@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;//シーン遷移に必要
-
+[RequireComponent(typeof(Rigidbody))]//リジッドボディのコンポーネントをオブジェクトに追加
 public class PlayerScript : MonoBehaviour
 {
+
     public float speed = 10; //速さ
     private Rigidbody rb; // Rididbody
     // Start is called before the first frame update
