@@ -55,7 +55,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Enemy\EnemyScript.cs" />
     <Compile Include="Assets\Player\PlayerScript.cs" />
+    <Compile Include="Assets\PrototypeScripts\EllipseMove.cs" />
+    <Compile Include="Assets\PrototypeScripts\Enemy.cs" />
+    <Compile Include="Assets\PrototypeScripts\Particle.cs" />
+    <Compile Include="Assets\PrototypeScripts\Player.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>D:/HAL/TGS/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>

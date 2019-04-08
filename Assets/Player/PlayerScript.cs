@@ -8,11 +8,16 @@ public class PlayerScript : MonoBehaviour
 
     public float speed = 10; //速さ
     private Rigidbody rb; // Rididbody
+    private Transform MyTrans;
+    //private SphereCollider MyCollider;
+    public float SizeUp = 2.0f;//拡大する値
+
     // Start is called before the first frame update
     void Start()
     {
-        // Rigidbody を取得
+        // コンポーネントを取得
         rb = GetComponent<Rigidbody>();
+        MyTrans = this.transform;
     }
 
     // Update is called once per frame
@@ -28,7 +33,7 @@ public class PlayerScript : MonoBehaviour
         // Ridigbody に力を与えて玉を動かす
         rb.AddForce(movement * speed);
     }
-    void OnCollisionEnter(Collision collision)
+    void OnTriggerEnter(Collider other)//他のオブジェクトと衝突したら
     {
         //以下に衝突判定を記入)
         //例
@@ -36,5 +41,15 @@ public class PlayerScript : MonoBehaviour
         //{
         //    SceneManager.LoadScene("GameOver");//ゲームオーバーのsceneへ
         //}
+        if(other.tag=="Enemy")//衝突したオブジェクトのタグがEnemyなら
+        {
+            //サイズを変更
+            Transform GetTrans = this.transform;//自分の位置を取得
+            Vector3 SetScale = GetTrans.lossyScale;//ワールド空間サイズ情報
+            Vector3 SizeUpScale = new Vector3(SetScale.x * SizeUp, SetScale.y * SizeUp, SetScale.z * SizeUp);//拡大
+            MyTrans.localScale = SizeUpScale;
+
+            Destroy(other.gameObject);//当たったオブジェクトを消滅
+        }
     }
 }
