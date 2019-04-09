@@ -59,6 +59,7 @@
      <Compile Include="Assets\Player\PlayerScript.cs" />
      <Compile Include="Assets\PrototypeScripts\Enemy.cs" />
      <Compile Include="Assets\PrototypeScripts\Player.cs" />
+     <Compile Include="Assets\Scripts\TimeManager.cs" />
      <Compile Include="Assets\Spawer\StraightEnemySpawner.cs" />
  <Reference Include="Unity.TextMeshPro.Editor">
  <HintPath>C:/Users/ohs75011/Desktop/Heliosphere_0406/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
