@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class EnemyScript : MonoBehaviour
 {
+    [SerializeField]
+    private int Hp = 1;//HP
+    private int Damage = 1;//ダメージ量
+
     [SerializeField, Range(0, 10)]
     float time = 1;
 
@@ -43,10 +47,21 @@ public class EnemyScript : MonoBehaviour
             enabled = false;
             Destroy(this.gameObject);
         }
-
+        if(Hp <= 0)//HPが0になったら消滅
+        {
+            Destroy(this.gameObject);
+        }
         var rate = diff / time;
 
         transform.position = Vector3.Lerp(startPosition, endPosition, rate);
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if(other.tag=="Comet")//彗星とぶつかったら
+        {
+            Hp -= Damage;//ダメージを与える
+        }
     }
 
     void OnDrawGizmosSelected()//選択されている場合のみギズモを表示
