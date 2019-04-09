@@ -51,5 +51,10 @@ public class PlayerScript : MonoBehaviour
 
             Destroy(other.gameObject);//当たったオブジェクトを消滅
         }
+        if(other.tag=="Comet")//彗星に衝突
+        {
+            //当たった時の処理
+            Debug.Log("Hit"); // ログを表示する
+        }
     }
 }
