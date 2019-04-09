@@ -7,37 +7,51 @@ using UnityEngine;
 
 public class StraightEnemySpawner : MonoBehaviour
 {
-
+    public float StartTime;//出現開始時間
     public GameObject SpawnEnemy;//出現させるエネミー
     public float IntervalTime;//出現させる間隔
     public int MaxEnemyNum;//軟体出現させるか
+
+    private float StartCountTime;//起動までの時間管理変数
     private float CountTime;//時間管理用変数
+
+    [SerializeField]
     private float CountEnemyNum = 0;//出現させたエネミーカウント用
 
     // Start is called before the first frame update
     void Start()
     {
+        StartCountTime = 0;
+        CountTime = IntervalTime;
     }
 
     // Update is called once per frame
     void Update()
     {
-        //指定時間ごとにエネミーを生成
-        CountTime += Time.deltaTime;
-        if(CountTime >= IntervalTime)
+        StartCountTime += Time.deltaTime;
+
+        if (StartCountTime >= StartTime)
         {
-            EnemySpawn();//エネミー出現
-            CountTime = 0;
+            EnemySpawn();//エネミー生成
         }
 
-        SpawnerManager();
+        SpawnerManager();//スポナー管理
+
     }
 
     void EnemySpawn()
     {
-        //エネミー出現処理
-        Instantiate(SpawnEnemy);
-        CountEnemyNum += 1;
+
+        //指定時間ごとにエネミーを生成
+        CountTime += Time.deltaTime;
+        if (CountTime >= IntervalTime)
+        {
+            //エネミー出現処理
+            Instantiate(SpawnEnemy);
+            CountEnemyNum += 1;
+            CountTime = 0;
+        }
+
 
     }
 
