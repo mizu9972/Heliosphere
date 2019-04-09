@@ -41,6 +41,7 @@ public class EnemyScript : MonoBehaviour
         {
             transform.position = endPosition;
             enabled = false;
+            Destroy(this.gameObject);
         }
 
         var rate = diff / time;
