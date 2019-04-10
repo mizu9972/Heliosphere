@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4794293868609869176}
   - component: {fileID: 4794293868609869180}
   - component: {fileID: 4794293868609869177}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -106,7 +106,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Hp: 1
-  time: 10
+  time: 4
   endPosition: {x: 15, y: 0.5, z: 0}
   curve:
     serializedVersion: 2
