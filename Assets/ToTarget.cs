@@ -4,5 +4,6 @@ using UnityEngine;
 
 public interface ToMove
 {
-    void SetTarget(Transform newTarget);
+    //インターフェース
+    void SetTarget(Transform newTarget);//ターゲットを設定する
 }

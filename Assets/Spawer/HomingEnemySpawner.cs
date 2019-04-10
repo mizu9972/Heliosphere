@@ -47,9 +47,11 @@ public class HomingEnemySpawner : MonoBehaviour
         if (CountTime >= IntervalTime)
         {
             //エネミー出現処理
-            GameObject SpawnObject = Instantiate(SpawnEnemy, this.transform);
-            SpawnObject.GetComponent<ToMove>().SetTarget(TargetTrans);
-            SpawnObject.GetComponent<NavMeshAgent>().enabled = true;
+            //Instantiateする前はエネミーのNavMeshAgentを無効化にしておき
+            //Instantiateの後、有効化することでナビゲーション通りに動く
+            GameObject SpawnObject = Instantiate(SpawnEnemy, this.transform);//エネミー生成
+            SpawnObject.GetComponent<ToMove>().SetTarget(TargetTrans);//ターゲットを設定
+            SpawnObject.GetComponent<NavMeshAgent>().enabled = true;//NavMeshAgentを有効に
             
             CountEnemyNum += 1;
             CountTime = 0;

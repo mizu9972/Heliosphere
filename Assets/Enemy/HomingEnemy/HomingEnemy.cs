@@ -35,8 +35,8 @@ public class HomingEnemy : MonoBehaviour,ToMove
         }
     }
 
-    public void SetTarget(Transform newTarget)
+    public void SetTarget(Transform newTarget)//ToMoveを継承
     {
-        TargetTrans = newTarget;
+        TargetTrans = newTarget;//ターゲットを設定
     }
 }
