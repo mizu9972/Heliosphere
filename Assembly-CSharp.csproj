@@ -55,13 +55,14 @@
   <ItemGroup>
      <Compile Include="Assets\Comet\Comet\EllipseMove.cs" />
      <Compile Include="Assets\Comet\Particle\Particle.cs" />
-     <Compile Include="Assets\Enemy\EnemyScript.cs" />
+     <Compile Include="Assets\Enemy\HomingEnemy\HomingEnemy.cs" />
+     <Compile Include="Assets\Enemy\StraightEnemy\EnemyScript.cs" />
      <Compile Include="Assets\Player\PlayerScript.cs" />
-     <Compile Include="Assets\PrototypeScripts\Enemy.cs" />
      <Compile Include="Assets\PrototypeScripts\Player.cs" />
      <Compile Include="Assets\Scripts\TimeManager.cs" />
+     <Compile Include="Assets\Spawer\HomingEnemySpawner.cs" />
      <Compile Include="Assets\Spawer\StraightEnemySpawner.cs" />
-     <Compile Include="Assets\stick.cs" />
+     <Compile Include="Assets\ToTarget.cs" />
  <Reference Include="Unity.TextMeshPro.Editor">
  <HintPath>C:/Users/ohs75011/Desktop/Heliosphere_0406/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>
