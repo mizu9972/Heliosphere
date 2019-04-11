@@ -47,7 +47,7 @@ public class StraightEnemySpawner : MonoBehaviour
         if (CountTime >= IntervalTime)
         {
             //エネミー出現処理
-            Instantiate(SpawnEnemy);
+            Instantiate(SpawnEnemy, this.transform);
             CountEnemyNum += 1;
             CountTime = 0;
         }
