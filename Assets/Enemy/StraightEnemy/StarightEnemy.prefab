@@ -124,7 +124,12 @@ MonoBehaviour:
   speed: 15
   Rotate: 0
   Hp: 1
+<<<<<<< HEAD
   time: 0.7
+=======
+  time: 2
+  endPosition: {x: 15, y: 0.5, z: 0}
+>>>>>>> b6fb4dbcc3449452e670c3f88123f59ad5a01d0c
   curve:
     serializedVersion: 2
     m_Curve: []
