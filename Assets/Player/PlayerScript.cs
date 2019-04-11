@@ -7,8 +7,7 @@ public class PlayerScript : MonoBehaviour
 {
 
     public float speed = 3.0f; //速さ
-    float moveX = 0.0f;//X移動
-    float moveZ = 0.0f;//Z移動
+    
     public float Gravity = 9.8f;
 
     /*private Rigidbody rb;*/ // Rididbody

@@ -46,10 +46,12 @@ public class StraightEnemySpawner : MonoBehaviour
         CountTime += Time.deltaTime;
         if (CountTime >= IntervalTime)
         {
+            GameObject enemy;
             //エネミー出現処理
-            Instantiate(SpawnEnemy, this.transform);
+            enemy = Instantiate(SpawnEnemy, this.transform/*.position,this.transform.rotation*/);
             CountEnemyNum += 1;
             CountTime = 0;
+            //enemy.GetComponent<EnemyScript>().GetSpawner(gameObject);
         }
 
 

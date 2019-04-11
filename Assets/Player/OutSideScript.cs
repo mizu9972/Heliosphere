@@ -32,7 +32,7 @@ public class OutSideScript : MonoBehaviour
         //}
         if (other.tag == "Enemy")//衝突したオブジェクトのタグがEnemyなら
         {
-            Debug.Log("hit");
+            Debug.Log("EnemyHit");
             //サイズを変更
             Transform GetTrans = this.transform;//自分の位置を取得
             Vector3 SetScale = GetTrans.lossyScale;//ワールド空間サイズ情報
@@ -45,7 +45,7 @@ public class OutSideScript : MonoBehaviour
         if (other.tag == "Comet")//彗星に衝突
         {
             //当たった時の処理
-            Debug.Log("Hit"); // ログを表示する
+            Debug.Log("CometHit"); // ログを表示する
         }
     }
 }
