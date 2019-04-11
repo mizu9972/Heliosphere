@@ -106,7 +106,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Hp: 1
-  time: 4
+  time: 2
   endPosition: {x: 15, y: 0.5, z: 0}
   curve:
     serializedVersion: 2
