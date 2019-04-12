@@ -881,7 +881,7 @@ MonoBehaviour:
   Speed: 1.5
   CenterX: 0
   CenterY: 0
-  RadiusX: 15
+  RadiusX: 5
   RadiusY: 5
   Acceleration: {x: 0, y: 0, z: 0}
 --- !u!54 &1688975656
@@ -928,7 +928,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1781288083}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0.81, y: 0, z: -0}
+  m_LocalPosition: {x: 0, y: 0, z: -0}
   m_LocalScale: {x: 0.41226, y: 0.33723, z: 0.8284103}
   m_Children: []
   m_Father: {fileID: 1688975653}
