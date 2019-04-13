@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyScript : MonoBehaviour
+public class protoEnemyScript : MonoBehaviour
 {
     
     private GameObject Spawner;//発生するスポナー
