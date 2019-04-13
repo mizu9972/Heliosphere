@@ -12,11 +12,11 @@ public class PlayerScript : MonoBehaviour
 
     /*private Rigidbody rb;*/ // Rididbody
 
-    private Vector3 MoveVector = Vector3.zero;
+    protected Vector3 MoveVector = Vector3.zero;
     
-    CharacterController controller;
+    protected CharacterController controller;
 
-    
+    public bool isActive = false;
 
     // Start is called before the first frame update
     void Start()
@@ -26,7 +26,6 @@ public class PlayerScript : MonoBehaviour
         //rb = GetComponent<Rigidbody>();
         
     }
-
     // Update is called once per frame
     void Update()
     {
@@ -40,5 +39,4 @@ public class PlayerScript : MonoBehaviour
 
         controller.Move(MoveVector * Time.deltaTime);
     }
-   
 }
