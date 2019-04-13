@@ -55,6 +55,8 @@
   <ItemGroup>
      <Compile Include="Assets\Game\Comet\Comet\EllipseMove.cs" />
      <Compile Include="Assets\Game\Comet\Particle\Particle.cs" />
+     <Compile Include="Assets\Game\Enemies\EnemyScript.cs" />
+     <Compile Include="Assets\Game\Friends\FirendScript.cs" />
      <Compile Include="Assets\Game\Player\OutSideScript.cs" />
      <Compile Include="Assets\Game\Player\PlayerScript.cs" />
      <Compile Include="Assets\Game\RCore.cs" />
