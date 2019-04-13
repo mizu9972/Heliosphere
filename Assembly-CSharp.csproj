@@ -53,7 +53,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
      <Compile Include="Assets\Game\Comet\Comet\ColliderScript.cs" />
+=======
+     <Compile Include="Assets\ChangeActiveInterface.cs" />
+>>>>>>> 94864f196eb9b9c883abc380e1b6413551b2cb34
      <Compile Include="Assets\Game\Comet\Comet\EllipseMove.cs" />
      <Compile Include="Assets\Game\Comet\Comet\Gizmo.cs" />
      <Compile Include="Assets\Game\Comet\Particle\Particle.cs" />
