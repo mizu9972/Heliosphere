@@ -62,6 +62,7 @@
      <Compile Include="Assets\PrototypeFolder\Player.cs" />
      <Compile Include="Assets\PrototypeFolder\Spawer\HomingEnemySpawner.cs" />
      <Compile Include="Assets\PrototypeFolder\Spawer\StraightEnemySpawner.cs" />
+     <Compile Include="Assets\RCore.cs" />
      <Compile Include="Assets\Scripts\TimeManager.cs" />
      <Compile Include="Assets\ToTarget.cs" />
  <Reference Include="Unity.TextMeshPro.Editor">
