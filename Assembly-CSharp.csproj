@@ -54,7 +54,9 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\ChangeActiveInterface.cs" />
+     <Compile Include="Assets\Game\Comet\Comet\ColliderScript.cs" />
      <Compile Include="Assets\Game\Comet\Comet\EllipseMove.cs" />
+     <Compile Include="Assets\Game\Comet\Comet\Gizmo.cs" />
      <Compile Include="Assets\Game\Comet\Particle\Particle.cs" />
      <Compile Include="Assets\Game\Enemies\EnemyScript.cs" />
      <Compile Include="Assets\Game\Friends\FirendScript.cs" />
