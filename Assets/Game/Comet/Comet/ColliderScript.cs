@@ -29,7 +29,7 @@ public class ColliderScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Wark_Pos = Parent.position;//位置を取得
+        
         Vector3 MyPos = MyTrans.position;//自分の座標
         Vector3 SunPos = SunTrans.position;//太陽の座標
 
@@ -56,8 +56,10 @@ public class ColliderScript : MonoBehaviour
     void SetColliderSizeUp(float Distance)
     {
         //距離によって当たり判定を伸ばす
+
+        Wark_Pos = Parent.position;//親オブジェクトの位置を取得
         MyTrans.localScale = Wark_Size;//一度拡大縮小をリセット
-        MyTrans.position = Wark_Pos;
+        MyTrans.position = Wark_Pos;//キューブの位置をリセット
 
         float DistanceRatio = SizeUp / Distance;//割合
 
@@ -70,7 +72,7 @@ public class ColliderScript : MonoBehaviour
                                         SetScale.z + DistanceRatio);//拡大
         MyTrans.localScale = SizeUpScale;
 
-        //Z座標の修正
+        //拡大した分のZ座標の修正
         MyTrans.position += this.transform.forward * DistanceRatio;
     }
 }
