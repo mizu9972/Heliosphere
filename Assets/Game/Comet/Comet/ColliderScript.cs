@@ -8,7 +8,7 @@ public class ColliderScript : MonoBehaviour
     private Vector3 Wark_Size;//サイズの避難用
     private Vector3 Wark_Pos;//座標の避難用
     public Transform SunTrans;
-    
+
 
     [SerializeField]
     private GameObject Target = null;
@@ -42,7 +42,7 @@ public class ColliderScript : MonoBehaviour
         //オブジェクトの拡大
         SetColliderSizeUp(Distance);
     }
-    void ColliderAngleSet(float dz,float dx)
+    void ColliderAngleSet(float dz, float dx)
     {
         //伸びる方向の角度を計算して設定
         this.transform.LookAt(Target.transform);//ターゲットの方を向く
@@ -55,7 +55,7 @@ public class ColliderScript : MonoBehaviour
     {
         //距離によって当たり判定を伸ばす
         MyTrans.localScale = Wark_Size;//一度拡大縮小をリセット
-        
+
 
         float DistanceRatio = SizeUp / Distance;//割合
 
@@ -67,6 +67,6 @@ public class ColliderScript : MonoBehaviour
                                         SetScale.y,
                                         SetScale.z + DistanceRatio);//拡大
         MyTrans.localScale = SizeUpScale;
-        
+
     }
 }

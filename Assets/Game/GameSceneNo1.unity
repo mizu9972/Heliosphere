@@ -213,12 +213,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 27489817}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28d74aa9d0aff494b83b880cb3049919, type: 3}
+  m_Script: {fileID: 11500000, guid: bdf3a0b4581acfc418175dc0bba92a7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   SunTrans: {fileID: 187035774}
   Target: {fileID: 187035768}
-  SizeUp: 3
+  SizeUp: 10
 --- !u!1 &47819715
 GameObject:
   m_ObjectHideFlags: 0
