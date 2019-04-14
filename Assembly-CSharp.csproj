@@ -68,11 +68,13 @@
      <Compile Include="Assets\Game\Scripts\TimeManager.cs" />
      <Compile Include="Assets\Game\ToTarget.cs" />
      <Compile Include="Assets\GameManagerScript.cs" />
+     <Compile Include="Assets\GameOver\GameOverManager.cs" />
      <Compile Include="Assets\PrototypeFolder\Enemy\HomingEnemy\HomingEnemy.cs" />
      <Compile Include="Assets\PrototypeFolder\Enemy\StraightEnemy\protoEnemyScript.cs" />
      <Compile Include="Assets\PrototypeFolder\Player.cs" />
      <Compile Include="Assets\PrototypeFolder\Spawer\HomingEnemySpawner.cs" />
      <Compile Include="Assets\PrototypeFolder\Spawer\StraightEnemySpawner.cs" />
+     <Compile Include="Assets\StageClear\ClearSceneManager.cs" />
      <Compile Include="Assets\Title\TitleManager.cs" />
  <Reference Include="Unity.TextMeshPro.Editor">
  <HintPath>C:/Users/ohs75011/Desktop/Heliosphere_0406/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
