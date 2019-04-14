@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FirendScript : MonoBehaviour
+public class FirendScript : MonoBehaviour,ITragetFunction
 {
+    [SerializeField]
+    GameObject GameManager;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,5 +21,11 @@ public class FirendScript : MonoBehaviour
     void OnCollisionEnter()
     {
         //衝突時
+    }
+
+   public void Hit()
+    {
+        GameManager.GetComponent<IGameManager>().AddFriendPoint();
+        Destroy(gameObject);
     }
 }

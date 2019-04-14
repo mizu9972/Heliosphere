@@ -75,4 +75,15 @@ public class ColliderScript : MonoBehaviour
         //拡大した分のZ座標の修正
         MyTrans.position += this.transform.forward * DistanceRatio;
     }
+
+    void OnTriggerEnter(Collider other)
+    {
+        var HitObjectisTarget = other.gameObject.GetComponent<ITragetFunction>();
+
+        Debug.Log("OK");
+        if(HitObjectisTarget != null)
+        {
+            other.gameObject.GetComponent<ITragetFunction>().Hit();
+        }
+    }
 }
