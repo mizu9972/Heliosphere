@@ -80,7 +80,6 @@ public class ColliderScript : MonoBehaviour
     {
         var HitObjectisTarget = other.gameObject.GetComponent<ITragetFunction>();
 
-        Debug.Log("OK");
         if(HitObjectisTarget != null)
         {
             other.gameObject.GetComponent<ITragetFunction>().Hit();

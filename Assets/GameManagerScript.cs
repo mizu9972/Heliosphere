@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UniRx;//Reactive Extension for Unity
+using UnityEngine.SceneManagement;
 
 [CreateAssetMenu()]
 public class GameManagerScript : MonoBehaviour,IGameManager
@@ -90,10 +91,12 @@ public class GameManagerScript : MonoBehaviour,IGameManager
     private void ToClearScene()
     {
         Debug.Log("クリア");
+        SceneManager.LoadScene("StageClearScene");
     }
 
     private void ToGameOverScene()
     {
         Debug.Log("ゲームオーバー");
+        SceneManager.LoadScene("GameOverScene");
     }
 }
