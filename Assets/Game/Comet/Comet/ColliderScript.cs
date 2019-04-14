@@ -5,18 +5,24 @@ using UnityEngine;
 public class ColliderScript : MonoBehaviour
 {
     private Transform MyTrans;
+    private Vector3 Wark_Size;//サイズの避難用
+    private Vector3 Wark_Pos;//座標の避難用
     public Transform SunTrans;
+    
 
-    private float SizeUp = 1;//拡大するやつ
     [SerializeField]
     private GameObject Target = null;
+
+    [SerializeField]
+    float SizeUp = 1;//拡大するやつ
 
     // Start is called before the first frame update
     void Start()
     {
         //コンポーネントの取得
         MyTrans = this.GetComponent<Transform>();
-        
+        Wark_Size = this.GetComponent<Transform>().localScale;
+
     }
 
     // Update is called once per frame
@@ -34,6 +40,7 @@ public class ColliderScript : MonoBehaviour
 
         ColliderAngleSet(dz, dx);//角度を設定
         //オブジェクトの拡大
+        SetColliderSizeUp(Distance);
     }
     void ColliderAngleSet(float dz,float dx)
     {
@@ -47,9 +54,19 @@ public class ColliderScript : MonoBehaviour
     void SetColliderSizeUp(float Distance)
     {
         //距離によって当たり判定を伸ばす
-        float DistanceRatio = 1 / Distance;//割合
+        MyTrans.localScale = Wark_Size;//一度拡大縮小をリセット
+        
+
+        float DistanceRatio = SizeUp / Distance;//割合
 
         //オブジェクトの拡大処理
-
+        Transform GetTrans = this.transform;//自分の位置を取得
+        Vector3 WarkPos = MyTrans.position;//Z座標修正用
+        Vector3 SetScale = GetTrans.lossyScale;//ワールド空間サイズ情報
+        Vector3 SizeUpScale = new Vector3(SetScale.x,
+                                        SetScale.y,
+                                        SetScale.z + DistanceRatio);//拡大
+        MyTrans.localScale = SizeUpScale;
+        
     }
 }

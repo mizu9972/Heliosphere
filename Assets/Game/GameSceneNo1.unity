@@ -218,6 +218,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SunTrans: {fileID: 187035774}
   Target: {fileID: 187035768}
+  SizeUp: 3
 --- !u!1 &47819715
 GameObject:
   m_ObjectHideFlags: 0
@@ -432,7 +433,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e790f52070022e45bbca267712ed773, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 30
+  speed: 10
   Gravity: 9.8
   isActive: 0
 --- !u!135 &187035771
