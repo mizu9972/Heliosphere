@@ -216,6 +216,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdf3a0b4581acfc418175dc0bba92a7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Parent: {fileID: 120918420}
   SunTrans: {fileID: 187035774}
   Target: {fileID: 187035768}
   SizeUp: 10

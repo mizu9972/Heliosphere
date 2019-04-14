@@ -7,6 +7,7 @@ public class ColliderScript : MonoBehaviour
     private Transform MyTrans;
     private Vector3 Wark_Size;//サイズの避難用
     private Vector3 Wark_Pos;//座標の避難用
+    public Transform Parent;//親オブジェクトの位置情報
     public Transform SunTrans;
 
 
@@ -28,6 +29,7 @@ public class ColliderScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Wark_Pos = Parent.position;//位置を取得
         Vector3 MyPos = MyTrans.position;//自分の座標
         Vector3 SunPos = SunTrans.position;//太陽の座標
 
@@ -55,7 +57,7 @@ public class ColliderScript : MonoBehaviour
     {
         //距離によって当たり判定を伸ばす
         MyTrans.localScale = Wark_Size;//一度拡大縮小をリセット
-
+        MyTrans.position = Wark_Pos;
 
         float DistanceRatio = SizeUp / Distance;//割合
 
@@ -68,5 +70,7 @@ public class ColliderScript : MonoBehaviour
                                         SetScale.z + DistanceRatio);//拡大
         MyTrans.localScale = SizeUpScale;
 
+        //Z座標の修正
+        MyTrans.position += this.transform.forward * DistanceRatio;
     }
 }
