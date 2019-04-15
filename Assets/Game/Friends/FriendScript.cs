@@ -1,11 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UniRx;
 
-public class FirendScript : MonoBehaviour,ITragetFunction
+public class FriendScript : MonoBehaviour,ITragetFunction
 {
     [SerializeField]
     GameObject GameManager;
+    [SerializeField]
+    GameObject ExplosionEffect;
+
+    [SerializeField]
+    float DestroyInterval;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +32,9 @@ public class FirendScript : MonoBehaviour,ITragetFunction
    public void Hit()
     {
         GameManager.GetComponent<IGameManager>().AddFriendPoint();
-        Destroy(gameObject);
+        GameObject explosion;
+        explosion = Instantiate(ExplosionEffect, this.transform);
+        this.GetComponent<MeshRenderer>().enabled = false;
+        Observable.Timer(System.TimeSpan.FromSeconds(DestroyInterval)).Subscribe(_ => Destroy(gameObject));
     }
 }
