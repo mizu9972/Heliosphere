@@ -91,6 +91,7 @@ public class GameManagerScript : MonoBehaviour,IGameManager
     private void ToClearScene()
     {
         Debug.Log("クリア");
+        AllChangeActive();
         //SceneChangeTimeの分だけ遅らせて
         //クリアシーンへ
         Observable.Timer(System.TimeSpan.FromSeconds(SceneChangeTime)).Subscribe(_ => SceneManager.LoadScene("StageClearScene"));
@@ -101,6 +102,7 @@ public class GameManagerScript : MonoBehaviour,IGameManager
     private void ToGameOverScene()
     {
         Debug.Log("ゲームオーバー");
+        AllChangeActive();
         //SceneChangeTimeの分だけ遅らせて
         //ゲームオーバーシーンへ
         Observable.Timer(System.TimeSpan.FromSeconds(SceneChangeTime)).Subscribe(_ => SceneManager.LoadScene("GameOverScene"));
