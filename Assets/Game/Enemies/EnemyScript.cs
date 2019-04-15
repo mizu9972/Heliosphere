@@ -6,6 +6,8 @@ public class EnemyScript : MonoBehaviour,ITragetFunction
 {
     [SerializeField]
     GameObject GameManager;
+    [SerializeField]
+    GameObject ExplosionEffect;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +28,8 @@ public class EnemyScript : MonoBehaviour,ITragetFunction
     public void Hit()
     {
         GameManager.GetComponent<IGameManager>().AddEnemyPoint();
-        Destroy(gameObject);
+        GameObject explosion;
+        explosion = Instantiate(ExplosionEffect, this.transform);
+       // Destroy(gameObject);
     }
 }

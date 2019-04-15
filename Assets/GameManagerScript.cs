@@ -16,6 +16,7 @@ public class GameManagerScript : MonoBehaviour,IGameManager
     [Header("待機時間の描画")]
     public GameObject ReadyObject, StartObject;
     public float ReadyTime, StartTime;
+    public float SceneChangeTime = 0;
 
     [Header("isActiveを操作するオブジェクト群")]
     public GameObject PlayerCore;
@@ -91,12 +92,16 @@ public class GameManagerScript : MonoBehaviour,IGameManager
     private void ToClearScene()
     {
         Debug.Log("クリア");
-        SceneManager.LoadScene("StageClearScene");
+        Observable.Timer(System.TimeSpan.FromSeconds(SceneChangeTime)).Subscribe(_ => SceneManager.LoadScene("StageClearScene"));//SceneChangeTime秒後にシーン遷移
+
+
     }
 
     private void ToGameOverScene()
     {
         Debug.Log("ゲームオーバー");
-        SceneManager.LoadScene("GameOverScene");
+        Observable.Timer(System.TimeSpan.FromSeconds(SceneChangeTime)).Subscribe(_ => SceneManager.LoadScene("GameOverScene"));//SceneChangeTime秒後にシーン遷移
+
+
     }
 }

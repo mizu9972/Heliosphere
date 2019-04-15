@@ -1181,6 +1181,7 @@ MonoBehaviour:
   StartObject: {fileID: 1264321872}
   ReadyTime: 2
   StartTime: 1
+  SceneChangeTime: 1
   PlayerCore: {fileID: 187035768}
   RevolutionCore: {fileID: 1217190869}
   Comet: {fileID: 1688975652}
@@ -1353,6 +1354,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameManager: {fileID: 987414312}
+  ExplosionEffect: {fileID: 5979260350877947122, guid: 0d44181efa043da44a2f245a598901c0,
+    type: 3}
 --- !u!54 &1466805622
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6493,5 +6496,11 @@ PrefabInstance:
       propertyPath: GameManager
       value: 
       objectReference: {fileID: 987414312}
+    - target: {fileID: 8788027046077915627, guid: 7777130018d8ae3448574776ac2c7a6d,
+        type: 3}
+      propertyPath: ExplosionEffect
+      value: 
+      objectReference: {fileID: 5979260350877947122, guid: 0d44181efa043da44a2f245a598901c0,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7777130018d8ae3448574776ac2c7a6d, type: 3}
