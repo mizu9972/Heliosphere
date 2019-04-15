@@ -1356,6 +1356,7 @@ MonoBehaviour:
   GameManager: {fileID: 987414312}
   ExplosionEffect: {fileID: 5979260350877947122, guid: 0d44181efa043da44a2f245a598901c0,
     type: 3}
+  DestroyInterval: 1
 --- !u!54 &1466805622
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6429,7 +6430,7 @@ PrefabInstance:
     - target: {fileID: 3072145552464752708, guid: 7777130018d8ae3448574776ac2c7a6d,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3072145552464752709, guid: 7777130018d8ae3448574776ac2c7a6d,
         type: 3}
@@ -6502,5 +6503,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5979260350877947122, guid: 0d44181efa043da44a2f245a598901c0,
         type: 3}
+    - target: {fileID: 8788027046077915627, guid: 7777130018d8ae3448574776ac2c7a6d,
+        type: 3}
+      propertyPath: DestroyInterval
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7777130018d8ae3448574776ac2c7a6d, type: 3}

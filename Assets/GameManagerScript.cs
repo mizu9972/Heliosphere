@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UniRx;//Reactive Extension for Unity
+using UniRx.Triggers;
 using UnityEngine.SceneManagement;
 
 [CreateAssetMenu()]
@@ -39,20 +40,18 @@ public class GameManagerScript : MonoBehaviour,IGameManager
         ReadyObject.GetComponent<Text>().enabled = true;
         StartObject.GetComponent<Text>().enabled = false;
         Observable.Timer(System.TimeSpan.FromSeconds(ReadyTime)).Subscribe(_ => ReadyChange());//ReadyTime秒後にStart描画に切り替える
+
+        //シーン遷移条件を判定しシーン遷移用の関数へ
+        //Whereで条件判定し、Take(1)で一回だけ実行、Subscribeで処理
+        this.UpdateAsObservable().Where(_ => (EnemyDesroyCount >= Enemy_GameClearPoint)).Take(1).Subscribe(_ => ToClearScene());
+        this.UpdateAsObservable().Where(_ => (FriendDestroyCount >= Friend_GameOverPoint)).Take(1).Subscribe(_ => ToGameOverScene());
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(EnemyDesroyCount >= Enemy_GameClearPoint)
-        {
-            ToClearScene();//目標数Enemy破壊したらゲームクリアシーンへ
-        }
 
-        if(FriendDestroyCount >= Friend_GameOverPoint)
-        {
-            ToGameOverScene();//指定数Friend破壊したらゲームオーバーシーンへ
-        }
     }
 
 
@@ -92,16 +91,19 @@ public class GameManagerScript : MonoBehaviour,IGameManager
     private void ToClearScene()
     {
         Debug.Log("クリア");
-        Observable.Timer(System.TimeSpan.FromSeconds(SceneChangeTime)).Subscribe(_ => SceneManager.LoadScene("StageClearScene"));//SceneChangeTime秒後にシーン遷移
+        //SceneChangeTimeの分だけ遅らせて
+        //クリアシーンへ
+        Observable.Timer(System.TimeSpan.FromSeconds(SceneChangeTime)).Subscribe(_ => SceneManager.LoadScene("StageClearScene"));
 
-
+      
     }
 
     private void ToGameOverScene()
     {
         Debug.Log("ゲームオーバー");
-        Observable.Timer(System.TimeSpan.FromSeconds(SceneChangeTime)).Subscribe(_ => SceneManager.LoadScene("GameOverScene"));//SceneChangeTime秒後にシーン遷移
-
+        //SceneChangeTimeの分だけ遅らせて
+        //ゲームオーバーシーンへ
+        Observable.Timer(System.TimeSpan.FromSeconds(SceneChangeTime)).Subscribe(_ => SceneManager.LoadScene("GameOverScene"));
 
     }
 }
