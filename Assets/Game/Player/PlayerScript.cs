@@ -31,16 +31,6 @@ public class PlayerScript : MonoBehaviour, ChangeActiveInterface, IMoveOperate
     // Update is called once per frame
     void Update()
     {
-<<<<<<< HEAD
-        if (isActive)
-        {
-            //isActiveがtrueeなら操作受付
-            Controll();
-            
-        }
-=======
-
->>>>>>> develop
 
         MoveVector = new Vector3(MoveHorizontal, 0, MoveVertical);
         MoveVector = transform.TransformDirection(MoveVector);
