@@ -11,11 +11,7 @@ public class PlayerScript : MonoBehaviour, ChangeActiveInterface
     
     public float Gravity = 9.8f;
 
-    //移動範囲制限用の変数
-    public float MinX = -5.0f;
-    public float MaxX = 5.0f;
-    public float MinZ = -5.0f;
-    public float MaxZ = 5.0f;
+   
 
     protected Vector3 MoveVector = Vector3.zero;
     
@@ -25,20 +21,21 @@ public class PlayerScript : MonoBehaviour, ChangeActiveInterface
 
     private float MoveHorizontal;
     private float MoveVertical;
+
     // Start is called before the first frame update
     void Start()
     {
         // コンポーネントを取得
         controller = GetComponent<CharacterController>();
-        
     }
     // Update is called once per frame
     void Update()
     {
         if (isActive)
         {
-            //isActiveがtrueなら操作受付
+            //isActiveがtrueeなら操作受付
             Controll();
+            
         }
 
         MoveVector = new Vector3(MoveHorizontal, 0, MoveVertical);
@@ -47,11 +44,6 @@ public class PlayerScript : MonoBehaviour, ChangeActiveInterface
         MoveVector.y -= Gravity * Time.deltaTime;
 
         controller.Move(MoveVector * Time.deltaTime);
-
-        //移動範囲の制限
-        this.transform.position = (new Vector3(Mathf.Clamp(this.transform.position.x, MinX, MaxX),
-                                               this.transform.position.y,
-                                               Mathf.Clamp(this.transform.position.z, MinZ, MaxZ)));
 
     }
 
@@ -66,4 +58,5 @@ public class PlayerScript : MonoBehaviour, ChangeActiveInterface
     {
         isActive = !isActive;
     }
+    
 }

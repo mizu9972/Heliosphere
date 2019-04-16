@@ -7,6 +7,9 @@ public class ColliderScript : MonoBehaviour
     private Transform MyTrans;
     private Vector3 Wark_Size;//サイズの避難用
     private Vector3 Wark_Pos;//座標の避難用
+    
+    
+    
     public Transform Parent;//親オブジェクトの位置情報
     public Transform SunTrans;
 
@@ -56,7 +59,6 @@ public class ColliderScript : MonoBehaviour
     void SetColliderSizeUp(float Distance)
     {
         //距離によって当たり判定を伸ばす
-
         Wark_Pos = Parent.position;//親オブジェクトの位置を取得
         MyTrans.localScale = Wark_Size;//一度拡大縮小をリセット
         MyTrans.position = Wark_Pos;//キューブの位置をリセット
@@ -85,4 +87,5 @@ public class ColliderScript : MonoBehaviour
             other.gameObject.GetComponent<ITragetFunction>().Hit();
         }
     }
+    
 }
