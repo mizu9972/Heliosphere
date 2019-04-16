@@ -67,8 +67,10 @@
      <Compile Include="Assets\Game\RCore.cs" />
      <Compile Include="Assets\Game\Scripts\TimeManager.cs" />
      <Compile Include="Assets\Game\ToTarget.cs" />
+     <Compile Include="Assets\GameControllerScript.cs" />
      <Compile Include="Assets\GameManagerScript.cs" />
      <Compile Include="Assets\GameOver\GameOverManager.cs" />
+     <Compile Include="Assets\IMoveOperate.cs" />
      <Compile Include="Assets\PrototypeFolder\Enemy\HomingEnemy\HomingEnemy.cs" />
      <Compile Include="Assets\PrototypeFolder\Enemy\StraightEnemy\protoEnemyScript.cs" />
      <Compile Include="Assets\PrototypeFolder\Player.cs" />

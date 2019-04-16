@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;//シーン遷移に必要
 //[RequireComponent(typeof(Rigidbody))]//リジッドボディのコンポーネントをオブジェクトに追加
 
-public class PlayerScript : MonoBehaviour, ChangeActiveInterface
+public class PlayerScript : MonoBehaviour, ChangeActiveInterface, IMoveOperate
 {
 
     public float speed = 3.0f; //速さ
@@ -35,11 +35,7 @@ public class PlayerScript : MonoBehaviour, ChangeActiveInterface
     // Update is called once per frame
     void Update()
     {
-        if (isActive)
-        {
-            //isActiveがtrueなら操作受付
-            Controll();
-        }
+
 
         MoveVector = new Vector3(MoveHorizontal, 0, MoveVertical);
         MoveVector = transform.TransformDirection(MoveVector);
@@ -55,11 +51,14 @@ public class PlayerScript : MonoBehaviour, ChangeActiveInterface
 
     }
 
-    private void Controll()
+    public void MoveControll()
     {
-        //キー操作
-        MoveHorizontal = Input.GetAxis("Horizontal");
-        MoveVertical = Input.GetAxis("Vertical");
+        if (isActive)
+        {
+            //キー操作
+            MoveHorizontal = Input.GetAxis("Horizontal");
+            MoveVertical = Input.GetAxis("Vertical");
+        }
     }
 
     public void ChangeActive()

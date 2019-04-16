@@ -31,10 +31,14 @@ public class EnemyScript : MonoBehaviour,ITragetFunction
 
     public void Hit()
     {
+        //衝突時
         GameManager.GetComponent<IGameManager>().AddEnemyPoint();
         GameObject explosion;
         explosion = Instantiate(ExplosionEffect, this.transform);
         this.GetComponent<MeshRenderer>().enabled = false;
+
+        //DestroyInterval秒後にオブジェクト消去
+        //爆発エフェクトを子クラスに生成するため爆発中は生存させておく
         Observable.Timer(System.TimeSpan.FromSeconds(DestroyInterval)).Subscribe(_ => Destroy(gameObject));
     }
 }
