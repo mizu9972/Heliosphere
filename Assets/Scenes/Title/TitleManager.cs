@@ -26,7 +26,7 @@ public class TitleManager : MonoBehaviour, IButtonPush
 
     public void ButtonPush()
     {
-        if (Input.GetKey(KeyCode.Return))
+        if (Input.GetKey(KeyCode.Return) || Input.GetButtonDown("action1")) 
         {
             SceneChange();
         }
