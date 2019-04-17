@@ -60,6 +60,7 @@
      <Compile Include="Assets\Game\Comet\Particle\Particle.cs" />
      <Compile Include="Assets\Game\Enemies\EnemyScript.cs" />
      <Compile Include="Assets\Game\Friends\FriendScript.cs" />
+     <Compile Include="Assets\Game\IButtonPush.cs" />
      <Compile Include="Assets\Game\IGameManager.cs" />
      <Compile Include="Assets\Game\ITragetFunction.cs" />
      <Compile Include="Assets\Game\Player\OutSideScript.cs" />
