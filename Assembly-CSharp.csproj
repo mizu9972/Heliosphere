@@ -54,6 +54,20 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\ChangeActiveInterface.cs" />
+     <Compile Include="Assets\Game\Comet\Comet\ColliderScript.cs" />
+     <Compile Include="Assets\Game\Comet\Comet\EllipseMove.cs" />
+     <Compile Include="Assets\Game\Comet\Comet\Gizmo.cs" />
+     <Compile Include="Assets\Game\Comet\Particle\Particle.cs" />
+     <Compile Include="Assets\Game\Enemies\EnemyScript.cs" />
+     <Compile Include="Assets\Game\Friends\FriendScript.cs" />
+     <Compile Include="Assets\Game\IButtonPush.cs" />
+     <Compile Include="Assets\Game\IGameManager.cs" />
+     <Compile Include="Assets\Game\ITragetFunction.cs" />
+     <Compile Include="Assets\Game\Player\OutSideScript.cs" />
+     <Compile Include="Assets\Game\Player\PlayerScript.cs" />
+     <Compile Include="Assets\Game\RCore.cs" />
+     <Compile Include="Assets\Game\Scripts\TimeManager.cs" />
+     <Compile Include="Assets\Game\ToTarget.cs" />
      <Compile Include="Assets\GameControllerScript.cs" />
      <Compile Include="Assets\GameManagerScript.cs" />
      <Compile Include="Assets\IMoveOperate.cs" />
