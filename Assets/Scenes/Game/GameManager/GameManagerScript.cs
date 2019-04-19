@@ -23,6 +23,7 @@ public class GameManagerScript : MonoBehaviour,IGameManager
     public GameObject PlayerCore;
     public GameObject RevolutionCore;
     public GameObject Comet;
+    public GameObject Comet2;
 
     [Header("クリアEnemy破壊数・ゲームオーバーFriend破壊数")]
     [SerializeField]
@@ -75,7 +76,13 @@ public class GameManagerScript : MonoBehaviour,IGameManager
     {
         PlayerCore.GetComponent<ChangeActiveInterface>().ChangeActive();
         RevolutionCore.GetComponent<ChangeActiveInterface>().ChangeActive();
+        if(Comet != null) { 
         Comet.GetComponent<ChangeActiveInterface>().ChangeActive();
+        }
+        if (Comet2 != null)
+        {
+            Comet2.GetComponent<ChangeActiveInterface>().ChangeActive();
+        }
     }
 
     public void AddFriendPoint()
@@ -94,7 +101,7 @@ public class GameManagerScript : MonoBehaviour,IGameManager
         AllChangeActive();
         //SceneChangeTimeの分だけ遅らせて
         //クリアシーンへ
-        Observable.Timer(System.TimeSpan.FromSeconds(SceneChangeTime)).Subscribe(_ => SceneManager.LoadScene("StageClearScene"));
+        Observable.Timer(System.TimeSpan.FromSeconds(SceneChangeTime)).Subscribe(_ => SceneManager.LoadScene("GameSceneNo2"));
 
       
     }
@@ -105,7 +112,7 @@ public class GameManagerScript : MonoBehaviour,IGameManager
         AllChangeActive();
         //SceneChangeTimeの分だけ遅らせて
         //ゲームオーバーシーンへ
-        Observable.Timer(System.TimeSpan.FromSeconds(SceneChangeTime)).Subscribe(_ => SceneManager.LoadScene("GameOverScene"));
+        Observable.Timer(System.TimeSpan.FromSeconds(SceneChangeTime)).Subscribe(_ => SceneManager.LoadScene("GameSceneNo2"));
 
     }
 }
