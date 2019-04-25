@@ -1,0 +1,9 @@
+☆使い方☆
+１．Comet親オブジェクトの子にCometsPaticleSystemを配置
+２．trailmaterialにテクスチャ設定(ドラッグ&リリース)
+３．CometsPaticleSystemのインスペクターのRenderer項目のTrailMaterialに２．のtrailmaterialを設定
+４．Transformやスクリプトの数値を調整して完了
+
+スクリプトのLifeTimeRatiobyDistanceは尾の長さの変化の倍率を調整できる
+
+何かあったら阿形まで
