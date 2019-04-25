@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UniRx;
+using UniRx.Triggers;
 
 public class Cursor : MonoBehaviour
 {
@@ -14,7 +16,8 @@ public class Cursor : MonoBehaviour
 
     //選択中か
     private bool SelectFlg=false;
-    private bool EnterFlg = false;
+
+    
     void Start()
     {
         rect = GetComponent<RectTransform>();
@@ -29,7 +32,9 @@ public class Cursor : MonoBehaviour
         //{
         //    return;
         //}
+
         //　移動先を計算
+        
         var pos = rect.anchoredPosition + new Vector2(Input.GetAxis("Horizontal") * iconSpeed, Input.GetAxis("Vertical") * iconSpeed) * Time.deltaTime;
 
         //　アイコンが画面外に出ないようにする
@@ -39,19 +44,24 @@ public class Cursor : MonoBehaviour
         rect.anchoredPosition = pos;
 
         //Debug.Log(SelectFlg);
-        Debug.Log(EnterFlg);
+        //Debug.Log(EnterFlg);
     }
 
    
     void OnTriggerEnter(Collider other)//選択中
     {   
         other.GetComponent<ISelectStage>().OnSelect();
+
         SelectFlg = true;
-        
-        if(SelectFlg)//キー入力がなぜか効かないので今は触れたら遷移
+        if(SelectFlg)
         {
-            Debug.Log("選択中にキーが押されました");
-            other.GetComponent<ISelectStage>().SelectScene();//選択したステージへ
+            //ステージアイコン選択中かつ決定ボタンが押されたら遷移
+            //選択したステージへ
+            this.UpdateAsObservable()
+                .Where(_ => Input.GetKey(KeyCode.Return))
+                .Take(1)//1回のみの処理
+                .Subscribe(_ => other.GetComponent<ISelectStage>().SelectScene());
+                
         }
     }
     void OnTriggerExit(Collider other)//離れたら

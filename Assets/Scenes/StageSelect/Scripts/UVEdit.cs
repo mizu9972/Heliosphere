@@ -52,7 +52,7 @@ public class UVEdit : MonoBehaviour,ISelectStage
     {
         if (SceneName != null)//遷移先のsceneがあれば
         {
-            Debug.Log("シーン遷移します");
+            Debug.Log("シーン遷移");
             SceneManager.LoadScene(SceneName);
         }
     }
