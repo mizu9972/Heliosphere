@@ -21,7 +21,7 @@ public class TitleManager : MonoBehaviour, IButtonPush
     private void SceneChange()
     {
         //シーン遷移
-        SceneManager.LoadScene("GameSceneno1");
+        SceneManager.LoadScene("StageSelectScene");
     }
 
     public void ButtonPush()

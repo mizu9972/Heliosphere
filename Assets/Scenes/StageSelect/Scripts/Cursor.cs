@@ -12,6 +12,9 @@ public class Cursor : MonoBehaviour
     //　アイコンが画面内に収まる為のオフセット値
     private Vector2 offset;
 
+    //選択中か
+    private bool SelectFlg=false;
+    private bool EnterFlg = false;
     void Start()
     {
         rect = GetComponent<RectTransform>();
@@ -22,10 +25,10 @@ public class Cursor : MonoBehaviour
     void Update()
     {
         //　移動キーを押していなければ何もしない
-        if (Input.GetAxis("Horizontal") == 0f && Input.GetAxis("Vertical") == 0f)
-        {
-            return;
-        }
+        //if (Input.GetAxis("Horizontal") == 0f && Input.GetAxis("Vertical") == 0f)
+        //{
+        //    return;
+        //}
         //　移動先を計算
         var pos = rect.anchoredPosition + new Vector2(Input.GetAxis("Horizontal") * iconSpeed, Input.GetAxis("Vertical") * iconSpeed) * Time.deltaTime;
 
@@ -34,13 +37,26 @@ public class Cursor : MonoBehaviour
         pos.y = Mathf.Clamp(pos.y, -Screen.height * 0.5f + offset.y, Screen.height * 0.5f - offset.y);
         //　アイコン位置を設定
         rect.anchoredPosition = pos;
+
+        //Debug.Log(SelectFlg);
+        Debug.Log(EnterFlg);
     }
+
+   
     void OnTriggerEnter(Collider other)//選択中
     {   
         other.GetComponent<ISelectStage>().OnSelect();
+        SelectFlg = true;
+        
+        if(SelectFlg)//キー入力がなぜか効かないので今は触れたら遷移
+        {
+            Debug.Log("選択中にキーが押されました");
+            other.GetComponent<ISelectStage>().SelectScene();//選択したステージへ
+        }
     }
     void OnTriggerExit(Collider other)//離れたら
     {
+        SelectFlg = false;
         other.GetComponent<ISelectStage>().RemoveSelect();
     }
 }

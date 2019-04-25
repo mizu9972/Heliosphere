@@ -24,6 +24,6 @@ public class GameOverManager : MonoBehaviour
     private void SceneChange()
     {
         //シーン遷移
-        SceneManager.LoadScene("TitleScene");
+        SceneManager.LoadScene("StageSelectScene");
     }
 }

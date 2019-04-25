@@ -101,7 +101,7 @@ public class GameManagerScript : MonoBehaviour,IGameManager
         AllChangeActive();
         //SceneChangeTimeの分だけ遅らせて
         //クリアシーンへ
-        Observable.Timer(System.TimeSpan.FromSeconds(SceneChangeTime)).Subscribe(_ => SceneManager.LoadScene("GameSceneNo2"));
+        Observable.Timer(System.TimeSpan.FromSeconds(SceneChangeTime)).Subscribe(_ => SceneManager.LoadScene("StageClearScene"));
 
       
     }
@@ -112,7 +112,7 @@ public class GameManagerScript : MonoBehaviour,IGameManager
         AllChangeActive();
         //SceneChangeTimeの分だけ遅らせて
         //ゲームオーバーシーンへ
-        Observable.Timer(System.TimeSpan.FromSeconds(SceneChangeTime)).Subscribe(_ => SceneManager.LoadScene("GameSceneNo2"));
+        Observable.Timer(System.TimeSpan.FromSeconds(SceneChangeTime)).Subscribe(_ => SceneManager.LoadScene("GameOverScene"));
 
     }
 }

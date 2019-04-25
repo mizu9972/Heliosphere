@@ -8,5 +8,6 @@ public interface ISelectStage
     void OnSelect();
     //カーソルが離れた時に実行
     void RemoveSelect();
-    //選択された状態でボタンを押したらscene遷移s
+    //選択された状態でボタンを押したらscene遷移
+    void SelectScene();
 }

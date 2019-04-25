@@ -1,9 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class UVEdit : MonoBehaviour,ISelectStage
-{ 
+{
+    //遷移するシーンを選択する
+    public string SceneName;
     //テクスチャの表示範囲の幅
     public float TexWidth;
     public float TexHeight;
@@ -11,10 +13,6 @@ public class UVEdit : MonoBehaviour,ISelectStage
     //UV座標変更用の変数
     private float U = 0;
     private float V = 0.5f;
-
-    //遷移するステージシーンの番号
-    [SerializeField]
-    int StageSceneNum;
 
     private UnityEngine.UI.RawImage Image;
 
@@ -49,5 +47,13 @@ public class UVEdit : MonoBehaviour,ISelectStage
         Debug.Log("Remove");
         U = 0;
         V = 0.5f;
+    }
+    public void SelectScene()
+    {
+        if (SceneName != null)//遷移先のsceneがあれば
+        {
+            Debug.Log("シーン遷移します");
+            SceneManager.LoadScene(SceneName);
+        }
     }
 }
