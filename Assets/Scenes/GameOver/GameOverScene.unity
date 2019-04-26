@@ -762,5 +762,20 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 195680016621597838, guid: ece48aaaadf11fd408eb8169dd6e6218,
+        type: 3}
+      propertyPath: m_Text
+      value: Press Enter Key or A button
+      objectReference: {fileID: 0}
+    - target: {fileID: 195680016621597838, guid: ece48aaaadf11fd408eb8169dd6e6218,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 195680016621597838, guid: ece48aaaadf11fd408eb8169dd6e6218,
+        type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ece48aaaadf11fd408eb8169dd6e6218, type: 3}

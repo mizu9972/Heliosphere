@@ -58,7 +58,7 @@ public class Cursor : MonoBehaviour
             //ステージアイコン選択中かつ決定ボタンが押されたら遷移
             //選択したステージへ
             this.UpdateAsObservable()
-                .Where(_ => Input.GetKey(KeyCode.Return))
+                .Where(_ => Input.GetKey(KeyCode.Return) || Input.GetButtonDown("action1"))
                 .Take(1)//1回のみの処理
                 .Subscribe(_ => other.GetComponent<ISelectStage>().SelectScene());
                 
