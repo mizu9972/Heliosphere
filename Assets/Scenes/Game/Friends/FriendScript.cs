@@ -15,7 +15,6 @@ public class FriendScript : MonoBehaviour,ITragetFunction
     public float RadiusX = 5.0f;//楕円運動の水平方向の半径
     public float RadiusY = 5.0f;//楕円運動の垂直方向の半径
     public Vector3 Acceleration;
-    public Transform TargetTrans;
 
     [SerializeField]
     GameObject GameManager;
@@ -28,27 +27,13 @@ public class FriendScript : MonoBehaviour,ITragetFunction
     void Start()
     {
         MyRigidB = this.GetComponent<Rigidbody>();
-        if (TargetTrans != null)//ターゲットがあるなら中心座標設定
-        {
-            CenterX = TargetTrans.transform.position.x;
-            CenterY = TargetTrans.transform.position.z;
-        }
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        //公転処理
-        if (TargetTrans != null)
-        {
-            //角度を更新して彗星を移動させる関数
-            Angle += Speed;
-            Angle = (Angle % 360 + 360) % 360;//角度を0から360の間の数値に調整
-            Radian = Angle * AngleToRadian;//ラジアンに変換
 
-            MyRigidB.AddForce(Acceleration, ForceMode.Acceleration);//加速度(inspectorで調整)
-            transform.position = new Vector3(CenterX + Mathf.Cos(Radian) * RadiusX, 0, CenterY + Mathf.Sin(Radian) * RadiusY);
-        }
     }
 
     void OnCollisionEnter()
