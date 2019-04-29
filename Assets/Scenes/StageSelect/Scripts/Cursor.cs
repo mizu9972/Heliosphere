@@ -43,25 +43,25 @@ public class Cursor : MonoBehaviour
         //　アイコン位置を設定
         rect.anchoredPosition = pos;
 
-        //Debug.Log(SelectFlg);
+        Debug.Log(SelectFlg);
         //Debug.Log(EnterFlg);
     }
 
    
-    void OnTriggerEnter(Collider other)//選択中
-    {   
+    void OnTriggerStay(Collider other)//選択中
+    {
         other.GetComponent<ISelectStage>().OnSelect();
-
         SelectFlg = true;
-        if(SelectFlg)
+        if (Input.GetKey(KeyCode.Return) || Input.GetButtonDown("action1"))
         {
             //ステージアイコン選択中かつ決定ボタンが押されたら遷移
             //選択したステージへ
+            
             this.UpdateAsObservable()
-                .Where(_ => Input.GetKey(KeyCode.Return) || Input.GetButtonDown("action1"))
+                .Where(_ => SelectFlg)
                 .Take(1)//1回のみの処理
                 .Subscribe(_ => other.GetComponent<ISelectStage>().SelectScene());
-                
+
         }
     }
     void OnTriggerExit(Collider other)//離れたら
