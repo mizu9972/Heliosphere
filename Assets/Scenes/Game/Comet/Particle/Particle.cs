@@ -8,6 +8,8 @@ public class Particle : MonoBehaviour
     private Transform MyTrans;
     public Transform sunTrans;
     public float LifeTimeRatiobyDistance;
+    public float MaxLifeTime;
+    public bool isActiveLifeTimeSet;
     private Quaternion PreRotate;
     private ParticleSystem MyParticleState;
     // Start is called before the first frame update
@@ -33,11 +35,13 @@ public class Particle : MonoBehaviour
         float Distance = Mathf.Sqrt(dy * dy + dx * dx);
 
         ParticleAngleSet(dy, dx);//角度を設定
-        ParticleLifetimeSet(Distance);//生存時間を設定
-
+        if (isActiveLifeTimeSet)
+        {
+            ParticleLifetimeSet(Distance);//生存時間を設定
+        }
     }
 
-    void ParticleAngleSet(float dy,float dx)
+    void ParticleAngleSet(float dy, float dx)
     {
         //パーティクル発射の角度を計算して設定
 
@@ -47,9 +51,9 @@ public class Particle : MonoBehaviour
         //角度を計算
         AngleinRadian = Mathf.Atan2(dy, dx) + Mathf.PI / 2;
 
-        
+
         //回転
-        MyTrans.rotation = PreRotate * Quaternion.Euler(0,360 - 90 - (AngleinRadian * Mathf.Rad2Deg),  0);
+        MyTrans.rotation = PreRotate * Quaternion.Euler(0, 360 - 90 - (AngleinRadian * Mathf.Rad2Deg), 0);
         ParticleRotationSet(AngleinRadian);
     }
 
@@ -57,7 +61,7 @@ public class Particle : MonoBehaviour
     {
         //太陽の位置によって粒子の角度を変更する
         var ParticleMain = MyParticleState.main;
-        ParticleMain.startRotation = Angle;
+        ParticleMain.startRotation = 360 - Angle;
     }
     void ParticleLifetimeSet(float Distance)
     {
@@ -65,7 +69,13 @@ public class Particle : MonoBehaviour
         float DistanceRatio = 1 / Distance;//割合
 
         var ParticleMain = MyParticleState.main;
-        ParticleMain.startLifetime = LifeTimeRatiobyDistance * DistanceRatio;
+
+        float SetLifeTime = LifeTimeRatiobyDistance * DistanceRatio;
+        if (SetLifeTime > MaxLifeTime)
+        {
+            SetLifeTime = MaxLifeTime;
+        }
+        ParticleMain.startLifetime = SetLifeTime;
 
 
     }
