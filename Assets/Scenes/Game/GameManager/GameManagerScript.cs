@@ -46,7 +46,7 @@ public class GameManagerScript : MonoBehaviour,IGameManager
         //Whereで条件判定し、Take(1)で一回だけ実行、Subscribeで処理
         this.UpdateAsObservable().Where(_ => (EnemyDesroyCount >= Enemy_GameClearPoint)).Take(1).Subscribe(_ => ToClearScene());
         this.UpdateAsObservable().Where(_ => (FriendDestroyCount >= Friend_GameOverPoint)).Take(1).Subscribe(_ => ToGameOverScene());
-
+        SceneManager.sceneUnloaded += OnSceneUnloaded;
     }
 
     // Update is called once per frame
@@ -114,5 +114,12 @@ public class GameManagerScript : MonoBehaviour,IGameManager
         //ゲームオーバーシーンへ
         Observable.Timer(System.TimeSpan.FromSeconds(SceneChangeTime)).Subscribe(_ => SceneManager.LoadScene("GameOverScene"));
 
+    }
+    void OnSceneUnloaded(Scene scene)
+    {
+        Debug.Log("実行");
+        GameObject gameObject;
+        gameObject = GameObject.Find("Manager");
+        gameObject.GetComponent<BeforScene>().ExportSceneName(scene);
     }
 }

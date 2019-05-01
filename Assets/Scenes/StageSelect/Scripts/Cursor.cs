@@ -43,7 +43,7 @@ public class Cursor : MonoBehaviour
         //　アイコン位置を設定
         rect.anchoredPosition = pos;
 
-        Debug.Log(SelectFlg);
+        //Debug.Log(SelectFlg);
         //Debug.Log(EnterFlg);
     }
 
@@ -52,7 +52,7 @@ public class Cursor : MonoBehaviour
     {
         other.GetComponent<ISelectStage>().OnSelect();
         SelectFlg = true;
-        if (Input.GetKey(KeyCode.Return) || Input.GetButtonDown("action1"))
+        if (Input.GetKeyDown(KeyCode.Return) || Input.GetButtonDown("action1"))
         {
             //ステージアイコン選択中かつ決定ボタンが押されたら遷移
             //選択したステージへ

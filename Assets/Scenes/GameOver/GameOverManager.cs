@@ -6,10 +6,12 @@ using UnityEngine.SceneManagement;
 
 public class GameOverManager : MonoBehaviour
 {
+    public string Name;
     // Start is called before the first frame update
     void Start()
     {
-        
+        //前のシーンを取得
+        //Name=GameObject.Find("Manager").GetComponent<BeforScene>().SceneName;
     }
 
     // Update is called once per frame
@@ -24,6 +26,6 @@ public class GameOverManager : MonoBehaviour
     private void SceneChange()
     {
         //シーン遷移
-        SceneManager.LoadScene("StageSelectScene");
+        //SceneManager.LoadScene("StageSelectScene");
     }
 }

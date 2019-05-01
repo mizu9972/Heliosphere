@@ -85,10 +85,13 @@
     <Compile Include="Assets\Scenes\Game\Scripts\RCore.cs" />
     <Compile Include="Assets\Scenes\Game\Scripts\TimeManager.cs" />
     <Compile Include="Assets\Scenes\Game\Scripts\ToTarget.cs" />
+    <Compile Include="Assets\Scenes\GameOver\Button.cs" />
     <Compile Include="Assets\Scenes\GameOver\GameOverManager.cs" />
-    <Compile Include="Assets\Scenes\Manager\AudioManager.cs" />
-    <Compile Include="Assets\Scenes\Manager\ExitFunction.cs" />
-    <Compile Include="Assets\Scenes\Manager\Manager.cs" />
+    <Compile Include="Assets\Scenes\Manager\Scripts\AudioManager.cs" />
+    <Compile Include="Assets\Scenes\Manager\Scripts\BeforScene.cs" />
+    <Compile Include="Assets\Scenes\Manager\Scripts\ExitFunction.cs" />
+    <Compile Include="Assets\Scenes\Manager\Scripts\Manager.cs" />
+    <Compile Include="Assets\Scenes\Manager\Scripts\Volume.cs" />
     <Compile Include="Assets\Scenes\StageClear\ClearSceneManager.cs" />
     <Compile Include="Assets\Scenes\StageSelect\Scripts\Cursor.cs" />
     <Compile Include="Assets\Scenes\StageSelect\Scripts\SelectStage.cs" />
