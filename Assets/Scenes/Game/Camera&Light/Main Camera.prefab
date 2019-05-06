@@ -97,7 +97,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tweakMode: 0
   screenBlendMode: 1
-  hdr: 0
+  hdr: 1
   sepBlurSpread: 2.5
   quality: 1
   bloomIntensity: 0.1
