@@ -64,9 +64,9 @@
      <Compile Include="Assets\Scenes\Game\Enemies\EnemyScript.cs" />
      <Compile Include="Assets\Scenes\Game\Friends\FriendScript.cs" />
      <Compile Include="Assets\Scenes\Game\GameManager\GameManagerScript.cs" />
-     <Compile Include="Assets\Scenes\Game\Player\OutSideScript.cs" />
-     <Compile Include="Assets\Scenes\Game\Player\PlayerScript.cs" />
-     <Compile Include="Assets\Scenes\Game\Player\sunUVs.cs" />
+     <Compile Include="Assets\Scenes\Game\Player\scripts\OutSideScript.cs" />
+     <Compile Include="Assets\Scenes\Game\Player\scripts\PlayerScript.cs" />
+     <Compile Include="Assets\Scenes\Game\Player\scripts\sunUVs.cs" />
      <Compile Include="Assets\Scenes\Game\Scripts\circleset.cs" />
      <Compile Include="Assets\Scenes\Game\Scripts\IButtonPush.cs" />
      <Compile Include="Assets\Scenes\Game\Scripts\IGameManager.cs" />
