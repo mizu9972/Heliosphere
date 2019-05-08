@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class Button : MonoBehaviour,ISelectStage
 {
+    //デバッグ用のシーン名
+    public string DebugSceneName;
     //遷移するシーンを選択する
     private string Name = null;
     //テクスチャの表示範囲の幅
@@ -57,8 +59,15 @@ public class Button : MonoBehaviour,ISelectStage
         Name = gameObject.GetComponent<BeforScene>().NamePush();
         if (Name != null)
         {
-            //マネージャーから取得したシーン名のシーンに遷移
-            SceneManager.LoadScene(Name);
+            if (Name == "ManagerScene")
+            {
+                SceneManager.LoadScene(DebugSceneName);
+            }
+            else
+            {
+                //マネージャーから取得したシーン名のシーンに遷移
+                SceneManager.LoadScene(Name);
+            }
         }
         Debug.Log(Name);
     }

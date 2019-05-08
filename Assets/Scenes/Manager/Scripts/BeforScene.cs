@@ -7,11 +7,7 @@ public class BeforScene : MonoBehaviour
     
     public string SceneName;
 
-    //void OnSceneUnloaded(Scene scene)//シーンが破棄されるとき
-    //{
-    //    SceneName = SceneManager.GetActiveScene().name;
-    //    Debug.Log(SceneName);
-    //}
+    
     public string NamePush()
     {
         Debug.Log("Pushしたよ");
