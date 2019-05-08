@@ -16,6 +16,10 @@ public class FriendScript : MonoBehaviour,ITragetFunction
     public float RadiusY = 5.0f;//楕円運動の垂直方向の半径
     public Vector3 Acceleration;
 
+    public AudioClip Explosion;//爆発音
+    [SerializeField]
+    AudioSource audioSource;//オーディオソース
+
     [SerializeField]
     GameObject GameManager;
     [SerializeField]
@@ -43,6 +47,7 @@ public class FriendScript : MonoBehaviour,ITragetFunction
 
    public void Hit()
     {
+        audioSource.PlayOneShot(Explosion);
         GameManager.GetComponent<IGameManager>().AddFriendPoint();
         GameObject explosion;
         explosion = Instantiate(ExplosionEffect, this.transform);
