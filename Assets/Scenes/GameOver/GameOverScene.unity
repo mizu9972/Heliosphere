@@ -619,7 +619,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f37711f6eae439045a9399d19f9c6084, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: 
 --- !u!4 &1306976430
 Transform:
   m_ObjectHideFlags: 0
@@ -646,7 +645,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f37711f6eae439045a9399d19f9c6084, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: 
 --- !u!224 &1587326128 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1082326207195712055, guid: 131577a3b1f0fd54e9ce46fe91243acd,
@@ -1177,5 +1175,10 @@ PrefabInstance:
       propertyPath: m_Texture
       value: 
       objectReference: {fileID: 2800000, guid: aeff2064fa30a1341a4c2982ace8e3bc, type: 3}
+    - target: {fileID: 2426838527439479036, guid: 796e042d2a111f542b297169c70cca54,
+        type: 3}
+      propertyPath: DebugSceneName
+      value: GameSceneNo1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 796e042d2a111f542b297169c70cca54, type: 3}
