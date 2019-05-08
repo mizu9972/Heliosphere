@@ -30,7 +30,7 @@ Transform:
   m_Children:
   - {fileID: 2550043631095521501}
   m_Father: {fileID: 2592975415085212246}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2550043631027069955
 MonoBehaviour:
@@ -336,7 +336,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2592975414107047308
 Transform:
   m_ObjectHideFlags: 0
@@ -366,7 +366,7 @@ ParticleSystem:
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
   looping: 1
-  prewarm: 0
+  prewarm: 1
   playOnAwake: 1
   useUnscaledTime: 0
   autoRandomSeed: 1
@@ -487,7 +487,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 3
+      scalar: 1
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -5082,7 +5082,7 @@ ParticleSystem:
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
   looping: 1
-  prewarm: 0
+  prewarm: 1
   playOnAwake: 1
   useUnscaledTime: 0
   autoRandomSeed: 1
@@ -5900,7 +5900,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 200
+      scalar: 100
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -6347,7 +6347,7 @@ ParticleSystem:
         key6: {r: 0, g: 0, b: 0, a: 0}
         key7: {r: 0, g: 0, b: 0, a: 0}
         ctime0: 655
-        ctime1: 3470
+        ctime1: 14071
         ctime2: 25443
         ctime3: 26792
         ctime4: 0
@@ -7994,8 +7994,8 @@ ParticleSystem:
     remapEnabled: 0
     positionAmount:
       serializedVersion: 2
-      minMaxState: 3
-      scalar: 3
+      minMaxState: 0
+      scalar: 1
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -8048,7 +8048,7 @@ ParticleSystem:
     rotationAmount:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: 1
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -8943,16 +8943,16 @@ ParticleSystem:
       maxGradient:
         serializedVersion: 2
         key0: {r: 0.93004626, g: 0.9392297, b: 0.9433962, a: 1}
-        key1: {r: 0.4543201, g: 0.031372547, b: 0.94509804, a: 1}
-        key2: {r: 0.003921588, g: 0.5165534, b: 0.90588236, a: 0.35744506}
+        key1: {r: 0.06603773, g: 0.105882354, b: 0.41960785, a: 1}
+        key2: {r: 0.022917405, g: 0.16052023, b: 0.9716981, a: 0.35744506}
         key3: {r: 0.013127446, g: 0.32267272, b: 0.5566038, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
         key5: {r: 0, g: 0, b: 0, a: 0}
         key6: {r: 0, g: 0, b: 0, a: 0}
         key7: {r: 0, g: 0, b: 0, a: 0}
-        ctime0: 655
-        ctime1: 14456
-        ctime2: 25443
+        ctime0: 6746
+        ctime1: 24287
+        ctime2: 36430
         ctime3: 50886
         ctime4: 0
         ctime5: 0
@@ -8960,14 +8960,14 @@ ParticleSystem:
         ctime7: 0
         atime0: 0
         atime1: 11758
-        atime2: 26214
-        atime3: 53777
+        atime2: 19853
+        atime3: 63608
         atime4: 53777
         atime5: 0
         atime6: 0
         atime7: 0
         m_Mode: 0
-        m_NumColorKeys: 3
+        m_NumColorKeys: 4
         m_NumAlphaKeys: 4
       minGradient:
         serializedVersion: 2
@@ -9055,7 +9055,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.23852047, g: 0.1535244, b: 0.4339623, a: 1}
+      maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 0.93004626, g: 0.9392297, b: 0.9433962, a: 1}
@@ -9804,6 +9804,7 @@ Transform:
   - {fileID: 2592975413840794940}
   - {fileID: 2592975414859028455}
   - {fileID: 2592975414107047308}
+  - {fileID: 4248288702402297917}
   - {fileID: 2550043631027069954}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -9857,3 +9858,46 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &4752843948767836353
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4248288702402297917}
+  - component: {fileID: 2554470232077785259}
+  m_Layer: 0
+  m_Name: Flare
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4248288702402297917
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4752843948767836353}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2592975415085212246}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!122 &2554470232077785259
+Halo:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4752843948767836353}
+  m_Enabled: 1
+  m_Color:
+    serializedVersion: 2
+    rgba: 4293233190
+  m_Size: 2.5
