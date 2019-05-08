@@ -47,6 +47,6 @@ public class FriendScript : MonoBehaviour,ITragetFunction
         GameObject explosion;
         explosion = Instantiate(ExplosionEffect, this.transform);
         this.GetComponent<MeshRenderer>().enabled = false;
-        Observable.Timer(System.TimeSpan.FromSeconds(DestroyInterval)).Subscribe(_ => Destroy(gameObject));
+        Observable.Timer(System.TimeSpan.FromSeconds(DestroyInterval)).Subscribe(_ => Destroy(this));
     }
 }
