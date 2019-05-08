@@ -16,6 +16,10 @@ public class EnemyScript : MonoBehaviour,ITragetFunction
     public float RadiusY = 5.0f;//楕円運動の垂直方向の半径
     public Vector3 Acceleration;
 
+    public AudioClip Explosion;//爆発音
+    [SerializeField]
+    AudioSource audioSource;//オーディオソース
+
     [SerializeField]
     GameObject GameManager;
     [SerializeField]
@@ -42,12 +46,13 @@ public class EnemyScript : MonoBehaviour,ITragetFunction
 
     public void Hit()
     {
+        audioSource.PlayOneShot(Explosion);
         //衝突時
         GameManager.GetComponent<IGameManager>().AddEnemyPoint();
         GameObject explosion;
         explosion = Instantiate(ExplosionEffect, this.transform);
         this.GetComponent<MeshRenderer>().enabled = false;
-
+        
         //DestroyInterval秒後にオブジェクト消去
         //爆発エフェクトを子クラスに生成するため爆発中は生存させておく
         Observable.Timer(System.TimeSpan.FromSeconds(DestroyInterval)).Subscribe(_ => Destroy(gameObject));
