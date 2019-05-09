@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2550043631027069954}
   - component: {fileID: 2550043631027069955}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ColliderParent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -184,7 +184,6 @@ GameObject:
   - component: {fileID: 2592975413840794912}
   - component: {fileID: 2592975413840794913}
   - component: {fileID: 2592975413840794914}
-  - component: {fileID: 2592975413840794915}
   m_Layer: 10
   m_Name: comet
   m_TagString: Comet
@@ -201,7 +200,7 @@ Transform:
   m_GameObject: {fileID: 2592975413840794941}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.75, y: 0.75, z: 0.75}
+  m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
   m_Children: []
   m_Father: {fileID: 2592975415085212246}
   m_RootOrder: 0
@@ -280,44 +279,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!108 &2592975413840794915
-Light:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2592975413840794941}
-  m_Enabled: 0
-  serializedVersion: 8
-  m_Type: 2
-  m_Color: {r: 0.19607842, g: 0.45060316, b: 0.8784314, a: 1}
-  m_Intensity: 98.08
-  m_Range: 10
-  m_SpotAngle: 30
-  m_CookieSize: 10
-  m_Shadows:
-    m_Type: 0
-    m_Resolution: -1
-    m_CustomResolution: -1
-    m_Strength: 1
-    m_Bias: 0.05
-    m_NormalBias: 0.4
-    m_NearPlane: 0.2
-  m_Cookie: {fileID: 0}
-  m_DrawHalo: 0
-  m_Flare: {fileID: 0}
-  m_RenderMode: 0
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_Lightmapping: 4
-  m_LightShadowCasterMode: 0
-  m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1
-  m_ColorTemperature: 6570
-  m_UseColorTemperature: 0
-  m_ShadowRadius: 0
-  m_ShadowAngle: 0
 --- !u!1 &2592975414107047309
 GameObject:
   m_ObjectHideFlags: 0
@@ -330,7 +291,7 @@ GameObject:
   - component: {fileID: 2592975414107047025}
   - component: {fileID: 2592975414107047026}
   - component: {fileID: 2592975414107047027}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Second Particle SystemVer1.0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -603,7 +564,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 5
+      scalar: 1
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -1623,7 +1584,7 @@ ParticleSystem:
       maxGradient:
         serializedVersion: 2
         key0: {r: 0.93004626, g: 0.9392297, b: 0.9433962, a: 1}
-        key1: {r: 0.06603773, g: 0.105882354, b: 0.26415092, a: 1}
+        key1: {r: 0.06603773, g: 0.105882354, b: 0.41960785, a: 1}
         key2: {r: 0.022917405, g: 0.16052023, b: 0.9716981, a: 0.35744506}
         key3: {r: 0.013127446, g: 0.32267272, b: 0.5566038, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
@@ -1631,8 +1592,8 @@ ParticleSystem:
         key6: {r: 0, g: 0, b: 0, a: 0}
         key7: {r: 0, g: 0, b: 0, a: 0}
         ctime0: 6746
-        ctime1: 9638
-        ctime2: 29491
+        ctime1: 24287
+        ctime2: 36430
         ctime3: 50886
         ctime4: 0
         ctime5: 0
@@ -1640,7 +1601,7 @@ ParticleSystem:
         ctime7: 0
         atime0: 0
         atime1: 11758
-        atime2: 30069
+        atime2: 19853
         atime3: 63608
         atime4: 0
         atime5: 0
@@ -5062,7 +5023,7 @@ Transform:
   m_GameObject: {fileID: 2592975414859028448}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: -0}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 1.5}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 1.5}
   m_Children: []
   m_Father: {fileID: 2592975415085212246}
   m_RootOrder: 1
@@ -5695,7 +5656,7 @@ ParticleSystem:
     serializedVersion: 6
     enabled: 1
     type: 4
-    angle: 10
+    angle: 20
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 1
@@ -5781,7 +5742,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 0.09
+      value: 0.0001
       mode: 0
       spread: 0
       speed:
@@ -5900,7 +5861,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 100
+      scalar: 20
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -6017,18 +5978,27 @@ ParticleSystem:
         m_Curve:
         - serializedVersion: 3
           time: 0
-          value: 1
-          inSlope: -1
-          outSlope: -1
+          value: 0.17567873
+          inSlope: -0.056613553
+          outSlope: -0.056613553
           tangentMode: 0
           weightedMode: 0
-          inWeight: 0
-          outWeight: 0
+          inWeight: 1
+          outWeight: 1
+        - serializedVersion: 3
+          time: 0.19798867
+          value: 0.115814604
+          inSlope: -0.08878043
+          outSlope: -0.08878043
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 1
+          outWeight: 0.33333334
         - serializedVersion: 3
           time: 1
-          value: 0
-          inSlope: -1
-          outSlope: -1
+          value: 0.0000021206215
+          inSlope: 0
+          outSlope: 0
           tangentMode: 0
           weightedMode: 0
           inWeight: 0
@@ -6339,32 +6309,32 @@ ParticleSystem:
       maxGradient:
         serializedVersion: 2
         key0: {r: 0.93004626, g: 0.9392297, b: 0.9433962, a: 1}
-        key1: {r: 0.4543201, g: 0.031372547, b: 0.94509804, a: 1}
-        key2: {r: 0.003921588, g: 0.5165534, b: 0.90588236, a: 0.35744506}
-        key3: {r: 0.003921598, g: 0.5165534, b: 0.90588236, a: 0}
-        key4: {r: 0, g: 0, b: 0, a: 0}
+        key1: {r: 0.06603773, g: 0.105882354, b: 0.41960785, a: 0.73333335}
+        key2: {r: 0.022917405, g: 0.16052023, b: 0.9716981, a: 0}
+        key3: {r: 0.013127446, g: 0.32267272, b: 0.5566038, a: 0}
+        key4: {r: 0.013127446, g: 0.32267272, b: 0.5566038, a: 0}
         key5: {r: 0, g: 0, b: 0, a: 0}
         key6: {r: 0, g: 0, b: 0, a: 0}
         key7: {r: 0, g: 0, b: 0, a: 0}
-        ctime0: 655
-        ctime1: 14071
-        ctime2: 25443
-        ctime3: 26792
-        ctime4: 0
+        ctime0: 23130
+        ctime1: 33346
+        ctime2: 45682
+        ctime3: 59560
+        ctime4: 55705
         ctime5: 0
         ctime6: 0
         ctime7: 0
         atime0: 0
-        atime1: 11758
-        atime2: 26214
-        atime3: 53777
+        atime1: 19853
+        atime2: 63608
+        atime3: 63608
         atime4: 0
         atime5: 0
         atime6: 0
         atime7: 0
         m_Mode: 0
-        m_NumColorKeys: 3
-        m_NumAlphaKeys: 4
+        m_NumColorKeys: 4
+        m_NumAlphaKeys: 3
       minGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -8752,7 +8722,7 @@ ParticleSystem:
       properties: 0
       emitProbability: 1
   LightsModule:
-    enabled: 1
+    enabled: 0
     ratio: 1
     light: {fileID: 5547839966895699179, guid: 15f9db8dfeacd634b821144194effb85, type: 3}
     randomDistribution: 1
@@ -8942,32 +8912,32 @@ ParticleSystem:
       maxColor: {r: 0.944705, g: 0.94509804, b: 0.9372549, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 0.93004626, g: 0.9392297, b: 0.9433962, a: 1}
-        key1: {r: 0.06603773, g: 0.105882354, b: 0.41960785, a: 1}
-        key2: {r: 0.022917405, g: 0.16052023, b: 0.9716981, a: 0.35744506}
-        key3: {r: 0.013127446, g: 0.32267272, b: 0.5566038, a: 0}
-        key4: {r: 0, g: 0, b: 0, a: 0}
+        key0: {r: 0.93004626, g: 0.9392297, b: 0.9433962, a: 0}
+        key1: {r: 0.93004626, g: 0.9392297, b: 0.9433962, a: 1}
+        key2: {r: 0.06603773, g: 0.105882354, b: 0.41960785, a: 0.34799528}
+        key3: {r: 0.022917405, g: 0.16052023, b: 0.9716981, a: 0}
+        key4: {r: 0.013127446, g: 0.32267272, b: 0.5566038, a: 0}
         key5: {r: 0, g: 0, b: 0, a: 0}
         key6: {r: 0, g: 0, b: 0, a: 0}
         key7: {r: 0, g: 0, b: 0, a: 0}
-        ctime0: 6746
-        ctime1: 24287
-        ctime2: 36430
-        ctime3: 50886
-        ctime4: 0
+        ctime0: 26214
+        ctime1: 35659
+        ctime2: 41249
+        ctime3: 47224
+        ctime4: 58596
         ctime5: 0
         ctime6: 0
         ctime7: 0
         atime0: 0
-        atime1: 11758
-        atime2: 19853
+        atime1: 7517
+        atime2: 39128
         atime3: 63608
-        atime4: 53777
-        atime5: 0
+        atime4: 63608
+        atime5: 63608
         atime6: 0
         atime7: 0
         m_Mode: 0
-        m_NumColorKeys: 4
+        m_NumColorKeys: 5
         m_NumAlphaKeys: 4
       minGradient:
         serializedVersion: 2
@@ -9001,7 +8971,7 @@ ParticleSystem:
     widthOverTrail:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 4
+      scalar: 10.8
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -9055,7 +9025,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 1, b: 1, a: 1}
+      maxColor: {r: 0.2756764, g: 0.2817561, b: 0.990566, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 0.93004626, g: 0.9392297, b: 0.9433962, a: 1}
@@ -9783,7 +9753,7 @@ GameObject:
   - component: {fileID: 2592975415085212251}
   - component: {fileID: 2592975415085212244}
   - component: {fileID: 2592975415085212245}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CometVer100
   m_TagString: Comet
   m_Icon: {fileID: 0}
@@ -9868,7 +9838,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4248288702402297917}
   - component: {fileID: 2554470232077785259}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Flare
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9899,5 +9869,5 @@ Halo:
   m_Enabled: 1
   m_Color:
     serializedVersion: 2
-    rgba: 4293233190
-  m_Size: 2.5
+    rgba: 4293216294
+  m_Size: 2
