@@ -1,33 +1,60 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class AudioManager : MonoBehaviour
 {
-    public AudioClip audioClip1;
-    //public AudioClip audioClip2;
-    //public AudioClip audioClip3;
-    private AudioSource audioSource;
+    public AudioClip TitleBgm;//タイトルBGM
+    public AudioClip GameMainBgm;//ゲームメインBGM
+    public AudioClip MenuBgm;//ステージセレクト(仮)
 
+    private AudioSource audioSource;
+    private string sceneName;//アクティブシーン名
     private bool PlayFlg = false;
     void Start()
     {
         audioSource = gameObject.GetComponent<AudioSource>();
-        audioSource.clip = audioClip1;
+        sceneName = SceneManager.GetActiveScene().name;//アクティブシーン名の取得
         
     }
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space)&&PlayFlg==false)
+        sceneName = SceneManager.GetActiveScene().name;//アクティブシーン名の取得
+        //シーンごとにBGM切り替え
+        if (sceneName == "TitleScene")//タイトルシーン
         {
-            Debug.Log("PUSH");
-            PlayFlg = true;
+            audioSource.clip = TitleBgm;
+        }
+        else if (sceneName == "StageSelectScene")//ステージセレクトシーン
+        {
+            //ステージ選択のBGM
+            audioSource.clip = MenuBgm;
+        }
+        else//ステージ
+        {
+            //ステージのBGM
+            audioSource.clip = GameMainBgm;
+        }
+        if(!audioSource.isPlaying)
+        {
             audioSource.Play();
         }
-        else if(Input.GetKeyDown(KeyCode.Space)&&PlayFlg==true)
-        {
-            audioSource.Stop();
-            PlayFlg = false;
-        }
+        //if(Input.GetKeyDown(KeyCode.Space)&&PlayFlg==false)
+        //{
+        //    Debug.Log("PUSH");
+        //    PlayFlg = true;
+        //    audioSource.Play();
+        //}
+        //else if(Input.GetKeyDown(KeyCode.Space)&&PlayFlg==true)
+        //{
+        //    audioSource.Stop();
+        //    PlayFlg = false;
+        //}
+    }
+    void SceneLoaded()
+    {
+        audioSource.Play();
     }
 }

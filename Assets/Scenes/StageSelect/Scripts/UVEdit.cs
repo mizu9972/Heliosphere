@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+
+
 public class UVEdit : MonoBehaviour,ISelectStage
 {
     //遷移するシーンを選択する

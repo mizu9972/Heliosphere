@@ -4,9 +4,7 @@ MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
-  - audioClip1: {fileID: 8300000, guid: e9ce43e977705b645a5a192d5c184ae6, type: 3}
-  - audioClip2: {instanceID: 0}
-  - audioClip3: {instanceID: 0}
+  - audioClip1: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

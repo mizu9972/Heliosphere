@@ -17,8 +17,7 @@ public class FriendScript : MonoBehaviour,ITragetFunction
     public Vector3 Acceleration;
 
     public AudioClip Explosion;//爆発音
-    [SerializeField]
-    AudioSource audioSource;//オーディオソース
+    private AudioSource audioSource;//オーディオソース
 
     [SerializeField]
     GameObject GameManager;
@@ -31,7 +30,7 @@ public class FriendScript : MonoBehaviour,ITragetFunction
     void Start()
     {
         MyRigidB = this.GetComponent<Rigidbody>();
-
+        audioSource = this.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
