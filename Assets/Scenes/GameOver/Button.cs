@@ -24,7 +24,8 @@ public class Button : MonoBehaviour,ISelectStage
     {
         //コンポーネントの取得
         Image = GetComponent<UnityEngine.UI.RawImage>();
-        
+        //前回のシーン名を取得
+        gameObject = GameObject.Find("Manager");
     }
 
     // Update is called once per frame
@@ -54,8 +55,7 @@ public class Button : MonoBehaviour,ISelectStage
     }
     public void SelectScene()
     {
-        //前回のシーン名を取得
-        gameObject = GameObject.Find("Manager");
+        
         Name = gameObject.GetComponent<BeforScene>().NamePush();
         if (Name != null)
         {
