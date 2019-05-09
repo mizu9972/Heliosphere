@@ -23,7 +23,7 @@ RenderSettings:
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
-  m_AmbientIntensity: 1.14
+  m_AmbientIntensity: 0.2
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
@@ -373,6 +373,75 @@ PrefabInstance:
       objectReference: {fileID: 987414312}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7498c2884e5b0c948a7d81611c74f7cb, type: 3}
+--- !u!1001 &517185526
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2904933484738274919, guid: 0f1bed8a8c465de44b0683ef9e53990f,
+        type: 3}
+      propertyPath: m_Name
+      value: Planetarium
+      objectReference: {fileID: 0}
+    - target: {fileID: 2904933484738274916, guid: 0f1bed8a8c465de44b0683ef9e53990f,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2904933484738274916, guid: 0f1bed8a8c465de44b0683ef9e53990f,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2904933484738274916, guid: 0f1bed8a8c465de44b0683ef9e53990f,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2904933484738274916, guid: 0f1bed8a8c465de44b0683ef9e53990f,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 2904933484738274916, guid: 0f1bed8a8c465de44b0683ef9e53990f,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2904933484738274916, guid: 0f1bed8a8c465de44b0683ef9e53990f,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2904933484738274916, guid: 0f1bed8a8c465de44b0683ef9e53990f,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 2904933484738274916, guid: 0f1bed8a8c465de44b0683ef9e53990f,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2904933484738274916, guid: 0f1bed8a8c465de44b0683ef9e53990f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 2904933484738274916, guid: 0f1bed8a8c465de44b0683ef9e53990f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2904933484738274916, guid: 0f1bed8a8c465de44b0683ef9e53990f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0f1bed8a8c465de44b0683ef9e53990f, type: 3}
 --- !u!1 &558915204 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1171825780495747868, guid: 3af6d03d1a9ea6a4093a21ccc01760ad,
