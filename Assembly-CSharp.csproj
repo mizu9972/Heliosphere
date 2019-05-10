@@ -54,7 +54,6 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\ChangeActiveInterface.cs" />
-     <Compile Include="Assets\Editter\PrefabReplacement.cs" />
      <Compile Include="Assets\GameControllerScript.cs" />
      <Compile Include="Assets\IMoveOperate.cs" />
      <Compile Include="Assets\Scenes\Game\Comet\Comet\ColliderScript.cs" />
