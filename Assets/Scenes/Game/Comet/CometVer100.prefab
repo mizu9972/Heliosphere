@@ -154,7 +154,7 @@ MonoBehaviour:
   Parent: {fileID: 2550043631027069954}
   SunTrans: {fileID: 0}
   Target: {fileID: 0}
-  SizeUp: 10
+  SizeUp: 100
 --- !u!54 &2550043631095521502
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5164,7 +5164,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 5
+      scalar: 10
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -8843,7 +8843,7 @@ ParticleSystem:
     lifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0.25
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -9811,8 +9811,8 @@ MonoBehaviour:
   Speed: 1.5
   CenterX: 0
   CenterY: 0
-  RadiusX: 5
-  RadiusY: 5
+  RadiusX: 13
+  RadiusY: 13
   Acceleration: {x: 0, y: 0, z: 0}
   isActive: 0
 --- !u!135 &2592975415085212245
