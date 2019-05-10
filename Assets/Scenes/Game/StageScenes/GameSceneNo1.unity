@@ -37,8 +37,8 @@ RenderSettings:
   m_ReflectionBounces: 1
   m_ReflectionIntensity: 0.005
   m_CustomReflection: {fileID: 0}
-  m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.0108452905, g: 0.013613568, b: 0.018730205, a: 0.005}
+  m_Sun: {fileID: 0}
+  m_IndirectSpecularColor: {r: 0.0074162055, g: 0.00773699, b: 0.006831881, a: 0.005}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -123,12 +123,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5521166529872634114, guid: cbeec5ff95b42234d849821f692ae86c,
     type: 3}
   m_PrefabInstance: {fileID: 234631111}
-  m_PrefabAsset: {fileID: 0}
---- !u!108 &170076734 stripped
-Light:
-  m_CorrespondingSourceObject: {fileID: 7984879781276950541, guid: 1c079c6dbab6f0344bf2f6bbecfe1792,
-    type: 3}
-  m_PrefabInstance: {fileID: 7984879781174118963}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &187035768 stripped
 GameObject:
@@ -1158,12 +1152,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2592975414859028454, guid: 380412b23ee415047a9669f47ef45143,
+    - target: {fileID: 2592975414107047027, guid: 380412b23ee415047a9669f47ef45143,
         type: 3}
       propertyPath: sunTrans
       value: 
       objectReference: {fileID: 187035774}
-    - target: {fileID: 2592975414107047027, guid: 380412b23ee415047a9669f47ef45143,
+    - target: {fileID: 2592975414859028454, guid: 380412b23ee415047a9669f47ef45143,
         type: 3}
       propertyPath: sunTrans
       value: 
