@@ -198,7 +198,7 @@ MeshCollider:
   m_GameObject: {fileID: 61128557}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Convex: 0
   m_CookingOptions: 14
@@ -826,7 +826,7 @@ PrefabInstance:
     - target: {fileID: 1082326205950279196, guid: 131577a3b1f0fd54e9ce46fe91243acd,
         type: 3}
       propertyPath: SceneName
-      value: GameSceneNo1
+      value: Stage_Template
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 131577a3b1f0fd54e9ce46fe91243acd, type: 3}

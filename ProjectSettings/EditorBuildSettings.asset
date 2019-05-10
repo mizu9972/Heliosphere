@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Manager/ManagerScene.unity
     guid: a7686c8099bc2294890443254c16d4cf
+  - enabled: 1
+    path: Assets/Template/Stage_Template.unity
+    guid: a308050a217f2d04eb0a7a61e5501764
   m_configObjects: {}
