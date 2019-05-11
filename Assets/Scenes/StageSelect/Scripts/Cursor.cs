@@ -52,7 +52,7 @@ public class Cursor : MonoBehaviour
     {
         other.GetComponent<ISelectStage>().OnSelect();
         SelectFlg = true;
-        if (Input.GetKeyDown(KeyCode.Return) || Input.GetButtonDown("action1"))
+        if (Input.GetKey(KeyCode.Return) || Input.GetButton("action1"))
         {
             //ステージアイコン選択中かつ決定ボタンが押されたら遷移
             //選択したステージへ
