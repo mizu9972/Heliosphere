@@ -1,0 +1,10 @@
+diff a/Assets/Scenes/Game/Comet/CometVer100.prefab b/Assets/Scenes/Game/Comet/CometVer100.prefab	(rejected hunks)
+@@ -5164,7 +5164,7 @@
+     startSpeed:
+       serializedVersion: 2
+       minMaxState: 0
+-      scalar: 5
++      scalar: 10
+       minScalar: 5
+       maxCurve:
+         serializedVersion: 2
