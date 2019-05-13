@@ -480,6 +480,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4117819980547469317, guid: 33497f760492b9e47a82df9ee71f9243,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 33497f760492b9e47a82df9ee71f9243, type: 3}
 --- !u!1001 &1165301770
@@ -1168,7 +1173,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4140862703881610440}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7fceaeb339b971b429c4cc600acabd13, type: 3}
   m_Name: 
@@ -6201,7 +6206,7 @@ Transform:
   m_GameObject: {fileID: 2592975414306536470}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2592975415550872445}
   m_RootOrder: 0
@@ -6959,7 +6964,7 @@ ParticleSystem:
     serializedVersion: 6
     enabled: 1
     type: 4
-    angle: 14.1
+    angle: 10
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 1
@@ -7164,7 +7169,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 20
+      scalar: 60
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -7612,17 +7617,17 @@ ParticleSystem:
       maxGradient:
         serializedVersion: 2
         key0: {r: 0.93004626, g: 0.9392297, b: 0.9433962, a: 1}
-        key1: {r: 0.06603773, g: 0.105882354, b: 0.41960785, a: 0.73333335}
+        key1: {r: 0.40005338, g: 0.42059252, b: 0.5849056, a: 0.35744506}
         key2: {r: 0.022917405, g: 0.16052023, b: 0.9716981, a: 0}
         key3: {r: 0.013127446, g: 0.32267272, b: 0.5566038, a: 0}
         key4: {r: 0.013127446, g: 0.32267272, b: 0.5566038, a: 0}
         key5: {r: 0, g: 0, b: 0, a: 0}
         key6: {r: 0, g: 0, b: 0, a: 0}
         key7: {r: 0, g: 0, b: 0, a: 0}
-        ctime0: 23130
-        ctime1: 33346
-        ctime2: 45682
-        ctime3: 59560
+        ctime0: 6746
+        ctime1: 24287
+        ctime2: 36430
+        ctime3: 50886
         ctime4: 55705
         ctime5: 0
         ctime6: 0
@@ -8272,7 +8277,7 @@ ParticleSystem:
     radial:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: 1
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -10215,32 +10220,32 @@ ParticleSystem:
       maxColor: {r: 0.944705, g: 0.94509804, b: 0.9372549, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 0.93004626, g: 0.9392297, b: 0.9433962, a: 0}
-        key1: {r: 0.93004626, g: 0.9392297, b: 0.9433962, a: 1}
-        key2: {r: 0.06603773, g: 0.105882354, b: 0.41960785, a: 0.34799528}
-        key3: {r: 0.022917405, g: 0.16052023, b: 0.9716981, a: 0}
+        key0: {r: 0.93004626, g: 0.9392297, b: 0.9433962, a: 1}
+        key1: {r: 0.06603773, g: 0.105882354, b: 0.26415092, a: 1}
+        key2: {r: 0.022917405, g: 0.16052023, b: 0.9716981, a: 0.35744506}
+        key3: {r: 0.013127446, g: 0.32267272, b: 0.5566038, a: 0}
         key4: {r: 0.013127446, g: 0.32267272, b: 0.5566038, a: 0}
         key5: {r: 0, g: 0, b: 0, a: 0}
         key6: {r: 0, g: 0, b: 0, a: 0}
         key7: {r: 0, g: 0, b: 0, a: 0}
-        ctime0: 26214
-        ctime1: 35659
-        ctime2: 41249
-        ctime3: 47224
+        ctime0: 6746
+        ctime1: 9638
+        ctime2: 29491
+        ctime3: 50886
         ctime4: 58596
         ctime5: 0
         ctime6: 0
         ctime7: 0
         atime0: 0
-        atime1: 7517
-        atime2: 39128
+        atime1: 11758
+        atime2: 30069
         atime3: 63608
         atime4: 63608
         atime5: 63608
         atime6: 0
         atime7: 0
         m_Mode: 0
-        m_NumColorKeys: 5
+        m_NumColorKeys: 4
         m_NumAlphaKeys: 4
       minGradient:
         serializedVersion: 2
@@ -11116,7 +11121,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4140862703881610440}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 948f4100a11a5c24981795d21301da5c, type: 3}
   m_Name: 
