@@ -9807,14 +9807,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 879aa0021c1ef2c43967f8e79c223510, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  prePosition: {x: 0, y: 0}
   Angle: 0
   Speed: 1.5
-  CenterX: 0
-  CenterY: 0
-  RadiusX: 13
-  RadiusY: 13
+  CenterPos: {x: 0, y: 0}
+  Radius: {x: 13, y: 13}
   Acceleration: {x: 0, y: 0, z: 0}
-  isActive: 0
 --- !u!135 &2592975415085212245
 SphereCollider:
   m_ObjectHideFlags: 0
