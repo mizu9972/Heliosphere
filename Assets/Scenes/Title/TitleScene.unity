@@ -133,7 +133,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!114 &417362112
 MonoBehaviour:
@@ -276,7 +276,7 @@ PrefabInstance:
     - target: {fileID: 120237085618055560, guid: 7c3aa04e706de9546b6657d9c3082ce1,
         type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 4294967295
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 120237085618055564, guid: 7c3aa04e706de9546b6657d9c3082ce1,
         type: 3}
@@ -363,7 +363,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!114 &810730873
 MonoBehaviour:
@@ -1175,7 +1175,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 0
 --- !u!33 &2550043630629849585
 MeshFilter:
@@ -1300,7 +1300,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!122 &2554470232543261056
 Halo:
@@ -1331,7 +1331,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 0
 --- !u!4 &2592975413507435687
 Transform:
@@ -6121,7 +6121,7 @@ GameObject:
   m_TagString: Comet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &2592975414306536471
 Transform:
@@ -6168,7 +6168,7 @@ GameObject:
   m_TagString: Comet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &2592975415458725580
 Transform:
@@ -6178,7 +6178,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2592975415458725579}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: -0}
+  m_LocalPosition: {x: -0.6, y: 0, z: -0}
   m_LocalScale: {x: 0.7, y: 0.7, z: 1.5}
   m_Children: []
   m_Father: {fileID: 2592975415550872445}
@@ -10917,7 +10917,7 @@ GameObject:
   m_TagString: Comet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &2592975415550872445
 Transform:
@@ -10926,7 +10926,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2592975415550872444}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: -0.13052624, z: 0, w: 0.9914449}
   m_LocalPosition: {x: 251, y: 136, z: 12.55}
   m_LocalScale: {x: 0.6275, y: 0.6275, z: 0.6275}
   m_Children:
@@ -10937,7 +10937,7 @@ Transform:
   - {fileID: 2550043630427376937}
   m_Father: {fileID: 0}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -15, z: 0}
 --- !u!135 &2592975415550872446
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -10966,9 +10966,7 @@ MonoBehaviour:
   Angle: 15
   Speed: 1.5
   CenterPos: {x: 0, y: 0}
-  prePosition: {x: 0, y: 0}
-  RadiusX: 5
-  RadiusY: 5
+  Radius: {x: 0, y: 0}
   Acceleration: {x: 0, y: 0, z: 0}
 --- !u!1001 &2904933484642043119
 PrefabInstance:
@@ -10981,6 +10979,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Planetarium
+      objectReference: {fileID: 0}
+    - target: {fileID: 2904933484738274919, guid: 0f1bed8a8c465de44b0683ef9e53990f,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 2904933484738274919, guid: 0f1bed8a8c465de44b0683ef9e53990f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2904933484738274916, guid: 0f1bed8a8c465de44b0683ef9e53990f,
         type: 3}
@@ -11212,7 +11220,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1001 &7243293782951410834
 PrefabInstance:
@@ -11225,6 +11233,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PPSv2 Settings
+      objectReference: {fileID: 0}
+    - target: {fileID: 6746451774802021257, guid: 33497f760492b9e47a82df9ee71f9243,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 6746451774802021263, guid: 33497f760492b9e47a82df9ee71f9243,
         type: 3}
