@@ -4991,6 +4991,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sunTrans: {fileID: 0}
+  prePosition: {x: 0, y: 0, z: 0}
   LifeTimeRatiobyDistance: 1.5
   MaxLifeTime: 2
   isActiveLifeTimeSet: 0
@@ -9725,6 +9726,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sunTrans: {fileID: 0}
+  prePosition: {x: 0, y: 0, z: 0}
   LifeTimeRatiobyDistance: 4
   MaxLifeTime: 2
   isActiveLifeTimeSet: 1
@@ -9807,7 +9809,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 879aa0021c1ef2c43967f8e79c223510, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prePosition: {x: 0, y: 0}
   Angle: 0
   Speed: 1.5
   CenterPos: {x: 0, y: 0}
