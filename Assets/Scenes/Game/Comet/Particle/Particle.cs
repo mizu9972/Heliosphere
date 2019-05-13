@@ -5,13 +5,16 @@ using UnityEngine;
 [RequireComponent(typeof(ParticleSystem))]
 public class Particle : MonoBehaviour
 {
+
     private Transform MyTrans;
     public Transform sunTrans;
+
     public float LifeTimeRatiobyDistance;
     public float MaxLifeTime;
     public bool isActiveLifeTimeSet;
     private Quaternion PreRotate;
     private ParticleSystem MyParticleState;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -47,13 +50,9 @@ public class Particle : MonoBehaviour
 
         float AngleinRadian;//太陽と彗星の角度
 
-
         //角度を計算
         AngleinRadian = Mathf.Atan2(dy, dx) + Mathf.PI / 2;
 
-
-        //回転
-        MyTrans.rotation = PreRotate * Quaternion.Euler(0, 360 - 90 - (AngleinRadian * Mathf.Rad2Deg), 0);
         ParticleRotationSet(AngleinRadian);
     }
 
