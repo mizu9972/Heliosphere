@@ -51,7 +51,8 @@ public class EllipseMove : MonoBehaviour, ChangeActiveInterface
         Radian = Angle * AngleToRadian;//ラジアンに変換
 
         MyRigidB.AddForce(Acceleration, ForceMode.Acceleration);//加速度(inspectorで調整)
-        transform.position = new Vector3(CenterPos.x + Mathf.Cos(Radian) * Radius.x, 0, CenterPos.y + Mathf.Sin(Radian) * Radius.y);
+        this.transform.position = new Vector3(CenterPos.x + Mathf.Cos(Radian) * Radius.x, 0, CenterPos.y + Mathf.Sin(Radian) * Radius.y);
+        this.transform.Rotate(0, 360 - Speed, 0);
     }
 
     public void ChangeActive()
