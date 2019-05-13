@@ -6,10 +6,6 @@ using UnityEngine;
 public class EllipseMove : MonoBehaviour, ChangeActiveInterface
 {
 
-    [Header("ローカル座標")]
-    [SerializeField]
-    private Vector2 prePosition;
-
     [SerializeField,Header("角度")]
     private float Angle = 0.0f;//角度
     [SerializeField, Header("速度")]
