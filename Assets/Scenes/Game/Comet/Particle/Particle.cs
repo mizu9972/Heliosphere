@@ -37,7 +37,7 @@ public class Particle : MonoBehaviour
         //彗星と太陽の距離
         float Distance = Mathf.Sqrt(dy * dy + dx * dx);
 
-        ParticleAngleSet(dy, dx);//角度を設定
+        //ParticleAngleSet(dy, dx);//角度を設定
         if (isActiveLifeTimeSet)
         {
             ParticleLifetimeSet(Distance);//生存時間を設定
