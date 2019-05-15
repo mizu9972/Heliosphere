@@ -48,8 +48,6 @@ public class EllipseMove : MonoBehaviour, ChangeActiveInterface
         float dy = sunPos.z - MyPos.z;
         float dx = sunPos.x - MyPos.x;
 
-        //彗星と太陽の距離
-        float Distance = Mathf.Sqrt(dy * dy + dx * dx);
         ParticleAngleSet(dy, dx);
         if (isActive)
         {
@@ -66,7 +64,6 @@ public class EllipseMove : MonoBehaviour, ChangeActiveInterface
 
         MyRigidB.AddForce(Acceleration, ForceMode.Acceleration);//加速度(inspectorで調整)
         this.transform.position = new Vector3(CenterPos.x + Mathf.Cos(Radian) * Radius.x, 0, CenterPos.y + Mathf.Sin(Radian) * Radius.y);
-        //this.transform.Rotate(0, 360 - Speed, 0);
     }
 
     public void ChangeActive()
@@ -74,24 +71,17 @@ public class EllipseMove : MonoBehaviour, ChangeActiveInterface
         isActive = !isActive;
     }
     void ParticleAngleSet(float dy, float dx)
-    {
-        Vector3 axis = new Vector3(0, 1.0f, 0);
+    {       
         //パーティクル発射の角度を計算して設定
-
+        Vector3 axis = new Vector3(0, 1.0f, 0);//回転の軸を指定
         float AngleinRadian;//太陽と彗星の角度
 
         //角度を計算
         AngleinRadian = Mathf.Atan2(dy, dx) * Mathf.Rad2Deg;
-        Quaternion Rotation = Quaternion.AngleAxis(180 - AngleinRadian, axis);
 
-        MyTrans.rotation = Rotation;
-        //MyTrans.Rotate(0, AngleinRadian, 0);
+        Quaternion Rotation = Quaternion.AngleAxis(180 - AngleinRadian, axis);//回転量を設定
+
+        MyTrans.rotation = Rotation;//反映
+
     }
-
-    //void ParticleRotationSet(float Angle)
-    //{
-    //    //太陽の位置によって粒子の角度を変更する
-    //    var ParticleMain = MyParticleState.main;
-    //    ParticleMain.startRotation = 360 - Angle;
-    //}
 }

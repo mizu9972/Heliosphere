@@ -37,31 +37,12 @@ public class Particle : MonoBehaviour
         //彗星と太陽の距離
         float Distance = Mathf.Sqrt(dy * dy + dx * dx);
 
-        //ParticleAngleSet(dy, dx);//角度を設定
         if (isActiveLifeTimeSet)
         {
             ParticleLifetimeSet(Distance);//生存時間を設定
         }
     }
 
-    void ParticleAngleSet(float dy, float dx)
-    {
-        //パーティクル発射の角度を計算して設定
-
-        float AngleinRadian;//太陽と彗星の角度
-
-        //角度を計算
-        AngleinRadian = Mathf.Atan2(dy, dx) + Mathf.PI / 2;
-
-        ParticleRotationSet(AngleinRadian);
-    }
-
-    void ParticleRotationSet(float Angle)
-    {
-        //太陽の位置によって粒子の角度を変更する
-        var ParticleMain = MyParticleState.main;
-        ParticleMain.startRotation = 360 - Angle;
-    }
     void ParticleLifetimeSet(float Distance)
     {
         //距離によって生存時間を変更する = 尾の長さを変更する
