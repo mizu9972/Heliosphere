@@ -5,7 +5,10 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class EllipseMove : MonoBehaviour, ChangeActiveInterface
 {
+    [SerializeField,Header("太陽のコア")]
+    private Transform sunTrans;
 
+    private Transform MyTrans;//自身
     [SerializeField,Header("角度")]
     private float Angle = 0.0f;//角度
     [SerializeField, Header("速度")]
@@ -31,12 +34,21 @@ public class EllipseMove : MonoBehaviour, ChangeActiveInterface
     void Start()
     {
         MyRigidB = this.GetComponent<Rigidbody>();
+        MyTrans = this.GetComponent<Transform>();
         setPosition();//初期位置へ
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
+        Vector3 MyPos = MyTrans.position;//自分の座標
+        Vector3 sunPos = sunTrans.position;//太陽の座標
+
+        //彗星と太陽の座標値の差を計算
+        float dy = sunPos.z - MyPos.z;
+        float dx = sunPos.x - MyPos.x;
+
+        ParticleAngleSet(dy, dx);
         if (isActive)
         {
             setPosition();//移動
@@ -52,11 +64,24 @@ public class EllipseMove : MonoBehaviour, ChangeActiveInterface
 
         MyRigidB.AddForce(Acceleration, ForceMode.Acceleration);//加速度(inspectorで調整)
         this.transform.position = new Vector3(CenterPos.x + Mathf.Cos(Radian) * Radius.x, 0, CenterPos.y + Mathf.Sin(Radian) * Radius.y);
-        this.transform.Rotate(0, 360 - Speed, 0);
     }
 
     public void ChangeActive()
     {
         isActive = !isActive;
+    }
+    void ParticleAngleSet(float dy, float dx)
+    {       
+        //パーティクル発射の角度を計算して設定
+        Vector3 axis = new Vector3(0, 1.0f, 0);//回転の軸を指定
+        float AngleinRadian;//太陽と彗星の角度
+
+        //角度を計算
+        AngleinRadian = Mathf.Atan2(dy, dx) * Mathf.Rad2Deg;
+
+        Quaternion Rotation = Quaternion.AngleAxis(180 - AngleinRadian, axis);//回転量を設定
+
+        MyTrans.rotation = Rotation;//反映
+
     }
 }
