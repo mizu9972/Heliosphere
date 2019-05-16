@@ -96,6 +96,7 @@
     <Compile Include="Assets\Scenes\StageSelect\Scripts\UVEdit.cs" />
     <Compile Include="Assets\Scenes\Title\FeedIn.cs" />
     <Compile Include="Assets\Scenes\Title\TitleManager.cs" />
+    <Compile Include="Assets\Template\GameObjects\ChangeActive.cs" />
     <Compile Include="Assets\Template\GameObjects\GameControllerScript.cs" />
     <Compile Include="Assets\Template\GameObjects\Options.cs" />
     <Compile Include="Assets\Template\Script\ITutorial.cs" />
