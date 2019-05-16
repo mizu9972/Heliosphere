@@ -22,7 +22,7 @@ public class Manager : MonoBehaviour
         }
     }
 
-    void Quit()
+    public void Quit()
     {
         //実行環境によって終了処理を変更
 #if UNITY_EDITOR
