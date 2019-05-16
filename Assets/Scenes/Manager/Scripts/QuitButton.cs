@@ -1,14 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class QuitButton : MonoBehaviour
+public class QuitButton : MonoBehaviour,IOnSelected
 {
     private Button MyButton;
+
+    Selectable Me;
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -19,6 +22,7 @@ public class QuitButton : MonoBehaviour
 
     public void OnClick()
     {
+        //ボタンが押されたら
         Quit();
     }
 
@@ -30,5 +34,12 @@ public class QuitButton : MonoBehaviour
 #elif UNITY_STANDALONE
     UnityEngine.Application.Quit();
 #endif
+    }
+
+    public void OnSelected()
+    {
+        Me = GetComponent<Selectable>();
+        //選択状態にする
+        Me.Select();
     }
 }
