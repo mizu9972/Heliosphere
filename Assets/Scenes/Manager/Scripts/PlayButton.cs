@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class PlayButton : MonoBehaviour,IOnSelected
 {
@@ -26,7 +27,7 @@ public class PlayButton : MonoBehaviour,IOnSelected
         //Managerにオプションボタン終了を通知
         GameObject.Find("Manager").GetComponent<Manager>().ChengeOptionMode();
         //ボタンが押されたら
-        
+        EventSystem.current.SetSelectedGameObject(null);//選択解除
         Option.SetActive(false);
     }
 

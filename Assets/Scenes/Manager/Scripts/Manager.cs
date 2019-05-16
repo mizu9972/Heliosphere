@@ -45,7 +45,7 @@ public class Manager : MonoBehaviour
     public void ChengeOptionMode()
     {
         //オプションボタン起動、終了時に呼び出す
-        GameObject.Find("GameManager").GetComponent<GameManagerScript>().AllChangeActive();
+        GameObject.Find("GameManager").GetComponent<GameManagerScript>().AllChangeActive();//オブジェクト停止・再生切り替え
         isOptionMode = !isOptionMode;
     }
 }
