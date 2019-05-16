@@ -5,12 +5,15 @@ using UnityEngine;
 public class Manager : MonoBehaviour
 {
     public GameObject gameobject;
+
     [SerializeField, Header("オプションボタン全体")]
     GameObject Option;
     [SerializeField, Header("最初に選択状態にするボタン")]
     GameObject InitialButton;
 
-    private bool isOptionMode = false;
+    private bool isOptionMode = false;//実行中かどうか
+    private bool isActive = false;//実行可能かどうか
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +22,7 @@ public class Manager : MonoBehaviour
     private void Update()
     {
         //ESCキーが押されたらオプション呼び出し
-        if (Input.GetKeyDown(KeyCode.Escape) && isOptionMode == false)
+        if (Input.GetKeyDown(KeyCode.Escape) && isOptionMode == false && isActive == true)
         {
             CallOption();
         }
@@ -47,5 +50,11 @@ public class Manager : MonoBehaviour
         //オプションボタン起動、終了時に呼び出す
         GameObject.Find("GameManager").GetComponent<GameManagerScript>().AllChangeActive();//オブジェクト停止・再生切り替え
         isOptionMode = !isOptionMode;
+    }
+
+    public void ChengeActive(bool _isActive)
+    {
+        //実行可不可切り替え
+        isActive = _isActive;
     }
 }

@@ -68,7 +68,7 @@ public class GameManagerScript : MonoBehaviour,IGameManager
     {
         //Start描画を終了
         StartObject.GetComponent<Text>().enabled = false;
-
+        GameObject.Find("Manager").GetComponent<Manager>().ChengeActive(true);//オプションボタン有効化
         AllChangeActive();//isActiveを切り替え
     }
 
