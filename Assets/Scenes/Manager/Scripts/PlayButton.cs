@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class PlayButton : MonoBehaviour,IOnSelected
 {
@@ -12,7 +13,7 @@ public class PlayButton : MonoBehaviour,IOnSelected
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
@@ -23,7 +24,10 @@ public class PlayButton : MonoBehaviour,IOnSelected
 
     public void OnClick()
     {
+        //Managerにオプションボタン終了を通知
+        GameObject.Find("Manager").GetComponent<Manager>().ChengeOptionMode();
         //ボタンが押されたら
+        EventSystem.current.SetSelectedGameObject(null);//選択解除
         Option.SetActive(false);
     }
 
