@@ -78,6 +78,7 @@
      <Compile Include="Assets\Scenes\Manager\Scripts\BeforScene.cs" />
      <Compile Include="Assets\Scenes\Manager\Scripts\ExitFunction.cs" />
      <Compile Include="Assets\Scenes\Manager\Scripts\Manager.cs" />
+     <Compile Include="Assets\Scenes\Manager\Scripts\PlayButton.cs" />
      <Compile Include="Assets\Scenes\Manager\Scripts\Volume.cs" />
      <Compile Include="Assets\Scenes\StageClear\ClearSceneManager.cs" />
      <Compile Include="Assets\Scenes\StageSelect\Scripts\Cursor.cs" />
@@ -87,7 +88,6 @@
      <Compile Include="Assets\Scenes\Title\TitleManager.cs" />
      <Compile Include="Assets\Template\GameObjects\GameControllerScript.cs" />
      <Compile Include="Assets\Template\GameObjects\Options.cs" />
-     <Compile Include="Assets\Template\GameObjects\PlayButton.cs" />
      <Compile Include="Assets\Template\Tutorial.cs" />
  <Reference Include="Unity.TextMeshPro.Editor">
  <HintPath>C:/Users/ohs75011/Documents/Heliosphere/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
