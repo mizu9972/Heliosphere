@@ -87,6 +87,8 @@
      <Compile Include="Assets\Scenes\Title\TitleManager.cs" />
      <Compile Include="Assets\Template\GameObjects\GameControllerScript.cs" />
      <Compile Include="Assets\Template\GameObjects\Options.cs" />
+     <Compile Include="Assets\Template\GameObjects\PlayButton.cs" />
+     <Compile Include="Assets\Template\Tutorial.cs" />
  <Reference Include="Unity.TextMeshPro.Editor">
  <HintPath>C:/Users/ohs75011/Documents/Heliosphere/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>
