@@ -72,7 +72,7 @@ public class GameManagerScript : MonoBehaviour,IGameManager
         AllChangeActive();//isActiveを切り替え
     }
 
-    private void AllChangeActive()
+    public void AllChangeActive()
     {
         PlayerCore.GetComponent<ChangeActiveInterface>().ChangeActive();
         RevolutionCore.GetComponent<ChangeActiveInterface>().ChangeActive();

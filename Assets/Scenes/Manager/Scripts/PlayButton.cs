@@ -12,7 +12,7 @@ public class PlayButton : MonoBehaviour,IOnSelected
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
@@ -23,7 +23,10 @@ public class PlayButton : MonoBehaviour,IOnSelected
 
     public void OnClick()
     {
+        //Managerにオプションボタン終了を通知
+        GameObject.Find("Manager").GetComponent<Manager>().ChengeOptionMode();
         //ボタンが押されたら
+        
         Option.SetActive(false);
     }
 

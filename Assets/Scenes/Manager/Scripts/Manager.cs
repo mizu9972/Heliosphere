@@ -10,6 +10,7 @@ public class Manager : MonoBehaviour
     [SerializeField, Header("最初に選択状態にするボタン")]
     GameObject InitialButton;
 
+    private bool isOptionMode = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,7 +19,7 @@ public class Manager : MonoBehaviour
     private void Update()
     {
         //ESCキーが押されたらオプション呼び出し
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && isOptionMode == false)
         {
             CallOption();
         }
@@ -27,7 +28,7 @@ public class Manager : MonoBehaviour
     void CallOption()
     {
         //オプションボタン呼び出し
-
+        ChengeOptionMode();
         var Selectable = InitialButton.GetComponent<IOnSelected>();
 
         Option.SetActive(true);//オプション有効化
@@ -38,5 +39,13 @@ public class Manager : MonoBehaviour
             InitialButton.GetComponent<IOnSelected>().OnSelected();
         }
 
+
+    }
+
+    public void ChengeOptionMode()
+    {
+        //オプションボタン起動、終了時に呼び出す
+        GameObject.Find("GameManager").GetComponent<GameManagerScript>().AllChangeActive();
+        isOptionMode = !isOptionMode;
     }
 }
