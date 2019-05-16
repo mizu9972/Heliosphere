@@ -125,7 +125,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isActive: 0
-  _radius: 23
+  _radius: 22
 --- !u!1 &6587445822855549681
 GameObject:
   m_ObjectHideFlags: 0
@@ -278,7 +278,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isActive: 0
-  _radius: 24.5
+  _radius: 24
 --- !u!1 &9112584729194365383
 GameObject:
   m_ObjectHideFlags: 0
