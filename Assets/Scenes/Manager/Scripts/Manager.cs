@@ -5,8 +5,10 @@ using UnityEngine;
 public class Manager : MonoBehaviour
 {
     public GameObject gameobject;
-    [SerializeField, Header("オプションボタン")]
+    [SerializeField, Header("オプションボタン全体")]
     GameObject Option;
+    [SerializeField, Header("最初に選択状態にするボタン")]
+    GameObject InitialButton;
 
     // Start is called before the first frame update
     void Start()
@@ -15,20 +17,26 @@ public class Manager : MonoBehaviour
     }
     private void Update()
     {
-        //ESCキーが押されたら終了処理実行
+        //ESCキーが押されたらオプション呼び出し
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            Option.SetActive(true);
+            CallOption();
         }
     }
 
-    public void Quit()
+    void CallOption()
     {
-        //実行環境によって終了処理を変更
-#if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false;
-#elif UNITY_STANDALONE
-    UnityEngine.Application.Quit();
-#endif
+        //オプションボタン呼び出し
+
+        var Selectable = InitialButton.GetComponent<IOnSelected>();
+
+        Option.SetActive(true);//オプション有効化
+
+        if (Selectable != null)
+        {
+            //ボタン選択状態に
+            InitialButton.GetComponent<IOnSelected>().OnSelected();
+        }
+
     }
 }
