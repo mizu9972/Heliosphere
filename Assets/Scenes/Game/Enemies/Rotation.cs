@@ -9,6 +9,7 @@ public class Rotation : MonoBehaviour
     [SerializeField, Header("回転速度")]
     float RotSpeed;
 
+    private float NowAngle = 0;
     private Vector3 RotateAxis;//回転軸
     // Start is called before the first frame update
     void Start()
@@ -20,7 +21,8 @@ public class Rotation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Quaternion Rotation = Quaternion.AngleAxis(RotSpeed, RotateAxis);//回転量計算
+        NowAngle += RotSpeed;
+        Quaternion Rotation = Quaternion.AngleAxis(NowAngle, RotateAxis);//回転量計算
 
         MyTrans.rotation = Rotation;//回転
     }
