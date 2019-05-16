@@ -4991,7 +4991,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sunTrans: {fileID: 0}
-  prePosition: {x: 0, y: 0, z: 0}
   LifeTimeRatiobyDistance: 1.5
   MaxLifeTime: 2
   isActiveLifeTimeSet: 0
@@ -5023,7 +5022,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2592975414859028448}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: -0}
+  m_LocalPosition: {x: -2, y: 0, z: -0}
   m_LocalScale: {x: 0.7, y: 0.7, z: 1.5}
   m_Children: []
   m_Father: {fileID: 2592975415085212246}
@@ -5862,7 +5861,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 20
+      scalar: 80
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -9726,7 +9725,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sunTrans: {fileID: 0}
-  prePosition: {x: 0, y: 0, z: 0}
   LifeTimeRatiobyDistance: 4
   MaxLifeTime: 2
   isActiveLifeTimeSet: 1
@@ -9809,6 +9807,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 879aa0021c1ef2c43967f8e79c223510, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sunTrans: {fileID: 0}
   Angle: 0
   Speed: 1.5
   CenterPos: {x: 0, y: 0}
