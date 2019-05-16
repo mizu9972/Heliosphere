@@ -8,17 +8,6 @@ public class QuitButton : MonoBehaviour,IOnSelected
     private Button MyButton;
 
     Selectable Me;
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public void OnClick()
     {
