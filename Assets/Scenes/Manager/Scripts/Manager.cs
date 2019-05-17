@@ -35,7 +35,7 @@ public class Manager : MonoBehaviour
     private void Update()
     {
         //ESCキーが押されたらオプション呼び出し
-        if (Input.GetKeyDown(KeyCode.Escape) && isOptionMode == false && isActive == true)
+        if ((Input.GetKeyDown(KeyCode.Escape)==true || Input.GetButtonDown("Option")==true) && isOptionMode == false && isActive == true && isResultMode == false)
         {
             CallOption();
         }
