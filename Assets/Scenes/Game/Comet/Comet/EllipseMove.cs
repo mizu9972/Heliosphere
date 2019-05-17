@@ -31,6 +31,7 @@ public class EllipseMove : MonoBehaviour, ChangeActiveInterface
     private Vector3 Acceleration;
     
     private bool isActive;
+    private float StartPosition;
     // Start is called before the first frame update
     void Start()
     {
@@ -54,6 +55,7 @@ public class EllipseMove : MonoBehaviour, ChangeActiveInterface
         {
             setPosition();//移動
         }
+        //初期位置をセットする（これを関数で渡す）
     }
 
     private void setPosition()

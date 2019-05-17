@@ -69,6 +69,7 @@
     <Compile Include="Assets\Scenes\Game\Comet\Comet\Gizmo.cs" />
     <Compile Include="Assets\Scenes\Game\Comet\Particle\Particle.cs" />
     <Compile Include="Assets\Scenes\Game\Enemies\EnemyScript.cs" />
+    <Compile Include="Assets\Scenes\Game\Enemies\Rotation.cs" />
     <Compile Include="Assets\Scenes\Game\Friends\FriendScript.cs" />
     <Compile Include="Assets\Scenes\Game\GameManager\GameManagerScript.cs" />
     <Compile Include="Assets\Scenes\Game\Player\scripts\OutSideScript.cs" />
@@ -90,6 +91,8 @@
     <Compile Include="Assets\Scenes\Manager\Scripts\Manager.cs" />
     <Compile Include="Assets\Scenes\Manager\Scripts\PlayButton.cs" />
     <Compile Include="Assets\Scenes\Manager\Scripts\QuitButton.cs" />
+    <Compile Include="Assets\Scenes\Manager\Scripts\RetryButton.cs" />
+    <Compile Include="Assets\Scenes\Manager\Scripts\ToSelectScene.cs" />
     <Compile Include="Assets\Scenes\Manager\Scripts\Volume.cs" />
     <Compile Include="Assets\Scenes\Manager\Scripts\VolumeButton.cs" />
     <Compile Include="Assets\Scenes\StageClear\ClearSceneManager.cs" />
@@ -105,6 +108,7 @@
     <Compile Include="Assets\Template\GameObjects\Options.cs" />
     <Compile Include="Assets\Template\Script\ITutorial.cs" />
     <Compile Include="Assets\Template\Script\MovePlane.cs" />
+    <Compile Include="Assets\Template\Script\SceneReload.cs" />
     <Compile Include="Assets\Template\Script\Tutorial.cs" />
     <Compile Include="Assets\Template\Script\TutorialComet.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
