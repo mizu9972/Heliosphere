@@ -121,4 +121,8 @@ public class GameManagerScript : MonoBehaviour,IGameManager
         gameObject = GameObject.Find("Manager");
         gameObject.GetComponent<BeforScene>().ExportSceneName(scene);
     }
+    public int ReturnDestroyObj()
+    {
+        return EnemyDesroyCount;
+    }
 }
