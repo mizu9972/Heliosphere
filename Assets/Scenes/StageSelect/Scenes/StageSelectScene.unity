@@ -2835,6 +2835,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: cursor
       objectReference: {fileID: 0}
+    - target: {fileID: 2760924066462540856, guid: cd2ed62955a9a68488f072068736bed1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9075699536903748651, guid: cd2ed62955a9a68488f072068736bed1,
         type: 3}
       propertyPath: m_LocalPosition.x

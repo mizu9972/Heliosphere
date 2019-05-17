@@ -11,11 +11,15 @@ public class Manager : MonoBehaviour
     GameObject Option;
     [SerializeField, Header("リザルトボタン全体")]
     GameObject Result;
+    [SerializeField, Header("クリアボタン全体")]
+    GameObject Clear;
 
     [SerializeField, Header("最初に選択状態にするオプションボタン")]
     GameObject InitialOptionButton;
     [SerializeField, Header("最初に選択状態にするリザルトボタン")]
     GameObject InitialResultButton;
+    [SerializeField, Header("最初に選択状態にするクリアボタン")]
+    GameObject InitialClearButton;
 
     private bool isOptionMode = false;//実行中かどうか
     private bool isResultMode = false;
@@ -68,6 +72,20 @@ public class Manager : MonoBehaviour
         }
     }
 
+    public void CallClear()
+    {
+        ChangeResultMode();
+        var Selectable = InitialClearButton.GetComponent<IOnSelected>();
+
+        Clear.SetActive(true);
+
+
+        if (Selectable != null)
+        {
+            //ボタン選択状態に
+            InitialClearButton.GetComponent<IOnSelected>().OnSelected();
+        }
+    }
     public void ChangeResultMode()
     {
         isResultMode = !isResultMode;
