@@ -154,7 +154,7 @@ MonoBehaviour:
   Parent: {fileID: 2550043631027069954}
   SunTrans: {fileID: 0}
   Target: {fileID: 0}
-  SizeUp: 150
+  SizeUp: 155
 --- !u!54 &2550043631095521502
 Rigidbody:
   m_ObjectHideFlags: 0
