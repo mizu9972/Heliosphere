@@ -102,7 +102,7 @@ public class GameManagerScript : MonoBehaviour,IGameManager
         //SceneChangeTimeの分だけ遅らせて
         //クリアシーンへ
         Observable.Timer(System.TimeSpan.FromSeconds(SceneChangeTime)).Subscribe(_ => GameObject.Find("Manager").GetComponent<Manager>().CallClear());
-
+        GameObject.Find("Manager").GetComponent<Manager>().ChengeActive(false);
     }
 
     private void ToGameOverScene()
@@ -112,7 +112,7 @@ public class GameManagerScript : MonoBehaviour,IGameManager
         //SceneChangeTimeの分だけ遅らせて
         //ゲームオーバーシーンへ
         Observable.Timer(System.TimeSpan.FromSeconds(SceneChangeTime)).Subscribe(_ => GameObject.Find("Manager").GetComponent<Manager>().CallResult());
-
+        GameObject.Find("Manager").GetComponent<Manager>().ChengeActive(false);
     }
     void OnSceneUnloaded(Scene scene)
     {
