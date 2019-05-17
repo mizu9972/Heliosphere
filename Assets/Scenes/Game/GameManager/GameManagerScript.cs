@@ -18,7 +18,7 @@ public class GameManagerScript : MonoBehaviour,IGameManager
     public GameObject ReadyObject, StartObject;
     public float ReadyTime, StartTime;
     public float SceneChangeTime = 0;
-
+    
     [Header("isActiveを操作するオブジェクト群")]
     public GameObject PlayerCore;
     public GameObject RevolutionCore;

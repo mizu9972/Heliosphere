@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UniRx;
 
 [RequireComponent(typeof(Rigidbody))]
 public class EllipseMove : MonoBehaviour, ChangeActiveInterface
@@ -28,7 +29,7 @@ public class EllipseMove : MonoBehaviour, ChangeActiveInterface
     [Header("加速度")]
     [SerializeField]
     private Vector3 Acceleration;
-
+    
     private bool isActive;
     // Start is called before the first frame update
     void Start()
@@ -83,5 +84,11 @@ public class EllipseMove : MonoBehaviour, ChangeActiveInterface
 
         MyTrans.rotation = Rotation;//反映
 
+    }
+    public void SetisActiveFalse()
+    {
+        isActive = false;
+        Observable.Timer(System.TimeSpan.FromMilliseconds(16.0)).
+            Where(_=>!GetComponent<TutorialComet>().ReturnMoveFlg()).Subscribe(_ => SetisActiveFalse());
     }
 }
