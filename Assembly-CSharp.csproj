@@ -83,6 +83,7 @@
      <Compile Include="Assets\Scenes\Manager\Scripts\PlayButton.cs" />
      <Compile Include="Assets\Scenes\Manager\Scripts\QuitButton.cs" />
      <Compile Include="Assets\Scenes\Manager\Scripts\RetryButton.cs" />
+     <Compile Include="Assets\Scenes\Manager\Scripts\ToSelectScene.cs" />
      <Compile Include="Assets\Scenes\Manager\Scripts\Volume.cs" />
      <Compile Include="Assets\Scenes\Manager\Scripts\VolumeButton.cs" />
      <Compile Include="Assets\Scenes\StageClear\ClearSceneManager.cs" />

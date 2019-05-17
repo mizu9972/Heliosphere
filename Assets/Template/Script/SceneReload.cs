@@ -8,8 +8,8 @@ public class SceneReload : MonoBehaviour
     public void NowSceneReload()
     {
         //自身のシーン再読み込み
-        Debug.Log(SceneManager.GetActiveScene().name);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 
     }
+
 }
