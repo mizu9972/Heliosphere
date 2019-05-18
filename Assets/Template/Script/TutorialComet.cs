@@ -12,6 +12,7 @@ public class TutorialComet : MonoBehaviour
     private bool MoveFlg = false;
     public float MoveTime;//彗星が動き出す時間
     private int DestroyNum = 0;//エネミーを破壊した数
+    private Transform MyTrans;
     public GameObject GameManager;
     public GameObject PlaneNo1;//一番目の壁
     public GameObject PlaneNo2;//二番目の壁(左)
@@ -19,6 +20,7 @@ public class TutorialComet : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        MyTrans = this.GetComponent<Transform>();
         //時間経過するまで彗星は停止
         Observable.
         Timer(System.TimeSpan.FromMilliseconds(16.0)).
@@ -43,19 +45,25 @@ public class TutorialComet : MonoBehaviour
     }
     void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Hit");
-        if(StepNum == 0)
+        Debug.Log(other.name);
+        if(StepNum == 0)//何も破壊してなければPlaneNo1と当たった場合のみ位置をリセット
         {
             if(other.name== "MovePlaneNo1")
             {
-                //PlaneNo1をenableにする関数
-                //other.GetComponent<MovePlane>().StartFade();
+                //彗星の位置をリセット
+                GetComponent<EllipseMove>().SetStartPosition();
             }
-            else if(other.name=="MovePlaneNo2")
+            
+        }
+        else if(StepNum==1)
+        {
+            if (other.name == "MovePlaneNo2-1"||other.name== "MovePlaneNo2-2")
             {
-
+                //彗星の位置をリセット
+                GetComponent<EllipseMove>().SetStartPosition();
             }
         }
+        
     }
     public bool ReturnMoveFlg()
     {
@@ -66,6 +74,7 @@ public class TutorialComet : MonoBehaviour
         if (DestroyNum == 1)//1番目の壁を開放
         {
             PlaneNo1.GetComponent<MovePlane>().StartFade();
+            StepNum = 1;
         }
         if (DestroyNum == 2)//2番目の壁を開放
         {
