@@ -59,6 +59,7 @@
      <Compile Include="Assets\Scenes\Game\Comet\Comet\EllipseMove.cs" />
      <Compile Include="Assets\Scenes\Game\Comet\Comet\Gizmo.cs" />
      <Compile Include="Assets\Scenes\Game\Comet\Particle\Particle.cs" />
+     <Compile Include="Assets\Scenes\Game\Enemies\BlackHoleEnemy\BHEnemy.cs" />
      <Compile Include="Assets\Scenes\Game\Enemies\EnemyScript.cs" />
      <Compile Include="Assets\Scenes\Game\Enemies\Rotation.cs" />
      <Compile Include="Assets\Scenes\Game\Friends\FriendScript.cs" />
