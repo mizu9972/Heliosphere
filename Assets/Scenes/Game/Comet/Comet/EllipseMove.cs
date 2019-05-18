@@ -13,7 +13,7 @@ public class EllipseMove : MonoBehaviour, ChangeActiveInterface
     [SerializeField,Header("角度")]
     private float Angle = 0.0f;//角度
     [SerializeField, Header("速度")]
-    private float Speed = 2.5f;//速度
+    private float Speed = 1.5f;//速度
     private float AngleToRadian = Mathf.PI / 180.0f;//ラジアンに変換
     private float Radian;//ラジアンに変換後の数値保存用
     private Rigidbody MyRigidB;
@@ -31,13 +31,15 @@ public class EllipseMove : MonoBehaviour, ChangeActiveInterface
     private Vector3 Acceleration;
     
     private bool isActive;
-    private float StartPosition;
+    private Transform StartPosition;//開始位置
     // Start is called before the first frame update
     void Start()
     {
         MyRigidB = this.GetComponent<Rigidbody>();
         MyTrans = this.GetComponent<Transform>();
         setPosition();//初期位置へ
+        
+        GetStartPosition();
     }
 
     // Update is called once per frame
@@ -92,5 +94,17 @@ public class EllipseMove : MonoBehaviour, ChangeActiveInterface
         isActive = false;
         Observable.Timer(System.TimeSpan.FromMilliseconds(16.0)).
             Where(_=>!GetComponent<TutorialComet>().ReturnMoveFlg()).Subscribe(_ => SetisActiveFalse());
+    }
+    public void GetStartPosition()//開始位置を送信
+    {
+
+        StartPosition = this.transform;//初期位置をセット
+        
+    }
+    public void SetStartPosition()
+    {
+        Angle = 0.0f;
+        Speed = 1.5f;
+        MyTrans = StartPosition;
     }
 }
