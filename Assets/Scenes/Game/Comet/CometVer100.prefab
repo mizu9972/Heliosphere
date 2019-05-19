@@ -7318,7 +7318,7 @@ ParticleSystem:
     inWorldSpace: 0
     randomizePerFrame: 0
   ExternalForcesModule:
-    enabled: 0
+    enabled: 1
     multiplier: 1
     influenceFilter: 0
     influenceMask:
