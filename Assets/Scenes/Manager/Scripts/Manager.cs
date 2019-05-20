@@ -6,7 +6,7 @@ public class Manager : MonoBehaviour
 {
     public GameObject gameobject;
     public GameObject Canvas;
-
+    public GameObject Planetarium;
     [SerializeField, Header("オプションボタン全体")]
     GameObject Option;
     [SerializeField, Header("リザルトボタン全体")]
@@ -31,6 +31,7 @@ public class Manager : MonoBehaviour
     {
         DontDestroyOnLoad(gameobject);
         DontDestroyOnLoad(Canvas);
+        DontDestroyOnLoad(Planetarium);
     }
     private void Update()
     {

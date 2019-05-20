@@ -122,7 +122,6 @@ GameObject:
   m_Component:
   - component: {fileID: 417362113}
   - component: {fileID: 417362112}
-  - component: {fileID: 417362114}
   m_Layer: 0
   m_Name: TitleSceneManager
   m_TagString: Untagged
@@ -156,19 +155,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &417362114
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 417362111}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c3e72702bd461e4e85e56228f019775, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  DontDestroy1: {fileID: 5460135589201176156}
 --- !u!1 &553566040
 GameObject:
   m_ObjectHideFlags: 0
@@ -11550,6 +11536,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Planetarium
       objectReference: {fileID: 0}
+    - target: {fileID: 5460135589238113491, guid: 40e2d4e4529980d4481d5e44a2fae987,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5460135589238113488, guid: 40e2d4e4529980d4481d5e44a2fae987,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -11607,12 +11598,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 40e2d4e4529980d4481d5e44a2fae987, type: 3}
---- !u!1 &5460135589201176156 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5460135589238113491, guid: 40e2d4e4529980d4481d5e44a2fae987,
-    type: 3}
-  m_PrefabInstance: {fileID: 5460135589201176155}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &5901908750987053255
 GameObject:
   m_ObjectHideFlags: 0
