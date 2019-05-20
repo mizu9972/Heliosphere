@@ -470,7 +470,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StartWaitTime: 0
   FeedInTime: 0.5
-  StartAlpha: 150
+  StartAlpha: 255
   EndAlpha: 0
 --- !u!114 &463703144
 MonoBehaviour:
@@ -485,7 +485,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.5882353}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -686,6 +686,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2099830777553596667}
     m_Modifications:
+    - target: {fileID: 4172258807983410902, guid: 827e7e3663026fc4ab53b47753e32ea7,
+        type: 3}
+      propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 4172258807983410902, guid: 827e7e3663026fc4ab53b47753e32ea7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4172258807983410903, guid: 827e7e3663026fc4ab53b47753e32ea7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -740,16 +750,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4172258807983410902, guid: 827e7e3663026fc4ab53b47753e32ea7,
-        type: 3}
-      propertyPath: m_Name
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 4172258807983410902, guid: 827e7e3663026fc4ab53b47753e32ea7,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 827e7e3663026fc4ab53b47753e32ea7, type: 3}
@@ -834,16 +834,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
-    - target: {fileID: 7371129766374675095, guid: 2eb110a2d88e6094b89b196aed7bf952,
-        type: 3}
-      propertyPath: sunTrans
-      value: 
-      objectReference: {fileID: 1944179874}
-    - target: {fileID: 7371129766416869157, guid: 2eb110a2d88e6094b89b196aed7bf952,
-        type: 3}
-      propertyPath: sunTrans
-      value: 
-      objectReference: {fileID: 1944179874}
     - target: {fileID: 7371129766416869159, guid: 2eb110a2d88e6094b89b196aed7bf952,
         type: 3}
       propertyPath: m_RootOrder
@@ -949,6 +939,11 @@ PrefabInstance:
       propertyPath: ControllObject
       value: 
       objectReference: {fileID: 1944179873}
+    - target: {fileID: 1780851023766044438, guid: 2eb110a2d88e6094b89b196aed7bf952,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2099830778279023388, guid: 2eb110a2d88e6094b89b196aed7bf952,
         type: 3}
       propertyPath: m_RootOrder
@@ -964,21 +959,11 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1780851023766044438, guid: 2eb110a2d88e6094b89b196aed7bf952,
+    - target: {fileID: 7371129766416869157, guid: 2eb110a2d88e6094b89b196aed7bf952,
         type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8757260474749265380, guid: 2eb110a2d88e6094b89b196aed7bf952,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6813600171760567606, guid: 2eb110a2d88e6094b89b196aed7bf952,
-        type: 3}
-      propertyPath: m_Name
-      value: CometVer100
-      objectReference: {fileID: 0}
+      propertyPath: sunTrans
+      value: 
+      objectReference: {fileID: 1944179874}
     - target: {fileID: 1780851023766044434, guid: 2eb110a2d88e6094b89b196aed7bf952,
         type: 3}
       propertyPath: m_RenderMode
@@ -994,11 +979,26 @@ PrefabInstance:
       propertyPath: m_PixelPerfect
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7371129766374675095, guid: 2eb110a2d88e6094b89b196aed7bf952,
+        type: 3}
+      propertyPath: sunTrans
+      value: 
+      objectReference: {fileID: 1944179874}
     - target: {fileID: 3418860537772784435, guid: 2eb110a2d88e6094b89b196aed7bf952,
         type: 3}
       propertyPath: Target
       value: 
       objectReference: {fileID: 1944179873}
+    - target: {fileID: 8757260474749265380, guid: 2eb110a2d88e6094b89b196aed7bf952,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6813600171760567606, guid: 2eb110a2d88e6094b89b196aed7bf952,
+        type: 3}
+      propertyPath: m_Name
+      value: CometVer100
+      objectReference: {fileID: 0}
     - target: {fileID: 7409557435383178664, guid: 2eb110a2d88e6094b89b196aed7bf952,
         type: 3}
       propertyPath: m_Enabled
@@ -2401,7 +2401,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StartWaitTime: 0
   FeedInTime: 0.5
-  StartAlpha: 150
+  StartAlpha: 255
   EndAlpha: 0
 --- !u!114 &1889718161
 MonoBehaviour:
@@ -2416,7 +2416,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.5882353}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -2574,7 +2574,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StartWaitTime: 0
   FeedInTime: 0.5
-  StartAlpha: 150
+  StartAlpha: 255
   EndAlpha: 0
 --- !u!114 &2022513239
 MonoBehaviour:
@@ -2589,7 +2589,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.5882353}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
