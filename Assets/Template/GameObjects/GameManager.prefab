@@ -339,6 +339,7 @@ MonoBehaviour:
   Comet2: {fileID: 0}
   Friend_GameOverPoint: 1
   Enemy_GameClearPoint: 9
+  TutorialCanvas: {fileID: 0}
 --- !u!114 &1506324338213659205
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -371,11 +372,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 9118420321705598582}
     m_Modifications:
-    - target: {fileID: 1171825779688422883, guid: 3af6d03d1a9ea6a4093a21ccc01760ad,
-        type: 3}
-      propertyPath: m_Name
-      value: Canvas
-      objectReference: {fileID: 0}
     - target: {fileID: 1171825779688422884, guid: 3af6d03d1a9ea6a4093a21ccc01760ad,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -481,6 +477,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1171825779688422883, guid: 3af6d03d1a9ea6a4093a21ccc01760ad,
+        type: 3}
+      propertyPath: m_Name
+      value: Canvas
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3af6d03d1a9ea6a4093a21ccc01760ad, type: 3}
 --- !u!224 &1780851023766044433 stripped
@@ -508,11 +509,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2099830778279023388}
     m_Modifications:
-    - target: {fileID: 2592975415085212247, guid: 380412b23ee415047a9669f47ef45143,
-        type: 3}
-      propertyPath: m_Name
-      value: CometVer100
-      objectReference: {fileID: 0}
     - target: {fileID: 2592975415085212246, guid: 380412b23ee415047a9669f47ef45143,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -568,30 +564,23 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2592975415085212247, guid: 380412b23ee415047a9669f47ef45143,
+        type: 3}
+      propertyPath: m_Name
+      value: CometVer100
+      objectReference: {fileID: 0}
     - target: {fileID: 2592975414859028454, guid: 380412b23ee415047a9669f47ef45143,
         type: 3}
       propertyPath: sunTrans
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 2592975415085212244, guid: 380412b23ee415047a9669f47ef45143,
-        type: 3}
-      propertyPath: sunTrans
+    - target: {fileID: 0}
+      propertyPath: SunTrans
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 2592975415085212244, guid: 380412b23ee415047a9669f47ef45143,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7693733224272395842, guid: 380412b23ee415047a9669f47ef45143,
-        type: 3}
+    - target: {fileID: 0}
       propertyPath: Target
       value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 2592975414859028448, guid: 380412b23ee415047a9669f47ef45143,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2550043631095521501, guid: 380412b23ee415047a9669f47ef45143,
         type: 3}
@@ -608,6 +597,26 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2592975414859028448, guid: 380412b23ee415047a9669f47ef45143,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2592975415085212244, guid: 380412b23ee415047a9669f47ef45143,
+        type: 3}
+      propertyPath: sunTrans
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2592975415085212244, guid: 380412b23ee415047a9669f47ef45143,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7693733224272395842, guid: 380412b23ee415047a9669f47ef45143,
+        type: 3}
+      propertyPath: Target
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 2592975413840794912, guid: 380412b23ee415047a9669f47ef45143,
         type: 3}
       propertyPath: m_Enabled
@@ -623,18 +632,7 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 2550043631095521503, guid: 380412b23ee415047a9669f47ef45143,
-        type: 3}
-      propertyPath: SunTrans
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 2550043631095521503, guid: 380412b23ee415047a9669f47ef45143,
-        type: 3}
-      propertyPath: Target
-      value: 
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 2550043631095521503, guid: 380412b23ee415047a9669f47ef45143, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 380412b23ee415047a9669f47ef45143, type: 3}
 --- !u!1 &7371129766416869158 stripped
 GameObject:
