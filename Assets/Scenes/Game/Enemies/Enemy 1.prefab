@@ -124,12 +124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cded4c7487ac2a459448d4932a1bf8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Angle: 0
-  Speed: 2.5
-  RadiusX: 5
-  RadiusY: 5
-  Acceleration: {x: 0, y: 0, z: 0}
-  Explosion: {fileID: 8300000, guid: 28e52216e4e320b4e8afe672186e9f54, type: 3}
+  Explosion: {fileID: 8300000, guid: 4d8a6a6cadd608f45ab93a31714245bd, type: 3}
   GameManager: {fileID: 0}
   ExplosionEffect: {fileID: 5979260350877947122, guid: 0d44181efa043da44a2f245a598901c0,
     type: 3}

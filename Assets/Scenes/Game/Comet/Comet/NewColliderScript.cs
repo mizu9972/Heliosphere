@@ -46,24 +46,5 @@ public class NewColliderScript : MonoBehaviour
         MyTrans.localScale = SizeUpScale;
         
     }
-    void OnTriggerEnter(Collider other)
-    {
-        var HitObjectisTarget = other.gameObject.GetComponent<ITragetFunction>();
-
-        if (HitObjectisTarget != null)
-        {
-            other.gameObject.GetComponent<ITragetFunction>().Hit();
-        }
-
-
-    }
-
-    void OnTriggerStay(Collider other)
-    {
-        var HitObjectisTargetBT = other.gameObject.GetComponent<ITargetFunctionByTransform>();
-        if (HitObjectisTargetBT != null)
-        {
-            other.gameObject.GetComponent<ITargetFunctionByTransform>().Hit(MyTrans);
-        }
-    }
+    
 }
