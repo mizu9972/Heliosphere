@@ -106,7 +106,6 @@
     <Compile Include="Assets\Scenes\StageSelect\Scripts\SelectScene.cs" />
     <Compile Include="Assets\Scenes\StageSelect\Scripts\SelectStage.cs" />
     <Compile Include="Assets\Scenes\StageSelect\Scripts\UVEdit.cs" />
-    <Compile Include="Assets\Scenes\Title\DontDestroySet.cs" />
     <Compile Include="Assets\Scenes\Title\FeedIn.cs" />
     <Compile Include="Assets\Scenes\Title\TitleManager.cs" />
     <Compile Include="Assets\Template\GameObjects\ChangeActive.cs" />
