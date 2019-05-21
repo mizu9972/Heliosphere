@@ -31,17 +31,24 @@ public class GameManagerScript : MonoBehaviour,IGameManager
     [SerializeField]
     int Enemy_GameClearPoint;
 
+    [Header("エネミーチュートリアル用キャンバス")]
+    public GameObject TutorialCanvas;
+
     private int FriendDestroyCount;
     private int EnemyDesroyCount;
+    private bool ReadyFlg;
     // Start is called before the first frame update
     void Start()
     {
-        FriendDestroyCount = 0;
-        EnemyDesroyCount = 0;
-        ReadyObject.GetComponent<Text>().enabled = true;
-        StartObject.GetComponent<Text>().enabled = false;
-        Observable.Timer(System.TimeSpan.FromSeconds(ReadyTime)).Subscribe(_ => ReadyChange());//ReadyTime秒後にStart描画に切り替える
+        SetParam();//条件に基づいて変数に値をセット
 
+        //エンターが押されるまでチュートリアル用のキャンバスを表示(チュートリアル要素があれば実行)
+        this.UpdateAsObservable().Where(_ => TutorialCanvas != null &&
+                                            Input.GetKeyDown(KeyCode.Return)).
+                                            Take(1).Subscribe(_ => ChangeReadyFlg());
+        //Readyを表示
+        this.UpdateAsObservable().Where(_ => ReadyFlg).Take(1).Subscribe(_ => DelayReadyChange());
+        
         //シーン遷移条件を判定しシーン遷移用の関数へ
         //Whereで条件判定し、Take(1)で一回だけ実行、Subscribeで処理
         this.UpdateAsObservable().Where(_ => (EnemyDesroyCount >= Enemy_GameClearPoint)).Take(1).Subscribe(_ => ToClearScene());
@@ -124,5 +131,33 @@ public class GameManagerScript : MonoBehaviour,IGameManager
     public int ReturnDestroyObj()
     {
         return EnemyDesroyCount;
+    }
+    void DelayReadyChange()
+    {
+        Observable.Timer(System.TimeSpan.FromSeconds(ReadyTime)).Subscribe(_ => ReadyChange());//ReadyTime秒後にStart描画に切り替える
+    }
+    public void ChangeReadyFlg()
+    {
+        //キャンバスのenabledをfalseにする処理を記入
+        TutorialCanvas.SetActive(false);
+        ReadyObject.GetComponent<Text>().enabled = true;//Readyの描画開始
+        ReadyFlg = true;
+    }
+    void SetParam()
+    {
+        FriendDestroyCount = 0;
+        EnemyDesroyCount = 0;
+        StartObject.GetComponent<Text>().enabled = false;
+        if (TutorialCanvas != null)//チュートリアル要素があれば
+        {
+            ReadyObject.GetComponent<Text>().enabled = false;
+            ReadyFlg = false;
+        }
+        else
+        {
+            ReadyObject.GetComponent<Text>().enabled = true;
+            ReadyFlg = true;
+        }
+        
     }
 }
