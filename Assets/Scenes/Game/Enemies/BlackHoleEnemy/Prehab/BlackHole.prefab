@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2683168195432709863}
   - component: {fileID: 3285180018546342325}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: GravityZone3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55,7 +55,7 @@ GameObject:
   m_Component:
   - component: {fileID: 857260481220636699}
   - component: {fileID: 382138498024688302}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: GravityZone1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5012,7 +5012,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3659156404389696912}
   - component: {fileID: 8587865598901070312}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: GravityZone2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
