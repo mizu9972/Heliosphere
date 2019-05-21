@@ -10,9 +10,10 @@ public class ToSelectScene : MonoBehaviour,IOnSelected
     [SerializeField, Header("リザルトボタン全体")]
     GameObject Result;
     Selectable Me;
-
+    public GameObject manager;
     public void OnClick()
     {
+        GameObject.Find("Manager").GetComponent<AudioManager>().PlayClick();
         GameObject.Find("Manager").GetComponent<Manager>().ChangeResultMode();
         EventSystem.current.SetSelectedGameObject(null);
 
