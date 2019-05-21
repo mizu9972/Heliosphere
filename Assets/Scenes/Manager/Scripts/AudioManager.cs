@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+using UniRx;
+using UniRx.Triggers;
 
 public class AudioManager : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip MenuBgm;//ステージセレクト(仮)
     public AudioClip ClearSound;//ゲームCLEAR
     public AudioClip OverSound;//ゲームオーバー
+    public AudioClip ClickSound;//決定音
 
     private AudioSource audioSource;
     private string sceneName;//アクティブシーン名
@@ -76,5 +78,11 @@ public class AudioManager : MonoBehaviour
         sceneName = nextScene.name;
         PlayFlg = false;
     }
-
+    public void PlayClick()//決定音再生
+    {
+        //クリック音を1回再生
+        audioSource.clip = ClickSound;
+        audioSource.loop = false;
+        this.UpdateAsObservable().Take(1).Subscribe(_ => audioSource.Play());
+    }
 }
