@@ -30,7 +30,7 @@ public class EllipseMove : MonoBehaviour, ChangeActiveInterface
     [SerializeField]
     private Vector3 Acceleration;
     
-    private bool isActive;
+    public bool isActive;
     private Transform StartPosition;//開始位置
     // Start is called before the first frame update
     void Start()
