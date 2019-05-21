@@ -110,6 +110,7 @@
      <Compile Include="Assets\Template\Script\SceneReload.cs" />
      <Compile Include="Assets\Template\Script\Tutorial.cs" />
      <Compile Include="Assets\Template\Script\TutorialComet.cs" />
+     <Compile Include="Assets\WAVEGameManager.cs" />
  <Reference Include="Unity.TextMeshPro.Editor">
  <HintPath>C:/Users/ohs75011/Documents/Heliosphere/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>
