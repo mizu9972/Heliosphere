@@ -15,7 +15,7 @@ public class MoveByGravity : MonoBehaviour, IAffectbyBH
         controller = GetComponent<CharacterController>();
     }
 
-    public void GravityEffect(Transform BHTrans)
+    public void GravityEffect(Transform BHTrans,Rigidbody BHRigid)
     {
         MyTrans = this.GetComponent<Transform>();
 

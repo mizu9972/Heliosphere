@@ -6,3 +6,9 @@ public interface ITragetFunction
 {
     void Hit();
 }
+
+
+public interface ITargetFunctionByTransform
+{
+    void Hit(Transform Trans);
+}
