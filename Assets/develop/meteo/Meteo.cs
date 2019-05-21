@@ -38,4 +38,18 @@ public class Meteo : MonoBehaviour,ITargetFunctionByTransform
         //力を加える
         MyRigid.AddForceAtPosition(subTrans * PowerRatio, MyTrans.position);
     }
+
+    void OnTriggerEnter(Collider other)
+    {
+        MyTrans = this.GetComponent<Transform>();
+
+        var HitObjectisTarget = other.gameObject.GetComponent<ITragetFunction>();
+
+        //当たり判定があるなら
+        //ヒット
+        if (HitObjectisTarget != null)
+        {
+            other.gameObject.GetComponent<ITragetFunction>().Hit();
+        }
+    }
 }
