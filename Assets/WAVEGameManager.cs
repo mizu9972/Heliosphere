@@ -80,7 +80,6 @@ public class WAVEGameManager : MonoBehaviour, IGameManager
     }
     private void ToClearScene()
     {
-        Debug.Log("クリア");
         //SceneChangeTimeの分だけ遅らせて
         //クリアシーンへ
         Observable.Timer(System.TimeSpan.FromSeconds(SceneChangeTime)).Subscribe(_ => nextWave());
@@ -96,6 +95,8 @@ public class WAVEGameManager : MonoBehaviour, IGameManager
             nextGameManager.GetComponent<WAVEGameManager>().ApproachStart();
         }else
         {
+            Debug.Log("クリア");
+            AllChangeActive();
             GameObject.Find("Manager").GetComponent<Manager>().CallClear();
         }
     }
