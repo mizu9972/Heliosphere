@@ -54,5 +54,16 @@ public class NewColliderScript : MonoBehaviour
         {
             other.gameObject.GetComponent<ITragetFunction>().Hit();
         }
+
+
+    }
+
+    void OnTriggerStay(Collider other)
+    {
+        var HitObjectisTargetBT = other.gameObject.GetComponent<ITargetFunctionByTransform>();
+        if (HitObjectisTargetBT != null)
+        {
+            other.gameObject.GetComponent<ITargetFunctionByTransform>().Hit(MyTrans);
+        }
     }
 }
