@@ -20,23 +20,22 @@ public class ObjectMoveByGravity : MonoBehaviour, IAffectbyBH
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
-    public void GravityEffect(Transform BHTrans)
+    public void GravityEffect(Transform BHTrans, Rigidbody BHRigid)
     {
         MyTrans = this.GetComponent<Transform>();
-
         //ブラックホールとの位置差
         Vector3 subVector = new Vector3(
-            BHTrans.position.x - MyTrans.position.x,
-            BHTrans.position.y - MyTrans.position.y,
-            BHTrans.position.z - MyTrans.position.z
-            );
+        MyTrans.position.x - BHTrans.position.x,
+        MyTrans.position.y - BHTrans.position.y,
+        MyTrans.position.z - BHTrans.position.z
+    );
 
-        subVector = transform.TransformDirection(subVector);
-        subVector *= GravityForceRatio;
+        Vector3 gravity = -6 * subVector.normalized * (BHRigid.mass * MyRigid.mass) / (subVector.sqrMagnitude);
+        gravity *= GravityForceRatio;
 
-        MyRigid.AddForceAtPosition(subVector, MyTrans.position);
+        MyRigid.AddForceAtPosition(gravity, MyTrans.position);
     }
 }

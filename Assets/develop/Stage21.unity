@@ -125,7 +125,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 06ede291677a2cd40a861eba9e0e1ffc, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 06ede291677a2cd40a861eba9e0e1ffc, type: 3}
       propertyPath: m_LocalPosition.y
@@ -366,6 +366,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Radius
       value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4432947454418951283, guid: cda98f75372a21f4883f55b0d98d6928,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cda98f75372a21f4883f55b0d98d6928, type: 3}
@@ -1370,6 +1375,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CometVer100 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2592975415085212247, guid: 380412b23ee415047a9669f47ef45143,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2592975415085212246, guid: 380412b23ee415047a9669f47ef45143,
         type: 3}
@@ -16952,7 +16962,7 @@ GameObject:
   - component: {fileID: 1674870232}
   m_Layer: 17
   m_Name: Meteo
-  m_TagString: Untagged
+  m_TagString: FallinHole
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16983,7 +16993,7 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 0
+  m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
@@ -17054,7 +17064,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1674870225}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.9, y: 0, z: -3.07}
+  m_LocalPosition: {x: 1.9, y: 0, z: -5}
   m_LocalScale: {x: 3.8163, y: 3.8163, z: 3.8163}
   m_Children: []
   m_Father: {fileID: 0}
@@ -17072,7 +17082,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac4ead34088481a4090356326d0ea87f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GravityForceRatio: 1
+  GravityForceRatio: 100
 --- !u!1 &1725884473
 GameObject:
   m_ObjectHideFlags: 0

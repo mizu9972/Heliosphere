@@ -24,7 +24,7 @@ public class BlackHole : MonoBehaviour
         
         if (isAffectable != null)
         {//与えられるなら
-            other.GetComponent<IAffectbyBH>().GravityEffect(this.GetComponent<Transform>());
+            other.GetComponent<IAffectbyBH>().GravityEffect(this.GetComponent<Transform>(), this.GetComponent<Rigidbody>());
         }
     }
 }

@@ -4,5 +4,5 @@ using UnityEngine;
 
 public interface IAffectbyBH
 {
-    void GravityEffect(Transform BHTrans);
+    void GravityEffect(Transform BHTrans,Rigidbody BHRigid);
 }

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - Comet
+  - FallinHole
   layers:
   - Default
   - TransparentFX
