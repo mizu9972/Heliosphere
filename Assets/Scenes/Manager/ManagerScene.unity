@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311912, g: 0.3807398, b: 0.3587271, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1911,7 +1911,7 @@ MonoBehaviour:
   GameMainBgm: {fileID: 8300000, guid: edc3123cddb736a42918b89dbbb361b3, type: 3}
   MenuBgm: {fileID: 8300000, guid: ceed4099b9c3c8742a50f40b45f74cde, type: 3}
   ClearSound: {fileID: 8300000, guid: 28e52216e4e320b4e8afe672186e9f54, type: 3}
-  OverSound: {fileID: 8300000, guid: 28e52216e4e320b4e8afe672186e9f54, type: 3}
+  OverSound: {fileID: 8300000, guid: 70204a9342938164fb4f8577b1c9a353, type: 3}
 --- !u!82 &2062281148
 AudioSource:
   m_ObjectHideFlags: 0
