@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 
 public class WAVEGameManager : MonoBehaviour, IGameManager
 {
-    
+    private bool FeverFlg;//フィーバー状態か
     public float SceneChangeTime = 0;
 
     [Header("isActiveを操作するオブジェクト群")]
@@ -134,5 +134,9 @@ public class WAVEGameManager : MonoBehaviour, IGameManager
     void ApproarchFunc()
     {
         MyTrans.position += subVector;
+    }
+    public bool GetFeverFlg()//フィーバーフラグを受け取る
+    {
+        return FeverFlg;
     }
 }
