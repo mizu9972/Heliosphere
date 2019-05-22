@@ -98,6 +98,7 @@ public class WAVEGameManager : MonoBehaviour, IGameManager
             nextGameManager.gameObject.SetActive(true);
             nextGameManager.GetComponent<WAVEGameManager>().ApproachStart();
             GameObject.Find("GameMaster").GetComponent<GameMaster>().WAVEset(nextGameManager);
+            this.gameObject.SetActive(false);//自身を無効化
         }else
         {
             Debug.Log("クリア");
