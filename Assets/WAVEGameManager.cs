@@ -25,6 +25,11 @@ public class WAVEGameManager : MonoBehaviour, IGameManager
     [SerializeField, Header("次のWAVEのGameManager")]
     GameObject nextGameManager = null;
 
+    [SerializeField, Header("エネミーを破壊した時のスコア")]
+    double EnemyBreakScore;
+
+    [SerializeField, Header("フレンドを破壊した時のスコア")]
+    double FriendBreakScore;
 
     private int FriendDestroyCount;
 
@@ -73,11 +78,13 @@ public class WAVEGameManager : MonoBehaviour, IGameManager
     public void AddFriendPoint()
     {
         FriendDestroyCount += 1;//破壊されたFriend数加算
+        //Score.csのScoreCountを実行(引数は-FriendBreakScore)
     }
 
     public void AddEnemyPoint()
     {
         EnemyDesroyCount += 1;//破壊されたEnemy数加算
+        //Score.csのScoreCountを実行(引数はEnemyBreakScore)
     }
     private void ToClearScene()
     {
