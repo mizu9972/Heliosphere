@@ -5,10 +5,8 @@ using UnityEngine.UI;
 using UniRx;//Reactive Extension for Unity
 using UniRx.Triggers;
 using UnityEngine.SceneManagement;
-
-public class WAVEGameManager : MonoBehaviour, IGameManager
+public class FeverGameManager : MonoBehaviour, IGameManager
 {
-    private bool FeverFlg;//フィーバー状態か
     public float SceneChangeTime = 0;
 
     [Header("isActiveを操作するオブジェクト群")]
@@ -25,13 +23,10 @@ public class WAVEGameManager : MonoBehaviour, IGameManager
     [SerializeField, Header("次のWAVEのGameManager")]
     GameObject nextGameManager = null;
 
-    [SerializeField, Header("エネミーを破壊した時のスコア")]
-    double EnemyBreakScore;
+    [SerializeField, Header("フィーバーマネージャー")]
+    GameObject myFeverManager;
 
-    [SerializeField, Header("フレンドを破壊した時のスコア")]
-    double FriendBreakScore;
 
-    private int FriendDestroyCount;
 
     private int EnemyDesroyCount;
 
@@ -41,11 +36,10 @@ public class WAVEGameManager : MonoBehaviour, IGameManager
     [SerializeField, Header("接近してくる時間")]
     float ApproachSpeed = 1;
     private int Count = 0;//連続でエネミーを破壊した数
-    private Canvas canvas;//スコア表示のキャンバス
+
     // Start is called before the first frame update
     void Start()
     {
-        canvas = GameObject.Find("ScoreCanvas").GetComponent<Canvas>();
         MyTrans = this.GetComponent<Transform>();
         subVector = TargetTrans - MyTrans.position;
         subVector /= ApproachSpeed;
@@ -55,7 +49,7 @@ public class WAVEGameManager : MonoBehaviour, IGameManager
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     void Init()
@@ -63,7 +57,6 @@ public class WAVEGameManager : MonoBehaviour, IGameManager
         //シーン遷移条件を判定しシーン遷移用の関数へ
         //Whereで条件判定し、Take(1)で一回だけ実行、Subscribeで処理
         this.UpdateAsObservable().Where(_ => (EnemyDesroyCount >= Enemy_GameClearPoint)).Take(1).Subscribe(_ => ToClearScene());
-        this.UpdateAsObservable().Where(_ => (FriendDestroyCount >= Friend_GameOverPoint)).Take(1).Subscribe(_ => ToGameOverScene());
         SceneManager.sceneUnloaded += OnSceneUnloaded;
     }
     public void AllChangeActive()
@@ -78,16 +71,11 @@ public class WAVEGameManager : MonoBehaviour, IGameManager
     }
     public void AddFriendPoint()
     {
-        FriendDestroyCount += 1;//破壊されたFriend数加算
-        //Score.csのScoreCountを実行(引数は-FriendBreakScore)
-        canvas.GetComponent<Score>().ScoreCount(-FriendBreakScore);
     }
 
     public void AddEnemyPoint()
     {
         EnemyDesroyCount += 1;//破壊されたEnemy数加算
-        //Score.csのScoreCountを実行(引数はEnemyBreakScore)
-        canvas.GetComponent<Score>().ScoreCount(EnemyBreakScore);
     }
     private void ToClearScene()
     {
@@ -99,28 +87,19 @@ public class WAVEGameManager : MonoBehaviour, IGameManager
 
     private void nextWave()
     {
-        if(nextGameManager != null)
+        if (nextGameManager != null)
         {
             //次のウェーブへ
             nextGameManager.gameObject.SetActive(true);
             nextGameManager.GetComponent<WAVEGameManager>().ApproachStart();
-        }else
+        }
+        else
         {
             Debug.Log("クリア");
-            AllChangeActive();
-            GameObject.Find("Manager").GetComponent<Manager>().CallClear();
+            myFeverManager.GetComponent<FeverManager>().FeverFinish();
         }
     }
 
-    private void ToGameOverScene()
-    {
-        Debug.Log("ゲームオーバー");
-        AllChangeActive();
-        //SceneChangeTimeの分だけ遅らせて
-        //ゲームオーバーシーンへ
-        Observable.Timer(System.TimeSpan.FromSeconds(SceneChangeTime)).Subscribe(_ => GameObject.Find("Manager").GetComponent<Manager>().CallResult());
-        GameObject.Find("Manager").GetComponent<Manager>().ChengeActive(false);
-    }
     void OnSceneUnloaded(Scene scene)
     {
         Debug.Log("実行");
@@ -141,15 +120,10 @@ public class WAVEGameManager : MonoBehaviour, IGameManager
             .TakeWhile(_ => MyTrans.position.y < 0)
             .Subscribe(_ => ApproarchFunc());
     }
-    
+
     void ApproarchFunc()
     {
         MyTrans.position += subVector;
-    }
-    
-    public bool GetFeverFlg()//フィーバーフラグを受け取る
-    {
-        return FeverFlg;
     }
 
 }

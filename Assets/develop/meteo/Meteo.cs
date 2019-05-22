@@ -12,6 +12,8 @@ public class Meteo : MonoBehaviour,ITargetFunctionByTransform
     [SerializeField, Header("衝突の移動量の倍率")]
     float PowerRatio;
 
+    [SerializeField, Header("隕石の落下")]
+    float Gravity_Y = -9.8f;
     private Transform MyTrans;
     private Rigidbody MyRigid;
     // Start is called before the first frame update
@@ -26,7 +28,7 @@ public class Meteo : MonoBehaviour,ITargetFunctionByTransform
     // Update is called once per frame
     void Update()
     {
-        
+       
     }
 
     public void Hit(Transform Trans)
@@ -34,9 +36,10 @@ public class Meteo : MonoBehaviour,ITargetFunctionByTransform
         MyTrans = this.GetComponent<Transform>();
         //位置差を計算
         Vector3 subTrans = Trans.position - MyTrans.position;
-
+        Vector3 Gravity = new Vector3(0, Gravity_Y, 0);
         //力を加える
         MyRigid.AddForceAtPosition(subTrans * PowerRatio, MyTrans.position);
+        MyRigid.AddForce(Gravity);
     }
 
     void OnTriggerEnter(Collider other)
