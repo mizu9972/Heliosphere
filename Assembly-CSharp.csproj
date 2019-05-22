@@ -65,6 +65,7 @@
     <Compile Include="Assets\ChangeActiveInterface.cs" />
     <Compile Include="Assets\develop\meteo\Meteo.cs" />
     <Compile Include="Assets\develop\meteo\ObjectMoveByGravity.cs" />
+    <Compile Include="Assets\FeverSystem.cs" />
     <Compile Include="Assets\IMoveOperate.cs" />
     <Compile Include="Assets\Scenes\Game\Comet\Comet\ColliderScript.cs" />
     <Compile Include="Assets\Scenes\Game\Comet\Comet\EllipseMove.cs" />
