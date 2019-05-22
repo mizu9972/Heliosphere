@@ -52,4 +52,15 @@ public class Meteo : MonoBehaviour,ITargetFunctionByTransform
             other.gameObject.GetComponent<ITragetFunction>().Hit();
         }
     }
+
+    public void ForceSet(Vector3 inForce,Vector3 inPoint)
+    {
+        InitAddForce = inForce;
+        InitPowerPoint = inPoint;
+
+        MyRigid = this.GetComponent<Rigidbody>();
+        MyTrans = this.GetComponent<Transform>();
+
+        MyRigid.AddForceAtPosition(InitAddForce, MyTrans.position + InitPowerPoint);
+    }
 }

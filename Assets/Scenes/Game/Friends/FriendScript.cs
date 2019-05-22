@@ -43,7 +43,11 @@ public class FriendScript : MonoBehaviour,ITragetFunction
         GameObject explosion;
         explosion = Instantiate(ExplosionEffect, this.transform);
         this.GetComponent<MeshRenderer>().enabled = false;
-        this.GetComponent<BoxCollider>().enabled = false;
+        this.GetComponent<BoxCollider>().enabled = false; 
+
+
+
+        this.transform.Find("friend_ver2").gameObject.SetActive(false);
         Observable.Timer(System.TimeSpan.FromSeconds(DestroyInterval)).Take(1).Subscribe(_ => Destroy(this.gameObject));
     }
 }

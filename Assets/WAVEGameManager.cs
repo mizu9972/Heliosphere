@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 
 public class WAVEGameManager : MonoBehaviour, IGameManager
 {
-    
+    private bool FeverFlg;//フィーバー状態か
     public float SceneChangeTime = 0;
 
     [Header("isActiveを操作するオブジェクト群")]
@@ -35,7 +35,8 @@ public class WAVEGameManager : MonoBehaviour, IGameManager
     private Vector3 subVector;
     [SerializeField, Header("接近してくる時間")]
     float ApproachSpeed = 1;
-    float Count = 0;
+    private int Count = 0;//連続でエネミーを破壊した数
+
     // Start is called before the first frame update
     void Start()
     {
@@ -130,9 +131,15 @@ public class WAVEGameManager : MonoBehaviour, IGameManager
             .TakeWhile(_ => MyTrans.position.y < 0)
             .Subscribe(_ => ApproarchFunc());
     }
-
+    
     void ApproarchFunc()
     {
         MyTrans.position += subVector;
     }
+    
+    public bool GetFeverFlg()//フィーバーフラグを受け取る
+    {
+        return FeverFlg;
+    }
+
 }
