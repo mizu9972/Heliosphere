@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class SetScorePos : MonoBehaviour
 {
-    private Vector3 Pos;
+    private RectTransform MyTrans;
     private Camera mainCamera;
     // Start is called before the first frame update
     void Start()
     {
         mainCamera = GameObject.Find("Main Camera").GetComponent<Camera>();
-        Pos = this.GetComponent<RectTransform>().position;
-        Pos = GetScreenTopLeft();
+        MyTrans = this.GetComponent<RectTransform>();
+        MyTrans.anchoredPosition= GetScreenTopLeft();
     }
 
     // Update is called once per frame
