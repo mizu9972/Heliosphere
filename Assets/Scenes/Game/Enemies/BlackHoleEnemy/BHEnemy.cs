@@ -47,6 +47,7 @@ public class BHEnemy : MonoBehaviour, ITragetFunction
         this.GetComponent<MeshRenderer>().enabled = false;
         this.GetComponent<BoxCollider>().enabled = false;
 
+        this.transform.Find("enemy_ver2").gameObject.SetActive(false);
         GameObject Born;
         Observable.Timer(System.TimeSpan.FromSeconds(DestroyInterval)).Take(1).Subscribe(_ => Born = Instantiate(BornObject, this.transform));
         //DestroyInterval秒後にオブジェクト消去
