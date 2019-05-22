@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1336881089771299768}
   - component: {fileID: 2417373156013099099}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: MeteoSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,5 +44,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SpawnTime: 0
-  SpawnObject: {fileID: 7672228107646529388, guid: 7e52a447fbe1621438e9c04424dbef0c,
+  SpawnObject: {fileID: 2167729673799386366, guid: 6b659b5d1cc797f46ab8f2c478b53b80,
     type: 3}
+  InitAddForce: {x: 0, y: 0, z: 0}
+  InitPowerPoint: {x: 0, y: 0, z: 0}
