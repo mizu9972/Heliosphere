@@ -105,6 +105,9 @@
      <Compile Include="Assets\Scenes\StageSelect\Scripts\UVEdit.cs" />
      <Compile Include="Assets\Scenes\Title\FeedIn.cs" />
      <Compile Include="Assets\Scenes\Title\TitleManager.cs" />
+     <Compile Include="Assets\Score\Score.cs" />
+     <Compile Include="Assets\Score\ScoreDraw.cs" />
+     <Compile Include="Assets\Score\SetScorePos.cs" />
      <Compile Include="Assets\Spawn_Meteo.cs" />
      <Compile Include="Assets\Template\GameObjects\ChangeActive.cs" />
      <Compile Include="Assets\Template\GameObjects\GameControllerScript.cs" />

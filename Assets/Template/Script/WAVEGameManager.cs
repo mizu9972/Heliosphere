@@ -25,16 +25,15 @@ public class WAVEGameManager : MonoBehaviour, IGameManager
     [SerializeField, Header("次のWAVEのGameManager")]
     GameObject nextGameManager = null;
 
-<<<<<<< HEAD:Assets/WAVEGameManager.cs
     [SerializeField, Header("エネミーを破壊した時のスコア")]
     double EnemyBreakScore;
 
     [SerializeField, Header("フレンドを破壊した時のスコア")]
     double FriendBreakScore;
-=======
+
     [SerializeField, Header("ゲームマスター")]
     GameObject GameMaster;
->>>>>>> develop:Assets/Template/Script/WAVEGameManager.cs
+
 
     private int FriendDestroyCount;
 
@@ -91,12 +90,9 @@ public class WAVEGameManager : MonoBehaviour, IGameManager
     public void AddEnemyPoint()
     {
         EnemyDesroyCount += 1;//破壊されたEnemy数加算
-<<<<<<< HEAD:Assets/WAVEGameManager.cs
         //Score.csのScoreCountを実行(引数はEnemyBreakScore)
         canvas.GetComponent<Score>().ScoreCount(EnemyBreakScore);
-=======
         GameMaster.GetComponent<GameMaster>().AddEnemycount();
->>>>>>> develop:Assets/Template/Script/WAVEGameManager.cs
     }
     private void ToClearScene()
     {
