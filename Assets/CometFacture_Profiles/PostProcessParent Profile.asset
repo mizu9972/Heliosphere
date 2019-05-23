@@ -1474,7 +1474,7 @@ MonoBehaviour:
     value: 1
   intensity:
     overrideState: 1
-    value: 22.17
+    value: 1
   threshold:
     overrideState: 1
     value: 0
@@ -1486,10 +1486,10 @@ MonoBehaviour:
     value: 65535
   diffusion:
     overrideState: 1
-    value: 1
+    value: 5
   anamorphicRatio:
     overrideState: 0
-    value: -0.12
+    value: -1
   color:
     overrideState: 1
     value: {r: 0, g: 0, b: 0, a: 1}
@@ -1502,4 +1502,4 @@ MonoBehaviour:
     defaultState: 1
   dirtIntensity:
     overrideState: 1
-    value: 0.04
+    value: 1
