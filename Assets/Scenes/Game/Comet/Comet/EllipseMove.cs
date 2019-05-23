@@ -12,8 +12,9 @@ public class EllipseMove : MonoBehaviour, ChangeActiveInterface
     private Transform MyTrans;//自身
     [SerializeField,Header("角度")]
     private float Angle = 0.0f;//角度
-    [SerializeField, Header("速度")]
-    private float Speed = 1.5f;//速度
+    [SerializeField, Header("一周にかける時間")]
+    private float TurnTime = 4.5f;
+    private float Speed;//一秒間の回転角度
     private float AngleToRadian = Mathf.PI / 180.0f;//ラジアンに変換
     private float Radian;//ラジアンに変換後の数値保存用
     private Rigidbody MyRigidB;
@@ -40,6 +41,8 @@ public class EllipseMove : MonoBehaviour, ChangeActiveInterface
         setPosition();//初期位置へ
         
         GetStartPosition();
+
+        Speed = 360.0f / TurnTime;
     }
 
     // Update is called once per frame
@@ -63,7 +66,7 @@ public class EllipseMove : MonoBehaviour, ChangeActiveInterface
     private void setPosition()
     {
         //角度を更新して彗星を移動させる関数
-        Angle += Speed;
+        Angle += Speed * Time.deltaTime;
         Angle = (Angle % 360 + 360) % 360;//角度を0から360の間の数値に調整
         Radian = Angle * AngleToRadian;//ラジアンに変換
 
@@ -104,7 +107,7 @@ public class EllipseMove : MonoBehaviour, ChangeActiveInterface
     public void SetStartPosition()
     {
         Angle = 0.0f;
-        Speed = 1.5f;
+        Speed = 360.0f / TurnTime;
         MyTrans = StartPosition;
     }
 }

@@ -9821,10 +9821,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sunTrans: {fileID: 0}
   Angle: 0
-  Speed: 1.5
+  TurnTime: 3
   CenterPos: {x: 0, y: 0}
   Radius: {x: 13, y: 13}
   Acceleration: {x: 0, y: 0, z: 0}
+  isActive: 0
 --- !u!135 &2592975415085212245
 SphereCollider:
   m_ObjectHideFlags: 0
