@@ -46,10 +46,12 @@ public class WAVEGameManager : MonoBehaviour, IGameManager
     float ApproachSpeed = 1;
     private int Count = 0;//連続でエネミーを破壊した数
     private Canvas canvas;//スコア表示のキャンバス
+    private Canvas nowWave;//ウェーブ
     // Start is called before the first frame update
     void Start()
     {
         canvas = GameObject.Find("ScoreCanvas").GetComponent<Canvas>();
+        nowWave = GameObject.Find("WaveCanvas").GetComponent<Canvas>();
         MyTrans = this.GetComponent<Transform>();
         subVector = TargetTrans - MyTrans.position;
         subVector /= ApproachSpeed;
@@ -110,6 +112,8 @@ public class WAVEGameManager : MonoBehaviour, IGameManager
             nextGameManager.gameObject.SetActive(true);
             nextGameManager.GetComponent<WAVEGameManager>().ApproachStart();
             GameObject.Find("GameMaster").GetComponent<GameMaster>().WAVEset(nextGameManager);
+            //ここで別スクリプトのカウント関数実行
+            nowWave.GetComponent<WaveCount>().WaveCounrer();
             this.gameObject.SetActive(false);//自身を無効化
         }else
         {
