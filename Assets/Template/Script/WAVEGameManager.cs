@@ -119,7 +119,7 @@ public class WAVEGameManager : MonoBehaviour, IGameManager
         {
             Debug.Log("クリア");
             AllChangeActive();
-            GameObject.Find("Manager").GetComponent<Manager>().CallClear();
+            GameObject.Find("Manager").GetComponent<Manager>().CallWAVEClear();
         }
     }
 
