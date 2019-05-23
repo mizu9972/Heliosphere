@@ -12,18 +12,27 @@ public class GameMaster : MonoBehaviour
     [SerializeField, Header("フィーバーWAVEプリセット")]
     GameObject FeverPrehab;
 
+    [SerializeField, Header("フィーバーモード移行スコア")]
+    double FeverScore = 1;
+
     private GameObject NowFeverObj;
     private int enemycount = 0;
+    private double ScoreCount;//フィーバーモードへのカウント用 
     // Start is called before the first frame update
     void Start()
     {
-        this.UpdateAsObservable().Where(_ => enemycount >= 1).Subscribe(_ => FeverStart());
+        this.UpdateAsObservable().Where(_ => ScoreCount >= FeverScore).Subscribe(_ => FeverStart());
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    public void CountUp(double _Score)
+    {
+        ScoreCount += _Score;
     }
 
     public void WAVEset(GameObject SetManager)
@@ -39,7 +48,7 @@ public class GameMaster : MonoBehaviour
         NowFeverObj = Instantiate(FeverPrehab);
         NowFeverObj.gameObject.SetActive(true);
         NowFeverObj.GetComponent<FeverManager>().FeverStart();
-        enemycount = 0;
+        ScoreCount = 0;
     }
 
     public void FeverFinish()
