@@ -14,7 +14,10 @@ public class GameMaster : MonoBehaviour
 
     [SerializeField, Header("フィーバーモード移行スコア")]
     double FeverScore = 1;
-    
+
+    [SerializeField,Header("フィーバーの文字表示キャンバス")]
+    public Canvas FeverCanvas;
+
     private GameObject NowFeverObj;
     private int enemycount = 0;
     private double ScoreCount;//フィーバーモードへのカウント用 
@@ -45,6 +48,9 @@ public class GameMaster : MonoBehaviour
 
     public void FeverStart()
     {
+        //フィーバーのキャンバスのenableをtrueに
+        FeverCanvas.gameObject.SetActive(true);
+        FeverCanvas.GetComponentInChildren<FeverBlink>().AlphaReset();//α値リセット
         NowWAVEGameManager.SetActive(false);
 
         NowFeverObj = Instantiate(FeverPrehab);
@@ -59,6 +65,8 @@ public class GameMaster : MonoBehaviour
 
     public void FeverFinish()
     {
+        //フィーバーのキャンバスのenableをfalseに
+        FeverCanvas.gameObject.SetActive(false);
         NowFeverObj.gameObject.SetActive(false);
         //Destroy(FeverPrehab.gameObject);
 
