@@ -34,6 +34,8 @@ public class WAVEGameManager : MonoBehaviour, IGameManager
     [SerializeField, Header("ゲームマスター")]
     GameObject GameMaster;
 
+    [SerializeField, Header("エネミー爆発時間")]
+    float DestryInterval = 1;
 
     private int FriendDestroyCount;
 
@@ -110,12 +112,12 @@ public class WAVEGameManager : MonoBehaviour, IGameManager
             nextGameManager.gameObject.SetActive(true);
             nextGameManager.GetComponent<WAVEGameManager>().ApproachStart();
             GameObject.Find("GameMaster").GetComponent<GameMaster>().WAVEset(nextGameManager);
-            this.gameObject.SetActive(false);//自身を無効化
+            Observable.Timer(System.TimeSpan.FromSeconds(DestryInterval)).Subscribe(_ => this.gameObject.SetActive(false));//自身を無効化
         }else
         {
             Debug.Log("クリア");
             AllChangeActive();
-            GameObject.Find("Manager").GetComponent<Manager>().CallClear();
+            GameObject.Find("Manager").GetComponent<Manager>().CallWAVEClear();
         }
     }
 
