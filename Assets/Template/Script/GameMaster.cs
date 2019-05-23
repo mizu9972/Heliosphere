@@ -12,7 +12,7 @@ public class GameMaster : MonoBehaviour
     [SerializeField, Header("フィーバーWAVEプリセット")]
     GameObject FeverPrehab;
 
-
+    private GameObject NowFeverObj;
     private int enemycount = 0;
     // Start is called before the first frame update
     void Start()
@@ -35,14 +35,17 @@ public class GameMaster : MonoBehaviour
     public void FeverStart()
     {
         NowWAVEGameManager.SetActive(false);
-        FeverPrehab.gameObject.SetActive(true);
-        FeverPrehab.GetComponent<FeverManager>().FeverStart();
+
+        NowFeverObj = Instantiate(FeverPrehab);
+        NowFeverObj.gameObject.SetActive(true);
+        NowFeverObj.GetComponent<FeverManager>().FeverStart();
         enemycount = 0;
     }
 
     public void FeverFinish()
     {
-        FeverPrehab.gameObject.SetActive(false);
+        NowFeverObj.gameObject.SetActive(false);
+        //Destroy(FeverPrehab.gameObject);
         NowWAVEGameManager.SetActive(true);
     }
 
