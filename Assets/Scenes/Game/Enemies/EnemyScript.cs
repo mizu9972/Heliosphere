@@ -16,12 +16,17 @@ public class EnemyScript : MonoBehaviour,ITragetFunction
 
     [SerializeField]
     float DestroyInterval;
+
+    GameObject EffectBox = null;
     // Start is called before the first frame update
     void Start()
     {
         MyRigidB = this.GetComponent<Rigidbody>();
         audioSource = this.GetComponent<AudioSource>();
+
+        EffectBox = GameObject.FindWithTag("EffectBox");
     }
+
 
     // Update is called once per frame
     void Update()
@@ -41,6 +46,11 @@ public class EnemyScript : MonoBehaviour,ITragetFunction
         GameManager.GetComponent<IGameManager>().AddEnemyPoint();
         GameObject explosion;
         explosion = Instantiate(ExplosionEffect, this.transform);
+
+        if(EffectBox != null)
+        {
+            explosion.transform.parent = EffectBox.transform;
+        }
         this.GetComponent<MeshRenderer>().enabled = false;
         this.GetComponent<BoxCollider>().enabled = false;
 
