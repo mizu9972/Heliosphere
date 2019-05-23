@@ -1031,6 +1031,7 @@ MonoBehaviour:
   EnemyBreakScore: 1
   FriendBreakScore: 0
   GameMaster: {fileID: 218295583}
+  DestryInterval: 1
   ApproachSpeed: 100
 --- !u!114 &1166544841
 MonoBehaviour:
@@ -1667,6 +1668,7 @@ MonoBehaviour:
   EnemyBreakScore: 1
   FriendBreakScore: 0
   GameMaster: {fileID: 218295583}
+  DestryInterval: 1
   ApproachSpeed: 100
 --- !u!114 &1762688148
 MonoBehaviour:
@@ -2290,6 +2292,11 @@ PrefabInstance:
       propertyPath: NowWAVEGameManager
       value: 
       objectReference: {fileID: 9112584729609429536}
+    - target: {fileID: 3363374701329921275, guid: 2c8bcda86af52494e992d81e96bab65a,
+        type: 3}
+      propertyPath: FeverScore
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c8bcda86af52494e992d81e96bab65a, type: 3}
 --- !u!1001 &4140862704025157069
@@ -2854,6 +2861,11 @@ PrefabInstance:
       propertyPath: GameMaster
       value: 
       objectReference: {fileID: 218295583}
+    - target: {fileID: 1342253054373635504, guid: 8723c20fe00bb6d4199206f00f6d9dd4,
+        type: 3}
+      propertyPath: DestryInterval
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8723c20fe00bb6d4199206f00f6d9dd4, type: 3}
 --- !u!1001 &7984879781174118963

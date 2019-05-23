@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 2146008357265865439}
   - component: {fileID: 1342253054373635504}
   m_Layer: 0
-  m_Name: GameManager
+  m_Name: WAVEGameManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -116,6 +116,7 @@ MonoBehaviour:
   EnemyBreakScore: 1
   FriendBreakScore: 0
   GameMaster: {fileID: 0}
+  DestryInterval: 1
   ApproachSpeed: 1
 --- !u!1 &2002089923699361767
 GameObject:

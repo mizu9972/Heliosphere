@@ -13,6 +13,8 @@ public class Manager : MonoBehaviour
     GameObject Result;
     [SerializeField, Header("クリアボタン全体")]
     GameObject Clear;
+    [SerializeField, Header("WAVEモードのクリア画面")]
+    GameObject WAVEClear;
 
     [SerializeField, Header("最初に選択状態にするオプションボタン")]
     GameObject InitialOptionButton;
@@ -20,7 +22,8 @@ public class Manager : MonoBehaviour
     GameObject InitialResultButton;
     [SerializeField, Header("最初に選択状態にするクリアボタン")]
     GameObject InitialClearButton;
-
+    [SerializeField, Header("WAVE用最初に選択状態にするクリアボタン")]
+    GameObject InitialWAVEClearButton;
     private bool isOptionMode = false;//実行中かどうか
     private bool isResultMode = false;
 
@@ -85,6 +88,22 @@ public class Manager : MonoBehaviour
         {
             //ボタン選択状態に
             InitialClearButton.GetComponent<IOnSelected>().OnSelected();
+        }
+    }
+
+    public void CallWAVEClear()
+    {
+        ChangeResultMode();
+
+        var Selectable = InitialWAVEClearButton.GetComponent<IOnSelected>();
+
+        WAVEClear.SetActive(true);
+
+
+        if (Selectable != null)
+        {
+            //ボタン選択状態に
+            InitialWAVEClearButton.GetComponent<IOnSelected>().OnSelected();
         }
     }
     public void ChangeResultMode()

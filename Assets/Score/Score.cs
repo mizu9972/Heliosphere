@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class Score : MonoBehaviour
 {
+    private GameObject GameMaster;
     private double Count;//スコアカウント
     // Start is called before the first frame update
     void Start()
     {
-        
+        GameMaster = GameObject.Find("GameMaster").gameObject;
+
     }
 
     // Update is called once per frame
@@ -20,7 +22,7 @@ public class Score : MonoBehaviour
     {
         Debug.Log(value);
         Count += value;
-        Debug.Log("カウントプラス");
+        GameMaster.GetComponent<GameMaster>().CountUp(value);
         if(Count>=99999)//マックススコア
         {
             Count = 99999;
