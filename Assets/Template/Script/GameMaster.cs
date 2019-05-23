@@ -14,14 +14,16 @@ public class GameMaster : MonoBehaviour
 
     [SerializeField, Header("フィーバーモード移行スコア")]
     double FeverScore = 1;
-
+    
     private GameObject NowFeverObj;
     private int enemycount = 0;
     private double ScoreCount;//フィーバーモードへのカウント用 
+    private GameObject MyCamera;
     // Start is called before the first frame update
     void Start()
     {
         this.UpdateAsObservable().Where(_ => ScoreCount >= FeverScore).Subscribe(_ => FeverStart());
+        MyCamera = GameObject.FindWithTag("MainCamera");
     }
 
     // Update is called once per frame
@@ -47,7 +49,11 @@ public class GameMaster : MonoBehaviour
 
         NowFeverObj = Instantiate(FeverPrehab);
         NowFeverObj.gameObject.SetActive(true);
+
+        MyCamera.GetComponent<SwitchPPS>().ChangeLayer("FeverPostProcessing");
+
         NowFeverObj.GetComponent<FeverManager>().FeverStart();
+
         ScoreCount = 0;
     }
 
@@ -55,6 +61,9 @@ public class GameMaster : MonoBehaviour
     {
         NowFeverObj.gameObject.SetActive(false);
         //Destroy(FeverPrehab.gameObject);
+
+        MyCamera.GetComponent<SwitchPPS>().ChangeLayer("PostProcessing");
+
         NowWAVEGameManager.SetActive(true);
     }
 

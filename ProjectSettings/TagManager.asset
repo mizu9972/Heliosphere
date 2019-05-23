@@ -7,6 +7,7 @@ TagManager:
   - Enemy
   - Comet
   - FallinHole
+  - EffectBox
   layers:
   - Default
   - TransparentFX
