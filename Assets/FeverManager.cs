@@ -7,12 +7,12 @@ public class FeverManager : MonoBehaviour
     [SerializeField, Header("先頭のWAVE")]
     GameObject StartFeverWAVE;
 
-    [SerializeField, Header("ゲームマスター")]
+    //[SerializeField, Header("ゲームマスター")]
     GameObject GameMaster;
     // Start is called before the first frame update
     void Start()
     {
-        
+        GameMaster = GameObject.Find("GameMaster").gameObject;
     }
 
     // Update is called once per frame
@@ -24,6 +24,7 @@ public class FeverManager : MonoBehaviour
     public void FeverStart()
     {
         StartFeverWAVE.gameObject.SetActive(true);
+        StartFeverWAVE.GetComponent<FeverGameManager>().Init();
         StartFeverWAVE.GetComponent<FeverGameManager>().ApproachStart();
     }
 

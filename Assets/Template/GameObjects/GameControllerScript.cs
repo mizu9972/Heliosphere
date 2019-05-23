@@ -11,6 +11,7 @@ public class GameControllerScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        ControllObject = GameObject.Find("core").gameObject;
         //十字キーに入力があったらControll関数呼び出し
         this.UpdateAsObservable().Where(_ => (Input.GetAxisRaw("Horizontal") != 0 || Input.GetAxisRaw("Vertical") != 0)).Subscribe(_ => Controll(ControllObject));
     }
