@@ -27,6 +27,14 @@ public class FeverGameManager : MonoBehaviour, IGameManager
     GameObject myFeverManager;
 
 
+    [SerializeField, Header("エネミーを破壊した時のスコア")]
+    double EnemyBreakScore;
+
+    [SerializeField, Header("フレンドを破壊した時のスコア")]
+    double FriendBreakScore;
+
+
+    private int FriendDestroyCount;
 
     private int EnemyDesroyCount;
 
@@ -36,10 +44,11 @@ public class FeverGameManager : MonoBehaviour, IGameManager
     [SerializeField, Header("接近してくる時間")]
     float ApproachSpeed = 1;
     private int Count = 0;//連続でエネミーを破壊した数
-
+    private Canvas canvas;//スコア表示のキャンバス
     // Start is called before the first frame update
     void Start()
     {
+        canvas = GameObject.Find("ScoreCanvas").GetComponent<Canvas>();
         MyTrans = this.GetComponent<Transform>();
         subVector = TargetTrans - MyTrans.position;
         subVector /= ApproachSpeed;
@@ -71,11 +80,16 @@ public class FeverGameManager : MonoBehaviour, IGameManager
     }
     public void AddFriendPoint()
     {
+        FriendDestroyCount += 1;//破壊されたFriend数加算
+        //Score.csのScoreCountを実行(引数は-FriendBreakScore)
+        canvas.GetComponent<Score>().ScoreCount(-FriendBreakScore);
     }
 
     public void AddEnemyPoint()
     {
         EnemyDesroyCount += 1;//破壊されたEnemy数加算
+        //Score.csのScoreCountを実行(引数はEnemyBreakScore)
+        canvas.GetComponent<Score>().ScoreCount(EnemyBreakScore);
     }
     private void ToClearScene()
     {
