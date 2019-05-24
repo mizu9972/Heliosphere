@@ -1,16 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UniRx;
+using UniRx.Triggers;
 public class Score : MonoBehaviour
 {
     private GameObject GameMaster;
     private double Count;//スコアカウント
+    public GameObject AddScore;
     // Start is called before the first frame update
     void Start()
     {
         GameMaster = GameObject.Find("GameMaster").gameObject;
-
     }
 
     // Update is called once per frame
@@ -20,6 +21,15 @@ public class Score : MonoBehaviour
     }
     public void ScoreCount(double value)//スコアの計算
     {
+        //加減算される点数表示用のキャンバスのenabledをtrueにして点数を送信
+        if(AddScore)//表示状態ならenabedをfalseに
+        {
+            AddScore.SetActive(false);
+        }
+        //獲得スコア表示のやつに数字（value）セット
+        AddScore.GetComponent<AddScore>().SetAddScore(value);
+        AddScore.SetActive(true);//描画
+        Observable.Timer(System.TimeSpan.FromSeconds(1)).Subscribe(_ => AddScore.SetActive(false));
         Debug.Log(value);
         Count += value;
         GameMaster.GetComponent<GameMaster>().CountUp(value);

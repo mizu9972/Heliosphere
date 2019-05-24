@@ -13,6 +13,8 @@ public class ScoreDraw : MonoBehaviour
     //テクスチャを割り当てるサイズ
     private float TexWidth = 0.2f;
     private float TexHeight = 0.5f;
+
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -45,4 +47,5 @@ public class ScoreDraw : MonoBehaviour
             rawImage.uvRect = new Rect(U, V, TexWidth, TexHeight);
         }
     }
+    
 }
