@@ -22,10 +22,14 @@ public class AddScore : MonoBehaviour
         Digit[0] = (int)Score % 10;//1桁
         Digit[1] = ((int)Score % 100) / 10;//2桁
         Digit[2] = ((int)Score % 1000) / 100;//3桁
-        return Digit[dig - 1];
+        return Mathf.Abs(Digit[dig - 1]);
     }
     public void SetAddScore(double value)
     {
         Score = value;//引数で受け取った値をセット(獲得スコア)
+    }
+    public double GetScore()
+    {
+        return Score;
     }
 }
