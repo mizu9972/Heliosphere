@@ -18,6 +18,10 @@ public class GameMaster : MonoBehaviour
     [SerializeField,Header("フィーバーの文字表示キャンバス")]
     public Canvas FeverCanvas;
 
+    [SerializeField, Header("フィーバー中に生成するオブジェクト")]
+    GameObject FeverObject;
+    private GameObject _FeverObject;
+
     private GameObject NowFeverObj;
     private int enemycount = 0;
     private double ScoreCount;//フィーバーモードへのカウント用 
@@ -53,7 +57,10 @@ public class GameMaster : MonoBehaviour
         FeverCanvas.gameObject.SetActive(true);
         FeverCanvas.GetComponentInChildren<FeverBlink>().AlphaReset();//α値リセット
         NowWAVEGameManager.SetActive(false);
-
+        if (FeverObject != null)
+        {
+            _FeverObject = Instantiate(FeverObject);
+        }
         NowFeverObj = Instantiate(FeverPrehab);
         NowFeverObj.gameObject.SetActive(true);
 
@@ -69,8 +76,10 @@ public class GameMaster : MonoBehaviour
         //フィーバーのキャンバスのenableをfalseに
         FeverCanvas.gameObject.SetActive(false);
         NowFeverObj.gameObject.SetActive(false);
-        //Destroy(FeverPrehab.gameObject);
-
+        if (_FeverObject != null)
+        {
+            Destroy(_FeverObject);
+        }
         MyCamera.GetComponent<SwitchPPS>().ChangeLayer("PostProcessing");
 
         NowWAVEGameManager.SetActive(true);
