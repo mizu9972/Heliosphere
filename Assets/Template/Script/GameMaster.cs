@@ -35,6 +35,8 @@ public class GameMaster : MonoBehaviour
         this.UpdateAsObservable().Where(_ => ScoreCount >= FeverScore).Subscribe(_ => FeverStart());
 
         MyCamera = GameObject.FindWithTag("MainCamera");
+
+
     }
 
     // Update is called once per frame
@@ -60,11 +62,16 @@ public class GameMaster : MonoBehaviour
 
     public void FeverStart()
     {
+        var FeedInPanel = GetComponentInChildren<FeedIn>();
+        //フェードイン
+        FeedInPanel.Init(255, 0, 0.5f);
+
         //フィーバーGageのフラグの切り替え
         Fevergauge.GetComponent<FeverGauge>().SwithGauge(true);
         //フィーバーのキャンバスのenableをtrueに
         FeverCanvas.gameObject.SetActive(true);
         FeverCanvas.GetComponentInChildren<FeverBlink>().AlphaReset();//α値リセット
+
         NowWAVEGameManager.SetActive(false);
         if (FeverObject != null)
         {
@@ -82,6 +89,9 @@ public class GameMaster : MonoBehaviour
 
     public void FeverFinish()
     {
+        var FeedInPanel = GetComponentInChildren<FeedIn>();
+        //フェードイン
+        FeedInPanel.Init(255, 0, 0.5f);
         //フィーバーGageのフラグの切り替え
         Fevergauge.GetComponent<FeverGauge>().SwithGauge(false);
         //フィーバーのキャンバスのenableをfalseに
