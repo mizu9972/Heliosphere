@@ -22566,8 +22566,8 @@ MonoBehaviour:
   Friend_GameOverPoint: 1
   Enemy_GameClearPoint: 3
   nextGameManager: {fileID: 0}
-  EnemyBreakScore: 1
-  FriendBreakScore: 0
+  EnemyBreakScore: 30
+  FriendBreakScore: 200
   GameMaster: {fileID: 218295583}
   WAVECount: 1
   ApproachSpeed: 100
@@ -29756,8 +29756,8 @@ MonoBehaviour:
   Friend_GameOverPoint: 1
   Enemy_GameClearPoint: 3
   nextGameManager: {fileID: 791181323}
-  EnemyBreakScore: 1
-  FriendBreakScore: 0
+  EnemyBreakScore: 30
+  FriendBreakScore: 200
   GameMaster: {fileID: 218295583}
   WAVECount: 1
   ApproachSpeed: 100
@@ -34155,8 +34155,8 @@ MonoBehaviour:
   Friend_GameOverPoint: 1
   Enemy_GameClearPoint: 45
   nextGameManager: {fileID: 1762688146}
-  EnemyBreakScore: 20
-  FriendBreakScore: 400
+  EnemyBreakScore: 30
+  FriendBreakScore: 200
   GameMaster: {fileID: 218295583}
   WAVECount: 1
   ApproachSpeed: 100
@@ -51738,8 +51738,8 @@ MonoBehaviour:
   Friend_GameOverPoint: 1
   Enemy_GameClearPoint: 128
   nextGameManager: {fileID: 1934229664}
-  EnemyBreakScore: 20
-  FriendBreakScore: 400
+  EnemyBreakScore: 30
+  FriendBreakScore: 200
   GameMaster: {fileID: 218295583}
   WAVECount: 1
   ApproachSpeed: 100
@@ -56125,8 +56125,8 @@ MonoBehaviour:
   Friend_GameOverPoint: 84
   Enemy_GameClearPoint: 3
   nextGameManager: {fileID: 0}
-  EnemyBreakScore: 1
-  FriendBreakScore: 0
+  EnemyBreakScore: 30
+  FriendBreakScore: 200
   GameMaster: {fileID: 218295583}
   WAVECount: 1
   ApproachSpeed: 100
@@ -62773,7 +62773,7 @@ PrefabInstance:
     - target: {fileID: 3363374701329921275, guid: 2c8bcda86af52494e992d81e96bab65a,
         type: 3}
       propertyPath: FeverScore
-      value: 1000
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 3363374701329921275, guid: 2c8bcda86af52494e992d81e96bab65a,
         type: 3}
@@ -63236,16 +63236,6 @@ PrefabInstance:
     - target: {fileID: 2550043631095521501, guid: 380412b23ee415047a9669f47ef45143,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2550043631095521501, guid: 380412b23ee415047a9669f47ef45143,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2550043631095521501, guid: 380412b23ee415047a9669f47ef45143,
-        type: 3}
-      propertyPath: m_LocalScale.y
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2592975414859028448, guid: 380412b23ee415047a9669f47ef45143,
@@ -63886,7 +63876,7 @@ MonoBehaviour:
   Friend_GameOverPoint: 1
   Enemy_GameClearPoint: 31
   nextGameManager: {fileID: 1166544839}
-  EnemyBreakScore: 20
+  EnemyBreakScore: 30
   FriendBreakScore: 400
   GameMaster: {fileID: 218295583}
   WAVECount: 1
