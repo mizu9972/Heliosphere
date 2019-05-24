@@ -34,7 +34,7 @@ public class DrawSign : MonoBehaviour
         {
             //マイナス
             U = 0;
-            V = 1.0f;
+            V = 0;
         }
         rawImage.uvRect = new Rect(U, V, TexWidth, TexHeight);
     }
