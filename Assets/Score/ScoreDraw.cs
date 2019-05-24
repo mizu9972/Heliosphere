@@ -26,7 +26,7 @@ public class ScoreDraw : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
         SetTexturePosition();//テクスチャに座標をセット
     }

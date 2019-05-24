@@ -17,6 +17,7 @@ public class Score : MonoBehaviour
     int Frame = 10;
 
     public GameObject AddScore;
+    private bool isGameOver = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -42,9 +43,8 @@ public class Score : MonoBehaviour
         //一定時間経過で描画終了
         Observable.Timer(System.TimeSpan.FromSeconds(1)).
             Subscribe(_ => AddScore.SetActive(false));
-        Debug.Log(value);
         JudgeCount += value;
-        Observable.Interval(System.TimeSpan.FromMilliseconds(16)).Take(Frame).Subscribe(_ =>Count += value / Frame);
+        var Function = Observable.Interval(System.TimeSpan.FromMilliseconds(16)).Take(Frame).Where(_ =>isGameOver == false).Subscribe(_ =>Count += value / Frame);
         GameMaster.GetComponent<GameMaster>().CountUp(value);
         if(JudgeCount >= MaxCount)//マックススコア
         {
@@ -54,6 +54,8 @@ public class Score : MonoBehaviour
         {
             JudgeCount = 0;
             Count = 0;
+
+            isGameOver = true;
             GameMaster.GetComponent<GameMaster>().ToGameOver();
         }
         Debug.Log(JudgeCount);
