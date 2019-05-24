@@ -65,6 +65,11 @@ public class FeverGameManager : MonoBehaviour, IGameManager
     void Update()
     {
         TimeCount += Time.deltaTime;
+
+        if(MyTrans.position.y > 0)
+        {
+            MyTrans.position = new Vector3(MyTrans.position.x, 0.0f, MyTrans.position.z);
+        }
     }
 
     public void Init()
@@ -143,7 +148,7 @@ public class FeverGameManager : MonoBehaviour, IGameManager
     {
         MyTrans = this.GetComponent<Transform>();
         Observable.Interval(System.TimeSpan.FromMilliseconds(16))
-            .TakeWhile(_ => MyTrans.position.y < 0)
+            .Where(_ => MyTrans.position.y < 0)
             .Subscribe(_ => ApproarchFunc());
     }
 
