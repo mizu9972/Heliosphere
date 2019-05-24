@@ -69,7 +69,7 @@ public class FeverGameManager : MonoBehaviour, IGameManager
     {
         //シーン遷移条件を判定しシーン遷移用の関数へ
         //Whereで条件判定し、Take(1)で一回だけ実行、Subscribeで処理
-        this.UpdateAsObservable().Where(_ => (TimeCount >= TimeToClear + 1)).Take(1).Subscribe(_ => ToClearScene());
+        this.UpdateAsObservable().Where(_ => (TimeCount >= TimeToClear)).Take(1).Subscribe(_ => ToClearScene());
         SceneManager.sceneUnloaded += OnSceneUnloaded;
         PlayerCore = GameObject.Find("core").gameObject;
         Comet = GameObject.Find("CometVer100").gameObject;

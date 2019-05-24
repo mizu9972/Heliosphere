@@ -9,6 +9,8 @@ public class ToSelectScene : MonoBehaviour,IOnSelected
 {
     [SerializeField, Header("リザルトボタン全体")]
     GameObject Result;
+    [SerializeField, Header("リザルトボタン全体")]
+    GameObject WAVEResult;
     Selectable Me;
     public GameObject manager;
     public void OnClick()
@@ -20,6 +22,7 @@ public class ToSelectScene : MonoBehaviour,IOnSelected
         SceneManager.LoadScene("StageSelectScene");
 
         Result.SetActive(false);
+        WAVEResult.SetActive(false);
     }
 
     public void OnSelected()
