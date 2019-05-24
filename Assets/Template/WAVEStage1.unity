@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.005
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0074162236, g: 0.0077370056, b: 0.006831892, a: 0.005}
+  m_IndirectSpecularColor: {r: 0.0074162055, g: 0.00773699, b: 0.006831881, a: 0.005}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -22542,7 +22542,7 @@ GameObject:
   - component: {fileID: 791181324}
   m_Layer: 0
   m_Name: GameManager (5)
-  m_TagString: Untagged
+  m_TagString: GameManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -22569,6 +22569,7 @@ MonoBehaviour:
   EnemyBreakScore: 1
   FriendBreakScore: 0
   GameMaster: {fileID: 218295583}
+  WAVECount: 1
   ApproachSpeed: 100
 --- !u!114 &791181325
 MonoBehaviour:
@@ -29731,7 +29732,7 @@ GameObject:
   - component: {fileID: 984633898}
   m_Layer: 0
   m_Name: GameManager (4)
-  m_TagString: Untagged
+  m_TagString: GameManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29758,6 +29759,7 @@ MonoBehaviour:
   EnemyBreakScore: 1
   FriendBreakScore: 0
   GameMaster: {fileID: 218295583}
+  WAVECount: 1
   ApproachSpeed: 100
 --- !u!114 &984633899
 MonoBehaviour:
@@ -34129,7 +34131,7 @@ GameObject:
   - component: {fileID: 1166544840}
   m_Layer: 0
   m_Name: GameManager (1)
-  m_TagString: Untagged
+  m_TagString: GameManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -34156,6 +34158,7 @@ MonoBehaviour:
   EnemyBreakScore: 20
   FriendBreakScore: 400
   GameMaster: {fileID: 218295583}
+  WAVECount: 1
   ApproachSpeed: 100
 --- !u!114 &1166544841
 MonoBehaviour:
@@ -51711,7 +51714,7 @@ GameObject:
   - component: {fileID: 1762688147}
   m_Layer: 0
   m_Name: GameManager (2)
-  m_TagString: Untagged
+  m_TagString: GameManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -51738,6 +51741,7 @@ MonoBehaviour:
   EnemyBreakScore: 20
   FriendBreakScore: 400
   GameMaster: {fileID: 218295583}
+  WAVECount: 1
   ApproachSpeed: 100
 --- !u!114 &1762688148
 MonoBehaviour:
@@ -56097,7 +56101,7 @@ GameObject:
   - component: {fileID: 1934229665}
   m_Layer: 0
   m_Name: GameManager (3)
-  m_TagString: Untagged
+  m_TagString: GameManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -56124,6 +56128,7 @@ MonoBehaviour:
   EnemyBreakScore: 1
   FriendBreakScore: 0
   GameMaster: {fileID: 218295583}
+  WAVECount: 1
   ApproachSpeed: 100
 --- !u!114 &1934229666
 MonoBehaviour:
@@ -60017,7 +60022,7 @@ GameObject:
   - component: {fileID: 2059971682}
   m_Layer: 0
   m_Name: StartGameManager
-  m_TagString: Untagged
+  m_TagString: GameManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -60044,6 +60049,7 @@ MonoBehaviour:
   EnemyBreakScore: 20
   FriendBreakScore: 400
   GameMaster: {fileID: 218295583}
+  WAVECount: 0
   ApproachSpeed: 1
 --- !u!114 &2059971683
 MonoBehaviour:
@@ -63856,7 +63862,7 @@ GameObject:
   - component: {fileID: 9112584729609429537}
   m_Layer: 0
   m_Name: GameManager
-  m_TagString: Untagged
+  m_TagString: GameManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -63883,6 +63889,7 @@ MonoBehaviour:
   EnemyBreakScore: 20
   FriendBreakScore: 400
   GameMaster: {fileID: 218295583}
+  WAVECount: 1
   ApproachSpeed: 100
 --- !u!4 &9118420322053553553
 Transform:
