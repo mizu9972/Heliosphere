@@ -42,7 +42,11 @@ public class GameMaster : MonoBehaviour
 
     public void CountUp(double _Score)
     {
-        ScoreCount += _Score;
+        if(_Score >= 0)
+        {
+            ScoreCount += _Score;
+        }
+
     }
 
     public void WAVEset(GameObject SetManager)
