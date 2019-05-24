@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UniRx;
+using UniRx.Triggers;
 
 public class Score : MonoBehaviour
 {
@@ -9,6 +11,8 @@ public class Score : MonoBehaviour
     private double Count = 1000;//スコアカウント
     [SerializeField,Header("マックススコア")]
     double MaxCount = 99999;
+
+    public GameObject AddScore;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +27,17 @@ public class Score : MonoBehaviour
     }
     public void ScoreCount(double value)//スコアの計算
     {
+        //加減算される点数表示用のキャンバスのenabledをtrueにして点数を送信
+        if (AddScore)//表示状態ならenabedをfalseに
+        {
+            AddScore.SetActive(false);
+        }
+        //獲得スコア表示のやつに数字（value）セット
+        AddScore.GetComponent<AddScore>().SetAddScore(value);
+        AddScore.SetActive(true);//描画
+        //一定時間経過で描画終了
+        Observable.Timer(System.TimeSpan.FromSeconds(1)).
+            Subscribe(_ => AddScore.SetActive(false));
         Debug.Log(value);
         Count += value;
         GameMaster.GetComponent<GameMaster>().CountUp(value);
@@ -40,7 +55,19 @@ public class Score : MonoBehaviour
 
     public void FeverScoreCount(double value)
     {
+        //加減算される点数表示用のキャンバスのenabledをtrueにして点数を送信
+        if (AddScore)//表示状態ならenabedをfalseに
+        {
+            AddScore.SetActive(false);
+        }
+        //獲得スコア表示のやつに数字（value）セット
+        AddScore.GetComponent<AddScore>().SetAddScore(value);
+        AddScore.SetActive(true);//描画
+        //一定時間経過で描画終了
+        Observable.Timer(System.TimeSpan.FromSeconds(1)).
+            Subscribe(_ => AddScore.SetActive(false));
         Debug.Log(value);
+
         Count += value;
 
         if (Count >= MaxCount)//マックススコア
