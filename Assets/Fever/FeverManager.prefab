@@ -329,7 +329,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c7fcd72fddee4140bc833468188ab1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotateSpeed: 0
+  RotateSpeed: 5
   isActive: 0
 --- !u!114 &3378507887607079632
 MonoBehaviour:
@@ -475,7 +475,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c7fcd72fddee4140bc833468188ab1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotateSpeed: 0
+  RotateSpeed: 5
   isActive: 0
 --- !u!114 &3378507887879780261
 MonoBehaviour:
@@ -603,7 +603,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c7fcd72fddee4140bc833468188ab1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotateSpeed: 0
+  RotateSpeed: 5
   isActive: 0
 --- !u!114 &3378507889323471783
 MonoBehaviour:
@@ -734,6 +734,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3378507887738613444}
     m_Modifications:
+    - target: {fileID: 1171825779688422883, guid: 3af6d03d1a9ea6a4093a21ccc01760ad,
+        type: 3}
+      propertyPath: m_Name
+      value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 1171825779688422883, guid: 3af6d03d1a9ea6a4093a21ccc01760ad,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1171825779688422884, guid: 3af6d03d1a9ea6a4093a21ccc01760ad,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -837,16 +847,6 @@ PrefabInstance:
     - target: {fileID: 1171825779688422884, guid: 3af6d03d1a9ea6a4093a21ccc01760ad,
         type: 3}
       propertyPath: m_Pivot.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1171825779688422883, guid: 3af6d03d1a9ea6a4093a21ccc01760ad,
-        type: 3}
-      propertyPath: m_Name
-      value: Canvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 1171825779688422883, guid: 3af6d03d1a9ea6a4093a21ccc01760ad,
-        type: 3}
-      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
