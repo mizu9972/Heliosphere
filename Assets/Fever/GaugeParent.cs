@@ -16,7 +16,8 @@ public class GaugeParent : MonoBehaviour
     private double NowScore;
     private double Per;//拡大率
     private float CntTime;//フィーバーの減少処理用
-    private float ClearTime=4;
+    [Header("フィーバータイムの継続時間")]
+    public float ClearTime=6;
     private bool Getflg;
     // Start is called before the first frame update
     void Start()
@@ -42,12 +43,13 @@ public class GaugeParent : MonoBehaviour
         {
             CntTime += Time.deltaTime;
             Per = this.GetComponentInChildren<FeverGauge>()
-                .GaugeDivision(CntTime, ClearTime / 1000);
+                .GaugeDivision((ClearTime-CntTime),ClearTime);
             SizeDown();
         }
     }
     void SizeUp()
     {
+        //拡大処理
         Vector3 SetScale = MyRectTrans.lossyScale;
         Vector3 SizeUpScale = new Vector3(MaxSize*(float)Per,
                                         SetScale.y,
@@ -58,7 +60,7 @@ public class GaugeParent : MonoBehaviour
     {
         //縮小処理
         Vector3 SetScale = MyRectTrans.lossyScale;
-        Vector3 SizeDownScale = new Vector3(MaxSize*(100-(float)Per),
+        Vector3 SizeDownScale = new Vector3(MaxSize*((float)Per),
                                         SetScale.y,
                                         SetScale.z);
         MyRectTrans.localScale = SizeDownScale;
