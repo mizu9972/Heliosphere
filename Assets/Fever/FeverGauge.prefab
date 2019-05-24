@@ -109,6 +109,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8053183215809560177}
   - component: {fileID: 8053183215809560176}
+  - component: {fileID: 4954556462844753405}
   m_Layer: 5
   m_Name: GaugeParent
   m_TagString: Untagged
@@ -123,9 +124,9 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8053183215809560182}
-  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+  m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 100, y: 1, z: 1}
+  m_LocalScale: {x: 100.00012, y: 1, z: 1}
   m_Children:
   - {fileID: 8053183216832787602}
   m_Father: {fileID: 8053183215477871000}
@@ -153,6 +154,18 @@ MonoBehaviour:
     type: 3}
   MaxSize: 100
   ClearTime: 6
+--- !u!114 &4954556462844753405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8053183215809560182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92a61d620f3aae04485233d77b7670f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8053183216832787603
 GameObject:
   m_ObjectHideFlags: 0
