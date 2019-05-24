@@ -6,6 +6,8 @@ public class SetFeverPos : MonoBehaviour
 {
     private RectTransform MyTrans;
     private Camera mainCamera;
+    [SerializeField]
+    Vector2 setPos;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,8 +25,8 @@ public class SetFeverPos : MonoBehaviour
     {
         // 画面の左上を取得
         Vector3 topLeft = mainCamera.ScreenToWorldPoint(Vector3.zero);
-        topLeft.x += 150;
-        topLeft.y += 50;
+        topLeft.x += setPos.x;
+        topLeft.y += setPos.y;
         // 上下反転させる
         topLeft.Scale(new Vector3(1f, -1f, 1f));
         return topLeft;
