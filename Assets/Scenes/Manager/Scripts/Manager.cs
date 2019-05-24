@@ -32,6 +32,7 @@ public class Manager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Application.targetFrameRate = 60;//60FPS
         DontDestroyOnLoad(gameobject);
         DontDestroyOnLoad(Canvas);
         DontDestroyOnLoad(Planetarium);

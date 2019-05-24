@@ -14,10 +14,12 @@ public class FeverGameManager : MonoBehaviour, IGameManager
     public GameObject RevolutionCore;
     public GameObject Comet;
 
-    [Header("クリアEnemy破壊数・ゲームオーバーFriend破壊数")]
+    [Header("WAVEの時間")]
     [SerializeField]
-    int Friend_GameOverPoint;
-    [SerializeField]
+    float TimeToClear = 4;
+
+    private float TimeCount =0;//時間計測用
+
     int Enemy_GameClearPoint;
 
     [SerializeField, Header("次のWAVEのGameManager")]
@@ -60,20 +62,20 @@ public class FeverGameManager : MonoBehaviour, IGameManager
     // Update is called once per frame
     void Update()
     {
-        
+        TimeCount += Time.deltaTime;
     }
 
     public void Init()
     {
         //シーン遷移条件を判定しシーン遷移用の関数へ
         //Whereで条件判定し、Take(1)で一回だけ実行、Subscribeで処理
-        this.UpdateAsObservable().Where(_ => (EnemyDesroyCount >= Enemy_GameClearPoint)).Take(1).Subscribe(_ => ToClearScene());
+        this.UpdateAsObservable().Where(_ => (TimeCount >= TimeToClear)).Take(1).Subscribe(_ => ToClearScene());
         SceneManager.sceneUnloaded += OnSceneUnloaded;
         PlayerCore = GameObject.Find("core").gameObject;
         Comet = GameObject.Find("CometVer100").gameObject;
         canvas = GameObject.Find("ScoreCanvas").GetComponent<Canvas>();
         MyTrans = this.GetComponent<Transform>();
-
+        TimeCount = 0;
     }
     public void AllChangeActive()
     {
@@ -96,13 +98,14 @@ public class FeverGameManager : MonoBehaviour, IGameManager
     {
         EnemyDesroyCount += 1;//破壊されたEnemy数加算
         //Score.csのScoreCountを実行(引数はEnemyBreakScore)
-        canvas.GetComponent<Score>().ScoreCount(EnemyBreakScore);
+        canvas.GetComponent<Score>().FeverScoreCount(EnemyBreakScore);
     }
     private void ToClearScene()
     {
         //SceneChangeTimeの分だけ遅らせて
         //クリアシーンへ
-        Observable.Timer(System.TimeSpan.FromSeconds(SceneChangeTime)).Subscribe(_ => nextWave());
+        //Observable.Timer(System.TimeSpan.FromSeconds(SceneChangeTime)).Subscribe(_ => nextWave());
+        nextWave();
         GameObject.Find("Manager").GetComponent<Manager>().ChengeActive(false);
     }
 

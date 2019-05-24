@@ -422,8 +422,7 @@ MonoBehaviour:
   PlayerCore: {fileID: 0}
   RevolutionCore: {fileID: 3378507887879780260}
   Comet: {fileID: 0}
-  Friend_GameOverPoint: 0
-  Enemy_GameClearPoint: 3
+  TimeToClear: 6
   nextGameManager: {fileID: 0}
   myFeverManager: {fileID: 2508690213010493306}
   EnemyBreakScore: 1
@@ -735,16 +734,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3378507887738613444}
     m_Modifications:
-    - target: {fileID: 1171825779688422883, guid: 3af6d03d1a9ea6a4093a21ccc01760ad,
-        type: 3}
-      propertyPath: m_Name
-      value: Canvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 1171825779688422883, guid: 3af6d03d1a9ea6a4093a21ccc01760ad,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1171825779688422884, guid: 3af6d03d1a9ea6a4093a21ccc01760ad,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -848,6 +837,16 @@ PrefabInstance:
     - target: {fileID: 1171825779688422884, guid: 3af6d03d1a9ea6a4093a21ccc01760ad,
         type: 3}
       propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1171825779688422883, guid: 3af6d03d1a9ea6a4093a21ccc01760ad,
+        type: 3}
+      propertyPath: m_Name
+      value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 1171825779688422883, guid: 3af6d03d1a9ea6a4093a21ccc01760ad,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

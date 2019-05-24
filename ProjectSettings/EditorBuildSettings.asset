@@ -68,4 +68,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Template/Tutorial.unity
     guid: 0303d5acc6731094e81041e71911df98
+  - enabled: 1
+    path: Assets/Template/WAVEStage1.unity
+    guid: 04c1e5b68e945e54fbf66fa9f4674965
   m_configObjects: {}

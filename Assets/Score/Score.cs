@@ -1,17 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UniRx;
-using UniRx.Triggers;
+
 public class Score : MonoBehaviour
 {
     private GameObject GameMaster;
-    private double Count;//スコアカウント
-    public GameObject AddScore;
+    [SerializeField,Header("スコア")]
+    private double Count = 1000;//スコアカウント
+    [SerializeField,Header("マックススコア")]
+    double MaxCount = 99999;
     // Start is called before the first frame update
     void Start()
     {
         GameMaster = GameObject.Find("GameMaster").gameObject;
+
     }
 
     // Update is called once per frame
@@ -21,23 +23,31 @@ public class Score : MonoBehaviour
     }
     public void ScoreCount(double value)//スコアの計算
     {
-        //加減算される点数表示用のキャンバスのenabledをtrueにして点数を送信
-        if(AddScore)//表示状態ならenabedをfalseに
-        {
-            AddScore.SetActive(false);
-        }
-        //獲得スコア表示のやつに数字（value）セット
-        AddScore.GetComponent<AddScore>().SetAddScore(value);
-        AddScore.SetActive(true);//描画
-        Observable.Timer(System.TimeSpan.FromSeconds(1)).Subscribe(_ => AddScore.SetActive(false));
         Debug.Log(value);
         Count += value;
         GameMaster.GetComponent<GameMaster>().CountUp(value);
-        if(Count>=99999)//マックススコア
+        if(Count>= MaxCount)//マックススコア
         {
-            Count = 99999;
+            Count = MaxCount;
+        }
+        if(Count <= 0)
+        {
+            Count = 0;
+            GameMaster.GetComponent<GameMaster>().ToGameOver();
         }
         Debug.Log(Count);
+    }
+
+    public void FeverScoreCount(double value)
+    {
+        Debug.Log(value);
+        Count += value;
+
+        if (Count >= MaxCount)//マックススコア
+        {
+            Count = MaxCount;
+        }
+
     }
     public int GetScoreDigit(int Num)//何桁目を取得するかを引数で受け取る
     {

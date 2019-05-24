@@ -473,6 +473,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Result: {fileID: 757872600}
+  WAVEResult: {fileID: 0}
   manager: {fileID: 0}
 --- !u!114 &619331006
 MonoBehaviour:
@@ -1152,6 +1153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Result: {fileID: 6551559607108800106}
+  WAVEResult: {fileID: 0}
   manager: {fileID: 0}
 --- !u!114 &1173921288
 MonoBehaviour:
@@ -1450,6 +1452,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Result: {fileID: 675503254}
+  WAVEResult: {fileID: 0}
   manager: {fileID: 0}
 --- !u!114 &1361895827
 MonoBehaviour:
@@ -1752,6 +1755,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Result: {fileID: 757872600}
+  WAVEResult: {fileID: 1892876550}
   manager: {fileID: 0}
 --- !u!114 &1539915416
 MonoBehaviour:
