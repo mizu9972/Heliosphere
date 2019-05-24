@@ -9,15 +9,20 @@ public class Score : MonoBehaviour
     private GameObject GameMaster;
     [SerializeField,Header("スコア")]
     private double Count = 1000;//スコアカウント
+    private double JudgeCount;
     [SerializeField,Header("マックススコア")]
     double MaxCount = 99999;
 
+    [SerializeField, Header("スコアアップフレーム")]
+    int Frame = 10;
+
     public GameObject AddScore;
+    private bool isGameOver = false;
     // Start is called before the first frame update
     void Start()
     {
         GameMaster = GameObject.Find("GameMaster").gameObject;
-
+        JudgeCount = Count;
     }
 
     // Update is called once per frame
@@ -38,19 +43,22 @@ public class Score : MonoBehaviour
         //一定時間経過で描画終了
         Observable.Timer(System.TimeSpan.FromSeconds(1)).
             Subscribe(_ => AddScore.SetActive(false));
-        Debug.Log(value);
-        Count += value;
+        JudgeCount += value;
+        var Function = Observable.Interval(System.TimeSpan.FromMilliseconds(16)).Take(Frame).Where(_ =>isGameOver == false).Subscribe(_ =>Count += value / Frame);
         GameMaster.GetComponent<GameMaster>().CountUp(value);
-        if(Count>= MaxCount)//マックススコア
+        if(JudgeCount >= MaxCount)//マックススコア
         {
-            Count = MaxCount;
+            JudgeCount = MaxCount;
         }
-        if(Count <= 0)
+        if(JudgeCount <= 0)
         {
+            JudgeCount = 0;
             Count = 0;
+
+            isGameOver = true;
             GameMaster.GetComponent<GameMaster>().ToGameOver();
         }
-        Debug.Log(Count);
+        Debug.Log(JudgeCount);
     }
 
     public void FeverScoreCount(double value)
@@ -67,11 +75,13 @@ public class Score : MonoBehaviour
         Observable.Timer(System.TimeSpan.FromSeconds(1)).
             Subscribe(_ => AddScore.SetActive(false));
         Debug.Log(value);
+        JudgeCount += value;
+        Observable.Interval(System.TimeSpan.FromMilliseconds(16)).Take(Frame).Subscribe(_ => Count += value / Frame);
 
-        Count += value;
 
-        if (Count >= MaxCount)//マックススコア
+        if (JudgeCount >= MaxCount)//マックススコア
         {
+            JudgeCount = MaxCount;
             Count = MaxCount;
         }
 
