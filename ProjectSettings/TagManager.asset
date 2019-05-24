@@ -8,6 +8,7 @@ TagManager:
   - Comet
   - FallinHole
   - EffectBox
+  - GameManager
   layers:
   - Default
   - TransparentFX

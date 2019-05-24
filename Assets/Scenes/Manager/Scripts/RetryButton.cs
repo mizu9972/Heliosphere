@@ -14,7 +14,7 @@ public class RetryButton : MonoBehaviour,IOnSelected
         GameObject.Find("Manager").GetComponent<Manager>().ChangeResultMode();
         EventSystem.current.SetSelectedGameObject(null);
 
-        GameObject.Find("GameManager").GetComponent<SceneReload>().NowSceneReload();
+        GameObject.FindWithTag("GameManager").GetComponent<SceneReload>().NowSceneReload();
 
         Result.SetActive(false);
     }
