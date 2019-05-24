@@ -5,7 +5,8 @@ using UnityEngine;
 public class Score : MonoBehaviour
 {
     private GameObject GameMaster;
-    private double Count;//スコアカウント
+    [SerializeField,Header("スコア")]
+    private double Count = 1000;//スコアカウント
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +30,7 @@ public class Score : MonoBehaviour
         }
         if(Count <= 0)
         {
+            Count = 0;
             GameMaster.GetComponent<GameMaster>().ToGameOver();
         }
         Debug.Log(Count);

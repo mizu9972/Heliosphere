@@ -58,6 +58,7 @@ public class EnemyScript : MonoBehaviour,ITragetFunction
 
         //DestroyInterval秒後にオブジェクト消去
         //爆発エフェクトを子クラスに生成するため爆発中は生存させておく
-        Observable.Timer(System.TimeSpan.FromSeconds(DestroyInterval)).Take(1).Subscribe(_ => Destroy(this.gameObject));
+        Destroy(this.gameObject);
+        //Observable.Timer(System.TimeSpan.FromSeconds(DestroyInterval)).Take(1).Subscribe(_ => Destroy(this.gameObject));
     }
 }
