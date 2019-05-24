@@ -7,6 +7,8 @@ public class Score : MonoBehaviour
     private GameObject GameMaster;
     [SerializeField,Header("スコア")]
     private double Count = 1000;//スコアカウント
+    [SerializeField,Header("マックススコア")]
+    double MaxCount = 99999;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,9 +26,9 @@ public class Score : MonoBehaviour
         Debug.Log(value);
         Count += value;
         GameMaster.GetComponent<GameMaster>().CountUp(value);
-        if(Count>=99999)//マックススコア
+        if(Count>= MaxCount)//マックススコア
         {
-            Count = 99999;
+            Count = MaxCount;
         }
         if(Count <= 0)
         {
@@ -34,6 +36,18 @@ public class Score : MonoBehaviour
             GameMaster.GetComponent<GameMaster>().ToGameOver();
         }
         Debug.Log(Count);
+    }
+
+    public void FeverScoreCount(double value)
+    {
+        Debug.Log(value);
+        Count += value;
+
+        if (Count >= MaxCount)//マックススコア
+        {
+            Count = MaxCount;
+        }
+
     }
     public int GetScoreDigit(int Num)//何桁目を取得するかを引数で受け取る
     {

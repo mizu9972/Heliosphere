@@ -98,7 +98,7 @@ public class FeverGameManager : MonoBehaviour, IGameManager
     {
         EnemyDesroyCount += 1;//破壊されたEnemy数加算
         //Score.csのScoreCountを実行(引数はEnemyBreakScore)
-        canvas.GetComponent<Score>().ScoreCount(EnemyBreakScore);
+        canvas.GetComponent<Score>().FeverScoreCount(EnemyBreakScore);
     }
     private void ToClearScene()
     {
