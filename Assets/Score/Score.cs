@@ -27,6 +27,10 @@ public class Score : MonoBehaviour
         {
             Count = 99999;
         }
+        if(Count <= 0)
+        {
+            GameMaster.GetComponent<GameMaster>().ToGameOver();
+        }
         Debug.Log(Count);
     }
     public int GetScoreDigit(int Num)//何桁目を取得するかを引数で受け取る
