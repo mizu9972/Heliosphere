@@ -473,8 +473,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Result: {fileID: 757872600}
-  WAVEResult: {fileID: 0}
-  manager: {fileID: 0}
+  WAVEResult: {fileID: 1892876550}
+  manager: {fileID: 2062281144}
 --- !u!114 &619331006
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1452,8 +1452,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Result: {fileID: 675503254}
-  WAVEResult: {fileID: 0}
-  manager: {fileID: 0}
+  WAVEResult: {fileID: 1892876550}
+  manager: {fileID: 2062281144}
 --- !u!114 &1361895827
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1756,7 +1756,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Result: {fileID: 757872600}
   WAVEResult: {fileID: 1892876550}
-  manager: {fileID: 0}
+  manager: {fileID: 2062281144}
 --- !u!114 &1539915416
 MonoBehaviour:
   m_ObjectHideFlags: 0

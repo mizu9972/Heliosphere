@@ -22536,7 +22536,7 @@ GameObject:
   - component: {fileID: 791181324}
   m_Layer: 0
   m_Name: GameManager (5)
-  m_TagString: Untagged
+  m_TagString: GameManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29725,7 +29725,7 @@ GameObject:
   - component: {fileID: 984633898}
   m_Layer: 0
   m_Name: GameManager (4)
-  m_TagString: Untagged
+  m_TagString: GameManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -34123,7 +34123,7 @@ GameObject:
   - component: {fileID: 1166544840}
   m_Layer: 0
   m_Name: GameManager (1)
-  m_TagString: Untagged
+  m_TagString: GameManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -51705,7 +51705,7 @@ GameObject:
   - component: {fileID: 1762688147}
   m_Layer: 0
   m_Name: GameManager (2)
-  m_TagString: Untagged
+  m_TagString: GameManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -56091,7 +56091,7 @@ GameObject:
   - component: {fileID: 1934229665}
   m_Layer: 0
   m_Name: GameManager (3)
-  m_TagString: Untagged
+  m_TagString: GameManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -60011,7 +60011,7 @@ GameObject:
   - component: {fileID: 2059971682}
   m_Layer: 0
   m_Name: StartGameManager
-  m_TagString: Untagged
+  m_TagString: GameManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -63845,7 +63845,7 @@ GameObject:
   - component: {fileID: 9112584729609429537}
   m_Layer: 0
   m_Name: GameManager
-  m_TagString: Untagged
+  m_TagString: GameManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
