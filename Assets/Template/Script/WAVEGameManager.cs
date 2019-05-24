@@ -69,7 +69,6 @@ public class WAVEGameManager : MonoBehaviour, IGameManager
         //シーン遷移条件を判定しシーン遷移用の関数へ
         //Whereで条件判定し、Take(1)で一回だけ実行、Subscribeで処理
         this.UpdateAsObservable().Where(_ => (EnemyDesroyCount >= Enemy_GameClearPoint)).Take(1).Subscribe(_ => ToClearScene());
-        this.UpdateAsObservable().Where(_ => (FriendDestroyCount >= Friend_GameOverPoint)).Take(1).Subscribe(_ => ToGameOverScene());
         SceneManager.sceneUnloaded += OnSceneUnloaded;
     }
     public void AllChangeActive()
