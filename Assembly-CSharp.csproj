@@ -117,6 +117,7 @@
     <Compile Include="Assets\Scenes\Title\TitleManager.cs" />
     <Compile Include="Assets\Score\AddScore.cs" />
     <Compile Include="Assets\Score\DrawAddScore.cs" />
+    <Compile Include="Assets\Score\DrawSign.cs" />
     <Compile Include="Assets\Score\DrawWave.cs" />
     <Compile Include="Assets\Score\Score.cs" />
     <Compile Include="Assets\Score\ScoreDraw.cs" />

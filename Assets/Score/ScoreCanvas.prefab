@@ -324,6 +324,7 @@ GameObject:
   - component: {fileID: 1475860008651420277}
   - component: {fileID: 1015666911892426146}
   - component: {fileID: 1996445114943297944}
+  - component: {fileID: 582204716368248352}
   m_Layer: 5
   m_Name: Sign
   m_TagString: Untagged
@@ -385,6 +386,19 @@ MonoBehaviour:
     y: 0
     width: 0.5
     height: 0.5
+--- !u!114 &582204716368248352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6747031466146523130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a612e1ad6e25f5439ab631c2d72c29b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Parent: {fileID: 2357930701008424138}
 --- !u!1 &7323756424119273200
 GameObject:
   m_ObjectHideFlags: 0
@@ -812,6 +826,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e6dea4283aeff745af5be96fe3db4e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Count: 1000
+  MaxCount: 99999
   AddScore: {fileID: 2357930701008424138}
 --- !u!1 &7323756425378198715
 GameObject:
