@@ -156,5 +156,8 @@ public class FeverGameManager : MonoBehaviour, IGameManager
     {
         MyTrans.position += subVector;
     }
-
+    public float GetClearTime()
+    {
+        return TimeToClear;
+    }
 }
