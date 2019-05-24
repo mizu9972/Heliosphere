@@ -64082,7 +64082,7 @@ MonoBehaviour:
   Enemy_GameClearPoint: 0
   nextGameManager: {fileID: 9112584729609429536}
   EnemyBreakScore: 20
-  FriendBreakScore: 400
+  FriendBreakScore: 200
   GameMaster: {fileID: 218295583}
   WAVECount: 0
   ApproachSpeed: 1
@@ -68297,7 +68297,7 @@ MonoBehaviour:
   Enemy_GameClearPoint: 31
   nextGameManager: {fileID: 1166544839}
   EnemyBreakScore: 30
-  FriendBreakScore: 400
+  FriendBreakScore: 200
   GameMaster: {fileID: 218295583}
   WAVECount: 1
   ApproachSpeed: 100
