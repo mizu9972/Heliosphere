@@ -427,8 +427,7 @@ MonoBehaviour:
   myFeverManager: {fileID: 2508690213010493306}
   EnemyBreakScore: 1
   FriendBreakScore: 0
-  subVector: {x: 0, y: 0.57, z: 0}
-  ApproachSpeed: 100
+  ApproachSpeed: 25
 --- !u!1 &3378507887879780260
 GameObject:
   m_ObjectHideFlags: 0

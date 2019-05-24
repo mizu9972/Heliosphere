@@ -42,7 +42,7 @@ public class FeverGameManager : MonoBehaviour, IGameManager
 
     private Transform MyTrans;
     private Vector3 TargetTrans = Vector3.zero;
-    [SerializeField,Header("接近速度")]
+
     Vector3 subVector;
     [SerializeField, Header("接近してくる時間")]
     float ApproachSpeed = 1;
@@ -56,6 +56,8 @@ public class FeverGameManager : MonoBehaviour, IGameManager
         canvas = GameObject.Find("ScoreCanvas").GetComponent<Canvas>();
         MyTrans = this.GetComponent<Transform>();
 
+        subVector = TargetTrans - MyTrans.position;
+        subVector /= ApproachSpeed;
         Init();
     }
 
