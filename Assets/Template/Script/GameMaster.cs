@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UniRx;
 using UniRx.Triggers;
 
@@ -22,6 +23,8 @@ public class GameMaster : MonoBehaviour
     GameObject FeverObject;
     private GameObject _FeverObject;
 
+    [SerializeField, Header("フィーバーゲージ")]
+    public RawImage Fevergauge;
     private GameObject NowFeverObj;
     private int enemycount = 0;
     private double ScoreCount;//フィーバーモードへのカウント用 
@@ -57,6 +60,7 @@ public class GameMaster : MonoBehaviour
 
     public void FeverStart()
     {
+        this.UpdateAsObservable().Take(1).Subscribe(_=>Switch());//フィーバーゲージ切り替え
         //フィーバーのキャンバスのenableをtrueに
         FeverCanvas.gameObject.SetActive(true);
         FeverCanvas.GetComponentInChildren<FeverBlink>().AlphaReset();//α値リセット
@@ -77,6 +81,7 @@ public class GameMaster : MonoBehaviour
 
     public void FeverFinish()
     {
+        this.UpdateAsObservable().Take(1).Subscribe(_ => Switch());//フィーバーゲージ切り替え
         //フィーバーのキャンバスのenableをfalseに
         FeverCanvas.gameObject.SetActive(false);
         NowFeverObj.gameObject.SetActive(false);
@@ -97,5 +102,14 @@ public class GameMaster : MonoBehaviour
     public void ToGameOver()
     {
         NowWAVEGameManager.GetComponent<WAVEGameManager>().ToGameOverScene();
+    }
+    void Switch()
+    {
+        //フィーバーGageのフラグの切り替え
+        Fevergauge.GetComponent<FeverGauge>().SwithGauge();
+    }
+    public double GetFeverScore()//フィーバーに入るスコアを取得
+    {
+        return FeverScore;
     }
 }

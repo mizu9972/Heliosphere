@@ -31,7 +31,7 @@ public class DrawAddScore : MonoBehaviour
     {
         
         Num = Parent.GetComponent<AddScore>().DigitSet(Dig);//自分の桁に応じた数字の取得
-        Debug.Log(Dig+"桁目＝"+Num);
+        //Debug.Log(Dig+"桁目＝"+Num);
         if (Num < 5)
         {
             V = Num / 5 * 0.5f + 0.5f;

@@ -67,8 +67,10 @@
     <Compile Include="Assets\develop\meteo\ObjectMoveByGravity.cs" />
     <Compile Include="Assets\Fever\FeverBlink.cs" />
     <Compile Include="Assets\Fever\FeverGameManager.cs" />
+    <Compile Include="Assets\Fever\FeverGauge.cs" />
     <Compile Include="Assets\Fever\FeverManager.cs" />
     <Compile Include="Assets\Fever\FeverSystem.cs" />
+    <Compile Include="Assets\Fever\GaugeParent.cs" />
     <Compile Include="Assets\Fever\SetFeverPos.cs" />
     <Compile Include="Assets\IMoveOperate.cs" />
     <Compile Include="Assets\Scenes\Game\Comet\Comet\ColliderScript.cs" />
