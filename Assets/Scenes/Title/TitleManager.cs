@@ -6,9 +6,12 @@ using UniRx;
 using UniRx.Triggers;
 public class TitleManager : MonoBehaviour, IButtonPush
 {
+    [SerializeField]
+    GameObject Panel;
     // Start is called before the first frame update
     void Start()
     {
+        Panel.GetComponent<FeedIn>().Init(255, 0, 1);
         this.UpdateAsObservable().Where(_ => (Input.anyKey)).Subscribe(_ => this.GetComponent<IButtonPush>().ButtonPush());
     }
 

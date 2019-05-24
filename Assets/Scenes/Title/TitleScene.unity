@@ -141,6 +141,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0535f08fa406f3409f87152228bf24a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Panel: {fileID: 1861833578}
 --- !u!4 &417362113
 Transform:
   m_ObjectHideFlags: 0
@@ -430,22 +431,22 @@ PrefabInstance:
       propertyPath: sunTrans
       value: 
       objectReference: {fileID: 4172258807099761419}
+    - target: {fileID: 2592975414859028448, guid: 380412b23ee415047a9669f47ef45143,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 2592975415085212244, guid: 380412b23ee415047a9669f47ef45143,
         type: 3}
       propertyPath: Angle
       value: 14.63
       objectReference: {fileID: 0}
-    - target: {fileID: 4752843948767836353, guid: 380412b23ee415047a9669f47ef45143,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
-    - target: {fileID: 2592975414107047309, guid: 380412b23ee415047a9669f47ef45143,
+    - target: {fileID: 2550043631027069953, guid: 380412b23ee415047a9669f47ef45143,
         type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2592975414107047309, guid: 380412b23ee415047a9669f47ef45143,
+    - target: {fileID: 2550043631027069953, guid: 380412b23ee415047a9669f47ef45143,
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
@@ -455,17 +456,17 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
-    - target: {fileID: 2592975414859028448, guid: 380412b23ee415047a9669f47ef45143,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
-    - target: {fileID: 2550043631027069953, guid: 380412b23ee415047a9669f47ef45143,
+    - target: {fileID: 2592975414107047309, guid: 380412b23ee415047a9669f47ef45143,
         type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2550043631027069953, guid: 380412b23ee415047a9669f47ef45143,
+    - target: {fileID: 2592975414107047309, guid: 380412b23ee415047a9669f47ef45143,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 4752843948767836353, guid: 380412b23ee415047a9669f47ef45143,
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
@@ -646,9 +647,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StartWaitTime: 1
-  FeedInTime: 1
-  StartAlpha: 255
-  EndAlpha: 0
 --- !u!1001 &1911838827
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10855,10 +10853,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sunTrans: {fileID: 4172258807099761419}
   Angle: 15
-  Speed: 1.5
+  TurnTime: 4.5
   CenterPos: {x: 0, y: 0}
   Radius: {x: 0, y: 0}
   Acceleration: {x: 0, y: 0, z: 0}
+  isActive: 0
 --- !u!114 &3491847516652255886
 MonoBehaviour:
   m_ObjectHideFlags: 0
