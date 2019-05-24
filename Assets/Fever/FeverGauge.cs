@@ -37,14 +37,18 @@ public class FeverGauge : MonoBehaviour
         }
         MyImage.uvRect = new Rect(U, V, TexWidth, TexHeight);
     }
-    public float GaugeDivision(float Mol,float Denom)//第一引数:分子、第二引数:分母
+    public double GaugeDivision(double Mol,double Denom)//第一引数:分子、第二引数:分母
     {
-        float ReturnNum = Mol / Denom;
+        double ReturnNum = Mol / Denom;
         return ReturnNum;
     }
-    public void SwithGauge()//フィーバー開始終了で切り替え
+    public void SwithGauge(bool flg)//フィーバー開始終了で切り替え
     {
-        SwitchFlg = !SwitchFlg;
-        Debug.Log("フラグ切り替え完了" + SwitchFlg);
+        SwitchFlg = flg;
+        //Debug.Log("フラグ切り替え完了" + SwitchFlg);
+    }
+    public bool GetSwitchFlg()//現在フィーバーかどうかを返す(trueはフィーバー中)
+    {
+        return SwitchFlg;
     }
 }

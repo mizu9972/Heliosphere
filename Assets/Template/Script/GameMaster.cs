@@ -60,7 +60,8 @@ public class GameMaster : MonoBehaviour
 
     public void FeverStart()
     {
-        this.UpdateAsObservable().Take(1).Subscribe(_=>Switch());//フィーバーゲージ切り替え
+        //フィーバーGageのフラグの切り替え
+        Fevergauge.GetComponent<FeverGauge>().SwithGauge(true);
         //フィーバーのキャンバスのenableをtrueに
         FeverCanvas.gameObject.SetActive(true);
         FeverCanvas.GetComponentInChildren<FeverBlink>().AlphaReset();//α値リセット
@@ -81,7 +82,8 @@ public class GameMaster : MonoBehaviour
 
     public void FeverFinish()
     {
-        this.UpdateAsObservable().Take(1).Subscribe(_ => Switch());//フィーバーゲージ切り替え
+        //フィーバーGageのフラグの切り替え
+        Fevergauge.GetComponent<FeverGauge>().SwithGauge(false);
         //フィーバーのキャンバスのenableをfalseに
         FeverCanvas.gameObject.SetActive(false);
         NowFeverObj.gameObject.SetActive(false);
@@ -103,13 +105,17 @@ public class GameMaster : MonoBehaviour
     {
         NowWAVEGameManager.GetComponent<WAVEGameManager>().ToGameOverScene();
     }
-    void Switch()
-    {
+    //void Switch()//Gageのフラグ切り替え
+    //{
         //フィーバーGageのフラグの切り替え
-        Fevergauge.GetComponent<FeverGauge>().SwithGauge();
-    }
+        //Fevergauge.GetComponent<FeverGauge>().SwithGauge();
+    //}
     public double GetFeverScore()//フィーバーに入るスコアを取得
     {
         return FeverScore;
+    }
+    public double GetNowScore()
+    {
+        return ScoreCount;
     }
 }

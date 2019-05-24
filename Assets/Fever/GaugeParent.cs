@@ -6,8 +6,12 @@ public class GaugeParent : MonoBehaviour
 {
     [SerializeField, Header("ゲームマスター")]
     public GameObject gameMaster;
+    [Header("マックスサイズ")]
+    public float MaxSize;
     private RectTransform MyRectTrans;
     private double feverScore;
+    private double NowScore;
+    private double Per;//拡大率
     // Start is called before the first frame update
     void Start()
     {
@@ -19,9 +23,17 @@ public class GaugeParent : MonoBehaviour
     void Update()
     {
         
+        NowScore = gameMaster.GetComponent<GameMaster>().GetNowScore();
+        Per = this.GetComponentInChildren<FeverGauge>()
+            .GaugeDivision(NowScore, feverScore);
+        SizeUp();
     }
     void SizeUp()
     {
-        MyRectTrans.localScale = new Vector3(/*x*割合,y,z*/);
+        Vector3 SetScale = MyRectTrans.lossyScale;
+        Vector3 SizeUpScale = new Vector3(MaxSize*(float)Per,
+                                        SetScale.y,
+                                        SetScale.z);
+        MyRectTrans.localScale = SizeUpScale;
     }
 }
