@@ -34,7 +34,8 @@ public class WAVEGameManager : MonoBehaviour, IGameManager
     [SerializeField, Header("ゲームマスター")]
     GameObject GameMaster;
 
-
+    [SerializeField, Header("何WAVEとしてカウントするか")]
+    int WAVECount = 1;
     private int FriendDestroyCount;
 
     private int EnemyDesroyCount;
@@ -112,7 +113,7 @@ public class WAVEGameManager : MonoBehaviour, IGameManager
             nextGameManager.GetComponent<WAVEGameManager>().ApproachStart();
             GameObject.Find("GameMaster").GetComponent<GameMaster>().WAVEset(nextGameManager);
             //ここで別スクリプトのカウント関数実行
-            nowWave.GetComponent<WaveCount>().WaveCounrer();
+            nowWave.GetComponent<WaveCount>().WaveCounrer(WAVECount);
             this.gameObject.SetActive(false);//自身を無効化
         }else
         {

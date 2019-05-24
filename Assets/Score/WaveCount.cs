@@ -16,9 +16,9 @@ public class WaveCount : MonoBehaviour
     {
         
     }
-    public void WaveCounrer()
+    public void WaveCounrer(int _Num)
     {
-        NowWave++;
+        NowWave += _Num;
     }
     public int GetNowWave(int Num)
     {
