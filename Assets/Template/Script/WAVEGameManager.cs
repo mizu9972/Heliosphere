@@ -122,7 +122,7 @@ public class WAVEGameManager : MonoBehaviour, IGameManager
         }
     }
 
-    private void ToGameOverScene()
+    public void ToGameOverScene()
     {
         Debug.Log("ゲームオーバー");
         AllChangeActive();

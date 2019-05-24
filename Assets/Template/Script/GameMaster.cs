@@ -26,6 +26,7 @@ public class GameMaster : MonoBehaviour
     void Start()
     {
         this.UpdateAsObservable().Where(_ => ScoreCount >= FeverScore).Subscribe(_ => FeverStart());
+
         MyCamera = GameObject.FindWithTag("MainCamera");
     }
 
@@ -78,5 +79,10 @@ public class GameMaster : MonoBehaviour
     public void AddEnemycount()
     {
         enemycount += 1;
+    }
+
+    public void ToGameOver()
+    {
+        NowWAVEGameManager.GetComponent<WAVEGameManager>().ToGameOverScene();
     }
 }
