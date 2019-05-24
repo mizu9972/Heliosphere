@@ -89,6 +89,9 @@ public class GameMaster : MonoBehaviour
 
     public void FeverFinish()
     {
+        var FeedInPanel = GetComponentInChildren<FeedIn>();
+        //フェードイン
+        FeedInPanel.Init(255, 0, 0.5f);
         //フィーバーGageのフラグの切り替え
         Fevergauge.GetComponent<FeverGauge>().SwithGauge(false);
         //フィーバーのキャンバスのenableをfalseに
