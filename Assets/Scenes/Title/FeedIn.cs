@@ -6,7 +6,7 @@ using UniRx;
 using UniRx.Triggers;
 public class FeedIn : MonoBehaviour
 {
-    private float R, G, B;//RGB値
+    private float R = 255, G = 255, B = 255;//RGB値
     private float SaveAlpha;//現在のアルファ値保存用
     private bool isActive = false;//実行中かどうか
     private float subAlpha;//変化量
