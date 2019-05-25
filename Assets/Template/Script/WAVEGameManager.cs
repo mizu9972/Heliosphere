@@ -56,11 +56,14 @@ public class WAVEGameManager : MonoBehaviour, IGameManager
     private int Count = 0;//連続でエネミーを破壊した数
     private Canvas canvas;//スコア表示のキャンバス
     private Canvas nowWave;//ウェーブ
+
+    private ParticleSystem FriendParticleSystem;
     // Start is called before the first frame update
     void Start()
     {
         canvas = GameObject.Find("ScoreCanvas").GetComponent<Canvas>();
         nowWave = GameObject.Find("WaveCanvas").GetComponent<Canvas>();
+        FriendParticleSystem = GameObject.Find("FriendParticleSystem").GetComponent<ParticleSystem>();
         MyTrans = this.GetComponent<Transform>();
         subVector = TargetTrans - MyTrans.position;
         subVector /= ApproachSpeed;
