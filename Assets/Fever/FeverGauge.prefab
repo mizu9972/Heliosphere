@@ -303,7 +303,7 @@ MonoBehaviour:
   feverManager: {fileID: 2508690213010493306, guid: ec1e62a8403f58b4388a3cac40cec5c4,
     type: 3}
   MaxSize: 100
-  ClearTime: 24
+  ClearTime: 18
 --- !u!114 &4954556462844753405
 MonoBehaviour:
   m_ObjectHideFlags: 0
