@@ -42,4 +42,9 @@ public class RCore : MonoBehaviour, ChangeActiveInterface
     {
         isActive = !isActive;
     }
+
+    public void AddScale(float _Scale)
+    {
+        MyTrans.transform.localScale += new Vector3(_Scale, _Scale, _Scale);
+    }
 }

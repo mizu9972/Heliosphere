@@ -110,14 +110,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SceneChangeTime: 0
   PlayerCore: {fileID: 0}
-  RevolutionCore: {fileID: 2487341862738946287}
   Comet: {fileID: 0}
+  RevolutionCore1: {fileID: 2487341862738946287}
+  RevolutionCore2: {fileID: 8737323510648565195}
+  RevolutionCore3: {fileID: 2002089923699361767}
+  RevolutionCore4: {fileID: 4016521060327863943}
+  RevolutionCore5: {fileID: 1402989273163026054}
   Friend_GameOverPoint: 1
   Enemy_GameClearPoint: 3
   nextGameManager: {fileID: 0}
   EnemyBreakScore: 1
   FriendBreakScore: 0
   GameMaster: {fileID: 0}
+  WAVECount: 1
   ApproachSpeed: 1
 --- !u!1 &1402989273163026054
 GameObject:
@@ -732,6 +737,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1323461761804745216}
     m_Modifications:
+    - target: {fileID: 1171825779688422883, guid: 3af6d03d1a9ea6a4093a21ccc01760ad,
+        type: 3}
+      propertyPath: m_Name
+      value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 1171825779688422883, guid: 3af6d03d1a9ea6a4093a21ccc01760ad,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1171825779688422884, guid: 3af6d03d1a9ea6a4093a21ccc01760ad,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -837,16 +852,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1171825779688422883, guid: 3af6d03d1a9ea6a4093a21ccc01760ad,
-        type: 3}
-      propertyPath: m_Name
-      value: Canvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 1171825779688422883, guid: 3af6d03d1a9ea6a4093a21ccc01760ad,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3af6d03d1a9ea6a4093a21ccc01760ad, type: 3}
 --- !u!224 &8385730128653523815 stripped
@@ -880,7 +885,7 @@ PrefabInstance:
     - target: {fileID: 526321667402825647, guid: 7498c2884e5b0c948a7d81611c74f7cb,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -21
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 526321667402825647, guid: 7498c2884e5b0c948a7d81611c74f7cb,
         type: 3}
@@ -960,7 +965,7 @@ PrefabInstance:
     - target: {fileID: 5834954319697091727, guid: 06a7268c3c3fd264ca5640801e504ef2,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 21
+      value: -21
       objectReference: {fileID: 0}
     - target: {fileID: 5834954319697091727, guid: 06a7268c3c3fd264ca5640801e504ef2,
         type: 3}
