@@ -32,6 +32,10 @@ public class Score : MonoBehaviour
     }
     public void ScoreCount(double value)//スコアの計算
     {
+        if(value == 0)
+        {
+            return;
+        }
         //加減算される点数表示用のキャンバスのenabledをtrueにして点数を送信
         if (AddScore)//表示状態ならenabedをfalseに
         {
@@ -65,6 +69,10 @@ public class Score : MonoBehaviour
     {
         //フィーバーモード移行用スコアには加算されない得点加算処理
 
+        if (value == 0)
+        {
+            return;
+        }
         //加減算される点数表示用のキャンバスのenabledをtrueにして点数を送信
         if (AddScore)//表示状態ならenabedをfalseに
         {
