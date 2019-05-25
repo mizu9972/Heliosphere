@@ -36,6 +36,9 @@ public class WAVEGameManager : MonoBehaviour, IGameManager
     [SerializeField, Header("フレンドを破壊した時のスコア")]
     double FriendBreakScore;
 
+    [SerializeField, Header("WAVEクリア時のスコア")]
+    int WAVEClearScore = 1000;
+
     [SerializeField, Header("ゲームマスター")]
     GameObject GameMaster;
 
@@ -125,6 +128,7 @@ public class WAVEGameManager : MonoBehaviour, IGameManager
         //SceneChangeTimeの分だけ遅らせて
         //クリアシーンへ
         Observable.Timer(System.TimeSpan.FromSeconds(SceneChangeTime)).Subscribe(_ => nextWave());
+        canvas.GetComponent<Score>().FeverScoreCount(WAVEClearScore);
         GameObject.Find("Manager").GetComponent<Manager>().ChengeActive(false);
     }
 
