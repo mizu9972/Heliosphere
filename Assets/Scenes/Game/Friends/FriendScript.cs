@@ -10,7 +10,7 @@ public class FriendScript : MonoBehaviour,ITragetFunction
 
     public AudioClip Explosion;//爆発音
     private AudioSource audioSource;//オーディオソース
-
+    private GameObject audioManager;
     [SerializeField]
     GameObject GameManager;
     [SerializeField]
@@ -23,6 +23,7 @@ public class FriendScript : MonoBehaviour,ITragetFunction
     // Start is called before the first frame update
     void Start()
     {
+        audioManager = GameObject.Find("SEManager");
         MyRigidB = this.GetComponent<Rigidbody>();
         audioSource = this.GetComponent<AudioSource>();
 
@@ -43,7 +44,9 @@ public class FriendScript : MonoBehaviour,ITragetFunction
 
    public void Hit()
     {
-        audioSource.PlayOneShot(Explosion);
+        //audioSource.PlayOneShot(Explosion);
+        audioManager.GetComponent<SEManager>().
+            PlaySE(SEManager.AudioType.Friend);
         GameManager.GetComponent<IGameManager>().AddFriendPoint();
         GameObject explosion;
         explosion = Instantiate(ExplosionEffect, this.transform);

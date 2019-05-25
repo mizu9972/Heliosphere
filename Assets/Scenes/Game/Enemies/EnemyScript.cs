@@ -21,7 +21,7 @@ public class EnemyScript : MonoBehaviour,ITragetFunction
     // Start is called before the first frame update
     void Start()
     {
-        audioManager = GameObject.Find("Manager");
+        audioManager = GameObject.Find("SEManager");
         MyRigidB = this.GetComponent<Rigidbody>();
         audioSource = this.GetComponent<AudioSource>();
 
@@ -42,8 +42,8 @@ public class EnemyScript : MonoBehaviour,ITragetFunction
 
     public void Hit()
     {
-        audioManager.GetComponent<AudioManager>().
-            PlaySE(AudioManager.AudioType.Enemy1);
+        audioManager.GetComponent<SEManager>().
+            PlaySE(SEManager.AudioType.Enemy1);
 
         //衝突時
         GameManager.GetComponent<IGameManager>().AddEnemyPoint();

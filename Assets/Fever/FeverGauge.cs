@@ -7,7 +7,7 @@ public class FeverGauge : MonoBehaviour
     //テクスチャを割り当てるサイズ
     public float TexWidth = 1.0f;
     public float TexHeight = 0.5f;
-
+    public GameObject Parent;
     private bool SwitchFlg = false;//フィーバー中か
     private RawImage MyImage;
     private float U, V;
@@ -35,6 +35,8 @@ public class FeverGauge : MonoBehaviour
             U = 0;
             V = 0;
         }
+        //TexWidthに倍率をかける
+        TexWidth = 1.0f*(float)Parent.GetComponent<GaugeParent>().GetPersent();
         MyImage.uvRect = new Rect(U, V, TexWidth, TexHeight);
     }
     public double GaugeDivision(double Mol,double Denom)//第一引数:分子、第二引数:分母

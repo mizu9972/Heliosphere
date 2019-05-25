@@ -15,14 +15,8 @@ public class AudioManager : MonoBehaviour
     public AudioClip ClearSound;//ゲームCLEAR
     public AudioClip OverSound;//ゲームオーバー
     public AudioClip ClickSound;//決定音
-    public AudioClip SE_Enemy1;
-    public AudioClip SE_Enemy2;
-    public AudioClip SE_Friend;
-    public  enum AudioType{
-        Enemy1,
-        Enemy2,
-        Friend,
-    };
+    
+    
     private AudioSource audioSource;
     private string sceneName;//アクティブシーン名
     private bool PlayFlg = false;
@@ -97,20 +91,5 @@ public class AudioManager : MonoBehaviour
         ///使い方getcomponent PlaySE(AudioManager.AudioType.Enemy1);
     }
 
-    public void PlaySE(AudioType _type)
-    {
-        switch(_type)
-        {
-            case AudioType.Enemy1:
-                audioSource.PlayOneShot(SE_Enemy2);
-                break;
-            case AudioType.Enemy2:
-                audioSource.clip = SE_Enemy2;
-                break;
-            case AudioType.Friend:
-                audioSource.clip = SE_Friend;
-                break;
-        }
-        
-    }
+    
 }

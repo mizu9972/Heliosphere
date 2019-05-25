@@ -71,4 +71,8 @@ public class GaugeParent : MonoBehaviour
         ReturnFlg = this.GetComponentInChildren<FeverGauge>().GetSwitchFlg();
         return ReturnFlg;
     }
+    public double GetPersent()
+    {
+        return Per;
+    }
 }
