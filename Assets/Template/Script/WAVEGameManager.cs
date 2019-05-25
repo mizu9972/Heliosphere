@@ -138,11 +138,13 @@ public class WAVEGameManager : MonoBehaviour, IGameManager
             GameObject.Find("GameMaster").GetComponent<GameMaster>().WAVEset(nextGameManager);
             //ここで別スクリプトのカウント関数実行
             nowWave.GetComponent<WaveCount>().WaveCounrer(WAVECount);
-            this.gameObject.SetActive(false);//自身を無効化
+            Observable.Interval(System.TimeSpan.FromMilliseconds(16)).Subscribe(_ => RCoreScaleUp());
+            Observable.Timer(System.TimeSpan.FromSeconds(1)).Subscribe(_ => this.gameObject.SetActive(false));//自身を無効化
         }else
         {
             Debug.Log("クリア");
             AllChangeActive();
+            Observable.Interval(System.TimeSpan.FromMilliseconds(16)).Subscribe(_ => RCoreScaleUp());
             GameObject.Find("Manager").GetComponent<Manager>().CallWAVEClear();
         }
     }
@@ -187,4 +189,29 @@ public class WAVEGameManager : MonoBehaviour, IGameManager
         return FeverFlg;
     }
 
+    private void RCoreScaleUp()
+    {
+
+        float ScaleUp = 0.05f;
+        if (RevolutionCore1 != null)
+        {
+            RevolutionCore1.GetComponent<RCore>().AddScale(ScaleUp);
+        }
+        if (RevolutionCore2 != null)
+        {
+            RevolutionCore2.GetComponent<RCore>().AddScale(ScaleUp);
+        }
+        if (RevolutionCore3 != null)
+        {
+            RevolutionCore3.GetComponent<RCore>().AddScale(ScaleUp);
+        }
+        if (RevolutionCore4 != null)
+        {
+            RevolutionCore4.GetComponent<RCore>().AddScale(ScaleUp);
+        }
+        if (RevolutionCore5 != null)
+        {
+            RevolutionCore5.GetComponent<RCore>().AddScale(ScaleUp);
+        }
+    }
 }
