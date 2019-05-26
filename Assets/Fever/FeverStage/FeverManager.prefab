@@ -2975,7 +2975,7 @@ MonoBehaviour:
   TimeToClear: 6
   nextGameManager: {fileID: 0}
   myFeverManager: {fileID: 2508690213010493306}
-  EnemyBreakScore: 5
+  EnemyBreakScore: 3
   FriendBreakScore: 0
   ApproachSpeed: 50
 --- !u!1 &1038202846072894049
@@ -4711,7 +4711,7 @@ MonoBehaviour:
   TimeToClear: 6
   nextGameManager: {fileID: 0}
   myFeverManager: {fileID: 2508690213010493306}
-  EnemyBreakScore: 5
+  EnemyBreakScore: 3
   FriendBreakScore: 0
   ApproachSpeed: 50
 --- !u!1 &1987748208543904513
@@ -8964,7 +8964,7 @@ MonoBehaviour:
   TimeToClear: 6
   nextGameManager: {fileID: 0}
   myFeverManager: {fileID: 2508690213010493306}
-  EnemyBreakScore: 5
+  EnemyBreakScore: 3
   FriendBreakScore: 0
   ApproachSpeed: 50
 --- !u!1 &3003621412396917641
@@ -10570,7 +10570,7 @@ MonoBehaviour:
   TimeToClear: 6
   nextGameManager: {fileID: 8625279182141312698}
   myFeverManager: {fileID: 2508690213010493306}
-  EnemyBreakScore: 5
+  EnemyBreakScore: 3
   FriendBreakScore: 0
   ApproachSpeed: 50
 --- !u!1 &3378507887879780260
@@ -28020,7 +28020,7 @@ MonoBehaviour:
   TimeToClear: 6
   nextGameManager: {fileID: 982485402852812966}
   myFeverManager: {fileID: 2508690213010493306}
-  EnemyBreakScore: 5
+  EnemyBreakScore: 3
   FriendBreakScore: 0
   ApproachSpeed: 50
 --- !u!1 &8644828779397955406
@@ -29831,7 +29831,7 @@ MonoBehaviour:
   TimeToClear: 6
   nextGameManager: {fileID: 0}
   myFeverManager: {fileID: 2508690213010493306}
-  EnemyBreakScore: 5
+  EnemyBreakScore: 3
   FriendBreakScore: 0
   ApproachSpeed: 50
 --- !u!1001 &27942242495750667

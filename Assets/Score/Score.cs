@@ -109,4 +109,10 @@ public class Score : MonoBehaviour
         Digit[4] = ((int)Count % 100000)/10000;//5桁
         return Digit[Num-1];//引数-1の配列の要素を返す(0番目からなので)
     }
+
+    public double ScoreGetter()
+    {
+        //スコアを返す
+        return JudgeCount;
+    }
 }
