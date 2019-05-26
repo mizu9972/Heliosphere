@@ -56,20 +56,35 @@ public class WAVEGameManager : MonoBehaviour, IGameManager
     private int Count = 0;//連続でエネミーを破壊した数
     private Canvas canvas;//スコア表示のキャンバス
     private Canvas nowWave;//ウェーブ
-
+    [SerializeField, Header("エフェクトボックス")]
+    GameObject EffectBox;
+    [SerializeField,Header("FriendParticleSytemプレハブ")]
     private ParticleSystem FriendParticleSystem;
     // Start is called before the first frame update
     void Start()
     {
         canvas = GameObject.Find("ScoreCanvas").GetComponent<Canvas>();
         nowWave = GameObject.Find("WaveCanvas").GetComponent<Canvas>();
-        FriendParticleSystem = GameObject.Find("Friend Particle System").GetComponent<ParticleSystem>();
         MyTrans = this.GetComponent<Transform>();
+        EffectBoxSearch();
+        if (FriendParticleSystem == null)
+        {
+            Debug.Log("FriendParticleSytemプレハブ非設定");
+            Debug.Break();
+        }
         subVector = TargetTrans - MyTrans.position;
         subVector /= ApproachSpeed;
         Init();
     }
 
+    [ContextMenu("EffectBoxSet")]
+    void EffectBoxSearch()
+    {
+        if(EffectBox == null)
+        {
+            EffectBox = GameObject.Find("EffectBox");
+        }
+    }
     // Update is called once per frame
     void Update()
     {
@@ -82,7 +97,6 @@ public class WAVEGameManager : MonoBehaviour, IGameManager
         //Whereで条件判定し、Take(1)で一回だけ実行、Subscribeで処理
         this.UpdateAsObservable().Where(_ => (EnemyDesroyCount >= Enemy_GameClearPoint)).Take(1).Subscribe(_ => ToClearScene());
         SceneManager.sceneUnloaded += OnSceneUnloaded;
-        FriendParticleSystem.Stop();
     }
     public void AllChangeActive()
     {
@@ -139,10 +153,16 @@ public class WAVEGameManager : MonoBehaviour, IGameManager
     private void nextWave()
     {
         //フレンドの残り数だけパーティクル放出
-        int FirendNum = FriendCount();
-        var Paticlemain = FriendParticleSystem.main;
-        Paticlemain.maxParticles = FriendCount();
-        FriendParticleSystem.Play();
+
+        //EffectBoxの子に生成
+        var setParticle = Instantiate(FriendParticleSystem);
+        setParticle.transform.parent = EffectBox.transform;
+        //フレンドの数を取得しMaxParticleに設定して再生
+        int FriendNum = FriendCount();
+        var Paticlemain = setParticle.main;
+        Paticlemain.maxParticles = FriendNum;
+        setParticle.Play();
+
         if (nextGameManager != null)
         {
             //次のウェーブへ
