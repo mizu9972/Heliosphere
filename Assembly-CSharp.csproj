@@ -111,7 +111,6 @@
     <Compile Include="Assets\Scenes\Manager\Scripts\RetryButton.cs" />
     <Compile Include="Assets\Scenes\Manager\Scripts\SEManager.cs" />
     <Compile Include="Assets\Scenes\Manager\Scripts\ToSelectScene.cs" />
-    <Compile Include="Assets\Scenes\Manager\Scripts\v.cs" />
     <Compile Include="Assets\Scenes\Manager\Scripts\Volume.cs" />
     <Compile Include="Assets\Scenes\Manager\Scripts\VolumeButton.cs" />
     <Compile Include="Assets\Scenes\StageClear\ClearSceneManager.cs" />
