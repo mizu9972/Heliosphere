@@ -63,7 +63,7 @@ public class WAVEGameManager : MonoBehaviour, IGameManager
     {
         canvas = GameObject.Find("ScoreCanvas").GetComponent<Canvas>();
         nowWave = GameObject.Find("WaveCanvas").GetComponent<Canvas>();
-        FriendParticleSystem = GameObject.Find("Friend Particle System").GetComponent<ParticleSystem>();
+        //FriendParticleSystem = GameObject.Find("Friend Particle System").GetComponent<ParticleSystem>();
         MyTrans = this.GetComponent<Transform>();
         subVector = TargetTrans - MyTrans.position;
         subVector /= ApproachSpeed;
