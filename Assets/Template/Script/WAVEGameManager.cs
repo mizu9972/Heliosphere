@@ -137,7 +137,9 @@ public class WAVEGameManager : MonoBehaviour, IGameManager
 
     private void nextWave()
     {
-        if(nextGameManager != null)
+        int FirendNum = FriendCount();
+        Debug.Log(FirendNum);
+        if (nextGameManager != null)
         {
             //次のウェーブへ
             nextGameManager.gameObject.SetActive(true);
@@ -220,5 +222,33 @@ public class WAVEGameManager : MonoBehaviour, IGameManager
         {
             RevolutionCore5.GetComponent<RCore>().AddScale(ScaleUp);
         }
+    }
+
+    int FriendCount()
+    {
+        //全ての子Friend数計上
+        int FriendNum = 0;
+
+        if (RevolutionCore1 != null)
+        {
+            FriendNum += RevolutionCore1.GetComponent<RCore>().FriendsAllGetter().Count;
+        }
+        if (RevolutionCore2 != null)
+        {
+            FriendNum += RevolutionCore2.GetComponent<RCore>().FriendsAllGetter().Count;
+        }
+        if (RevolutionCore3 != null)
+        {
+            FriendNum += RevolutionCore3.GetComponent<RCore>().FriendsAllGetter().Count;
+        }
+        if (RevolutionCore4 != null)
+        {
+            FriendNum += RevolutionCore4.GetComponent<RCore>().FriendsAllGetter().Count;
+        }
+        if (RevolutionCore5 != null)
+        {
+            FriendNum += RevolutionCore5.GetComponent<RCore>().FriendsAllGetter().Count;
+        }
+        return FriendNum;
     }
 }

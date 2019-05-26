@@ -47,4 +47,19 @@ public class RCore : MonoBehaviour, ChangeActiveInterface
     {
         MyTrans.transform.localScale += new Vector3(_Scale, _Scale, _Scale);
     }
+
+    public List<GameObject> FriendsAllGetter()
+    {
+        //全ての子Friend取得
+        List<GameObject> MyFriends = new List<GameObject>();
+        foreach(Transform _Friend in transform)
+        {
+            if(_Friend.GetComponent<FriendScript>() != null)
+            {
+            MyFriends.Add(_Friend.gameObject);
+            }
+        }
+        
+        return MyFriends;
+    }
 }
