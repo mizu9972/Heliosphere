@@ -828,8 +828,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Count: 1000
   MaxCount: 99999
-  Frame: -20
-  AddScore: {fileID: 0}
+  Frame: 10
+  AddScore: {fileID: 2357930701008424138}
 --- !u!1 &7323756425378198715
 GameObject:
   m_ObjectHideFlags: 0
