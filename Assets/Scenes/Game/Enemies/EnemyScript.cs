@@ -6,8 +6,6 @@ using UniRx;
 public class EnemyScript : MonoBehaviour,ITragetFunction
 {
     private Rigidbody MyRigidB;
-    public AudioClip Explosion;//爆発音
-    private AudioSource audioSource;//オーディオソース
     private GameObject audioManager;
     [SerializeField]
     GameObject GameManager;
@@ -23,7 +21,6 @@ public class EnemyScript : MonoBehaviour,ITragetFunction
     {
         audioManager = GameObject.Find("SEManager");
         MyRigidB = this.GetComponent<Rigidbody>();
-        audioSource = this.GetComponent<AudioSource>();
 
         EffectBox = GameObject.FindWithTag("EffectBox");
     }

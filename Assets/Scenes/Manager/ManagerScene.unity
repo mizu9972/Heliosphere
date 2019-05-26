@@ -2472,6 +2472,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TitleBgm: {fileID: 8300000, guid: e044b7f109ccb5f45a9a5d2b0071d08c, type: 3}
   GameMainBgm: {fileID: 8300000, guid: edc3123cddb736a42918b89dbbb361b3, type: 3}
+  FeverBgm: {fileID: 8300000, guid: 99b596d51a619e34c971484b425ba2de, type: 3}
   MenuBgm: {fileID: 8300000, guid: ceed4099b9c3c8742a50f40b45f74cde, type: 3}
   ClearSound: {fileID: 8300000, guid: 28e52216e4e320b4e8afe672186e9f54, type: 3}
   OverSound: {fileID: 8300000, guid: 70204a9342938164fb4f8577b1c9a353, type: 3}

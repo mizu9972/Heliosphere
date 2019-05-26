@@ -36,33 +36,36 @@ public class Score : MonoBehaviour
         {
             return;
         }
-        //加減算される点数表示用のキャンバスのenabledをtrueにして点数を送信
-        if (AddScore)//表示状態ならenabedをfalseに
+        if (AddScore != null)
         {
-            AddScore.SetActive(false);
-        }
-        //獲得スコア表示のやつに数字（value）セット
-        AddScore.GetComponent<AddScore>().SetAddScore(value);
-        AddScore.SetActive(true);//描画
-        //一定時間経過で描画終了
-        Observable.Timer(System.TimeSpan.FromSeconds(1)).
-            Subscribe(_ => AddScore.SetActive(false));
-        JudgeCount += value;
-        var Function = Observable.Interval(System.TimeSpan.FromMilliseconds(16)).Take(Frame).Where(_ =>isGameOver == false).Subscribe(_ =>Count += value / Frame);
-        GameMaster.GetComponent<GameMaster>().CountUp(value);
-        if(JudgeCount >= MaxCount)//マックススコア
-        {
-            JudgeCount = MaxCount;
-        }
-        if(JudgeCount <= 0)
-        {
-            JudgeCount = 0;
-            Count = 0;
+            //加減算される点数表示用のキャンバスのenabledをtrueにして点数を送信
+            if (AddScore)//表示状態ならenabedをfalseに
+            {
+                AddScore.SetActive(false);
+            }
+            //獲得スコア表示のやつに数字（value）セット
+            AddScore.GetComponent<AddScore>().SetAddScore(value);
+            AddScore.SetActive(true);//描画
+                                     //一定時間経過で描画終了
+            Observable.Timer(System.TimeSpan.FromSeconds(1)).Where(_ => AddScore != null).
+                Subscribe(_ => AddScore.SetActive(false));
+            JudgeCount += value;
+            var Function = Observable.Interval(System.TimeSpan.FromMilliseconds(16)).Take(Frame).Where(_ => isGameOver == false).Subscribe(_ => Count += value / Frame);
+            GameMaster.GetComponent<GameMaster>().CountUp(value);
+            if (JudgeCount >= MaxCount)//マックススコア
+            {
+                JudgeCount = MaxCount;
+            }
+            if (JudgeCount <= 0)
+            {
+                JudgeCount = 0;
+                Count = 0;
 
-            isGameOver = true;
-            GameMaster.GetComponent<GameMaster>().ToGameOver();
+                isGameOver = true;
+                GameMaster.GetComponent<GameMaster>().ToGameOver();
+            }
+            Debug.Log(JudgeCount);
         }
-        Debug.Log(JudgeCount);
     }
 
     public void FeverScoreCount(double value)
