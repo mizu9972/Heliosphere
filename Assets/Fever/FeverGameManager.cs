@@ -82,7 +82,7 @@ public class FeverGameManager : MonoBehaviour, IGameManager
             .Where(_ => (TimeCount >= TimeToClear));
         //フレンド破壊で次のWAVE
         var ClearByFriendDestroy = this.UpdateAsObservable()
-            .Where(_ => EnemyDesroyCount >= 1);
+            .Where(_ => FriendDestroyCount >= 1);
 
         Observable.Amb(ClearByTimer, ClearByFriendDestroy)
             .Take(1)

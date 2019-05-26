@@ -2972,7 +2972,7 @@ MonoBehaviour:
   PlayerCore: {fileID: 0}
   RevolutionCore: {fileID: 4215325505427616277}
   Comet: {fileID: 0}
-  TimeToClear: 6
+  TimeToClear: 12
   nextGameManager: {fileID: 0}
   myFeverManager: {fileID: 2508690213010493306}
   EnemyBreakScore: 3
@@ -4708,7 +4708,7 @@ MonoBehaviour:
   PlayerCore: {fileID: 0}
   RevolutionCore: {fileID: 4212716804495264405}
   Comet: {fileID: 0}
-  TimeToClear: 6
+  TimeToClear: 12
   nextGameManager: {fileID: 0}
   myFeverManager: {fileID: 2508690213010493306}
   EnemyBreakScore: 3
@@ -8961,7 +8961,7 @@ MonoBehaviour:
   PlayerCore: {fileID: 0}
   RevolutionCore: {fileID: 4044626653405197579}
   Comet: {fileID: 0}
-  TimeToClear: 6
+  TimeToClear: 12
   nextGameManager: {fileID: 0}
   myFeverManager: {fileID: 2508690213010493306}
   EnemyBreakScore: 3
@@ -10567,7 +10567,7 @@ MonoBehaviour:
   PlayerCore: {fileID: 0}
   RevolutionCore: {fileID: 3378507887879780260}
   Comet: {fileID: 0}
-  TimeToClear: 6
+  TimeToClear: 12
   nextGameManager: {fileID: 8625279182141312698}
   myFeverManager: {fileID: 2508690213010493306}
   EnemyBreakScore: 3
@@ -28017,7 +28017,7 @@ MonoBehaviour:
   PlayerCore: {fileID: 0}
   RevolutionCore: {fileID: 767410428642569206}
   Comet: {fileID: 0}
-  TimeToClear: 6
+  TimeToClear: 12
   nextGameManager: {fileID: 982485402852812966}
   myFeverManager: {fileID: 2508690213010493306}
   EnemyBreakScore: 3
@@ -29828,7 +29828,7 @@ MonoBehaviour:
   PlayerCore: {fileID: 0}
   RevolutionCore: {fileID: 7919657414177578021}
   Comet: {fileID: 0}
-  TimeToClear: 6
+  TimeToClear: 12
   nextGameManager: {fileID: 0}
   myFeverManager: {fileID: 2508690213010493306}
   EnemyBreakScore: 3
