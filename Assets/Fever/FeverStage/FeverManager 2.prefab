@@ -784,7 +784,7 @@ MonoBehaviour:
   PlayerCore: {fileID: 0}
   RevolutionCore: {fileID: 3378507887879780260}
   Comet: {fileID: 0}
-  TimeToClear: 6
+  TimeToClear: 12
   nextGameManager: {fileID: 0}
   myFeverManager: {fileID: 2508690213010493306}
   EnemyBreakScore: 3
