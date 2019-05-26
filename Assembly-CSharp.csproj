@@ -93,12 +93,14 @@
      <Compile Include="Assets\Scenes\GameOver\GameOverManager.cs" />
      <Compile Include="Assets\Scenes\Manager\Scripts\AudioManager.cs" />
      <Compile Include="Assets\Scenes\Manager\Scripts\BeforScene.cs" />
+     <Compile Include="Assets\Scenes\Manager\Scripts\CursorVisible.cs" />
      <Compile Include="Assets\Scenes\Manager\Scripts\ExitFunction.cs" />
      <Compile Include="Assets\Scenes\Manager\Scripts\IOnSelected.cs" />
      <Compile Include="Assets\Scenes\Manager\Scripts\Manager.cs" />
      <Compile Include="Assets\Scenes\Manager\Scripts\PlayButton.cs" />
      <Compile Include="Assets\Scenes\Manager\Scripts\QuitButton.cs" />
      <Compile Include="Assets\Scenes\Manager\Scripts\RetryButton.cs" />
+     <Compile Include="Assets\Scenes\Manager\Scripts\SEManager.cs" />
      <Compile Include="Assets\Scenes\Manager\Scripts\ToSelectScene.cs" />
      <Compile Include="Assets\Scenes\Manager\Scripts\Volume.cs" />
      <Compile Include="Assets\Scenes\Manager\Scripts\VolumeButton.cs" />
@@ -119,6 +121,7 @@
      <Compile Include="Assets\Score\SetScorePos.cs" />
      <Compile Include="Assets\Score\SetWavePos.cs" />
      <Compile Include="Assets\Score\WaveCount.cs" />
+     <Compile Include="Assets\ScoreDownbyTime.cs" />
      <Compile Include="Assets\Spawn_Meteo.cs" />
      <Compile Include="Assets\SwitchPPS.cs" />
      <Compile Include="Assets\Template\GameObjects\ChangeActive.cs" />

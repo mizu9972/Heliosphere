@@ -13,9 +13,14 @@ public class WAVEGameManager : MonoBehaviour, IGameManager
 
     [Header("isActiveを操作するオブジェクト群")]
     public GameObject PlayerCore;
-    public GameObject RevolutionCore;
+
     public GameObject Comet;
 
+    
+    [SerializeField,Header("レボリューションコア")]
+    GameObject RevolutionCore1;
+    [SerializeField]
+    GameObject RevolutionCore2, RevolutionCore3, RevolutionCore4, RevolutionCore5;
     [Header("クリアEnemy破壊数・ゲームオーバーFriend破壊数")]
     [SerializeField]
     int Friend_GameOverPoint;
@@ -30,6 +35,9 @@ public class WAVEGameManager : MonoBehaviour, IGameManager
 
     [SerializeField, Header("フレンドを破壊した時のスコア")]
     double FriendBreakScore;
+
+    [SerializeField, Header("WAVEクリア時のスコア")]
+    int WAVEClearScore = 1000;
 
     [SerializeField, Header("ゲームマスター")]
     GameObject GameMaster;
@@ -48,17 +56,41 @@ public class WAVEGameManager : MonoBehaviour, IGameManager
     private int Count = 0;//連続でエネミーを破壊した数
     private Canvas canvas;//スコア表示のキャンバス
     private Canvas nowWave;//ウェーブ
+    [SerializeField, Header("エフェクトボックス")]
+    GameObject EffectBox;
+    [SerializeField,Header("FriendParticleSytemプレハブ")]
+    private ParticleSystem FriendParticleSystem;
     // Start is called before the first frame update
     void Start()
     {
         canvas = GameObject.Find("ScoreCanvas").GetComponent<Canvas>();
         nowWave = GameObject.Find("WaveCanvas").GetComponent<Canvas>();
         MyTrans = this.GetComponent<Transform>();
+        EffectBoxSearch();
+        if (FriendParticleSystem == null)
+        {
+            Debug.Log("FriendParticleSytemプレハブ非設定");
+            Debug.Break();
+        }
         subVector = TargetTrans - MyTrans.position;
         subVector /= ApproachSpeed;
         Init();
     }
 
+    [ContextMenu("EffectBoxSet")]
+    void EffectBoxSearch()
+    {
+        if(EffectBox == null)
+        {
+            EffectBox = GameObject.Find("EffectBox");
+        }
+    }
+
+    [ContextMenu("エネミーの数取得")]
+    void EnemyNumSet()
+    {
+        Enemy_GameClearPoint = EnemyCount();
+    }
     // Update is called once per frame
     void Update()
     {
@@ -75,7 +107,26 @@ public class WAVEGameManager : MonoBehaviour, IGameManager
     public void AllChangeActive()
     {
         PlayerCore.GetComponent<ChangeActiveInterface>().ChangeActive();
-        RevolutionCore.GetComponent<ChangeActiveInterface>().ChangeActive();
+        if (RevolutionCore1 != null)
+        {
+            RevolutionCore1.GetComponent<ChangeActiveInterface>().ChangeActive();
+        }
+        if (RevolutionCore2 != null)
+        {
+            RevolutionCore2.GetComponent<ChangeActiveInterface>().ChangeActive();
+        }
+        if (RevolutionCore3 != null)
+        {
+            RevolutionCore3.GetComponent<ChangeActiveInterface>().ChangeActive();
+        }
+        if (RevolutionCore4 != null)
+        {
+            RevolutionCore4.GetComponent<ChangeActiveInterface>().ChangeActive();
+        }
+        if (RevolutionCore5 != null)
+        {
+            RevolutionCore5.GetComponent<ChangeActiveInterface>().ChangeActive();
+        }
         if (Comet != null)
         {
             Comet.GetComponent<ChangeActiveInterface>().ChangeActive();
@@ -101,12 +152,24 @@ public class WAVEGameManager : MonoBehaviour, IGameManager
         //SceneChangeTimeの分だけ遅らせて
         //クリアシーンへ
         Observable.Timer(System.TimeSpan.FromSeconds(SceneChangeTime)).Subscribe(_ => nextWave());
+        canvas.GetComponent<Score>().FeverScoreCount(WAVEClearScore);
         GameObject.Find("Manager").GetComponent<Manager>().ChengeActive(false);
     }
 
     private void nextWave()
     {
-        if(nextGameManager != null)
+        //フレンドの残り数だけパーティクル放出
+
+        //EffectBoxの子に生成
+        var setParticle = Instantiate(FriendParticleSystem);
+        setParticle.transform.parent = EffectBox.transform;
+        //フレンドの数を取得しMaxParticleに設定して再生
+        int FriendNum = FriendCount();
+        var Paticlemain = setParticle.main;
+        Paticlemain.maxParticles = FriendNum;
+        setParticle.Play();
+
+        if (nextGameManager != null)
         {
             //次のウェーブへ
             nextGameManager.gameObject.SetActive(true);
@@ -114,11 +177,13 @@ public class WAVEGameManager : MonoBehaviour, IGameManager
             GameObject.Find("GameMaster").GetComponent<GameMaster>().WAVEset(nextGameManager);
             //ここで別スクリプトのカウント関数実行
             nowWave.GetComponent<WaveCount>().WaveCounrer(WAVECount);
-            this.gameObject.SetActive(false);//自身を無効化
+            Observable.Interval(System.TimeSpan.FromMilliseconds(16)).Subscribe(_ => RCoreScaleUp());
+            Observable.Timer(System.TimeSpan.FromSeconds(1)).Subscribe(_ => this.gameObject.SetActive(false));//自身を無効化
         }else
         {
             Debug.Log("クリア");
             AllChangeActive();
+            Observable.Interval(System.TimeSpan.FromMilliseconds(16)).Subscribe(_ => RCoreScaleUp());
             GameObject.Find("Manager").GetComponent<Manager>().CallWAVEClear();
         }
     }
@@ -163,4 +228,84 @@ public class WAVEGameManager : MonoBehaviour, IGameManager
         return FeverFlg;
     }
 
+    private void RCoreScaleUp()
+    {
+
+        float ScaleUp = 0.05f;
+        if (RevolutionCore1 != null)
+        {
+            RevolutionCore1.GetComponent<RCore>().AddScale(ScaleUp);
+        }
+        if (RevolutionCore2 != null)
+        {
+            RevolutionCore2.GetComponent<RCore>().AddScale(ScaleUp);
+        }
+        if (RevolutionCore3 != null)
+        {
+            RevolutionCore3.GetComponent<RCore>().AddScale(ScaleUp);
+        }
+        if (RevolutionCore4 != null)
+        {
+            RevolutionCore4.GetComponent<RCore>().AddScale(ScaleUp);
+        }
+        if (RevolutionCore5 != null)
+        {
+            RevolutionCore5.GetComponent<RCore>().AddScale(ScaleUp);
+        }
+    }
+
+    int FriendCount()
+    {
+        //全ての子Friend数計上
+        int FriendNum = 0;
+
+        if (RevolutionCore1 != null)
+        {
+            FriendNum += RevolutionCore1.GetComponent<RCore>().FriendsAllGetter().Count;
+        }
+        if (RevolutionCore2 != null)
+        {
+            FriendNum += RevolutionCore2.GetComponent<RCore>().FriendsAllGetter().Count;
+        }
+        if (RevolutionCore3 != null)
+        {
+            FriendNum += RevolutionCore3.GetComponent<RCore>().FriendsAllGetter().Count;
+        }
+        if (RevolutionCore4 != null)
+        {
+            FriendNum += RevolutionCore4.GetComponent<RCore>().FriendsAllGetter().Count;
+        }
+        if (RevolutionCore5 != null)
+        {
+            FriendNum += RevolutionCore5.GetComponent<RCore>().FriendsAllGetter().Count;
+        }
+        return FriendNum;
+    }
+
+    int EnemyCount()
+    {
+        int EnemyNum = 0;
+
+        if (RevolutionCore1 != null)
+        {
+            EnemyNum += RevolutionCore1.GetComponent<RCore>().EnemiesAllGetter().Count;
+        }
+        if (RevolutionCore2 != null)
+        {
+            EnemyNum += RevolutionCore2.GetComponent<RCore>().EnemiesAllGetter().Count;
+        }
+        if (RevolutionCore3 != null)
+        {
+            EnemyNum += RevolutionCore3.GetComponent<RCore>().EnemiesAllGetter().Count;
+        }
+        if (RevolutionCore4 != null)
+        {
+            EnemyNum += RevolutionCore4.GetComponent<RCore>().EnemiesAllGetter().Count;
+        }
+        if (RevolutionCore5 != null)
+        {
+            EnemyNum += RevolutionCore5.GetComponent<RCore>().EnemiesAllGetter().Count;
+        }
+        return EnemyNum;
+    }
 }

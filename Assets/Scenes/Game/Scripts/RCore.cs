@@ -42,4 +42,39 @@ public class RCore : MonoBehaviour, ChangeActiveInterface
     {
         isActive = !isActive;
     }
+
+    public void AddScale(float _Scale)
+    {
+        MyTrans.transform.localScale += new Vector3(_Scale, _Scale, _Scale);
+    }
+
+    public List<GameObject> FriendsAllGetter()
+    {
+        //全ての子Friend取得
+        List<GameObject> MyFriends = new List<GameObject>();
+        foreach(Transform _Friend in transform)
+        {
+            if(_Friend.GetComponent<FriendScript>() != null)
+            {
+            MyFriends.Add(_Friend.gameObject);
+            }
+        }
+        
+        return MyFriends;
+    }
+
+    public List<GameObject> EnemiesAllGetter()
+    {
+        //全ての子Enemy取得
+        List<GameObject> MyEnemies = new List<GameObject>();
+        foreach(Transform _Enemy in transform)
+        {
+            if(_Enemy.GetComponent<EnemyScript>() != null)
+            {
+                MyEnemies.Add(_Enemy.gameObject);
+            }
+        }
+
+        return MyEnemies;
+    }
 }

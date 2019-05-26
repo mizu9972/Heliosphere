@@ -6,9 +6,7 @@ using UniRx;
 public class EnemyScript : MonoBehaviour,ITragetFunction
 {
     private Rigidbody MyRigidB;
-    public AudioClip Explosion;//爆発音
-    private AudioSource audioSource;//オーディオソース
-
+    private GameObject audioManager;
     [SerializeField]
     GameObject GameManager;
     [SerializeField]
@@ -21,8 +19,8 @@ public class EnemyScript : MonoBehaviour,ITragetFunction
     // Start is called before the first frame update
     void Start()
     {
+        audioManager = GameObject.Find("SEManager");
         MyRigidB = this.GetComponent<Rigidbody>();
-        audioSource = this.GetComponent<AudioSource>();
 
         EffectBox = GameObject.FindWithTag("EffectBox");
     }
@@ -41,7 +39,9 @@ public class EnemyScript : MonoBehaviour,ITragetFunction
 
     public void Hit()
     {
-        audioSource.PlayOneShot(Explosion);
+        audioManager.GetComponent<SEManager>().
+            PlaySE(SEManager.AudioType.Enemy1);
+
         //衝突時
         GameManager.GetComponent<IGameManager>().AddEnemyPoint();
         GameObject explosion;
