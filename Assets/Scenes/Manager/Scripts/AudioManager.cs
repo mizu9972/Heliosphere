@@ -1,4 +1,6 @@
-﻿using System.Collections;
+﻿
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -13,7 +15,8 @@ public class AudioManager : MonoBehaviour
     public AudioClip ClearSound;//ゲームCLEAR
     public AudioClip OverSound;//ゲームオーバー
     public AudioClip ClickSound;//決定音
-
+    
+    
     private AudioSource audioSource;
     private string sceneName;//アクティブシーン名
     private bool PlayFlg = false;
@@ -84,5 +87,9 @@ public class AudioManager : MonoBehaviour
         audioSource.clip = ClickSound;
         audioSource.loop = false;
         this.UpdateAsObservable().Take(1).Subscribe(_ => audioSource.Play());
+
+        ///使い方getcomponent PlaySE(AudioManager.AudioType.Enemy1);
     }
+
+    
 }

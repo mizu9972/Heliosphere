@@ -122,7 +122,9 @@ public class FeverGameManager : MonoBehaviour, IGameManager
         {
             //次のウェーブへ
             nextGameManager.gameObject.SetActive(true);
-            nextGameManager.GetComponent<WAVEGameManager>().ApproachStart();
+            nextGameManager.GetComponent<FeverGameManager>().ApproachStart();
+            this.gameObject.SetActive(false);
+
         }
         else
         {
