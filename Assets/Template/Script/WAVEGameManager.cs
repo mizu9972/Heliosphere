@@ -63,7 +63,7 @@ public class WAVEGameManager : MonoBehaviour, IGameManager
     {
         canvas = GameObject.Find("ScoreCanvas").GetComponent<Canvas>();
         nowWave = GameObject.Find("WaveCanvas").GetComponent<Canvas>();
-        //FriendParticleSystem = GameObject.Find("Friend Particle System").GetComponent<ParticleSystem>();
+        FriendParticleSystem = GameObject.Find("Friend Particle System").GetComponent<ParticleSystem>();
         MyTrans = this.GetComponent<Transform>();
         subVector = TargetTrans - MyTrans.position;
         subVector /= ApproachSpeed;
@@ -82,6 +82,7 @@ public class WAVEGameManager : MonoBehaviour, IGameManager
         //Whereで条件判定し、Take(1)で一回だけ実行、Subscribeで処理
         this.UpdateAsObservable().Where(_ => (EnemyDesroyCount >= Enemy_GameClearPoint)).Take(1).Subscribe(_ => ToClearScene());
         SceneManager.sceneUnloaded += OnSceneUnloaded;
+        FriendParticleSystem.Stop();
     }
     public void AllChangeActive()
     {
@@ -137,8 +138,11 @@ public class WAVEGameManager : MonoBehaviour, IGameManager
 
     private void nextWave()
     {
+        //フレンドの残り数だけパーティクル放出
         int FirendNum = FriendCount();
-        Debug.Log(FirendNum);
+        var Paticlemain = FriendParticleSystem.main;
+        Paticlemain.maxParticles = FriendCount();
+        FriendParticleSystem.Play();
         if (nextGameManager != null)
         {
             //次のウェーブへ
