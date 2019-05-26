@@ -15,9 +15,9 @@ public class ScoreDownbyTime : MonoBehaviour
     {
         var GetScore = this.GetComponent<Score>();
         Observable.Interval(System.TimeSpan.FromSeconds(0.5f))
-            .Select(_ => GetScore.ScoreGetter())
+            .Select(x => GetScore.ScoreGetter())
             .Where(x => x > 1)
-            .Subscribe(_ => GetScore.ScoreCount(DownScore / 2.0f));
+            .Subscribe(_ => GetScore.ScoreCount(-1 * (DownScore / 2.0f)));
     }
 
 }
