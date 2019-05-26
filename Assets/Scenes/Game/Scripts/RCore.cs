@@ -62,4 +62,19 @@ public class RCore : MonoBehaviour, ChangeActiveInterface
         
         return MyFriends;
     }
+
+    public List<GameObject> EnemiesAllGetter()
+    {
+        //全ての子Enemy取得
+        List<GameObject> MyEnemies = new List<GameObject>();
+        foreach(Transform _Enemy in transform)
+        {
+            if(_Enemy.GetComponent<EnemyScript>() != null)
+            {
+                MyEnemies.Add(_Enemy.gameObject);
+            }
+        }
+
+        return MyEnemies;
+    }
 }

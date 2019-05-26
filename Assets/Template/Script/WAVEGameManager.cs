@@ -85,6 +85,12 @@ public class WAVEGameManager : MonoBehaviour, IGameManager
             EffectBox = GameObject.Find("EffectBox");
         }
     }
+
+    [ContextMenu("エネミーの数取得")]
+    void EnemyNumSet()
+    {
+        Enemy_GameClearPoint = EnemyCount();
+    }
     // Update is called once per frame
     void Update()
     {
@@ -274,5 +280,32 @@ public class WAVEGameManager : MonoBehaviour, IGameManager
             FriendNum += RevolutionCore5.GetComponent<RCore>().FriendsAllGetter().Count;
         }
         return FriendNum;
+    }
+
+    int EnemyCount()
+    {
+        int EnemyNum = 0;
+
+        if (RevolutionCore1 != null)
+        {
+            EnemyNum += RevolutionCore1.GetComponent<RCore>().EnemiesAllGetter().Count;
+        }
+        if (RevolutionCore2 != null)
+        {
+            EnemyNum += RevolutionCore2.GetComponent<RCore>().EnemiesAllGetter().Count;
+        }
+        if (RevolutionCore3 != null)
+        {
+            EnemyNum += RevolutionCore3.GetComponent<RCore>().EnemiesAllGetter().Count;
+        }
+        if (RevolutionCore4 != null)
+        {
+            EnemyNum += RevolutionCore4.GetComponent<RCore>().EnemiesAllGetter().Count;
+        }
+        if (RevolutionCore5 != null)
+        {
+            EnemyNum += RevolutionCore5.GetComponent<RCore>().EnemiesAllGetter().Count;
+        }
+        return EnemyNum;
     }
 }
