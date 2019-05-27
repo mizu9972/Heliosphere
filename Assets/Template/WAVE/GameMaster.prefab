@@ -52,6 +52,7 @@ MonoBehaviour:
   FeverObject: {fileID: 7369897965432992780, guid: b0a87a12e0a39e44689202b52eff18bf,
     type: 3}
   Fevergauge: {fileID: 0}
+  GameOverChangeTime: 1
 --- !u!1 &4022241188851852122
 GameObject:
   m_ObjectHideFlags: 0
