@@ -62,6 +62,7 @@ MonoBehaviour:
   Parent: {fileID: 2592975415085212246}
   Target: {fileID: 0}
   SizeUp: 70
+  LimitScale: 20
 --- !u!1 &2550043631095521500
 GameObject:
   m_ObjectHideFlags: 0
