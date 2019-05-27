@@ -121,9 +121,12 @@ MonoBehaviour:
   nextGameManager: {fileID: 0}
   EnemyBreakScore: 1
   FriendBreakScore: 0
+  WAVEClearScore: 1000
   GameMaster: {fileID: 0}
   WAVECount: 1
   ApproachSpeed: 1
+  EffectBox: {fileID: 0}
+  FriendParticleSystem: {fileID: 0}
 --- !u!1 &1402989273163026054
 GameObject:
   m_ObjectHideFlags: 0

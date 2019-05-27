@@ -25,17 +25,15 @@ public class GameMaster : MonoBehaviour
 
     [SerializeField, Header("フィーバーゲージ")]
     public RawImage Fevergauge;
-
-    [SerializeField, Header("ゲームオーバー表示までの時間")]
-    float GameOverChangeTime = 1;
-
     private GameObject NowFeverObj;
     private int enemycount = 0;
     private double ScoreCount;//フィーバーモードへのカウント用 
     private GameObject MyCamera;
+    private GameObject Manager;
     // Start is called before the first frame update
     void Start()
     {
+        Manager = GameObject.Find("Manager");
         this.UpdateAsObservable().Where(_ => ScoreCount >= FeverScore).Subscribe(_ => FeverStart());
 
         MyCamera = GameObject.FindWithTag("MainCamera");
@@ -117,9 +115,9 @@ public class GameMaster : MonoBehaviour
 
     public void ToGameOver()
     {
-        GameObject.Find("CometVer100").GetComponent<GameOverFunc>().GameOver();
-        Observable.Timer(System.TimeSpan.FromSeconds(GameOverChangeTime))
-            .Subscribe(_ => NowWAVEGameManager.GetComponent<WAVEGameManager>().ToGameOverScene());
+        //ゲームオーバーのBGM再生
+        Manager.GetComponent<AudioManager>().PlayResult(AudioManager.AudioType.GameOver);
+        NowWAVEGameManager.GetComponent<WAVEGameManager>().ToGameOverScene();
     }
     //void Switch()//Gageのフラグ切り替え
     //{
