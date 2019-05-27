@@ -130,6 +130,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DownScore: 2
+  isActive: 1
 --- !u!1 &498084920592391846
 GameObject:
   m_ObjectHideFlags: 0
@@ -1310,10 +1311,10 @@ MonoBehaviour:
   FeverPrehab: {fileID: 2508690213010493306, guid: ec1e62a8403f58b4388a3cac40cec5c4,
     type: 3}
   FeverScore: 7777
-  FeverCanvas: {fileID: 0}
+  FeverCanvas: {fileID: 8047157084576617950}
   FeverObject: {fileID: 7369897965432992780, guid: b0a87a12e0a39e44689202b52eff18bf,
     type: 3}
-  Fevergauge: {fileID: 0}
+  Fevergauge: {fileID: 1056861609564781166}
 --- !u!1 &3389715843618936784
 GameObject:
   m_ObjectHideFlags: 0
