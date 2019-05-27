@@ -25,6 +25,10 @@ public class GameMaster : MonoBehaviour
 
     [SerializeField, Header("フィーバーゲージ")]
     public RawImage Fevergauge;
+
+    [SerializeField, Header("ゲームオーバー表示までの時間")]
+    float GameOverChangeTime = 1;
+
     private GameObject NowFeverObj;
     private int enemycount = 0;
     private double ScoreCount;//フィーバーモードへのカウント用 
@@ -113,7 +117,9 @@ public class GameMaster : MonoBehaviour
 
     public void ToGameOver()
     {
-        NowWAVEGameManager.GetComponent<WAVEGameManager>().ToGameOverScene();
+        GameObject.Find("CometVer100").GetComponent<GameOverFunc>().GameOver();
+        Observable.Timer(System.TimeSpan.FromSeconds(GameOverChangeTime))
+            .Subscribe(_ => NowWAVEGameManager.GetComponent<WAVEGameManager>().ToGameOverScene());
     }
     //void Switch()//Gageのフラグ切り替え
     //{
