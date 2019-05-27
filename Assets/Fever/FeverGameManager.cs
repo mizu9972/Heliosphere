@@ -11,16 +11,17 @@ public class FeverGameManager : MonoBehaviour, IGameManager
 
     [Header("isActiveを操作するオブジェクト群")]
     public GameObject PlayerCore;
-    public GameObject RevolutionCore;
     public GameObject Comet;
 
+    [SerializeField, Header("レボリューションコア")]
+    GameObject RevolutionCore1;
+    [SerializeField]
+    GameObject RevolutionCore2, RevolutionCore3, RevolutionCore4, RevolutionCore5;
     [Header("WAVEの時間")]
     [SerializeField]
     float TimeToClear = 4;
 
     private float TimeCount =0;//時間計測用
-
-    int Enemy_GameClearPoint;
 
     [SerializeField, Header("次のWAVEのGameManager")]
     GameObject nextGameManager = null;
@@ -35,6 +36,8 @@ public class FeverGameManager : MonoBehaviour, IGameManager
     [SerializeField, Header("フレンドを破壊した時のスコア")]
     double FriendBreakScore;
 
+    [SerializeField]
+    int Enemy_GameClearPoint;
 
     private int FriendDestroyCount;
 
@@ -83,8 +86,11 @@ public class FeverGameManager : MonoBehaviour, IGameManager
         //フレンド破壊で次のWAVE
         var ClearByFriendDestroy = this.UpdateAsObservable()
             .Where(_ => FriendDestroyCount >= 1);
+        //エネミー全て破壊で次のWAVE
+        var ClearByAllKill = this.UpdateAsObservable()
+            .Where(_ => EnemyDesroyCount >= Enemy_GameClearPoint);
 
-        Observable.Amb(ClearByTimer, ClearByFriendDestroy)
+        Observable.Amb(ClearByTimer, ClearByFriendDestroy, ClearByAllKill)
             .Take(1)
             .Subscribe(_ => ToClearScene());
 
@@ -100,7 +106,26 @@ public class FeverGameManager : MonoBehaviour, IGameManager
     public void AllChangeActive()
     {
         PlayerCore.GetComponent<ChangeActiveInterface>().ChangeActive();
-        RevolutionCore.GetComponent<ChangeActiveInterface>().ChangeActive();
+        if (RevolutionCore1 != null)
+        {
+            RevolutionCore1.GetComponent<ChangeActiveInterface>().ChangeActive();
+        }
+        if (RevolutionCore2 != null)
+        {
+            RevolutionCore2.GetComponent<ChangeActiveInterface>().ChangeActive();
+        }
+        if (RevolutionCore3 != null)
+        {
+            RevolutionCore3.GetComponent<ChangeActiveInterface>().ChangeActive();
+        }
+        if (RevolutionCore4 != null)
+        {
+            RevolutionCore4.GetComponent<ChangeActiveInterface>().ChangeActive();
+        }
+        if (RevolutionCore5 != null)
+        {
+            RevolutionCore5.GetComponent<ChangeActiveInterface>().ChangeActive();
+        }
         if (Comet != null)
         {
             Comet.GetComponent<ChangeActiveInterface>().ChangeActive();
@@ -174,5 +199,38 @@ public class FeverGameManager : MonoBehaviour, IGameManager
     public float GetClearTime()
     {
         return TimeToClear;
+    }
+
+    [ContextMenu("エネミーの数取得")]
+    void EnemyNumSet()
+    {
+        Enemy_GameClearPoint = EnemyCount();
+    }
+
+    int EnemyCount()
+    {
+        int EnemyNum = 0;
+
+        if (RevolutionCore1 != null)
+        {
+            EnemyNum += RevolutionCore1.GetComponent<RCore>().EnemiesAllGetter().Count;
+        }
+        if (RevolutionCore2 != null)
+        {
+            EnemyNum += RevolutionCore2.GetComponent<RCore>().EnemiesAllGetter().Count;
+        }
+        if (RevolutionCore3 != null)
+        {
+            EnemyNum += RevolutionCore3.GetComponent<RCore>().EnemiesAllGetter().Count;
+        }
+        if (RevolutionCore4 != null)
+        {
+            EnemyNum += RevolutionCore4.GetComponent<RCore>().EnemiesAllGetter().Count;
+        }
+        if (RevolutionCore5 != null)
+        {
+            EnemyNum += RevolutionCore5.GetComponent<RCore>().EnemiesAllGetter().Count;
+        }
+        return EnemyNum;
     }
 }
