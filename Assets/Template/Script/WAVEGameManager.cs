@@ -11,6 +11,9 @@ public class WAVEGameManager : MonoBehaviour, IGameManager
     private bool FeverFlg;//フィーバー状態か
     public float SceneChangeTime = 0;
 
+    [SerializeField, Header("初期位置")]
+    Vector3 InitPosition = new Vector3(0, -60, 0);
+
     [Header("isActiveを操作するオブジェクト群")]
     public GameObject PlayerCore;
 
@@ -213,6 +216,7 @@ public class WAVEGameManager : MonoBehaviour, IGameManager
     public void ApproachStart()
     {
         MyTrans = this.GetComponent<Transform>();
+        MyTrans.position = InitPosition;
         Observable.Interval(System.TimeSpan.FromMilliseconds(16))
             .TakeWhile(_ => MyTrans.position.y < 0)
             .Subscribe(_ => ApproarchFunc());

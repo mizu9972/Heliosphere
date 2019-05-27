@@ -106,6 +106,7 @@ public class GameMaster : MonoBehaviour
         MyCamera.GetComponent<SwitchPPS>().ChangeLayer("PostProcessing");
 
         NowWAVEGameManager.SetActive(true);
+        NowWAVEGameManager.GetComponent<WAVEGameManager>().ApproachStart();
     }
 
     public void AddEnemycount()
