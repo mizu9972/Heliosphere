@@ -56,20 +56,41 @@ public class WAVEGameManager : MonoBehaviour, IGameManager
     private int Count = 0;//連続でエネミーを破壊した数
     private Canvas canvas;//スコア表示のキャンバス
     private Canvas nowWave;//ウェーブ
-
+    [SerializeField, Header("エフェクトボックス")]
+    GameObject EffectBox;
+    [SerializeField,Header("FriendParticleSytemプレハブ")]
     private ParticleSystem FriendParticleSystem;
     // Start is called before the first frame update
     void Start()
     {
         canvas = GameObject.Find("ScoreCanvas").GetComponent<Canvas>();
         nowWave = GameObject.Find("WaveCanvas").GetComponent<Canvas>();
-        //FriendParticleSystem = GameObject.Find("Friend Particle System").GetComponent<ParticleSystem>();
         MyTrans = this.GetComponent<Transform>();
+        EffectBoxSearch();
+        if (FriendParticleSystem == null)
+        {
+            Debug.Log("FriendParticleSytemプレハブ非設定");
+            Debug.Break();
+        }
         subVector = TargetTrans - MyTrans.position;
         subVector /= ApproachSpeed;
         Init();
     }
 
+    [ContextMenu("EffectBoxSet")]
+    void EffectBoxSearch()
+    {
+        if(EffectBox == null)
+        {
+            EffectBox = GameObject.Find("EffectBox");
+        }
+    }
+
+    [ContextMenu("エネミーの数取得")]
+    void EnemyNumSet()
+    {
+        Enemy_GameClearPoint = EnemyCount();
+    }
     // Update is called once per frame
     void Update()
     {
@@ -137,7 +158,18 @@ public class WAVEGameManager : MonoBehaviour, IGameManager
 
     private void nextWave()
     {
-        if(nextGameManager != null)
+        //フレンドの残り数だけパーティクル放出
+
+        //EffectBoxの子に生成
+        var setParticle = Instantiate(FriendParticleSystem);
+        setParticle.transform.parent = EffectBox.transform;
+        //フレンドの数を取得しMaxParticleに設定して再生
+        int FriendNum = FriendCount();
+        var Paticlemain = setParticle.main;
+        Paticlemain.maxParticles = FriendNum;
+        setParticle.Play();
+
+        if (nextGameManager != null)
         {
             //次のウェーブへ
             nextGameManager.gameObject.SetActive(true);
@@ -220,5 +252,60 @@ public class WAVEGameManager : MonoBehaviour, IGameManager
         {
             RevolutionCore5.GetComponent<RCore>().AddScale(ScaleUp);
         }
+    }
+
+    int FriendCount()
+    {
+        //全ての子Friend数計上
+        int FriendNum = 0;
+
+        if (RevolutionCore1 != null)
+        {
+            FriendNum += RevolutionCore1.GetComponent<RCore>().FriendsAllGetter().Count;
+        }
+        if (RevolutionCore2 != null)
+        {
+            FriendNum += RevolutionCore2.GetComponent<RCore>().FriendsAllGetter().Count;
+        }
+        if (RevolutionCore3 != null)
+        {
+            FriendNum += RevolutionCore3.GetComponent<RCore>().FriendsAllGetter().Count;
+        }
+        if (RevolutionCore4 != null)
+        {
+            FriendNum += RevolutionCore4.GetComponent<RCore>().FriendsAllGetter().Count;
+        }
+        if (RevolutionCore5 != null)
+        {
+            FriendNum += RevolutionCore5.GetComponent<RCore>().FriendsAllGetter().Count;
+        }
+        return FriendNum;
+    }
+
+    int EnemyCount()
+    {
+        int EnemyNum = 0;
+
+        if (RevolutionCore1 != null)
+        {
+            EnemyNum += RevolutionCore1.GetComponent<RCore>().EnemiesAllGetter().Count;
+        }
+        if (RevolutionCore2 != null)
+        {
+            EnemyNum += RevolutionCore2.GetComponent<RCore>().EnemiesAllGetter().Count;
+        }
+        if (RevolutionCore3 != null)
+        {
+            EnemyNum += RevolutionCore3.GetComponent<RCore>().EnemiesAllGetter().Count;
+        }
+        if (RevolutionCore4 != null)
+        {
+            EnemyNum += RevolutionCore4.GetComponent<RCore>().EnemiesAllGetter().Count;
+        }
+        if (RevolutionCore5 != null)
+        {
+            EnemyNum += RevolutionCore5.GetComponent<RCore>().EnemiesAllGetter().Count;
+        }
+        return EnemyNum;
     }
 }
