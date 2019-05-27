@@ -16,17 +16,21 @@ public class AudioManager : MonoBehaviour
     public AudioClip OverSound;//ゲームオーバー
     public AudioClip ClickSound;//決定音
     
-    
     private AudioSource audioSource;
     private string sceneName;//アクティブシーン名
     private bool PlayFlg = false;
     private bool FeverFlg;//フィーバー取得用
     private RawImage rawImage;//fevergauge
     private float PlayTime;//曲の再生時間
+    private bool ResultFlg;//リザルトの曲の再生状態
+    public enum AudioType
+    {
+        GameClear,
+        GameOver,
+    };
     void Start()
     {
-        Debug.Log("Start");
-        PlayTime = 0.0f;//リセット
+        rawImage = GameObject.Find("Gauge").GetComponent<RawImage>();//フィーバーフラグの更新を受け取るオブジェクト
         SceneManager.activeSceneChanged += ActiveSceneChanged;
         audioSource = gameObject.GetComponent<AudioSource>();
         sceneName = SceneManager.GetActiveScene().name;//アクティブシーン名の取得
@@ -34,14 +38,21 @@ public class AudioManager : MonoBehaviour
         var change = gameObject.ObserveEveryValueChanged(_ => FeverFlg);
         change.Where(_=>FeverFlg).Subscribe(_=>GetTime());
         change.Where(_ => !FeverFlg).Subscribe(_=>SetTime());
-        rawImage = GameObject.Find("Gauge").GetComponent<RawImage>();//フィーバーフラグの更新を受け取るオブジェクト
+        PlayTime = 0.0f;//リセット
     }
     private void Update()
     {
-        ChangeClip();
         CheckFeverFlg();
         if(!PlayFlg)//一度のみ再生(ループ設定がtrueになっていれば自動で再生される)
         {
+            if(!FeverFlg&&!ResultFlg)
+            {
+                audioSource.time = PlayTime;
+            }
+            else
+            {
+                audioSource.time = 0.0f;
+            }
             audioSource.Play();
             PlayFlg = true;
         }
@@ -78,10 +89,8 @@ public class AudioManager : MonoBehaviour
             audioSource.clip = OverSound;
             audioSource.loop = false;
         }
-
         else
         {
-
             if (!FeverFlg)
             {
                 //普通のBGM
@@ -100,10 +109,16 @@ public class AudioManager : MonoBehaviour
     }
     void ActiveSceneChanged(Scene thisScene, Scene nextScene)//アクティブシーンが変わったら
     {
-        sceneName = nextScene.name;
+        if(rawImage==null)
+        {
+            rawImage = GameObject.Find("Gauge").GetComponent<RawImage>();//フィーバーフラグの更新を受け取るオブジェクト
+        }
         PlayFlg = false;
-        rawImage = GameObject.Find("Gauge").GetComponent<RawImage>();//フィーバーフラグの更新を受け取るオブジェクト
-        
+        audioSource.clip = null;
+        sceneName = nextScene.name;
+        ResultFlg = false;
+        PlayTime = 0.0f;
+        ChangeClip();
     }
     bool CheckFeverFlg()//フィーバー中か
     {
@@ -117,21 +132,41 @@ public class AudioManager : MonoBehaviour
         audioSource.clip = ClickSound;
         audioSource.loop = false;
         this.UpdateAsObservable().Take(1).Subscribe(_ => audioSource.Play());
-
-        
     }
     void GetTime()
     {
         //再生時間の取得
         PlayTime = audioSource.time;
-        Debug.Log("GetTime");
         PlayFlg = false;
+        //フィーバーのBGM
+        audioSource.clip = FeverBgm;
+        audioSource.loop = true;
         audioSource.time = 0.0f;
     }
     void SetTime()
     {
-        PlayFlg = false;
         //時間を指定して再生
+        audioSource.clip = GameMainBgm;
+        audioSource.loop = true;
         audioSource.time = PlayTime;
+        PlayFlg = false;
+    }
+    public void PlayResult(AudioType _type)
+    {
+        switch(_type)
+        {
+            case AudioType.GameClear:
+                //クリップをクリアに
+                audioSource.clip = ClearSound;
+                audioSource.loop = false;
+                break;
+            case AudioType.GameOver:
+                //クリップをゲームオーバーに
+                audioSource.clip = OverSound;
+                audioSource.loop = false;
+                break;
+        }
+        PlayFlg = false;
+        ResultFlg = true;
     }
 }
