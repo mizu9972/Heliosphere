@@ -25,7 +25,7 @@ public class AudioManager : MonoBehaviour
     private float PlayTime;//曲の再生時間
     void Start()
     {
-        Debug.Log("Start");
+        
         PlayTime = 0.0f;//リセット
         SceneManager.activeSceneChanged += ActiveSceneChanged;
         audioSource = gameObject.GetComponent<AudioSource>();
@@ -42,6 +42,7 @@ public class AudioManager : MonoBehaviour
         CheckFeverFlg();
         if(!PlayFlg)//一度のみ再生(ループ設定がtrueになっていれば自動で再生される)
         {
+            audioSource.time = 0.0f;
             audioSource.Play();
             PlayFlg = true;
         }
@@ -100,10 +101,13 @@ public class AudioManager : MonoBehaviour
     }
     void ActiveSceneChanged(Scene thisScene, Scene nextScene)//アクティブシーンが変わったら
     {
-        sceneName = nextScene.name;
+        if(rawImage==null)
+        {
+            rawImage = GameObject.Find("Gauge").GetComponent<RawImage>();//フィーバーフラグの更新を受け取るオブジェクト
+        }
         PlayFlg = false;
-        rawImage = GameObject.Find("Gauge").GetComponent<RawImage>();//フィーバーフラグの更新を受け取るオブジェクト
-        
+        audioSource.clip = null;
+        sceneName = nextScene.name;
     }
     bool CheckFeverFlg()//フィーバー中か
     {
@@ -133,5 +137,11 @@ public class AudioManager : MonoBehaviour
         PlayFlg = false;
         //時間を指定して再生
         audioSource.time = PlayTime;
+    }
+    public void InitValue()
+    {
+        //リセット
+        PlayTime = 0.0f;//リセット
+        audioSource.Play();
     }
 }
