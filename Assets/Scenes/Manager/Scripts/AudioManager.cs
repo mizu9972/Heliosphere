@@ -30,7 +30,11 @@ public class AudioManager : MonoBehaviour
     };
     void Start()
     {
-        rawImage = GameObject.Find("Gauge").GetComponent<RawImage>();//フィーバーフラグの更新を受け取るオブジェクト
+        var Gauge = GameObject.Find("Gauge");
+        if (Gauge != null)
+        {
+            rawImage = Gauge.GetComponent<RawImage>();//フィーバーフラグの更新を受け取るオブジェクト
+        }
         SceneManager.activeSceneChanged += ActiveSceneChanged;
         audioSource = gameObject.GetComponent<AudioSource>();
         sceneName = SceneManager.GetActiveScene().name;//アクティブシーン名の取得
@@ -122,6 +126,10 @@ public class AudioManager : MonoBehaviour
     }
     bool CheckFeverFlg()//フィーバー中か
     {
+        if(rawImage == null)
+        {
+            return false;
+        }
         FeverFlg = rawImage.GetComponent<FeverGauge>().GetSwitchFlg();
         return FeverFlg;
     }
