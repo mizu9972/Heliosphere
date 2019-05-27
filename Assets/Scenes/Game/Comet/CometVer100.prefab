@@ -5111,7 +5111,7 @@ MonoBehaviour:
   CenterPos: {x: 0, y: 0}
   Radius: {x: 13, y: 13}
   Acceleration: {x: 0, y: 0, z: 0}
-  isActive: 0
+  isActive: 1
 --- !u!135 &2592975415085212245
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -5141,6 +5141,8 @@ MonoBehaviour:
   ParticleTime: 4
   CometDeathTime: 4
   ColliderParent: {fileID: 2550043631027069953}
+  CometCore: {fileID: 2592975413840794941}
+  CometParticle: {fileID: 2592975414859028452}
 --- !u!1 &4752843948767836353
 GameObject:
   m_ObjectHideFlags: 0
