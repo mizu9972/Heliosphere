@@ -29,9 +29,11 @@ public class GameMaster : MonoBehaviour
     private int enemycount = 0;
     private double ScoreCount;//フィーバーモードへのカウント用 
     private GameObject MyCamera;
+    private GameObject Manager;
     // Start is called before the first frame update
     void Start()
     {
+        Manager = GameObject.Find("Manager");
         this.UpdateAsObservable().Where(_ => ScoreCount >= FeverScore).Subscribe(_ => FeverStart());
 
         MyCamera = GameObject.FindWithTag("MainCamera");
@@ -113,6 +115,8 @@ public class GameMaster : MonoBehaviour
 
     public void ToGameOver()
     {
+        //ゲームオーバーのBGM再生
+        Manager.GetComponent<AudioManager>().PlayResult(AudioManager.AudioType.GameOver);
         NowWAVEGameManager.GetComponent<WAVEGameManager>().ToGameOverScene();
     }
     //void Switch()//Gageのフラグ切り替え
