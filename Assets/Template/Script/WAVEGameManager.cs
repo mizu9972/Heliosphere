@@ -184,10 +184,10 @@ public class WAVEGameManager : MonoBehaviour, IGameManager
             Observable.Timer(System.TimeSpan.FromSeconds(1)).Subscribe(_ => this.gameObject.SetActive(false));//自身を無効化
         }else
         {
-            Debug.Log("クリア");
             AllChangeActive();
             Observable.Interval(System.TimeSpan.FromMilliseconds(16)).Subscribe(_ => RCoreScaleUp());
             GameObject.Find("Manager").GetComponent<Manager>().CallWAVEClear();
+            GameObject.Find("ScoreCanvas").GetComponent<ScoreDownbyTime>().isActive = false;
         }
     }
 
