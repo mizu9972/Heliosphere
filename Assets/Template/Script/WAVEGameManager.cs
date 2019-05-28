@@ -63,9 +63,11 @@ public class WAVEGameManager : MonoBehaviour, IGameManager
     GameObject EffectBox;
     [SerializeField,Header("FriendParticleSytemプレハブ")]
     private ParticleSystem FriendParticleSystem;
+    private GameObject Manager;
     // Start is called before the first frame update
     void Start()
     {
+        Manager = GameObject.Find("Manager");
         canvas = GameObject.Find("ScoreCanvas").GetComponent<Canvas>();
         nowWave = GameObject.Find("WaveCanvas").GetComponent<Canvas>();
         MyTrans = this.GetComponent<Transform>();
@@ -152,11 +154,13 @@ public class WAVEGameManager : MonoBehaviour, IGameManager
     }
     private void ToClearScene()
     {
+        
         //SceneChangeTimeの分だけ遅らせて
         //クリアシーンへ
         Observable.Timer(System.TimeSpan.FromSeconds(SceneChangeTime)).Subscribe(_ => nextWave());
         canvas.GetComponent<Score>().FeverScoreCount(WAVEClearScore);
         GameObject.Find("Manager").GetComponent<Manager>().ChengeActive(false);
+        
     }
 
     private void nextWave()
@@ -188,6 +192,8 @@ public class WAVEGameManager : MonoBehaviour, IGameManager
             Observable.Interval(System.TimeSpan.FromMilliseconds(16)).Subscribe(_ => RCoreScaleUp());
             GameObject.Find("Manager").GetComponent<Manager>().CallWAVEClear();
             GameObject.Find("ScoreCanvas").GetComponent<ScoreDownbyTime>().isActive = false;
+            //ゲームCLEARのBGM流す
+            Manager.GetComponent<AudioManager>().PlayResult(AudioManager.AudioType.GameClear);
         }
     }
 
