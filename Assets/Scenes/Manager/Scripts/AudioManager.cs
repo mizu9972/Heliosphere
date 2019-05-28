@@ -33,6 +33,7 @@ public class AudioManager : MonoBehaviour
     };
     void Start()
     {
+        FlgInit();
         var Gauge = GameObject.Find("Gauge");
         if (Gauge != null)
         {
@@ -46,6 +47,7 @@ public class AudioManager : MonoBehaviour
         change.Where(_=>FeverFlg).Subscribe(_=>GetTime());
         change.Where(_ => !FeverFlg).Subscribe(_=>SetTime());
         PlayTime = 0.0f;//リセット
+        ChangeClip();
     }
     private void Update()
     {
@@ -124,13 +126,10 @@ public class AudioManager : MonoBehaviour
                 rawImage = GetRawImage.GetComponent<RawImage>();//フィーバーフラグの更新を受け取るオブジェクト
             }
         }
-        PlayFlg = false;
+        FlgInit();
         audioSource.clip = null;
         sceneName = nextScene.name;
-        ResultFlg = false;
         PlayTime = 0.0f;
-        ClearFlg = false;//クリアBGMの更新の停止
-        EndFlg = false;//クリアのループ終了
         ChangeClip();
     }
     bool CheckFeverFlg()//フィーバー中か
@@ -212,5 +211,13 @@ public class AudioManager : MonoBehaviour
         Debug.Log("BGMループスタート");
         EndFlg = true;
         PlayFlg = false;
+    }
+    void FlgInit()//フラグ初期化
+    {
+        PlayFlg = false;
+        FeverFlg=false;//フィーバー取得用
+        ResultFlg = false;//リザルトの曲の再生状態
+        EndFlg = false;
+        ClearFlg = false;
     }
 }
