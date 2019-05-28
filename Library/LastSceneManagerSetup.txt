@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Template/WAVEStage1.unity
+- path: Assets/Scenes/Title/TitleScene.unity
   isLoaded: 1
   isActive: 1
