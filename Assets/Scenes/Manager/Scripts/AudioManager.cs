@@ -13,6 +13,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip FeverBgm;//フィーバー
     public AudioClip MenuBgm;//ステージセレクト(仮)
     public AudioClip ClearSound;//ゲームCLEAR
+    public AudioClip ClearSoundLoop;//ゲームクリアのループ部分
     public AudioClip OverSound;//ゲームオーバー
     public AudioClip ClickSound;//決定音
     
@@ -23,6 +24,8 @@ public class AudioManager : MonoBehaviour
     private RawImage rawImage;//fevergauge
     private float PlayTime;//曲の再生時間
     private bool ResultFlg;//リザルトの曲の再生状態
+    private bool EndFlg;
+    private bool ClearFlg = false;
     public enum AudioType
     {
         GameClear,
@@ -126,6 +129,8 @@ public class AudioManager : MonoBehaviour
         sceneName = nextScene.name;
         ResultFlg = false;
         PlayTime = 0.0f;
+        ClearFlg = false;//クリアBGMの更新の停止
+        EndFlg = false;//クリアのループ終了
         ChangeClip();
     }
     bool CheckFeverFlg()//フィーバー中か
@@ -169,8 +174,14 @@ public class AudioManager : MonoBehaviour
         {
             case AudioType.GameClear:
                 //クリップをクリアに
-                audioSource.clip = ClearSound;
-                audioSource.loop = false;
+                ClearFlg = true;
+                ClearSoundLoopSystem();
+                //再生終了したらループ部分に切り替え
+                this.UpdateAsObservable().
+                    Where(_ => (audioSource.time + Time.deltaTime) > audioSource.clip.length).
+                    Take(1).
+                    Subscribe(_ => ChangeClearSound());
+                
                 break;
             case AudioType.GameOver:
                 //クリップをゲームオーバーに
@@ -180,5 +191,26 @@ public class AudioManager : MonoBehaviour
         }
         PlayFlg = false;
         ResultFlg = true;
+    }
+    void ClearSoundLoopSystem()
+    {
+        if(!EndFlg)
+        {
+            audioSource.clip = ClearSound;
+            audioSource.loop = false;
+        }
+        else
+        {
+            audioSource.clip = ClearSoundLoop;
+            audioSource.loop = true;
+        }
+        Observable.Timer(System.TimeSpan.FromMilliseconds(16)).Where(_ => ClearFlg).
+        Subscribe(_ => ClearSoundLoopSystem());//自分自身の呼び出し
+    }
+    void ChangeClearSound()
+    {
+        Debug.Log("BGMループスタート");
+        EndFlg = true;
+        PlayFlg = false;
     }
 }
