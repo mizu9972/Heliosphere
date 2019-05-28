@@ -10,6 +10,7 @@ public class WAVEGameManager : MonoBehaviour, IGameManager
 {
     private bool FeverFlg;//フィーバー状態か
     public float SceneChangeTime = 0;
+    private float GameOverTime = 5;
 
     [SerializeField, Header("初期位置")]
     Vector3 InitPosition = new Vector3(0, -60, 0);
@@ -203,7 +204,8 @@ public class WAVEGameManager : MonoBehaviour, IGameManager
         AllChangeActive();
         //SceneChangeTimeの分だけ遅らせて
         //ゲームオーバーシーンへ
-        Observable.Timer(System.TimeSpan.FromSeconds(SceneChangeTime)).Subscribe(_ => GameObject.Find("Manager").GetComponent<Manager>().CallResult());
+        Comet.GetComponent<GameOverFunc>().GameOver();
+        Observable.Timer(System.TimeSpan.FromSeconds(GameOverTime)).Subscribe(_ => GameObject.Find("Manager").GetComponent<Manager>().CallResult());
         GameObject.Find("Manager").GetComponent<Manager>().ChengeActive(false);
     }
     void OnSceneUnloaded(Scene scene)

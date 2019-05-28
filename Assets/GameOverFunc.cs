@@ -27,7 +27,11 @@ public class GameOverFunc : MonoBehaviour
 
     Vector3 CometParticleSize;
 
-
+    private GameObject EffectBox;
+    void Start()
+    {
+        EffectBox = GameObject.Find("EffectBox");
+    }
     void Update()
     {
 
@@ -40,13 +44,18 @@ public class GameOverFunc : MonoBehaviour
         CometDeathTime *= 1000;
 
         ColliderParent.SetActive(false);
-        DeathParticle.gameObject.SetActive(true);
 
+        var _DeathParticle = Instantiate(DeathParticle, this.gameObject.transform); 
         //パーティクルのDurationを設定
-        var ParticleMain = DeathParticle.main;
+        var ParticleMain = _DeathParticle.main;
         ParticleMain.duration = ParticleTime;
 
-        DeathParticle.Play();
+        DeathParticle.gameObject.SetActive(true);
+        if (EffectBox != null)
+        {
+            _DeathParticle.transform.parent = EffectBox.transform;
+        }
+        _DeathParticle.Play();
         
         this.UpdateAsObservable().Subscribe(_ => CometFunc());
 

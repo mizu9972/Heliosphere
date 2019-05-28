@@ -18,6 +18,7 @@ public class GameManagerScript : MonoBehaviour,IGameManager
     public GameObject ReadyObject, StartObject;
     public float ReadyTime, StartTime;
     public float SceneChangeTime = 0;
+    public float GameOverTime = 5;
     
     [Header("isActiveを操作するオブジェクト群")]
     public GameObject PlayerCore;
@@ -118,7 +119,8 @@ public class GameManagerScript : MonoBehaviour,IGameManager
         AllChangeActive();
         //SceneChangeTimeの分だけ遅らせて
         //ゲームオーバーシーンへ
-        Observable.Timer(System.TimeSpan.FromSeconds(SceneChangeTime)).Subscribe(_ => GameObject.Find("Manager").GetComponent<Manager>().CallResult());
+        Comet.GetComponent<GameOverFunc>().GameOver();
+        Observable.Timer(System.TimeSpan.FromSeconds(GameOverTime)).Subscribe(_ => GameObject.Find("Manager").GetComponent<Manager>().CallResult());
         GameObject.Find("Manager").GetComponent<Manager>().ChengeActive(false);
     }
     void OnSceneUnloaded(Scene scene)
