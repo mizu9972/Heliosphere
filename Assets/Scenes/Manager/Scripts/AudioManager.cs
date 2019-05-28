@@ -115,7 +115,11 @@ public class AudioManager : MonoBehaviour
     {
         if(rawImage==null)
         {
-            rawImage = GameObject.Find("Gauge").GetComponent<RawImage>();//フィーバーフラグの更新を受け取るオブジェクト
+            var GetRawImage = GameObject.Find("Gauge");
+            if (GetRawImage != null)
+            {
+                rawImage = GetRawImage.GetComponent<RawImage>();//フィーバーフラグの更新を受け取るオブジェクト
+            }
         }
         PlayFlg = false;
         audioSource.clip = null;
