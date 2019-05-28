@@ -41,4 +41,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Template/WAVEStage3.unity
     guid: 52e774c896b49a5499f34aa052f8d8b5
+  - enabled: 1
+    path: Assets/Scenes/StageSelect/Scenes/PracticeSelect.unity
+    guid: 9debca22fb824c14ea0976ec88f3deb4
+  - enabled: 1
+    path: Assets/Scenes/StageSelect/Scenes/Stage1Practice.unity
+    guid: 0eeeebf58910a454094707122fc4888c
+  - enabled: 1
+    path: Assets/Scenes/StageSelect/Scenes/Stage2Practice.unity
+    guid: 12e3874d398f9b94cb3d9e9261087e1d
+  - enabled: 1
+    path: Assets/Scenes/StageSelect/Scenes/Stage3Practice.unity
+    guid: 8e628d1937d4bfa47a76961abc841cc7
   m_configObjects: {}
