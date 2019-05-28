@@ -1388,6 +1388,11 @@ PrefabInstance:
       propertyPath: m_Text
       value: Title
       objectReference: {fileID: 0}
+    - target: {fileID: 550278513699308116, guid: 4b1824f71488bcb458093f1b2ea8e315,
+        type: 3}
+      propertyPath: m_Transition
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b1824f71488bcb458093f1b2ea8e315, type: 3}
 --- !u!1001 &1261068445
@@ -2317,6 +2322,22 @@ PrefabInstance:
     - target: {fileID: 550278514689027450, guid: 4b1824f71488bcb458093f1b2ea8e315,
         type: 3}
       propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 550278513699308117, guid: 4b1824f71488bcb458093f1b2ea8e315,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 2fcc663fc8792ec4a942041374c18092,
+        type: 3}
+    - target: {fileID: 550278513699308117, guid: 4b1824f71488bcb458093f1b2ea8e315,
+        type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 550278514689027453, guid: 4b1824f71488bcb458093f1b2ea8e315,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

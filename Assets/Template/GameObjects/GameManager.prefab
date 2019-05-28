@@ -294,7 +294,7 @@ GameObject:
   - component: {fileID: 8151203847432429225}
   m_Layer: 0
   m_Name: GameManager
-  m_TagString: Untagged
+  m_TagString: GameManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -509,6 +509,19 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2099830778279023388}
     m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: SunTrans
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2592975415085212247, guid: 380412b23ee415047a9669f47ef45143,
+        type: 3}
+      propertyPath: m_Name
+      value: CometVer100
+      objectReference: {fileID: 0}
     - target: {fileID: 2592975415085212246, guid: 380412b23ee415047a9669f47ef45143,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -564,22 +577,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2592975415085212247, guid: 380412b23ee415047a9669f47ef45143,
-        type: 3}
-      propertyPath: m_Name
-      value: CometVer100
-      objectReference: {fileID: 0}
     - target: {fileID: 2592975414859028454, guid: 380412b23ee415047a9669f47ef45143,
         type: 3}
       propertyPath: sunTrans
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: SunTrans
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: Target
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 2550043631095521501, guid: 380412b23ee415047a9669f47ef45143,
