@@ -12,6 +12,7 @@ public class NewColliderScript : MonoBehaviour
     public GameObject Target;
     public float SizeUp = 1;
     public float Mod_ratio = 100.0f;
+    public float Mod_visual = 0.0f;
     [SerializeField, Header("当たり判定長さ制限")]
     float LimitScale;
     // Start is called before the first frame update
@@ -44,7 +45,7 @@ public class NewColliderScript : MonoBehaviour
 
         Transform GetTrans = this.transform;
         Vector3 SetScale = GetTrans.lossyScale;
-        float RealScaleX = SetScale.x + DistanceRatio;
+        float RealScaleX = SetScale.x + DistanceRatio + Mod_visual;
         if(RealScaleX >= LimitScale)
         {
             RealScaleX = LimitScale;
