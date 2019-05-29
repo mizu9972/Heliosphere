@@ -9,6 +9,7 @@ public class SEManager : MonoBehaviour
     public AudioClip SE_Enemy1;
     public AudioClip SE_Enemy2;
     public AudioClip SE_Friend;
+    public AudioClip SE_StarCome;
     private AudioSource audioSource;
     private bool PlayFlg = false;
     public enum AudioType
@@ -16,6 +17,7 @@ public class SEManager : MonoBehaviour
         Enemy1,
         Enemy2,
         Friend,
+        StarCome,
     };
     // Start is called before the first frame update
     void Start()
@@ -41,6 +43,9 @@ public class SEManager : MonoBehaviour
                 break;
             case AudioType.Friend:
                 audioSource.clip = SE_Friend;
+                break;
+            case AudioType.StarCome:
+                audioSource.clip = SE_StarCome;
                 break;
         }
         audioSource.Play();

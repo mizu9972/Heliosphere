@@ -5,9 +5,9 @@ using UnityEngine.UI;
 using UniRx;//Reactive Extension for Unity
 using UniRx.Triggers;
 using UnityEngine.SceneManagement;
-
 public class WAVEGameManager : MonoBehaviour, IGameManager
 {
+    
     private bool FeverFlg;//フィーバー状態か
     public float SceneChangeTime = 0;
     private float GameOverTime = 5;
@@ -48,6 +48,7 @@ public class WAVEGameManager : MonoBehaviour, IGameManager
 
     [SerializeField, Header("何WAVEとしてカウントするか")]
     int WAVECount = 1;
+
     private int FriendDestroyCount;
 
     private int EnemyDesroyCount;
@@ -65,17 +66,21 @@ public class WAVEGameManager : MonoBehaviour, IGameManager
     [SerializeField,Header("FriendParticleSytemプレハブ")]
     private ParticleSystem FriendParticleSystem;
     private GameObject Manager;
-
+    private GameObject SEmanager;
     private float InitEnemyNum, InitFriendNum;
+    
     // Start is called before the first frame update
     void Start()
     {
+        this.gameObject.AddComponent<AudioSource>();
         InitEnemyNum = EnemyCount();
         InitFriendNum = FriendCount();
-
+        SEmanager = GameObject.Find("StarCome");
+        
         Manager = GameObject.Find("Manager");
         canvas = GameObject.Find("ScoreCanvas").GetComponent<Canvas>();
         nowWave = GameObject.Find("WaveCanvas").GetComponent<Canvas>();
+        
         MyTrans = this.GetComponent<Transform>();
         EffectBoxSearch();
         if (FriendParticleSystem == null)
@@ -201,7 +206,14 @@ public class WAVEGameManager : MonoBehaviour, IGameManager
         if (nextGameManager != null)
         {
             //次のウェーブへ
+            //semanagerの効果音再生
+            if (SEmanager != null)
+            {
+                SEmanager.GetComponent<SEManager>().PlaySE(SEManager.AudioType.StarCome);
+            }
+
             nextGameManager.gameObject.SetActive(true);
+            
             nextGameManager.GetComponent<WAVEGameManager>().ApproachStart();
             GameObject.Find("GameMaster").GetComponent<GameMaster>().WAVEset(nextGameManager);
             Observable.Timer(System.TimeSpan.FromSeconds(1)).Where(_ => this.gameObject != null).Subscribe(_ => this.gameObject.SetActive(false));//自身を無効化
@@ -243,6 +255,7 @@ public class WAVEGameManager : MonoBehaviour, IGameManager
 
     public void ApproachStart()
     {
+        
         MyTrans = this.GetComponent<Transform>();
         MyTrans.position = InitPosition;
         Observable.Interval(System.TimeSpan.FromMilliseconds(16))
@@ -340,4 +353,5 @@ public class WAVEGameManager : MonoBehaviour, IGameManager
         }
         return EnemyNum;
     }
+    
 }
