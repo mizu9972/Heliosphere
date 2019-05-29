@@ -184,13 +184,17 @@ public class WAVEGameManager : MonoBehaviour, IGameManager
         Paticlemain.maxParticles = (int)FriendNum;
         setParticle.Play();
 
-        if (InitFriendNum != 0)
+        if (InitEnemyNum != 0)
         {
-            canvas.GetComponent<ClearRankJudge>().setLivingFriendPercent((FriendNum / InitFriendNum));
-        }else
-        {
-            canvas.GetComponent<ClearRankJudge>().setLivingFriendPercent(1);
+            if (InitFriendNum != 0)
+            {
+                canvas.GetComponent<ClearRankJudge>().setLivingFriendPercent((FriendNum / InitFriendNum));
+            }
+            else
+            {
+                canvas.GetComponent<ClearRankJudge>().setLivingFriendPercent(1);
 
+            }
         }
         Observable.Interval(System.TimeSpan.FromMilliseconds(16)).Subscribe(_ => RCoreScaleUp());
 
