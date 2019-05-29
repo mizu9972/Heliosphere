@@ -129,7 +129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a75640e4c422a64c8f6c04db9f0f540, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DownScore: 2
+  DownScore: 0
   isActive: 1
 --- !u!1 &498084920592391846
 GameObject:
