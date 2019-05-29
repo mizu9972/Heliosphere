@@ -63,7 +63,7 @@ MonoBehaviour:
   Target: {fileID: 0}
   SizeUp: 50
   Mod_ratio: 75
-  Mod_visual: 2
+  Mod_visual: 1
   LimitScale: 20
 --- !u!1 &2550043631095521500
 GameObject:
