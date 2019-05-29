@@ -1674,7 +1674,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a79287e4a62d6d54c988eb77452a1ba9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Result: {fileID: 675503254}
+  Result: {fileID: 1892876550}
 --- !u!114 &902843659
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3337,7 +3337,7 @@ MonoBehaviour:
   InitialOptionButton: {fileID: 2314553105121249764}
   InitialResultButton: {fileID: 1902165648}
   InitialClearButton: {fileID: 865338188}
-  InitialWAVEClearButton: {fileID: 0}
+  InitialWAVEClearButton: {fileID: 902843656}
 --- !u!4 &2062281146
 Transform:
   m_ObjectHideFlags: 0
