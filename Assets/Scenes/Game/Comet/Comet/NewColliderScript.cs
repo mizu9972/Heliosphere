@@ -11,6 +11,7 @@ public class NewColliderScript : MonoBehaviour
     private Transform Parent;
     public GameObject Target;
     public float SizeUp = 1;
+    public float Mod_ratio = 100.0f;
     [SerializeField, Header("当たり判定長さ制限")]
     float LimitScale;
     // Start is called before the first frame update
@@ -38,7 +39,8 @@ public class NewColliderScript : MonoBehaviour
         MyTrans.localScale = Wark_Size;
         MyTrans.position = Wark_Pos;
 
-        float DistanceRatio = SizeUp / Distance;
+        float Work_ratio = Mod_ratio / 100.0f;
+        float DistanceRatio = SizeUp / Distance * Work_ratio;
 
         Transform GetTrans = this.transform;
         Vector3 SetScale = GetTrans.lossyScale;

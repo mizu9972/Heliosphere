@@ -61,7 +61,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Parent: {fileID: 2592975415085212246}
   Target: {fileID: 0}
-  SizeUp: 70
+  SizeUp: 50
+  Mod_ratio: 75
   LimitScale: 20
 --- !u!1 &2550043631095521500
 GameObject:
@@ -409,7 +410,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0.9
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -462,7 +463,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 8
+      scalar: 7
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -4141,7 +4142,7 @@ ParticleSystem:
     lifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.25
+      scalar: 0.18
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -5523,7 +5524,7 @@ ParticleSystem:
         m_RotationOrder: 4
     startSizeY:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 1
       scalar: 1
       minScalar: 1
       maxCurve:
@@ -5576,7 +5577,7 @@ ParticleSystem:
         m_RotationOrder: 4
     startSizeZ:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 1
       scalar: 1
       minScalar: 1
       maxCurve:

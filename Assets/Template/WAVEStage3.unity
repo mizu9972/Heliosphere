@@ -68852,7 +68852,7 @@ MonoBehaviour:
   RevolutionCore4: {fileID: 2071455890}
   RevolutionCore5: {fileID: 826275734}
   Friend_GameOverPoint: 1
-  Enemy_GameClearPoint: 31
+  Enemy_GameClearPoint: 140
   nextGameManager: {fileID: 0}
   EnemyBreakScore: 30
   FriendBreakScore: 200
@@ -82399,7 +82399,7 @@ MonoBehaviour:
   RevolutionCore4: {fileID: 175023019}
   RevolutionCore5: {fileID: 2084424792}
   Friend_GameOverPoint: 1
-  Enemy_GameClearPoint: 31
+  Enemy_GameClearPoint: 60
   nextGameManager: {fileID: 1761628530}
   EnemyBreakScore: 30
   FriendBreakScore: 200
@@ -92140,6 +92140,11 @@ PrefabInstance:
       propertyPath: Target
       value: 
       objectReference: {fileID: 1933613815}
+    - target: {fileID: 7693733224272395842, guid: 380412b23ee415047a9669f47ef45143,
+        type: 3}
+      propertyPath: SizeUp
+      value: 90
+      objectReference: {fileID: 0}
     - target: {fileID: 2592975413840794912, guid: 380412b23ee415047a9669f47ef45143,
         type: 3}
       propertyPath: m_Enabled
@@ -92514,11 +92519,11 @@ MonoBehaviour:
   Comet: {fileID: 54830369}
   RevolutionCore1: {fileID: 5643594944868790142}
   RevolutionCore2: {fileID: 1555983765476158042}
-  RevolutionCore3: {fileID: 0}
-  RevolutionCore4: {fileID: 0}
+  RevolutionCore3: {fileID: 1198607674}
+  RevolutionCore4: {fileID: 1527083878}
   RevolutionCore5: {fileID: 9200476643834693911}
   Friend_GameOverPoint: 1
-  Enemy_GameClearPoint: 21
+  Enemy_GameClearPoint: 42
   nextGameManager: {fileID: 919144245}
   EnemyBreakScore: 30
   FriendBreakScore: 200

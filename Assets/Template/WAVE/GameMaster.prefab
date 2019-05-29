@@ -223,10 +223,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Parfect_: 100
+  MarVelous_: 80
+  Good_: 30
   ParfectImage: {fileID: 2958546119092142889}
   MarvelousImage: {fileID: 205237987282657029}
   GoodImage: {fileID: 8124974570385369700}
   BadImage: {fileID: 7242062542781366732}
+  ImageTime: 1.5
 --- !u!1 &498084920592391846
 GameObject:
   m_ObjectHideFlags: 0
