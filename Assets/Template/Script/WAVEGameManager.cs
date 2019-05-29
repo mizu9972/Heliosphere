@@ -66,7 +66,7 @@ public class WAVEGameManager : MonoBehaviour, IGameManager
     private ParticleSystem FriendParticleSystem;
     private GameObject Manager;
 
-    private int InitEnemyNum, InitFriendNum;
+    private float InitEnemyNum, InitFriendNum;
     // Start is called before the first frame update
     void Start()
     {
@@ -166,6 +166,7 @@ public class WAVEGameManager : MonoBehaviour, IGameManager
         //クリアシーンへ
         Observable.Timer(System.TimeSpan.FromSeconds(SceneChangeTime)).Subscribe(_ => nextWave());
         canvas.GetComponent<Score>().FeverScoreCount(WAVEClearScore);
+
         GameObject.Find("Manager").GetComponent<Manager>().ChengeActive(false);
         
     }
@@ -178,11 +179,23 @@ public class WAVEGameManager : MonoBehaviour, IGameManager
         var setParticle = Instantiate(FriendParticleSystem);
         setParticle.transform.parent = EffectBox.transform;
         //フレンドの数を取得しMaxParticleに設定して再生
-        int FriendNum = FriendCount();
+        float FriendNum = FriendCount();
         var Paticlemain = setParticle.main;
-        Paticlemain.maxParticles = FriendNum;
+        Paticlemain.maxParticles = (int)FriendNum;
         setParticle.Play();
 
+        if (InitEnemyNum != 0)
+        {
+            if (InitFriendNum != 0)
+            {
+                canvas.GetComponent<ClearRankJudge>().setLivingFriendPercent((FriendNum / InitFriendNum));
+            }
+            else
+            {
+                canvas.GetComponent<ClearRankJudge>().setLivingFriendPercent(1);
+
+            }
+        }
         Observable.Interval(System.TimeSpan.FromMilliseconds(16)).Subscribe(_ => RCoreScaleUp());
 
         if (nextGameManager != null)
