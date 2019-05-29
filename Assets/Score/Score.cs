@@ -85,9 +85,11 @@ public class Score : MonoBehaviour
         AddScore.GetComponent<AddScore>().SetAddScore(value);
         AddScore.SetActive(true);//描画
         //一定時間経過で描画終了
-        Observable.Timer(System.TimeSpan.FromSeconds(1)).
-            Subscribe(_ => AddScore.SetActive(false));
-        Debug.Log(value);
+
+            Observable.Timer(System.TimeSpan.FromSeconds(1)).
+                Where(_ => AddScore != null)
+                .Subscribe(_ => AddScore.SetActive(false));
+        
         JudgeCount += value;
         Observable.Interval(System.TimeSpan.FromMilliseconds(16)).Take(Frame).Subscribe(_ => Count += value / Frame);
 

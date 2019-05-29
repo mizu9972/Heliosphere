@@ -81,6 +81,7 @@ public class WAVEGameManager : MonoBehaviour, IGameManager
         subVector = TargetTrans - MyTrans.position;
         subVector /= ApproachSpeed;
         Init();
+        EnemyDesroyCount = 0;
     }
 
     [ContextMenu("EffectBoxSet")]
@@ -177,20 +178,22 @@ public class WAVEGameManager : MonoBehaviour, IGameManager
         Paticlemain.maxParticles = FriendNum;
         setParticle.Play();
 
+        Observable.Interval(System.TimeSpan.FromMilliseconds(16)).Subscribe(_ => RCoreScaleUp());
+
         if (nextGameManager != null)
         {
             //次のウェーブへ
             nextGameManager.gameObject.SetActive(true);
             nextGameManager.GetComponent<WAVEGameManager>().ApproachStart();
             GameObject.Find("GameMaster").GetComponent<GameMaster>().WAVEset(nextGameManager);
+            Observable.Timer(System.TimeSpan.FromSeconds(1)).Where(_ => this.gameObject != null).Subscribe(_ => this.gameObject.SetActive(false));//自身を無効化
+
             //ここで別スクリプトのカウント関数実行
             nowWave.GetComponent<WaveCount>().WaveCounrer(WAVECount);
-            Observable.Interval(System.TimeSpan.FromMilliseconds(16)).Subscribe(_ => RCoreScaleUp());
-            Observable.Timer(System.TimeSpan.FromSeconds(1)).Subscribe(_ => this.gameObject.SetActive(false));//自身を無効化
+
         }else
         {
             AllChangeActive();
-            Observable.Interval(System.TimeSpan.FromMilliseconds(16)).Subscribe(_ => RCoreScaleUp());
             GameObject.Find("Manager").GetComponent<Manager>().CallWAVEClear();
             GameObject.Find("ScoreCanvas").GetComponent<ScoreDownbyTime>().isActive = false;
             //ゲームCLEARのBGM流す
@@ -200,7 +203,7 @@ public class WAVEGameManager : MonoBehaviour, IGameManager
 
     public void ToGameOverScene()
     {
-        Debug.Log("ゲームオーバー");
+
         AllChangeActive();
         //SceneChangeTimeの分だけ遅らせて
         //ゲームオーバーシーンへ
@@ -210,7 +213,6 @@ public class WAVEGameManager : MonoBehaviour, IGameManager
     }
     void OnSceneUnloaded(Scene scene)
     {
-        Debug.Log("実行");
         GameObject gameObject;
         gameObject = GameObject.Find("Manager");
         gameObject.GetComponent<BeforScene>().ExportSceneName(scene);
