@@ -65,9 +65,14 @@ public class WAVEGameManager : MonoBehaviour, IGameManager
     [SerializeField,Header("FriendParticleSytemプレハブ")]
     private ParticleSystem FriendParticleSystem;
     private GameObject Manager;
+
+    private int InitEnemyNum, InitFriendNum;
     // Start is called before the first frame update
     void Start()
     {
+        InitEnemyNum = EnemyCount();
+        InitFriendNum = FriendCount();
+
         Manager = GameObject.Find("Manager");
         canvas = GameObject.Find("ScoreCanvas").GetComponent<Canvas>();
         nowWave = GameObject.Find("WaveCanvas").GetComponent<Canvas>();
