@@ -178,7 +178,7 @@ public class AudioManager : MonoBehaviour
                 //再生終了したらループ部分に切り替え
                 this.UpdateAsObservable().
                     Where(_ => (audioSource.time + Time.deltaTime) > audioSource.clip.length).
-                    Take(1).
+                    
                     Subscribe(_ => ChangeClearSound());
                 
                 break;

@@ -725,14 +725,14 @@ RectTransform:
   m_GameObject: {fileID: 2452348316955784151}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 4753881168014480662}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -183, y: 89}
+  m_AnchoredPosition: {x: 153, y: -90}
   m_SizeDelta: {x: 170, y: 35}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8141904797209885957
@@ -795,7 +795,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78e8efe736da01f41833fecfc54f190d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  setPos: {x: 100, y: 30}
+  setPos: {x: 200, y: 30}
 --- !u!1 &2458597229836803184
 GameObject:
   m_ObjectHideFlags: 0
@@ -1157,7 +1157,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2962999532486800516}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
@@ -1599,7 +1599,7 @@ RectTransform:
   m_GameObject: {fileID: 3717617807413881117}
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 100, y: 1, z: 1}
+  m_LocalScale: {x: 200, y: 1, z: 1}
   m_Children:
   - {fileID: 5974746817191228711}
   - {fileID: 7210979513116993667}
@@ -1626,7 +1626,7 @@ MonoBehaviour:
   gameMaster: {fileID: 3363374701329921220}
   feverManager: {fileID: 2508690213010493306, guid: ec1e62a8403f58b4388a3cac40cec5c4,
     type: 3}
-  MaxSize: 100
+  MaxSize: 200
   ClearTime: 36
 --- !u!114 &3838663886081500791
 MonoBehaviour:
@@ -2131,7 +2131,7 @@ RectTransform:
   m_GameObject: {fileID: 7258648103850724725}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 100, y: 1, z: 1}
+  m_LocalScale: {x: 200, y: 1, z: 1}
   m_Children:
   - {fileID: 3307304703500084995}
   m_Father: {fileID: 9168338156066921244}
