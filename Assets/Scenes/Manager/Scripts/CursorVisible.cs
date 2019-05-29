@@ -7,5 +7,6 @@ public class CursorVisible : MonoBehaviour
     {
         // マウスカーソルを削除する
         UnityEngine.Cursor.visible = false;
+        //UnityEngine.Cursor.lockState = CursorLockMode.Locked;
     }
 }
