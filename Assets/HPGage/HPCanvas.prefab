@@ -66,7 +66,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Texture: {fileID: 2800000, guid: ffa2e137b14cee44ca31e462959de48f, type: 3}
+  m_Texture: {fileID: 2800000, guid: bc0c79a73a6476245a5c7426e3ff5066, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -195,6 +195,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3643796824333334123}
   - component: {fileID: 3643796824333334124}
+  - component: {fileID: 7574570698391925928}
   m_Layer: 5
   m_Name: HPGageParent
   m_TagString: Untagged
@@ -217,10 +218,10 @@ RectTransform:
   m_Father: {fileID: 3643796824049101224}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 640, y: -275}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -640, y: -275}
+  m_SizeDelta: {x: 1, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &3643796824333334124
 MonoBehaviour:
@@ -235,5 +236,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameMaster: {fileID: 0}
-  MaxSize: 200
+  MaxSize: 100
   DestroyFriendNum: 100
+--- !u!114 &7574570698391925928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3643796824333334122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d32e05ef3203bab41a1728f427e2fd2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  setPos: {x: 100, y: 300}

@@ -12,7 +12,7 @@ public class HPGage : MonoBehaviour
     private bool SwitchFlg = false;//フィーバー中か
     private RawImage MyImage;
     private float U, V;
-
+    private float Persent;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,8 +26,27 @@ public class HPGage : MonoBehaviour
     }
     void SetTexPos()
     {
+        Persent=Parent.GetComponent<HPGageParent>().GetPersent();
+        if (Persent>=0.5f)
+        {
+            //緑
+            U = 1.0f;
+            TexWidth = 0.5f;
+        }
+        else if(Persent>=0.25)
+        {
+            //黄色
+            U = 0.25f;
+            TexWidth = 0.25f;
+        }
+        else
+        {
+            //赤色
+            U = 0f;
+            TexWidth = 0.25f;
+        }
         //TexWidthに倍率をかける
-        TexWidth = 1.0f * (float)Parent.GetComponent<HPGageParent>().GetPersent();
+        //TexHeight = 1.0f * Parent.GetComponent<HPGageParent>().GetPersent();
         MyImage.uvRect = new Rect(U, V, TexWidth, TexHeight);
     }
     public float GaugeDivision(float Mol, float Denom)//第一引数:分子、第二引数:分母
