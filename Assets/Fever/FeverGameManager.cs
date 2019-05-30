@@ -102,6 +102,8 @@ public class FeverGameManager : MonoBehaviour, IGameManager
         canvas = GameObject.Find("ScoreCanvas").GetComponent<Canvas>();
         MyTrans = this.GetComponent<Transform>();
         TimeCount = 0;
+
+        EnemyNumSet();
     }
     public void AllChangeActive()
     {
