@@ -42,6 +42,18 @@ EditorBuildSettings:
     path: Assets/Template/aaaaaaa.unity
     guid: 0303d5acc6731094e81041e71911df98
   - enabled: 1
+    path: Assets/Template/WAVEStagever2_1.unity
+    guid: 1ae6c522999cb344ba106627679929d3
+  - enabled: 1
+    path: Assets/Template/WAVEStageVer2_2.unity
+    guid: fc5cfe88f7d30464f95ffe5f1fdf08c3
+  - enabled: 1
+    path: Assets/Template/WAVEStageVer2_3.unity
+    guid: 7d1e16025c8ac6f45a63db0b0561345d
+  - enabled: 1
+    path: Assets/Template/WAVEStageVer2_4.unity
+    guid: 591695070f825b44fa24cc7886806720
+  - enabled: 1
     path: Assets/Template/Practice_Stage/New Practice/Practice1-1.unity
     guid: 41f3277f1d8623a4cbf4aaa81d286906
   - enabled: 1

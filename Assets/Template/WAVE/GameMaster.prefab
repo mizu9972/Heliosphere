@@ -1503,7 +1503,7 @@ MonoBehaviour:
   FeverObject: {fileID: 7369897965432992780, guid: b0a87a12e0a39e44689202b52eff18bf,
     type: 3}
   Fevergauge: {fileID: 1056861609564781166}
-  HPGageCanvas: {fileID: 0}
+  HPGageCanvas: {fileID: 3955888633374940719}
 --- !u!1 &3389715843618936784
 GameObject:
   m_ObjectHideFlags: 0
@@ -2887,6 +2887,12 @@ PrefabInstance:
 --- !u!224 &3955888633765083286 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3643796824049101224, guid: ed1d26c0dd6f4f1428ea50de5a5272b8,
+    type: 3}
+  m_PrefabInstance: {fileID: 321864605183119678}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &3955888633374940719 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3643796822568701713, guid: ed1d26c0dd6f4f1428ea50de5a5272b8,
     type: 3}
   m_PrefabInstance: {fileID: 321864605183119678}
   m_PrefabAsset: {fileID: 0}
