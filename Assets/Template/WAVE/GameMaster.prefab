@@ -1726,6 +1726,7 @@ MonoBehaviour:
     type: 3}
   MaxSize: 100
   ClearTime: 36
+  DownCount: 0.16
 --- !u!114 &3838663886081500791
 MonoBehaviour:
   m_ObjectHideFlags: 0

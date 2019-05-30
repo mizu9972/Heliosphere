@@ -142,7 +142,10 @@ public class FeverGameManager : MonoBehaviour, IGameManager
         {
             canvas.GetComponent<Score>().ScoreCount(-FriendBreakScore);
         }
-
+        myFeverManager.GetComponent<FeverManager>()
+            .GameMaster.GetComponent<GameMaster>()
+            .FeverGaugeParent.GetComponent<GaugeParent>()
+            .FriendDestroyFunc();
     }
 
     public void AddEnemyPoint()
