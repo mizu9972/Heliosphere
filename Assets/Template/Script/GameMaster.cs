@@ -11,8 +11,8 @@ public class GameMaster : MonoBehaviour
     GameObject NowWAVEGameManager;
 
     [SerializeField, Header("フィーバーWAVEプリセット")]
-    GameObject FeverPrehab;
-
+    GameObject[] FeverPrehab = new GameObject[15];
+    
     [SerializeField, Header("フィーバーモード移行スコア")]
     double FeverScore = 1;
 
@@ -65,6 +65,7 @@ public class GameMaster : MonoBehaviour
     public void FeverStart()
     {
         var FeedInPanel = GetComponentInChildren<FeedIn>();
+        int RandomNum = (int)Random.Range(0.0f, 14.0f);
         //フェードイン
         FeedInPanel.Init(255, 0, 0.5f);
 
@@ -79,7 +80,7 @@ public class GameMaster : MonoBehaviour
         {
             _FeverObject = Instantiate(FeverObject);
         }
-        NowFeverObj = Instantiate(FeverPrehab);
+        NowFeverObj = Instantiate(FeverPrehab[RandomNum]);
         NowFeverObj.gameObject.SetActive(true);
 
         MyCamera.GetComponent<SwitchPPS>().ChangeLayer("FeverPostProcessing");

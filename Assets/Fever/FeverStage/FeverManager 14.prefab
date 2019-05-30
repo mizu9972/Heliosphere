@@ -6445,17 +6445,17 @@ MonoBehaviour:
   SceneChangeTime: 0
   PlayerCore: {fileID: 0}
   Comet: {fileID: 0}
-  RevolutionCore1: {fileID: 0}
-  RevolutionCore2: {fileID: 0}
-  RevolutionCore3: {fileID: 0}
-  RevolutionCore4: {fileID: 0}
-  RevolutionCore5: {fileID: 0}
+  RevolutionCore1: {fileID: 3378507887879780260}
+  RevolutionCore2: {fileID: 137629891994017233}
+  RevolutionCore3: {fileID: 3378507887607079646}
+  RevolutionCore4: {fileID: 3378507889323471781}
+  RevolutionCore5: {fileID: 2378293886981160541}
   TimeToClear: 12
   nextGameManager: {fileID: 5715988622348176318}
   myFeverManager: {fileID: 2508690213010493306}
   EnemyBreakScore: 3
   FriendBreakScore: 0
-  Enemy_GameClearPoint: 0
+  Enemy_GameClearPoint: 20
   ApproachSpeed: 25
 --- !u!1 &3378507887879780260
 GameObject:
@@ -8464,11 +8464,11 @@ MonoBehaviour:
   SceneChangeTime: 0
   PlayerCore: {fileID: 0}
   Comet: {fileID: 0}
-  RevolutionCore1: {fileID: 0}
-  RevolutionCore2: {fileID: 0}
-  RevolutionCore3: {fileID: 0}
-  RevolutionCore4: {fileID: 0}
-  RevolutionCore5: {fileID: 0}
+  RevolutionCore1: {fileID: 2450122685579887194}
+  RevolutionCore2: {fileID: 8462632313484941596}
+  RevolutionCore3: {fileID: 3261242607939989265}
+  RevolutionCore4: {fileID: 573573124066172383}
+  RevolutionCore5: {fileID: 8374568024257667219}
   TimeToClear: 12
   nextGameManager: {fileID: 0}
   myFeverManager: {fileID: 2508690213010493306}
@@ -8552,17 +8552,17 @@ MonoBehaviour:
   SceneChangeTime: 0
   PlayerCore: {fileID: 0}
   Comet: {fileID: 0}
-  RevolutionCore1: {fileID: 0}
-  RevolutionCore2: {fileID: 0}
-  RevolutionCore3: {fileID: 0}
-  RevolutionCore4: {fileID: 0}
-  RevolutionCore5: {fileID: 0}
+  RevolutionCore1: {fileID: 1136860772206898889}
+  RevolutionCore2: {fileID: 1910598794225759033}
+  RevolutionCore3: {fileID: 8126335150478511952}
+  RevolutionCore4: {fileID: 2240337767042074420}
+  RevolutionCore5: {fileID: 2071992273706842351}
   TimeToClear: 12
   nextGameManager: {fileID: 5466467716117255073}
   myFeverManager: {fileID: 2508690213010493306}
   EnemyBreakScore: 3
   FriendBreakScore: 0
-  Enemy_GameClearPoint: 0
+  Enemy_GameClearPoint: 50
   ApproachSpeed: 25
 --- !u!1 &5810583083377420085
 GameObject:
@@ -20849,7 +20849,7 @@ PrefabInstance:
         type: 3}
       propertyPath: GameManager
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 5715988622348176318}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cbeec5ff95b42234d849821f692ae86c, type: 3}
 --- !u!4 &5886181655507575314 stripped
@@ -39598,7 +39598,7 @@ PrefabInstance:
         type: 3}
       propertyPath: GameManager
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 5715988622348176318}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cbeec5ff95b42234d849821f692ae86c, type: 3}
 --- !u!4 &4144233523845697767 stripped
