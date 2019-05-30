@@ -2236,6 +2236,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StartFeverWAVE: {fileID: 3378507887738613455}
+  GameMaster: {fileID: 0}
 --- !u!1 &2522425226548043925
 GameObject:
   m_ObjectHideFlags: 0

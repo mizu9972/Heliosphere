@@ -8,7 +8,7 @@ public class FeverManager : MonoBehaviour
     GameObject StartFeverWAVE;
 
     //[SerializeField, Header("ゲームマスター")]
-    GameObject GameMaster;
+    public GameObject GameMaster;
 
     
     // Start is called before the first frame update

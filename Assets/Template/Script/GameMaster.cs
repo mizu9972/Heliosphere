@@ -23,6 +23,9 @@ public class GameMaster : MonoBehaviour
     GameObject FeverObject;
     private GameObject _FeverObject;
 
+    [Header("フィーバーゲージペアレント")]
+    public GameObject FeverGaugeParent;
+
     [SerializeField, Header("フィーバーゲージ")]
     public RawImage Fevergauge;
     [Header("HPゲージ")]
@@ -85,6 +88,8 @@ public class GameMaster : MonoBehaviour
         //フィーバーのキャンバスのenableをtrueに
         FeverCanvas.gameObject.SetActive(true);
         FeverCanvas.GetComponentInChildren<FeverBlink>().AlphaReset();//α値リセット
+
+        FeverGaugeParent.GetComponent<GaugeParent>().setWAVE1();
 
         NowWAVEGameManager.SetActive(false);
         if (FeverObject != null)

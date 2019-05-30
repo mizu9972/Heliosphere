@@ -8642,6 +8642,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StartFeverWAVE: {fileID: 3378507887738613455}
+  GameMaster: {fileID: 0}
 --- !u!1 &2645210749912190646
 GameObject:
   m_ObjectHideFlags: 0
@@ -10692,7 +10693,7 @@ MonoBehaviour:
   myFeverManager: {fileID: 2508690213010493306}
   EnemyBreakScore: 60
   FriendBreakScore: 0
-  Enemy_GameClearPoint: 0
+  Enemy_GameClearPoint: 20
   ApproachSpeed: 25
 --- !u!1 &3378507887879780260
 GameObject:
