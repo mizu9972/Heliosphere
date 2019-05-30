@@ -28,7 +28,11 @@ public class Score : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (JudgeCount <= 0)
+        {
+            JudgeCount = 0;
+            Count = 0;
+        }
     }
     public void ScoreCount(double value)//スコアの計算
     {
@@ -60,11 +64,7 @@ public class Score : MonoBehaviour
             {
                 JudgeCount = 0;
                 Count = 0;
-
-                //isGameOver = true;
-                //GameMaster.GetComponent<GameMaster>().ToGameOver();
             }
-            Debug.Log(JudgeCount);
         }
     }
 
