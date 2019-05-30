@@ -88,23 +88,32 @@ public class GameMaster : MonoBehaviour
         //フィーバーのキャンバスのenableをtrueに
         FeverCanvas.gameObject.SetActive(true);
         FeverCanvas.GetComponentInChildren<FeverBlink>().AlphaReset();//α値リセット
-
+        //WAVE1セット
         FeverGaugeParent.GetComponent<GaugeParent>().setWAVE1();
-
+        //通常ステージ退避
         NowWAVEGameManager.SetActive(false);
+
+        //HPゲージ非表示
+        HPGageCanvas.SetActive(false);
+
+        //パーティクル生成
         if (FeverObject != null)
         {
             _FeverObject = Instantiate(FeverObject);
         }
+        //フィーバールーチン生成
         NowFeverObj = Instantiate(FeverPrehab[RandomNum]);
         NowFeverObj.gameObject.SetActive(true);
-
+        //見た目変更
         MyCamera.GetComponent<SwitchPPS>().ChangeLayer("FeverPostProcessing");
 
+        //フィーバー起動
         NowFeverObj.GetComponent<FeverManager>().FeverStart();
 
+        //フィーバー突入演出
         Observable.Timer(System.TimeSpan.FromSeconds(FeverPopDelayTime)).Subscribe(_ => FeverPopFunc());
         ScoreCount = 0;
+
     }
 
     public void FeverFinish()
@@ -123,6 +132,8 @@ public class GameMaster : MonoBehaviour
         }
         MyCamera.GetComponent<SwitchPPS>().ChangeLayer("PostProcessing");
 
+        //HPゲージ表示
+        HPGageCanvas.SetActive(true);
         NowWAVEGameManager.SetActive(true);
         NowWAVEGameManager.GetComponent<WAVEGameManager>().ApproachStart();
     }

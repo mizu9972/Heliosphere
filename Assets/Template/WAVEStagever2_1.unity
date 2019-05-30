@@ -111798,11 +111798,6 @@ PrefabInstance:
       propertyPath: Fevergauge
       value: 
       objectReference: {fileID: 944166976}
-    - target: {fileID: 3363374701329921275, guid: 2c8bcda86af52494e992d81e96bab65a,
-        type: 3}
-      propertyPath: FeverScore
-      value: 7
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c8bcda86af52494e992d81e96bab65a, type: 3}
 --- !u!1001 &3373215761212016054
