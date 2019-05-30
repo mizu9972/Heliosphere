@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UniRx;
+using System;
 
 public class NewColliderScript : MonoBehaviour
 {
@@ -15,6 +17,9 @@ public class NewColliderScript : MonoBehaviour
     public float Mod_visual = 0.0f;
     [SerializeField, Header("当たり判定長さ制限")]
     float LimitScale;
+
+    [SerializeField, Header("尾の当たり判定変化遅延時間(秒)")]
+    float ColliderDelayTime = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,10 +35,13 @@ public class NewColliderScript : MonoBehaviour
         float dx = SunPos.x - MyPos.x;
         float dy = SunPos.z - MyPos.z;
         float Distance = Mathf.Sqrt(dy * dy + dx * dx);
-        
-        SetColliderSize(Distance);
+
+        Observable
+            .Return(Distance)//上で計算したDistanceを
+            .Delay(TimeSpan.FromSeconds(ColliderDelayTime))//指定秒遅らせて
+            .Subscribe(CDT => SetColliderSize(CDT));//SetColliderSize関数に流す
     }
-    
+   
     void SetColliderSize(float Distance)
     {
         Wark_Pos = Parent.transform.position;
