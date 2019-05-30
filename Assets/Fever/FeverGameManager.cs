@@ -84,13 +84,13 @@ public class FeverGameManager : MonoBehaviour, IGameManager
         var ClearByTimer = this.UpdateAsObservable()
             .Where(_ => (TimeCount >= TimeToClear));
         //フレンド破壊で次のWAVE
-        var ClearByFriendDestroy = this.UpdateAsObservable()
-            .Where(_ => FriendDestroyCount >= 1);
+        //var ClearByFriendDestroy = this.UpdateAsObservable()
+        //    .Where(_ => FriendDestroyCount >= 1);
         //エネミー全て破壊で次のWAVE
         var ClearByAllKill = this.UpdateAsObservable()
             .Where(_ => EnemyDesroyCount >= Enemy_GameClearPoint);
 
-        Observable.Amb(ClearByTimer, ClearByFriendDestroy, ClearByAllKill)
+        Observable.Amb(ClearByTimer, ClearByAllKill)
             .Take(1)
             .Subscribe(_ => ToClearScene());
 
@@ -140,6 +140,11 @@ public class FeverGameManager : MonoBehaviour, IGameManager
         {
             canvas.GetComponent<Score>().ScoreCount(-FriendBreakScore);
         }
+
+        myFeverManager.GetComponent<FeverManager>()
+            .GameMaster.GetComponent<GameMaster>()
+            .FeverGaugeParent.GetComponent<GaugeParent>()
+            .FriendDestroyFunction();
     }
 
     public void AddEnemyPoint()

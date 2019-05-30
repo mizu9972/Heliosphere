@@ -1577,6 +1577,7 @@ MonoBehaviour:
   FeverCanvas: {fileID: 8047157084576617950}
   FeverObject: {fileID: 7369897965432992780, guid: b0a87a12e0a39e44689202b52eff18bf,
     type: 3}
+  FeverGaugeParent: {fileID: 3717617807413881117}
   Fevergauge: {fileID: 1056861609564781166}
   HPGageCanvas: {fileID: 3955888633374940719}
   FeverPopCanvas: {fileID: 7042704898704085966}

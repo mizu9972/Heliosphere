@@ -59,6 +59,7 @@ public class GaugeParent : MonoBehaviour
             {
                 NowWAVE = WAVENum.WAVE3;
             }
+            Debug.Log(NowWAVE);
             CntTime += Time.deltaTime;
             Per = this.GetComponentInChildren<FeverGauge>()
                 .GaugeDivision((ClearTime - CntTime), ClearTime);

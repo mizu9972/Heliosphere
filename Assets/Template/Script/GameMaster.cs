@@ -23,6 +23,9 @@ public class GameMaster : MonoBehaviour
     GameObject FeverObject;
     private GameObject _FeverObject;
 
+    [Header("フィーバーゲージペアレント")]
+    public GameObject FeverGaugeParent;
+
     [SerializeField, Header("フィーバーゲージ")]
     public RawImage Fevergauge;
     [Header("HPゲージ")]
