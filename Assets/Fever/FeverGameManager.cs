@@ -79,7 +79,7 @@ public class FeverGameManager : MonoBehaviour, IGameManager
     {
         //シーン遷移条件を判定しシーン遷移用の関数へ
         //Whereで条件判定し、Take(1)で一回だけ実行、Subscribeで処理
-
+        EnemyNumSet();
         //時間で次のWAVE
         var ClearByTimer = this.UpdateAsObservable()
             .Where(_ => (TimeCount >= TimeToClear));
@@ -103,7 +103,7 @@ public class FeverGameManager : MonoBehaviour, IGameManager
         MyTrans = this.GetComponent<Transform>();
         TimeCount = 0;
 
-        EnemyNumSet();
+
     }
     public void AllChangeActive()
     {
