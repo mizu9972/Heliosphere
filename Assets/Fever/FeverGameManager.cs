@@ -45,7 +45,7 @@ public class FeverGameManager : MonoBehaviour, IGameManager
 
     private Transform MyTrans;
     private Vector3 TargetTrans = Vector3.zero;
-
+    private bool isClear = false;
     Vector3 subVector;
     [SerializeField, Header("接近してくる時間")]
     float ApproachSpeed = 1;
@@ -103,7 +103,7 @@ public class FeverGameManager : MonoBehaviour, IGameManager
         MyTrans = this.GetComponent<Transform>();
         TimeCount = 0;
 
-
+        isClear = false;
     }
     public void AllChangeActive()
     {
@@ -143,10 +143,6 @@ public class FeverGameManager : MonoBehaviour, IGameManager
             canvas.GetComponent<Score>().ScoreCount(-FriendBreakScore);
         }
 
-        myFeverManager.GetComponent<FeverManager>()
-            .GameMaster.GetComponent<GameMaster>()
-            .FeverGaugeParent.GetComponent<GaugeParent>()
-            .FriendDestroyFunction();
     }
 
     public void AddEnemyPoint()
@@ -160,21 +156,31 @@ public class FeverGameManager : MonoBehaviour, IGameManager
         //SceneChangeTimeの分だけ遅らせて
         //クリアシーンへ
         //Observable.Timer(System.TimeSpan.FromSeconds(SceneChangeTime)).Subscribe(_ => nextWave());
+
+
+
         nextWave();
         GameObject.Find("Manager").GetComponent<Manager>().ChengeActive(false);
     }
 
     private void nextWave()
     {
-        if (nextGameManager != null)
+        if (nextGameManager != null && isClear == false)
         {
             //次のウェーブへ
+
+            myFeverManager.GetComponent<FeverManager>()
+    .GameMaster.GetComponent<GameMaster>()
+    .FeverGaugeParent.GetComponent<GaugeParent>()
+    .setNextWAVE();
+
+            isClear = true;
             nextGameManager.gameObject.SetActive(true);
             nextGameManager.GetComponent<FeverGameManager>().ApproachStart();
             this.gameObject.SetActive(false);
 
         }
-        else
+        else if(nextGameManager == null)
         {
             Debug.Log("クリア");
             myFeverManager.GetComponent<FeverManager>().FeverFinish();

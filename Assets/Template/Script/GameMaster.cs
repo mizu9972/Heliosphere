@@ -89,6 +89,8 @@ public class GameMaster : MonoBehaviour
         FeverCanvas.gameObject.SetActive(true);
         FeverCanvas.GetComponentInChildren<FeverBlink>().AlphaReset();//α値リセット
 
+        FeverGaugeParent.GetComponent<GaugeParent>().setWAVE1();
+
         NowWAVEGameManager.SetActive(false);
         if (FeverObject != null)
         {

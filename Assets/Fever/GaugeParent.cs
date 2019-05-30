@@ -20,7 +20,7 @@ public class GaugeParent : MonoBehaviour
     public float ClearTime=6;
     private bool Getflg;
 
-    enum WAVENum
+    public enum WAVENum
     {
         WAVE1,
         WAVE2,
@@ -49,16 +49,6 @@ public class GaugeParent : MonoBehaviour
         }
         else
         {
-            if(ClearTime * 2 / 3 < CntTime)
-            {
-                NowWAVE = WAVENum.WAVE1;
-            }else if(ClearTime * 1 / 3 < CntTime)
-            {
-                NowWAVE = WAVENum.WAVE2;
-            }else
-            {
-                NowWAVE = WAVENum.WAVE3;
-            }
             Debug.Log(NowWAVE);
             CntTime += Time.deltaTime;
             Per = this.GetComponentInChildren<FeverGauge>()
@@ -95,20 +85,55 @@ public class GaugeParent : MonoBehaviour
         return Per;
     }
 
-    public void FriendDestroyFunction()
+    public void EnemyDestroyFunction()
     {
         switch (NowWAVE)
         {
             case WAVENum.WAVE1:
-                CntTime = ClearTime * 2 / 3;
+                CntTime = ClearTime * 1 / 3;
+                WAVESet(WAVENum.WAVE2);
                 break;
 
             case WAVENum.WAVE2:
-                CntTime = ClearTime * 1 / 3;
+                CntTime = ClearTime * 2 / 3;
+                WAVESet(WAVENum.WAVE3);
                 break;
 
             case WAVENum.WAVE3:
+                CntTime = ClearTime;
                 break;
         }
+    }
+
+    public void WAVESet(WAVENum _SetWAVE)
+    {
+        NowWAVE = _SetWAVE;
+    }
+
+    public void setNextWAVE()
+    {
+
+        switch (NowWAVE)
+        {
+            case WAVENum.WAVE3:
+                break;
+
+            case WAVENum.WAVE2:
+                WAVESet(WAVENum.WAVE3);
+                break;
+
+            case WAVENum.WAVE1:
+                WAVESet(WAVENum.WAVE2);
+                break;
+
+
+
+
+        }
+    }
+
+    public void setWAVE1()
+    {
+        NowWAVE = WAVENum.WAVE1;
     }
 }
