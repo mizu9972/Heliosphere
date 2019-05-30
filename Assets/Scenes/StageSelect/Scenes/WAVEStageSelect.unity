@@ -232,7 +232,7 @@ PrefabInstance:
     - target: {fileID: 550278513699308119, guid: 4b1824f71488bcb458093f1b2ea8e315,
         type: 3}
       propertyPath: SceneName
-      value: WAVEStage2
+      value: WAVEStagever2_2
       objectReference: {fileID: 0}
     - target: {fileID: 550278514689027451, guid: 4b1824f71488bcb458093f1b2ea8e315,
         type: 3}
@@ -836,7 +836,7 @@ PrefabInstance:
     - target: {fileID: 550278513699308119, guid: 4b1824f71488bcb458093f1b2ea8e315,
         type: 3}
       propertyPath: SceneName
-      value: WAVEStage1
+      value: WAVEStagever2_1
       objectReference: {fileID: 0}
     - target: {fileID: 550278514689027451, guid: 4b1824f71488bcb458093f1b2ea8e315,
         type: 3}
@@ -1046,7 +1046,7 @@ PrefabInstance:
     - target: {fileID: 550278513699308119, guid: 4b1824f71488bcb458093f1b2ea8e315,
         type: 3}
       propertyPath: SceneName
-      value: WAVEStage3
+      value: WAVEStagever2_3
       objectReference: {fileID: 0}
     - target: {fileID: 550278514689027451, guid: 4b1824f71488bcb458093f1b2ea8e315,
         type: 3}
@@ -1467,7 +1467,7 @@ PrefabInstance:
     - target: {fileID: 550278513699308119, guid: 4b1824f71488bcb458093f1b2ea8e315,
         type: 3}
       propertyPath: SceneName
-      value: WAVEStage3
+      value: WAVEStagever2_4
       objectReference: {fileID: 0}
     - target: {fileID: 550278514689027451, guid: 4b1824f71488bcb458093f1b2ea8e315,
         type: 3}
