@@ -136,7 +136,10 @@ public class FeverGameManager : MonoBehaviour, IGameManager
     {
         FriendDestroyCount += 1;//破壊されたFriend数加算
         //Score.csのScoreCountを実行(引数は-FriendBreakScore)
-        canvas.GetComponent<Score>().ScoreCount(-FriendBreakScore);
+        if (canvas != null)
+        {
+            canvas.GetComponent<Score>().ScoreCount(-FriendBreakScore);
+        }
     }
 
     public void AddEnemyPoint()
