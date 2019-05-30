@@ -19,10 +19,18 @@ public class GaugeParent : MonoBehaviour
     [Header("フィーバータイムの継続時間")]
     public float ClearTime=6;
     private bool Getflg;
-    // Start is called before the first frame update
+
+    enum WAVENum
+    {
+        WAVE1,
+        WAVE2,
+        WAVE3,
+    }
+    WAVENum NowWAVE; 
+
+        // Start is called before the first frame update
     void Start()
     {
-        //ClearTime = feverManager.GetComponent<FeverGameManager>().GetClearTime();
         feverScore = gameMaster.GetComponent<GameMaster>().GetFeverScore();
         MyRectTrans = this.GetComponent<RectTransform>();
     }
@@ -41,9 +49,19 @@ public class GaugeParent : MonoBehaviour
         }
         else
         {
+            if(ClearTime * 2 / 3 < CntTime)
+            {
+                NowWAVE = WAVENum.WAVE1;
+            }else if(ClearTime * 1 / 3 < CntTime)
+            {
+                NowWAVE = WAVENum.WAVE2;
+            }else
+            {
+                NowWAVE = WAVENum.WAVE3;
+            }
             CntTime += Time.deltaTime;
             Per = this.GetComponentInChildren<FeverGauge>()
-                .GaugeDivision((ClearTime-CntTime),ClearTime);
+                .GaugeDivision((ClearTime - CntTime), ClearTime);
             SizeDown();
         }
     }
@@ -74,5 +92,22 @@ public class GaugeParent : MonoBehaviour
     public double GetPersent()
     {
         return Per;
+    }
+
+    public void FriendDestroyFunction()
+    {
+        switch (NowWAVE)
+        {
+            case WAVENum.WAVE1:
+                CntTime = ClearTime * 2 / 3;
+                break;
+
+            case WAVENum.WAVE2:
+                CntTime = ClearTime * 1 / 3;
+                break;
+
+            case WAVENum.WAVE3:
+                break;
+        }
     }
 }
