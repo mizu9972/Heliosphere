@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Title/TitleScene.unity
+    path: Assets/Scenes/StageSelect/Title/TitleScene.unity
     guid: 077b68efbd3e7564abbde40f6e969dab
   - enabled: 1
     path: Assets/Scenes/Game/StageScenes/GameSceneNo1.unity
@@ -45,9 +45,6 @@ EditorBuildSettings:
     path: Assets/Scenes/StageSelect/Scenes/Stage1Practice.unity
     guid: 0eeeebf58910a454094707122fc4888c
   - enabled: 1
-    path: Assets/Scenes/StageSelect/Scenes/Stage2Practice.unity
-    guid: 12e3874d398f9b94cb3d9e9261087e1d
-  - enabled: 1
-    path: Assets/Scenes/StageSelect/Scenes/Stage3Practice.unity
-    guid: 8e628d1937d4bfa47a76961abc841cc7
+    path: Assets/Tutorial/Tutorial.unity
+    guid: 6f9d12b426cb42a428ff6d1c8aea3417
   m_configObjects: {}

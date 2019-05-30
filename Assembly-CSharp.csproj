@@ -121,8 +121,8 @@
     <Compile Include="Assets\Scenes\StageSelect\Scripts\SelectScene.cs" />
     <Compile Include="Assets\Scenes\StageSelect\Scripts\SelectStage.cs" />
     <Compile Include="Assets\Scenes\StageSelect\Scripts\UVEdit.cs" />
-    <Compile Include="Assets\Scenes\Title\FeedIn.cs" />
-    <Compile Include="Assets\Scenes\Title\TitleManager.cs" />
+    <Compile Include="Assets\Scenes\StageSelect\Title\FeedIn.cs" />
+    <Compile Include="Assets\Scenes\StageSelect\Title\TitleManager.cs" />
     <Compile Include="Assets\Score\AddScore.cs" />
     <Compile Include="Assets\Score\DrawAddScore.cs" />
     <Compile Include="Assets\Score\DrawSign.cs" />
@@ -146,6 +146,7 @@
     <Compile Include="Assets\Template\Script\Tutorial.cs" />
     <Compile Include="Assets\Template\Script\TutorialComet.cs" />
     <Compile Include="Assets\Template\Script\WAVEGameManager.cs" />
+    <Compile Include="Assets\Tutorial\TutorialImage.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>D:/HAL/ゲーム大賞/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
