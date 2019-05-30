@@ -22,9 +22,13 @@ public class GameManagerScript : MonoBehaviour,IGameManager
     
     [Header("isActiveを操作するオブジェクト群")]
     public GameObject PlayerCore;
-    public GameObject RevolutionCore;
     public GameObject Comet;
     public GameObject Comet2;
+
+    [SerializeField, Header("レボリューションコア")]
+    GameObject RevolutionCore1;
+    [SerializeField]
+    GameObject RevolutionCore2, RevolutionCore3, RevolutionCore4, RevolutionCore5;
 
     [Header("クリアEnemy破壊数・ゲームオーバーFriend破壊数")]
     [SerializeField]
@@ -83,8 +87,27 @@ public class GameManagerScript : MonoBehaviour,IGameManager
     public void AllChangeActive()
     {
         PlayerCore.GetComponent<ChangeActiveInterface>().ChangeActive();
-        RevolutionCore.GetComponent<ChangeActiveInterface>().ChangeActive();
-        if(Comet != null) { 
+        if (RevolutionCore1 != null)
+        {
+            RevolutionCore1.GetComponent<ChangeActiveInterface>().ChangeActive();
+        }
+        if (RevolutionCore2 != null)
+        {
+            RevolutionCore2.GetComponent<ChangeActiveInterface>().ChangeActive();
+        }
+        if (RevolutionCore3 != null)
+        {
+            RevolutionCore3.GetComponent<ChangeActiveInterface>().ChangeActive();
+        }
+        if (RevolutionCore4 != null)
+        {
+            RevolutionCore4.GetComponent<ChangeActiveInterface>().ChangeActive();
+        }
+        if (RevolutionCore5 != null)
+        {
+            RevolutionCore5.GetComponent<ChangeActiveInterface>().ChangeActive();
+        }
+        if (Comet != null) { 
         Comet.GetComponent<ChangeActiveInterface>().ChangeActive();
         }
         if (Comet2 != null)
