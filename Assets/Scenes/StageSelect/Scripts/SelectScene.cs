@@ -14,7 +14,26 @@ public class SelectScene : MonoBehaviour, IOnSelected
     GameObject Option;
 
     Selectable Me;
-
+    private GameObject SEmanager;
+    void Start()
+    {
+        SEmanager = GameObject.Find("SEManager");
+    }
+    void Update()
+    {
+        if (SEmanager != null)
+        {
+            //SE再生
+            if (Input.GetKeyDown(KeyCode.Return))//エンターで決定
+            {
+                SEmanager.GetComponent<SEManager>().PlaySE(SEManager.AudioType.Enter);
+            }
+            else if (Input.anyKeyDown && !Input.GetKeyDown(KeyCode.Return))//エンターキー以外の入力があればカーソル移動の効果音
+            {
+                SEmanager.GetComponent<SEManager>().PlaySE(SEManager.AudioType.Click);
+            }
+        }
+    }
     public void OnClick()
     {
         //シーン遷移
