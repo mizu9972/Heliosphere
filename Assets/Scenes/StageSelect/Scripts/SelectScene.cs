@@ -19,23 +19,13 @@ public class SelectScene : MonoBehaviour, IOnSelected
     {
         SEmanager = GameObject.Find("SEManager");
     }
-    void Update()
+    
+    public void OnClick()
     {
         if (SEmanager != null)
         {
-            //SE再生
-            if (Input.GetKeyDown(KeyCode.Return))//エンターで決定
-            {
-                SEmanager.GetComponent<SEManager>().PlaySE(SEManager.AudioType.Enter);
-            }
-            else if (Input.anyKeyDown && !Input.GetKeyDown(KeyCode.Return))//エンターキー以外の入力があればカーソル移動の効果音
-            {
-                SEmanager.GetComponent<SEManager>().PlaySE(SEManager.AudioType.Click);
-            }
+            SEmanager.GetComponent<SEManager>().PlaySE(SEManager.AudioType.Enter);
         }
-    }
-    public void OnClick()
-    {
         //シーン遷移
         SceneManager.LoadScene(SceneName);
 
@@ -55,5 +45,6 @@ public class SelectScene : MonoBehaviour, IOnSelected
         Me = GetComponent<Selectable>();
         //選択状態にする
         Me.Select();
+        
     }
 }
