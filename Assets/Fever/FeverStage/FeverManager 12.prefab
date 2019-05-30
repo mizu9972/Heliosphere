@@ -3497,17 +3497,17 @@ MonoBehaviour:
   SceneChangeTime: 0
   PlayerCore: {fileID: 0}
   Comet: {fileID: 0}
-  RevolutionCore1: {fileID: 0}
-  RevolutionCore2: {fileID: 0}
-  RevolutionCore3: {fileID: 0}
-  RevolutionCore4: {fileID: 0}
-  RevolutionCore5: {fileID: 0}
+  RevolutionCore1: {fileID: 4269748884444429204}
+  RevolutionCore2: {fileID: 7708666286570209245}
+  RevolutionCore3: {fileID: 8354226235363003465}
+  RevolutionCore4: {fileID: 1161832187520218980}
+  RevolutionCore5: {fileID: 2112584791401487423}
   TimeToClear: 12
   nextGameManager: {fileID: 5638401690339206362}
   myFeverManager: {fileID: 2508690213010493306}
   EnemyBreakScore: 3
   FriendBreakScore: 0
-  Enemy_GameClearPoint: 0
+  Enemy_GameClearPoint: 30
   ApproachSpeed: 25
 --- !u!1 &3378507887607079646
 GameObject:
@@ -3675,17 +3675,17 @@ MonoBehaviour:
   SceneChangeTime: 0
   PlayerCore: {fileID: 0}
   Comet: {fileID: 0}
-  RevolutionCore1: {fileID: 0}
-  RevolutionCore2: {fileID: 0}
-  RevolutionCore3: {fileID: 0}
-  RevolutionCore4: {fileID: 0}
-  RevolutionCore5: {fileID: 0}
+  RevolutionCore1: {fileID: 3378507887879780260}
+  RevolutionCore2: {fileID: 137629891994017233}
+  RevolutionCore3: {fileID: 3378507887607079646}
+  RevolutionCore4: {fileID: 3378507889323471781}
+  RevolutionCore5: {fileID: 2378293886981160541}
   TimeToClear: 12
   nextGameManager: {fileID: 3234648671805329425}
   myFeverManager: {fileID: 2508690213010493306}
   EnemyBreakScore: 3
   FriendBreakScore: 0
-  Enemy_GameClearPoint: 0
+  Enemy_GameClearPoint: 25
   ApproachSpeed: 25
 --- !u!1 &3378507887879780260
 GameObject:
@@ -7290,11 +7290,11 @@ MonoBehaviour:
   SceneChangeTime: 0
   PlayerCore: {fileID: 0}
   Comet: {fileID: 0}
-  RevolutionCore1: {fileID: 0}
-  RevolutionCore2: {fileID: 0}
-  RevolutionCore3: {fileID: 0}
-  RevolutionCore4: {fileID: 0}
-  RevolutionCore5: {fileID: 0}
+  RevolutionCore1: {fileID: 465088672499663934}
+  RevolutionCore2: {fileID: 5394322766411595374}
+  RevolutionCore3: {fileID: 6772601640165706917}
+  RevolutionCore4: {fileID: 4573426249981650404}
+  RevolutionCore5: {fileID: 5178299150962636400}
   TimeToClear: 12
   nextGameManager: {fileID: 0}
   myFeverManager: {fileID: 2508690213010493306}
@@ -11558,7 +11558,7 @@ PrefabInstance:
         type: 3}
       propertyPath: GameManager
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 3234648671805329425}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cbeec5ff95b42234d849821f692ae86c, type: 3}
 --- !u!4 &4718939293254703501 stripped
@@ -20993,7 +20993,7 @@ PrefabInstance:
         type: 3}
       propertyPath: GameManager
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 3234648671805329425}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cbeec5ff95b42234d849821f692ae86c, type: 3}
 --- !u!4 &613667605970850342 stripped
@@ -23835,7 +23835,7 @@ PrefabInstance:
         type: 3}
       propertyPath: GameManager
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 3234648671805329425}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cbeec5ff95b42234d849821f692ae86c, type: 3}
 --- !u!4 &2039471441370916143 stripped
