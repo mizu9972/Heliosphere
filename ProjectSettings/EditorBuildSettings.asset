@@ -9,17 +9,11 @@ EditorBuildSettings:
     path: Assets/Scenes/StageSelect/Title/TitleScene.unity
     guid: 077b68efbd3e7564abbde40f6e969dab
   - enabled: 1
-    path: Assets/Scenes/Game/StageScenes/GameSceneNo1.unity
-    guid: 8841fbc759a4a2246a54a580eba37065
-  - enabled: 1
     path: Assets/Scenes/StageClear/StageClearScene.unity
     guid: ca5309a04ff19bc49a55d44c9d0d7379
   - enabled: 1
     path: Assets/Scenes/GameOver/GameOverScene.unity
     guid: 97d6cba6018660342a11bbadc796fedf
-  - enabled: 1
-    path: Assets/Scenes/Game/StageScenes/GameSceneNo2.unity
-    guid: 180567a0f07a44b41b9db4f81e7941e2
   - enabled: 1
     path: Assets/Scenes/StageSelect/Scenes/StageSelectScene.unity
     guid: 4c953cd0d84617a479d2228842652632
@@ -29,9 +23,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Manager/ManagerScene.unity
     guid: a7686c8099bc2294890443254c16d4cf
-  - enabled: 1
-    path: Assets/Template/aaaaaaa.unity
-    guid: 0303d5acc6731094e81041e71911df98
   - enabled: 1
     path: Assets/Template/WAVEStage1.unity
     guid: 04c1e5b68e945e54fbf66fa9f4674965
@@ -47,4 +38,91 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Tutorial/Tutorial.unity
     guid: 6f9d12b426cb42a428ff6d1c8aea3417
+  - enabled: 1
+    path: Assets/Template/aaaaaaa.unity
+    guid: 0303d5acc6731094e81041e71911df98
+  - enabled: 1
+    path: Assets/Template/Practice_Stage/New Practice/Practice1-1.unity
+    guid: 41f3277f1d8623a4cbf4aaa81d286906
+  - enabled: 1
+    path: Assets/Template/Practice_Stage/New Practice/Practice1-2.unity
+    guid: a4dd53b49f953e644a18d22ebd4a2824
+  - enabled: 1
+    path: Assets/Template/Practice_Stage/New Practice/Practice1-3.unity
+    guid: 35e13c9b37ae53a45b4521a70e6fb45a
+  - enabled: 1
+    path: Assets/Template/Practice_Stage/New Practice/Practice1-4.unity
+    guid: 3ce6731cc35aa2446981950f27498aef
+  - enabled: 1
+    path: Assets/Template/Practice_Stage/New Practice/Practice1-5.unity
+    guid: 5abc58db62687284db5fbf64def7cf86
+  - enabled: 1
+    path: Assets/Template/Practice_Stage/New Practice/Practice1-6.unity
+    guid: fd277935e267bae42900d5dcbd7cdf49
+  - enabled: 1
+    path: Assets/Template/Practice_Stage/New Practice/Practice1-7.unity
+    guid: 44a8f12dcab35b346ad084296e85bb15
+  - enabled: 1
+    path: Assets/Template/Practice_Stage/New Practice/Practice2-1.unity
+    guid: 5b9cda57bbf1e4d42bee364e0a916ec2
+  - enabled: 1
+    path: Assets/Template/Practice_Stage/New Practice/Practice2-2.unity
+    guid: faf832a3ef93229438d91db59241c043
+  - enabled: 1
+    path: Assets/Template/Practice_Stage/New Practice/Practice2-3.unity
+    guid: 2472a06e5b599344a9ba4e96a7348296
+  - enabled: 1
+    path: Assets/Template/Practice_Stage/New Practice/Practice2-4.unity
+    guid: cc706d1efc1e6ed41a501605dee03a00
+  - enabled: 1
+    path: Assets/Template/Practice_Stage/New Practice/Practice2-5.unity
+    guid: b75541a4b3ee40847b66d6df64bb9d82
+  - enabled: 1
+    path: Assets/Template/Practice_Stage/New Practice/Practice2-6.unity
+    guid: 098303ea0c28307489e33d5f97c429eb
+  - enabled: 1
+    path: Assets/Template/Practice_Stage/New Practice/Practice2-7.unity
+    guid: f2b55d20e05a836459f5ee5a0ba06ac4
+  - enabled: 1
+    path: Assets/Template/Practice_Stage/New Practice/Practice3-1.unity
+    guid: 48767c5fafd23ac469ef0263fea8145b
+  - enabled: 1
+    path: Assets/Template/Practice_Stage/New Practice/Practice3-2.unity
+    guid: ce4b8eb6a1f3031459c3dd58b8d56dfb
+  - enabled: 1
+    path: Assets/Template/Practice_Stage/New Practice/Practice3-3.unity
+    guid: 3b754fd479a02f946a4de38d7abe0cc0
+  - enabled: 1
+    path: Assets/Template/Practice_Stage/New Practice/Practice3-4.unity
+    guid: e804384711a904c49aa4d8c6e56f7c35
+  - enabled: 1
+    path: Assets/Template/Practice_Stage/New Practice/Practice3-5.unity
+    guid: f80bef88ecca34949bfefcda22be37b9
+  - enabled: 1
+    path: Assets/Template/Practice_Stage/New Practice/Practice3-6.unity
+    guid: 324a78d9c6415544dae2a5fa37cad617
+  - enabled: 1
+    path: Assets/Template/Practice_Stage/New Practice/Practice3-7.unity
+    guid: 96e6c84be079b1c4c8b0de5aad6953fb
+  - enabled: 1
+    path: Assets/Template/Practice_Stage/New Practice/Practice4-1.unity
+    guid: af26dc59137087245b410973ebed9da2
+  - enabled: 1
+    path: Assets/Template/Practice_Stage/New Practice/Practice4-2.unity
+    guid: 08f6a9dfdcb7cd34693adb5a91dcda38
+  - enabled: 1
+    path: Assets/Template/Practice_Stage/New Practice/Practice4-3.unity
+    guid: 6e4d94e5249ed1b4aa83d615d4a3a8ad
+  - enabled: 1
+    path: Assets/Template/Practice_Stage/New Practice/Practice4-4.unity
+    guid: 46825efacff92bb4395e613e8b1068e5
+  - enabled: 1
+    path: Assets/Template/Practice_Stage/New Practice/Practice4-5.unity
+    guid: 10568e8e3e7dbfc4f8967c58c17ffa9d
+  - enabled: 1
+    path: Assets/Template/Practice_Stage/New Practice/Practice4-6.unity
+    guid: c3b17c43bb1b6a24389729080a27ecb1
+  - enabled: 1
+    path: Assets/Template/Practice_Stage/New Practice/Practice4-7.unity
+    guid: 02a34aaa2a2a4c846b57d082217d51bd
   m_configObjects: {}
