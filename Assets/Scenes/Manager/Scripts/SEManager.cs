@@ -1,7 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.EventSystems;
+using UniRx;
+using UniRx.Triggers;
 public class SEManager : MonoBehaviour
 {
     [SerializeField]
@@ -28,6 +30,11 @@ public class SEManager : MonoBehaviour
     {
         DontDestroyOnLoad(Obj);
         audioSource = this.GetComponent<AudioSource>();
+        this.UpdateAsObservable().Select(x => EventSystem.current.currentSelectedGameObject).
+            DistinctUntilChanged().
+            Where(x => x != null).
+            Subscribe(_ => PlaySE(AudioType.Click));
+
     }
 
     // Update is called once per frame

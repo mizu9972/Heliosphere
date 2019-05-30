@@ -2651,8 +2651,8 @@ MonoBehaviour:
   SE_Enemy1: {fileID: 8300000, guid: e9e06a6515ee9684a9c8507dfd05f4a8, type: 3}
   SE_Enemy2: {fileID: 8300000, guid: b9249e4643a3009498e1d91fba665292, type: 3}
   SE_Friend: {fileID: 8300000, guid: 1e44cd10a0a0c0c45bd63756757bd898, type: 3}
-  SE_StarCome: {fileID: 8300000, guid: ee052220751b0ff46a3b4a173bbb2bc4, type: 3}
-  SE_Click: {fileID: 8300000, guid: b109ec9a2c7de584aaa0b1f8b8059990, type: 3}
+  SE_StarCome: {fileID: 0}
+  SE_Click: {fileID: 8300000, guid: 28e52216e4e320b4e8afe672186e9f54, type: 3}
   SE_Enter: {fileID: 8300000, guid: 45e060b2e1142ec41b50144b4e177e81, type: 3}
 --- !u!4 &1634584877
 Transform:
