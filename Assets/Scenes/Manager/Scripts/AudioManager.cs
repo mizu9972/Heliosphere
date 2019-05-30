@@ -78,12 +78,14 @@ public class AudioManager : MonoBehaviour
             audioSource.loop = true;
         }
 
-        else if (sceneName == "StageSelectScene")//ステージセレクトシーン
+        else if (sceneName == "StageSelectScene"||sceneName== "WAVEStageSelect"|| sceneName == "PracticeSelect"||
+            sceneName== "Stage1Practice"||sceneName== "Stage2Practice"||sceneName== "Stage3Practice")//ステージセレクトシーン
         {
             //ステージ選択のBGM(ループする)
             audioSource.clip = MenuBgm;
             audioSource.loop = true;
         }
+        
 
         else if (sceneName == "StageClearScene")//ゲームCLEAR
         {

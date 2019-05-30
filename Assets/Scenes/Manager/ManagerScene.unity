@@ -2652,6 +2652,8 @@ MonoBehaviour:
   SE_Enemy2: {fileID: 8300000, guid: b9249e4643a3009498e1d91fba665292, type: 3}
   SE_Friend: {fileID: 8300000, guid: 1e44cd10a0a0c0c45bd63756757bd898, type: 3}
   SE_StarCome: {fileID: 8300000, guid: ee052220751b0ff46a3b4a173bbb2bc4, type: 3}
+  SE_Click: {fileID: 8300000, guid: b109ec9a2c7de584aaa0b1f8b8059990, type: 3}
+  SE_Enter: {fileID: 8300000, guid: 45e060b2e1142ec41b50144b4e177e81, type: 3}
 --- !u!4 &1634584877
 Transform:
   m_ObjectHideFlags: 0
@@ -3175,6 +3177,8 @@ MonoBehaviour:
   SE_Enemy2: {fileID: 8300000, guid: ee052220751b0ff46a3b4a173bbb2bc4, type: 3}
   SE_Friend: {fileID: 8300000, guid: ee052220751b0ff46a3b4a173bbb2bc4, type: 3}
   SE_StarCome: {fileID: 8300000, guid: ee052220751b0ff46a3b4a173bbb2bc4, type: 3}
+  SE_Click: {fileID: 0}
+  SE_Enter: {fileID: 0}
 --- !u!82 &1966793275
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3517,7 +3521,7 @@ MonoBehaviour:
   ClearSound: {fileID: 8300000, guid: 78b6606157da4b645acbeac624f5201d, type: 3}
   ClearSoundLoop: {fileID: 8300000, guid: 8a3682851800bd04487cb9d2c1427c70, type: 3}
   OverSound: {fileID: 8300000, guid: 70204a9342938164fb4f8577b1c9a353, type: 3}
-  ClickSound: {fileID: 8300000, guid: 3d2bef1bbce2d9440957e46c97be7a9b, type: 3}
+  ClickSound: {fileID: 8300000, guid: 45e060b2e1142ec41b50144b4e177e81, type: 3}
 --- !u!82 &2062281148
 AudioSource:
   m_ObjectHideFlags: 0
