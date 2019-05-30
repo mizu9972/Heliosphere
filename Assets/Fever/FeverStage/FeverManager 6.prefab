@@ -1459,17 +1459,17 @@ MonoBehaviour:
   SceneChangeTime: 0
   PlayerCore: {fileID: 0}
   Comet: {fileID: 0}
-  RevolutionCore1: {fileID: 0}
-  RevolutionCore2: {fileID: 0}
-  RevolutionCore3: {fileID: 0}
-  RevolutionCore4: {fileID: 0}
-  RevolutionCore5: {fileID: 0}
+  RevolutionCore1: {fileID: 8141631222114207149}
+  RevolutionCore2: {fileID: 1046753939326786952}
+  RevolutionCore3: {fileID: 6440951049654038025}
+  RevolutionCore4: {fileID: 3062475535594789733}
+  RevolutionCore5: {fileID: 8545202903415341041}
   TimeToClear: 12
   nextGameManager: {fileID: 3234648671805329425}
   myFeverManager: {fileID: 2508690213010493306}
   EnemyBreakScore: 3
   FriendBreakScore: 0
-  Enemy_GameClearPoint: 0
+  Enemy_GameClearPoint: 20
   ApproachSpeed: 25
 --- !u!1 &2052293887957884062
 GameObject:
@@ -1966,7 +1966,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b989f67fd8646824b81fdb02a714641f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartFeverWAVE: {fileID: 0}
+  StartFeverWAVE: {fileID: 1971632674160756568}
 --- !u!1 &2837518013503209000
 GameObject:
   m_ObjectHideFlags: 0
@@ -2857,17 +2857,17 @@ MonoBehaviour:
   SceneChangeTime: 0
   PlayerCore: {fileID: 0}
   Comet: {fileID: 0}
-  RevolutionCore1: {fileID: 0}
-  RevolutionCore2: {fileID: 0}
-  RevolutionCore3: {fileID: 0}
-  RevolutionCore4: {fileID: 0}
-  RevolutionCore5: {fileID: 0}
+  RevolutionCore1: {fileID: 4269748884444429204}
+  RevolutionCore2: {fileID: 7708666286570209245}
+  RevolutionCore3: {fileID: 8354226235363003465}
+  RevolutionCore4: {fileID: 1161832187520218980}
+  RevolutionCore5: {fileID: 2112584791401487423}
   TimeToClear: 12
   nextGameManager: {fileID: 7625586053490760598}
   myFeverManager: {fileID: 2508690213010493306}
   EnemyBreakScore: 3
   FriendBreakScore: 0
-  Enemy_GameClearPoint: 0
+  Enemy_GameClearPoint: 30
   ApproachSpeed: 25
 --- !u!1 &3387109864055458748
 GameObject:
@@ -9166,11 +9166,11 @@ MonoBehaviour:
   SceneChangeTime: 0
   PlayerCore: {fileID: 0}
   Comet: {fileID: 0}
-  RevolutionCore1: {fileID: 0}
-  RevolutionCore2: {fileID: 0}
-  RevolutionCore3: {fileID: 0}
-  RevolutionCore4: {fileID: 0}
-  RevolutionCore5: {fileID: 0}
+  RevolutionCore1: {fileID: 8291440988517196644}
+  RevolutionCore2: {fileID: 6836836711113259431}
+  RevolutionCore3: {fileID: 4707653298743717186}
+  RevolutionCore4: {fileID: 4257197437373770874}
+  RevolutionCore5: {fileID: 2308314048680818740}
   TimeToClear: 12
   nextGameManager: {fileID: 0}
   myFeverManager: {fileID: 2508690213010493306}

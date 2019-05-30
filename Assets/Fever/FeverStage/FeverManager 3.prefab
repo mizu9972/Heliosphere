@@ -6947,7 +6947,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b989f67fd8646824b81fdb02a714641f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartFeverWAVE: {fileID: 0}
+  StartFeverWAVE: {fileID: 8457074217368746109}
 --- !u!1 &2637155154753127345
 GameObject:
   m_ObjectHideFlags: 0
@@ -24893,11 +24893,11 @@ MonoBehaviour:
   SceneChangeTime: 0
   PlayerCore: {fileID: 0}
   Comet: {fileID: 0}
-  RevolutionCore1: {fileID: 0}
-  RevolutionCore2: {fileID: 0}
-  RevolutionCore3: {fileID: 0}
-  RevolutionCore4: {fileID: 0}
-  RevolutionCore5: {fileID: 0}
+  RevolutionCore1: {fileID: 5225832378999861190}
+  RevolutionCore2: {fileID: 7555794009284593549}
+  RevolutionCore3: {fileID: 3665494645210485221}
+  RevolutionCore4: {fileID: 2774781325227590954}
+  RevolutionCore5: {fileID: 1950511088369795881}
   TimeToClear: 12
   nextGameManager: {fileID: 982485402852812966}
   myFeverManager: {fileID: 2508690213010493306}

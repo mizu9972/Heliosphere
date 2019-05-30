@@ -3435,11 +3435,11 @@ MonoBehaviour:
   SceneChangeTime: 0
   PlayerCore: {fileID: 0}
   Comet: {fileID: 0}
-  RevolutionCore1: {fileID: 0}
-  RevolutionCore2: {fileID: 0}
-  RevolutionCore3: {fileID: 0}
-  RevolutionCore4: {fileID: 0}
-  RevolutionCore5: {fileID: 0}
+  RevolutionCore1: {fileID: 6492539254543670490}
+  RevolutionCore2: {fileID: 6018659753286973303}
+  RevolutionCore3: {fileID: 1736134358109682728}
+  RevolutionCore4: {fileID: 871323599615305662}
+  RevolutionCore5: {fileID: 7089158858282246110}
   TimeToClear: 12
   nextGameManager: {fileID: 0}
   myFeverManager: {fileID: 2508690213010493306}

@@ -1482,8 +1482,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NowWAVEGameManager: {fileID: 0}
-  FeverPrehab: {fileID: 2508690213010493306, guid: ec1e62a8403f58b4388a3cac40cec5c4,
-    type: 3}
+  FeverPrehab:
+  - {fileID: 2508690213010493306, guid: ec1e62a8403f58b4388a3cac40cec5c4, type: 3}
+  - {fileID: 2508690213010493306, guid: 2f9ce7427a1865843ba4723a55a110bc, type: 3}
+  - {fileID: 2508690213010493306, guid: b350d92cd6a36b247b1be2f1140139f1, type: 3}
+  - {fileID: 2508690213010493306, guid: 8b0613da60806c340a9114bf516a9fb9, type: 3}
+  - {fileID: 2508690213010493306, guid: d0549a08381b13a46ba376c6fa8b9e94, type: 3}
+  - {fileID: 2508690213010493306, guid: 91f434fe043c8ee40bc7ceb8255eb91c, type: 3}
+  - {fileID: 2508690213010493306, guid: e89477cdc278aa741b5bdfd224e55b5d, type: 3}
+  - {fileID: 2508690213010493306, guid: 2ec4819758674c2429e580c1c35d5d65, type: 3}
+  - {fileID: 2508690213010493306, guid: ea0e1f7b28e4bee498343f79372e2edd, type: 3}
+  - {fileID: 2508690213010493306, guid: 087d233ef292736409e5eb6bc3c64ab8, type: 3}
+  - {fileID: 2508690213010493306, guid: f9947849690863e4795b272d44822d1a, type: 3}
+  - {fileID: 2508690213010493306, guid: 6feccf0623c61534abe11be830c3a57b, type: 3}
+  - {fileID: 2508690213010493306, guid: 186e1303aa9e4444d8587001f8f50130, type: 3}
+  - {fileID: 2508690213010493306, guid: f7deb1dd488513a4bb50151ade3d623b, type: 3}
+  - {fileID: 2508690213010493306, guid: 79e303833c8c3e6468d3f05c40752bf0, type: 3}
   FeverScore: 7777
   FeverCanvas: {fileID: 8047157084576617950}
   FeverObject: {fileID: 7369897965432992780, guid: b0a87a12e0a39e44689202b52eff18bf,
