@@ -25,26 +25,30 @@ public class GameMaster : MonoBehaviour
 
     [SerializeField, Header("フィーバーゲージ")]
     public RawImage Fevergauge;
+    [Header("HPゲージ")]
+    public GameObject HPGageCanvas;
     private GameObject NowFeverObj;
     private int enemycount = 0;
     private double ScoreCount;//フィーバーモードへのカウント用 
     private GameObject MyCamera;
     private GameObject Manager;
+    private int HP;
     // Start is called before the first frame update
     void Start()
     {
+        HPGageCanvas = GameObject.Find("HPGageParent");
         Manager = GameObject.Find("Manager");
         this.UpdateAsObservable().Where(_ => ScoreCount >= FeverScore).Subscribe(_ => FeverStart());
 
         MyCamera = GameObject.FindWithTag("MainCamera");
-
-
+        HP = HPGageCanvas.GetComponent<HPGageParent>().GetNowHP();//HPの取得
+        this.UpdateAsObservable().Where(_ => HP <= 0).Take(1).Subscribe(_ => ToGameOver());
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        HP = HPGageCanvas.GetComponent<HPGageParent>().GetNowHP();//HPの取得
     }
 
     public void CountUp(double _Score)
@@ -132,5 +136,13 @@ public class GameMaster : MonoBehaviour
     public double GetNowScore()
     {
         return ScoreCount;
+    }
+    public void FrendDestroyCount()
+    {
+        //HPGageParentの関数実行
+        if(HPGageCanvas!=null)
+        {
+            HPGageCanvas.GetComponent<HPGageParent>().DestroyFriendCount();
+        }
     }
 }

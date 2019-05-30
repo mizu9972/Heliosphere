@@ -61,8 +61,8 @@ public class Score : MonoBehaviour
                 JudgeCount = 0;
                 Count = 0;
 
-                isGameOver = true;
-                GameMaster.GetComponent<GameMaster>().ToGameOver();
+                //isGameOver = true;
+                //GameMaster.GetComponent<GameMaster>().ToGameOver();
             }
             Debug.Log(JudgeCount);
         }

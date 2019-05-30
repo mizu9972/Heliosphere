@@ -75,6 +75,8 @@
     <Compile Include="Assets\Fever\SetFeverPos.cs" />
     <Compile Include="Assets\Fever\SetGagePos.cs" />
     <Compile Include="Assets\GameOverFunc.cs" />
+    <Compile Include="Assets\HPGage\HPGage.cs" />
+    <Compile Include="Assets\HPGage\HPGageParent.cs" />
     <Compile Include="Assets\IMoveOperate.cs" />
     <Compile Include="Assets\Scenes\Game\Comet\Comet\ColliderScript.cs" />
     <Compile Include="Assets\Scenes\Game\Comet\Comet\EllipseMove.cs" />

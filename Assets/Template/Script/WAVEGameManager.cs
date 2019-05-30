@@ -152,6 +152,11 @@ public class WAVEGameManager : MonoBehaviour, IGameManager
     }
     public void AddFriendPoint()
     {
+        if(GameMaster!=null)
+        {
+            //エネミーが破壊されたことを送信
+            GameMaster.GetComponent<GameMaster>().FrendDestroyCount();
+        }
         FriendDestroyCount += 1;//破壊されたFriend数加算
         //Score.csのScoreCountを実行(引数は-FriendBreakScore)
         canvas.GetComponent<Score>().ScoreCount(-FriendBreakScore);
