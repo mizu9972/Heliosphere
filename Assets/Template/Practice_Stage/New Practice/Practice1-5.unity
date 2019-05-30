@@ -1880,7 +1880,7 @@ PrefabInstance:
     - target: {fileID: 6264534364166353520, guid: 2eb110a2d88e6094b89b196aed7bf952,
         type: 3}
       propertyPath: Enemy_GameClearPoint
-      value: 32
+      value: 36
       objectReference: {fileID: 0}
     - target: {fileID: 1506324338213659205, guid: 2eb110a2d88e6094b89b196aed7bf952,
         type: 3}

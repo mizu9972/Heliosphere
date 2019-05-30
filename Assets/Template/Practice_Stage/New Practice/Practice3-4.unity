@@ -8484,6 +8484,31 @@ PrefabInstance:
       propertyPath: Enemy_GameClearPoint
       value: 123
       objectReference: {fileID: 0}
+    - target: {fileID: 6264534364166353520, guid: 2eb110a2d88e6094b89b196aed7bf952,
+        type: 3}
+      propertyPath: RevolutionCore1
+      value: 
+      objectReference: {fileID: 725836779}
+    - target: {fileID: 6264534364166353520, guid: 2eb110a2d88e6094b89b196aed7bf952,
+        type: 3}
+      propertyPath: RevolutionCore2
+      value: 
+      objectReference: {fileID: 725836778}
+    - target: {fileID: 6264534364166353520, guid: 2eb110a2d88e6094b89b196aed7bf952,
+        type: 3}
+      propertyPath: RevolutionCore3
+      value: 
+      objectReference: {fileID: 725836777}
+    - target: {fileID: 6264534364166353520, guid: 2eb110a2d88e6094b89b196aed7bf952,
+        type: 3}
+      propertyPath: RevolutionCore4
+      value: 
+      objectReference: {fileID: 559147205}
+    - target: {fileID: 6264534364166353520, guid: 2eb110a2d88e6094b89b196aed7bf952,
+        type: 3}
+      propertyPath: RevolutionCore5
+      value: 
+      objectReference: {fileID: 601047330}
     - target: {fileID: 1506324338213659205, guid: 2eb110a2d88e6094b89b196aed7bf952,
         type: 3}
       propertyPath: ControllObject
@@ -8524,6 +8549,24 @@ PrefabInstance:
 --- !u!4 &725836776 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4536301148495900938, guid: 2eb110a2d88e6094b89b196aed7bf952,
+    type: 3}
+  m_PrefabInstance: {fileID: 725836775}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &725836777 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6587445822855549681, guid: 2eb110a2d88e6094b89b196aed7bf952,
+    type: 3}
+  m_PrefabInstance: {fileID: 725836775}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &725836778 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8583326118418146193, guid: 2eb110a2d88e6094b89b196aed7bf952,
+    type: 3}
+  m_PrefabInstance: {fileID: 725836775}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &725836779 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5643594945292618905, guid: 2eb110a2d88e6094b89b196aed7bf952,
     type: 3}
   m_PrefabInstance: {fileID: 725836775}
   m_PrefabAsset: {fileID: 0}

@@ -62,9 +62,10 @@ MonoBehaviour:
   Parent: {fileID: 2592975415085212246}
   Target: {fileID: 0}
   SizeUp: 50
-  Mod_ratio: 75
-  Mod_visual: 1
+  Mod_ratio: 65
+  Mod_visual: 2.7
   LimitScale: 20
+  ColliderDelayTime: 0.15
 --- !u!1 &2550043631095521500
 GameObject:
   m_ObjectHideFlags: 0

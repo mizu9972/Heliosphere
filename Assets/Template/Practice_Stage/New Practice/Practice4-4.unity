@@ -5241,6 +5241,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2099830777553596667}
     m_Modifications:
+    - target: {fileID: 4172258807983410902, guid: 827e7e3663026fc4ab53b47753e32ea7,
+        type: 3}
+      propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 4172258807983410903, guid: 827e7e3663026fc4ab53b47753e32ea7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5295,11 +5300,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4172258807983410902, guid: 827e7e3663026fc4ab53b47753e32ea7,
-        type: 3}
-      propertyPath: m_Name
-      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 827e7e3663026fc4ab53b47753e32ea7, type: 3}
@@ -20274,6 +20274,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2099830777553596667}
     m_Modifications:
+    - target: {fileID: 2592975415085212247, guid: 380412b23ee415047a9669f47ef45143,
+        type: 3}
+      propertyPath: m_Name
+      value: CometVer100
+      objectReference: {fileID: 0}
     - target: {fileID: 2592975415085212246, guid: 380412b23ee415047a9669f47ef45143,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -20329,11 +20334,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2592975415085212247, guid: 380412b23ee415047a9669f47ef45143,
-        type: 3}
-      propertyPath: m_Name
-      value: CometVer100
-      objectReference: {fileID: 0}
     - target: {fileID: 2592975414859028454, guid: 380412b23ee415047a9669f47ef45143,
         type: 3}
       propertyPath: sunTrans
@@ -20374,11 +20374,6 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 5025206702230753827, guid: 380412b23ee415047a9669f47ef45143,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7693733224272395842, guid: 380412b23ee415047a9669f47ef45143,
         type: 3}
       propertyPath: Target
@@ -20388,6 +20383,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2554470232077785259, guid: 380412b23ee415047a9669f47ef45143,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 804492170783398737, guid: 380412b23ee415047a9669f47ef45143,
         type: 3}
@@ -20399,9 +20399,9 @@ PrefabInstance:
       propertyPath: InitialModule.startSizeZ.minMaxState
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 2554470232077785259, guid: 380412b23ee415047a9669f47ef45143,
+    - target: {fileID: 5025206702230753827, guid: 380412b23ee415047a9669f47ef45143,
         type: 3}
-      propertyPath: m_Enabled
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2550043631095521497, guid: 380412b23ee415047a9669f47ef45143,
@@ -20531,7 +20531,7 @@ MonoBehaviour:
   RevolutionCore4: {fileID: 0}
   RevolutionCore5: {fileID: 0}
   Friend_GameOverPoint: 1
-  Enemy_GameClearPoint: 140
+  Enemy_GameClearPoint: 150
   TutorialCanvas: {fileID: 0}
 --- !u!1 &6587445822230425878
 GameObject:
