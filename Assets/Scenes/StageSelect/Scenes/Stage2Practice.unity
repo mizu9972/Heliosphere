@@ -2043,7 +2043,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8366e2957a1b8604a9ddd6945336581c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneName: WAVEStage3
+  SceneName: Practice2-8
   Option: {fileID: 0}
 --- !u!114 &550278513779480326
 MonoBehaviour:
@@ -2262,7 +2262,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8366e2957a1b8604a9ddd6945336581c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneName: WAVEStage2
+  SceneName: Practice2-2
   Option: {fileID: 0}
 --- !u!222 &550278513827408406
 CanvasRenderer:
@@ -2470,7 +2470,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8366e2957a1b8604a9ddd6945336581c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneName: WAVEStage3
+  SceneName: Practice2-5
   Option: {fileID: 0}
 --- !u!224 &550278513962345861
 RectTransform:
@@ -2931,7 +2931,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8366e2957a1b8604a9ddd6945336581c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneName: WAVEStage3
+  SceneName: Practice2-6
   Option: {fileID: 0}
 --- !u!224 &550278514661245285
 RectTransform:
@@ -3249,7 +3249,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8366e2957a1b8604a9ddd6945336581c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneName: WAVEStage3
+  SceneName: Practice2-4
   Option: {fileID: 0}
 --- !u!224 &550278514932755051
 RectTransform:
@@ -3560,7 +3560,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8366e2957a1b8604a9ddd6945336581c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneName: WAVEStage1
+  SceneName: Practice2-1
   Option: {fileID: 0}
 --- !u!224 &550278515087940351
 RectTransform:
@@ -3697,7 +3697,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8366e2957a1b8604a9ddd6945336581c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneName: WAVEStage3
+  SceneName: Practice2-3
   Option: {fileID: 0}
 --- !u!224 &550278515132780539
 RectTransform:
@@ -3781,7 +3781,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8366e2957a1b8604a9ddd6945336581c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneName: WAVEStage3
+  SceneName: Practice2-10
   Option: {fileID: 0}
 --- !u!114 &550278515335134458
 MonoBehaviour:
@@ -3885,7 +3885,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8366e2957a1b8604a9ddd6945336581c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneName: WAVEStage3
+  SceneName: Practice2-9
   Option: {fileID: 0}
 --- !u!224 &550278515381787569
 RectTransform:
@@ -4161,5 +4161,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8366e2957a1b8604a9ddd6945336581c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneName: WAVEStage3
+  SceneName: Practice2-7
   Option: {fileID: 0}
