@@ -3177,8 +3177,8 @@ MonoBehaviour:
   SE_Enemy2: {fileID: 8300000, guid: ee052220751b0ff46a3b4a173bbb2bc4, type: 3}
   SE_Friend: {fileID: 8300000, guid: ee052220751b0ff46a3b4a173bbb2bc4, type: 3}
   SE_StarCome: {fileID: 8300000, guid: ee052220751b0ff46a3b4a173bbb2bc4, type: 3}
-  SE_Click: {fileID: 0}
-  SE_Enter: {fileID: 0}
+  SE_Click: {fileID: 8300000, guid: ee052220751b0ff46a3b4a173bbb2bc4, type: 3}
+  SE_Enter: {fileID: 8300000, guid: ee052220751b0ff46a3b4a173bbb2bc4, type: 3}
 --- !u!82 &1966793275
 AudioSource:
   m_ObjectHideFlags: 0
