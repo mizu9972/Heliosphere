@@ -27,6 +27,13 @@ public class GameMaster : MonoBehaviour
     public RawImage Fevergauge;
     [Header("HPゲージ")]
     public GameObject HPGageCanvas;
+
+    [SerializeField, Header("フィーバー突入で一瞬表示するキャンバス")]
+    GameObject FeverPopCanvas;
+
+    [SerializeField]
+    float FeverPopDelayTime = 0,FeverPopTime = 0;
+
     private GameObject NowFeverObj;
     private int enemycount = 0;
     private double ScoreCount;//フィーバーモードへのカウント用 
@@ -91,6 +98,7 @@ public class GameMaster : MonoBehaviour
 
         NowFeverObj.GetComponent<FeverManager>().FeverStart();
 
+        Observable.Timer(System.TimeSpan.FromSeconds(FeverPopDelayTime)).Subscribe(_ => FeverPopFunc());
         ScoreCount = 0;
     }
 
@@ -145,5 +153,13 @@ public class GameMaster : MonoBehaviour
         {
             HPGageCanvas.GetComponent<HPGageParent>().DestroyFriendCount();
         }
+    }
+
+    void FeverPopFunc()
+    {
+        FeverPopCanvas.SetActive(true);
+        Observable.Timer(System.TimeSpan.FromSeconds(FeverPopTime))
+            .Where(_ => FeverPopCanvas != null)
+            .Subscribe(_ => FeverPopCanvas.SetActive(false));
     }
 }

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311912, g: 0.3807398, b: 0.3587271, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -493,6 +493,21 @@ PrefabInstance:
       propertyPath: m_Color.b
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 550278513699308116, guid: 4b1824f71488bcb458093f1b2ea8e315,
+        type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.r
+      value: 0.6939467
+      objectReference: {fileID: 0}
+    - target: {fileID: 550278513699308116, guid: 4b1824f71488bcb458093f1b2ea8e315,
+        type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.g
+      value: 0.14017442
+      objectReference: {fileID: 0}
+    - target: {fileID: 550278513699308116, guid: 4b1824f71488bcb458093f1b2ea8e315,
+        type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.b
+      value: 0.8490566
+      objectReference: {fileID: 0}
     - target: {fileID: 550278513699308117, guid: 4b1824f71488bcb458093f1b2ea8e315,
         type: 3}
       propertyPath: m_Sprite
@@ -512,21 +527,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Color.b
       value: 0.4528302
-      objectReference: {fileID: 0}
-    - target: {fileID: 550278513699308116, guid: 4b1824f71488bcb458093f1b2ea8e315,
-        type: 3}
-      propertyPath: m_Colors.m_HighlightedColor.r
-      value: 0.6939467
-      objectReference: {fileID: 0}
-    - target: {fileID: 550278513699308116, guid: 4b1824f71488bcb458093f1b2ea8e315,
-        type: 3}
-      propertyPath: m_Colors.m_HighlightedColor.g
-      value: 0.14017442
-      objectReference: {fileID: 0}
-    - target: {fileID: 550278513699308116, guid: 4b1824f71488bcb458093f1b2ea8e315,
-        type: 3}
-      propertyPath: m_Colors.m_HighlightedColor.b
-      value: 0.8490566
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b1824f71488bcb458093f1b2ea8e315, type: 3}
@@ -1762,6 +1762,21 @@ PrefabInstance:
       propertyPath: m_FontData.m_HorizontalOverflow
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 550278513699308116, guid: 4b1824f71488bcb458093f1b2ea8e315,
+        type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.r
+      value: 0.69803923
+      objectReference: {fileID: 0}
+    - target: {fileID: 550278513699308116, guid: 4b1824f71488bcb458093f1b2ea8e315,
+        type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.g
+      value: 0.227451
+      objectReference: {fileID: 0}
+    - target: {fileID: 550278513699308116, guid: 4b1824f71488bcb458093f1b2ea8e315,
+        type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.b
+      value: 0.9058824
+      objectReference: {fileID: 0}
     - target: {fileID: 550278514689027450, guid: 4b1824f71488bcb458093f1b2ea8e315,
         type: 3}
       propertyPath: m_LocalPosition.z
@@ -1797,21 +1812,6 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
-    - target: {fileID: 550278513699308116, guid: 4b1824f71488bcb458093f1b2ea8e315,
-        type: 3}
-      propertyPath: m_Colors.m_HighlightedColor.r
-      value: 0.69803923
-      objectReference: {fileID: 0}
-    - target: {fileID: 550278513699308116, guid: 4b1824f71488bcb458093f1b2ea8e315,
-        type: 3}
-      propertyPath: m_Colors.m_HighlightedColor.g
-      value: 0.227451
-      objectReference: {fileID: 0}
-    - target: {fileID: 550278513699308116, guid: 4b1824f71488bcb458093f1b2ea8e315,
-        type: 3}
-      propertyPath: m_Colors.m_HighlightedColor.b
-      value: 0.9058824
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b1824f71488bcb458093f1b2ea8e315, type: 3}
 --- !u!224 &2109844098 stripped
@@ -1898,7 +1898,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &550278513903455385
 GameObject:
   m_ObjectHideFlags: 0
