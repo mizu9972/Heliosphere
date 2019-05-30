@@ -35,6 +35,10 @@ public class ScoreDraw : MonoBehaviour
         if (Parent != null)
         {
             Num = Parent.GetComponent<Score>().GetScoreDigit(Dig);//自分の桁の数字を取得
+            if(Num < 0)
+            {
+                Num = 0;
+            }
             if(Num<5)
             {
                 V = Num / 5 * 0.5f + 0.5f;
