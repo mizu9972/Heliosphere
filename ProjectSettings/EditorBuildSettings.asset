@@ -30,7 +30,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Manager/ManagerScene.unity
     guid: a7686c8099bc2294890443254c16d4cf
   - enabled: 1
-    path: Assets/Template/Tutorial.unity
+    path: Assets/Template/aaaaaaa.unity
     guid: 0303d5acc6731094e81041e71911df98
   - enabled: 1
     path: Assets/Template/WAVEStage1.unity
