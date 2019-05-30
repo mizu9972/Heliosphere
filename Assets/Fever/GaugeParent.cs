@@ -20,6 +20,8 @@ public class GaugeParent : MonoBehaviour
     public float ClearTime=6;
     private bool Getflg;
 
+    [SerializeField, Header("フレンド破壊時のゲージ減少量"), Range(0, 1)]
+    float DownCount;
     public enum WAVENum
     {
         WAVE1,
@@ -49,11 +51,16 @@ public class GaugeParent : MonoBehaviour
         }
         else
         {
-            Debug.Log(NowWAVE);
+
             CntTime += Time.deltaTime;
             Per = this.GetComponentInChildren<FeverGauge>()
                 .GaugeDivision((ClearTime - CntTime), ClearTime);
             SizeDown();
+
+            if(CntTime >= ClearTime)
+            {//ゲージ無くなったらフィーバー終了
+                gameMaster.GetComponent<GameMaster>().FeverFinish();
+            }
         }
     }
     void SizeUp()
@@ -105,6 +112,10 @@ public class GaugeParent : MonoBehaviour
         }
     }
 
+    public void FriendDestroyFunc()
+    {
+        CntTime += ClearTime * DownCount;
+    }
     public void WAVESet(WAVENum _SetWAVE)
     {
         NowWAVE = _SetWAVE;
