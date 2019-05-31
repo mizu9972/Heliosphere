@@ -61,9 +61,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Parent: {fileID: 2592975415085212246}
   Target: {fileID: 0}
-  SizeUp: 68
-  Mod_ratio: 92
-  Mod_visual: 4
+  SizeUp: 50
+  Mod_ratio: 85
+  Mod_visual: 2
   LimitScale: 15
   ColliderDelayTime: 0.24
 --- !u!1 &2550043631095521500
@@ -465,7 +465,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 8
+      scalar: 6
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -4144,7 +4144,7 @@ ParticleSystem:
     lifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.18
+      scalar: 0.15
       minScalar: 1
       maxCurve:
         serializedVersion: 2
