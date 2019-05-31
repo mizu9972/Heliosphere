@@ -103,6 +103,13 @@ public class Score : MonoBehaviour
     }
     public int GetScoreDigit(int Num)//何桁目を取得するかを引数で受け取る
     {
+        if(Count > 99999)
+        {
+            Count = 99999;
+        }else if(Count < 0)
+        {
+            Count = 0;
+        }
         int[] Digit=new int[5];
         Digit[0] = (int)Count % 10;//1桁
         Digit[1] = ((int)Count % 100)/10;//2桁

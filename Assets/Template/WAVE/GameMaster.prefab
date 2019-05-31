@@ -305,11 +305,11 @@ MonoBehaviour:
   Parfect_: 100
   MarVelous_: 80
   Good_: 30
-  SBorder: 0
-  ABorder: 0
-  BBorder: 0
-  CBorder: 0
-  DBorder: 0
+  SBorder: 99999
+  ABorder: 80000
+  BBorder: 60000
+  CBorder: 40000
+  DBorder: 20000
   EBorder: 0
   ParfectPoint: 2
   MarVelousPoint: 1
