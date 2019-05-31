@@ -44,7 +44,10 @@ public class NewColliderScript : MonoBehaviour
    
     void SetColliderSize(float Distance)
     {
-        Wark_Pos = Parent.transform.position;
+        if(Parent!=null)
+        {
+            Wark_Pos = Parent.transform.position;
+        }
         MyTrans.localScale = Wark_Size;
         MyTrans.position = Wark_Pos;
 
