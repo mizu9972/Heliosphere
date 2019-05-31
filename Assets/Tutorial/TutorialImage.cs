@@ -18,7 +18,7 @@ public class TutorialImage : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Backspace))
+        if(Input.GetKeyDown(KeyCode.Backspace) || Input.GetButtonDown("Cancel"))
         {
             //一つ前のページがあれば
             if(BeforeTutorial!=null)
@@ -28,7 +28,7 @@ public class TutorialImage : MonoBehaviour
                 this.gameObject.SetActive(false);
             }
         }
-        else if (Input.GetKeyDown(KeyCode.Return))
+        else if (Input.GetKeyDown(KeyCode.Return) || Input.GetButtonDown("action1"))
         {
             //次のページがあれば
             if(NextTutorial!=null)
