@@ -238,8 +238,6 @@ public class WAVEGameManager : MonoBehaviour, IGameManager
 
         }else
         {
-            // マウスカーソルを表示する
-            UnityEngine.Cursor.visible = true;
             AllChangeActive();
             Observable.Timer(System.TimeSpan.FromSeconds(GameClearTime)).Subscribe(_ => ClearFunc());
 
