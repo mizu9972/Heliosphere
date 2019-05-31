@@ -12,7 +12,7 @@ public class WAVEGameManager : MonoBehaviour, IGameManager
     public float SceneChangeTime = 0;
     private float GameOverTime = 5;
     ///
-    public float GameClearTime = 1;
+    public float GameClearTime = 1.2f;
     public float FriendLivingPoint = 10;
     ///
     [SerializeField, Header("初期位置")]
