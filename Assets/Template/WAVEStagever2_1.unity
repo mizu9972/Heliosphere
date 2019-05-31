@@ -48047,6 +48047,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SceneChangeTime: 0
+  GameClearTime: 1.2
+  FriendLivingPoint: 10
   InitPosition: {x: 0, y: -60, z: 0}
   PlayerCore: {fileID: 1933613815}
   Comet: {fileID: 54830369}
@@ -51668,6 +51670,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SceneChangeTime: 0
+  GameClearTime: 1.2
+  FriendLivingPoint: 10
   InitPosition: {x: 0, y: -60, z: 0}
   PlayerCore: {fileID: 1933613815}
   Comet: {fileID: 54830369}
@@ -56283,6 +56287,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SceneChangeTime: 0
+  GameClearTime: 1.2
+  FriendLivingPoint: 10
   InitPosition: {x: 0, y: -60, z: 0}
   PlayerCore: {fileID: 1933613815}
   Comet: {fileID: 54830369}
@@ -63083,6 +63089,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SceneChangeTime: 0
+  GameClearTime: 1.2
+  FriendLivingPoint: 10
   InitPosition: {x: 0, y: -60, z: 0}
   PlayerCore: {fileID: 1933613815}
   Comet: {fileID: 54830369}
@@ -79134,6 +79142,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SceneChangeTime: 0
+  GameClearTime: 1.2
+  FriendLivingPoint: 10
   InitPosition: {x: 0, y: -60, z: 0}
   PlayerCore: {fileID: 1933613815}
   Comet: {fileID: 54830369}
@@ -88743,6 +88753,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SceneChangeTime: 0
+  GameClearTime: 1.2
+  FriendLivingPoint: 10
   InitPosition: {x: 0, y: -60, z: 0}
   PlayerCore: {fileID: 1933613815}
   Comet: {fileID: 54830369}
@@ -99148,6 +99160,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SceneChangeTime: 0
+  GameClearTime: 1.2
+  FriendLivingPoint: 10
   InitPosition: {x: 0, y: -60, z: 0}
   PlayerCore: {fileID: 1933613815}
   Comet: {fileID: 54830369}
@@ -107429,6 +107443,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SceneChangeTime: 0
+  GameClearTime: 1.2
+  FriendLivingPoint: 10
   InitPosition: {x: 0, y: -60, z: 0}
   PlayerCore: {fileID: 1933613815}
   Comet: {fileID: 54830369}
