@@ -207,6 +207,7 @@ public class FeverGameManager : MonoBehaviour, IGameManager
     {
         MyTrans = this.GetComponent<Transform>();
         Observable.Interval(System.TimeSpan.FromMilliseconds(16))
+            .Where(_ => MyTrans != null)
             .Where(_ => MyTrans.position.y < 0)
             .Subscribe(_ => ApproarchFunc());
     }

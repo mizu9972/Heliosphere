@@ -148,8 +148,6 @@ public class GameMaster : MonoBehaviour
 
     public void ToGameOver()
     {
-        // マウスカーソルを表示する
-        UnityEngine.Cursor.visible = true;
         //ゲームオーバーのBGM再生
         Manager.GetComponent<AudioManager>().PlayResult(AudioManager.AudioType.GameOver);
         NowWAVEGameManager.GetComponent<WAVEGameManager>().ToGameOverScene();
