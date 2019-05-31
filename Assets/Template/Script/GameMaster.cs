@@ -34,7 +34,7 @@ public class GameMaster : MonoBehaviour
     [SerializeField, Header("フィーバー突入で一瞬表示するキャンバス")]
     GameObject FeverPopCanvas;
 
-    //[SerializeField]
+    [SerializeField]
     float FeverPopDelayTime = 0,FeverPopTime = 0.5f;
 
     private GameObject NowFeverObj;

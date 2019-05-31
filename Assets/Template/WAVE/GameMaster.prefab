@@ -316,6 +316,7 @@ MonoBehaviour:
   GoodPoint: 0
   BadPoint: -1
   MyRankPonit: -1
+  ScoreSpecific: 5000
   ParfectImage: {fileID: 2958546119092142889}
   MarvelousImage: {fileID: 205237987282657029}
   GoodImage: {fileID: 8124974570385369700}
@@ -1825,9 +1826,9 @@ MonoBehaviour:
   FeverGaugeParent: {fileID: 3717617807413881117}
   Fevergauge: {fileID: 1056861609564781166}
   HPGageCanvas: {fileID: 3955888633374940719}
-  FeverPopCanvas: {fileID: 2962999532486800516}
+  FeverPopCanvas: {fileID: 1720741317865746634}
   FeverPopDelayTime: 0
-  FeverPopTime: 0
+  FeverPopTime: 0.5
 --- !u!1 &3389715843618936784
 GameObject:
   m_ObjectHideFlags: 0
@@ -1971,7 +1972,7 @@ MonoBehaviour:
     type: 3}
   MaxSize: 100
   ClearTime: 36
-  DownCount: 0
+  DownCount: 0.16
 --- !u!114 &3838663886081500791
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3488,6 +3489,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ff31f67b95be1d4ebcb2d1fd7e2ac8d, type: 3}
+--- !u!1 &1720741317865746634 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7985037486907729074, guid: 0ff31f67b95be1d4ebcb2d1fd7e2ac8d,
+    type: 3}
+  m_PrefabInstance: {fileID: 8732972624640578680}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &39778962156063264 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8772047340311748184, guid: 0ff31f67b95be1d4ebcb2d1fd7e2ac8d,
