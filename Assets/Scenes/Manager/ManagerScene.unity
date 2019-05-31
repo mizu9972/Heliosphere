@@ -3630,6 +3630,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b80d2c49c3fd187458ca9a9fc4a6cb31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cursor: {fileID: 2800000, guid: 107e82cb17597154fa806fc051a66a2a, type: 3}
 --- !u!114 &2062281150
 MonoBehaviour:
   m_ObjectHideFlags: 0
