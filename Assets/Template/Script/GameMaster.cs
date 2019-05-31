@@ -46,6 +46,9 @@ public class GameMaster : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // マウスカーソルを削除する
+        UnityEngine.Cursor.visible = false;
+
         HPGageCanvas = GameObject.Find("HPGageParent");
         Manager = GameObject.Find("Manager");
         this.UpdateAsObservable().Where(_ => ScoreCount >= FeverScore).Subscribe(_ => FeverStart());
@@ -145,6 +148,8 @@ public class GameMaster : MonoBehaviour
 
     public void ToGameOver()
     {
+        // マウスカーソルを表示する
+        UnityEngine.Cursor.visible = true;
         //ゲームオーバーのBGM再生
         Manager.GetComponent<AudioManager>().PlayResult(AudioManager.AudioType.GameOver);
         NowWAVEGameManager.GetComponent<WAVEGameManager>().ToGameOverScene();

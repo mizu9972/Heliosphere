@@ -75,6 +75,8 @@ public class WAVEGameManager : MonoBehaviour, IGameManager
     // Start is called before the first frame update
     void Start()
     {
+        // マウスカーソルを削除する
+        UnityEngine.Cursor.visible = false;
         this.gameObject.AddComponent<AudioSource>();
         InitEnemyNum = EnemyCount();
         InitFriendNum = FriendCount();
@@ -233,6 +235,8 @@ public class WAVEGameManager : MonoBehaviour, IGameManager
 
         }else
         {
+            // マウスカーソルを表示する
+            UnityEngine.Cursor.visible = true;
             AllChangeActive();
             Observable.Timer(System.TimeSpan.FromSeconds(GameClearTime)).Subscribe(_ => GameObject.Find("Manager").GetComponent<Manager>().CallWAVEClear());
             GameObject.Find("ScoreCanvas").GetComponent<ScoreDownbyTime>().isActive = false;
@@ -243,7 +247,8 @@ public class WAVEGameManager : MonoBehaviour, IGameManager
 
     public void ToGameOverScene()
     {
-
+        // マウスカーソルを表示する
+        UnityEngine.Cursor.visible = true;
         AllChangeActive();
         //SceneChangeTimeの分だけ遅らせて
         //ゲームオーバーシーンへ
