@@ -42,11 +42,12 @@ public class GameManagerScript : MonoBehaviour,IGameManager
     private int FriendDestroyCount;
     private int EnemyDesroyCount;
     private bool ReadyFlg;
+    private GameObject audioManager;
     // Start is called before the first frame update
     void Start()
     {
         SetParam();//条件に基づいて変数に値をセット
-
+        audioManager = GameObject.Find("Manager");//オーディオ用のマネージャ
         //エンターが押されるまでチュートリアル用のキャンバスを表示(チュートリアル要素があれば実行)
         this.UpdateAsObservable().Where(_ => TutorialCanvas != null &&
                                             Input.GetKeyDown(KeyCode.Return)).
@@ -129,6 +130,11 @@ public class GameManagerScript : MonoBehaviour,IGameManager
     private void ToClearScene()
     {
         Debug.Log("クリア");
+        if(audioManager!=null)
+        {
+            //クリアBGM再生
+            audioManager.GetComponent<AudioManager>().PlayResult(AudioManager.AudioType.GameClear);
+        }
         AllChangeActive();
         //SceneChangeTimeの分だけ遅らせて
         //クリアシーンへ
@@ -139,6 +145,11 @@ public class GameManagerScript : MonoBehaviour,IGameManager
     private void ToGameOverScene()
     {
         Debug.Log("ゲームオーバー");
+        if (audioManager != null)
+        {
+            //GAMEOVERBGM再生
+            audioManager.GetComponent<AudioManager>().PlayResult(AudioManager.AudioType.GameOver);
+        }
         AllChangeActive();
         //SceneChangeTimeの分だけ遅らせて
         //ゲームオーバーシーンへ
