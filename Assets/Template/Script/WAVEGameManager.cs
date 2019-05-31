@@ -11,7 +11,10 @@ public class WAVEGameManager : MonoBehaviour, IGameManager
     private bool FeverFlg;//フィーバー状態か
     public float SceneChangeTime = 0;
     private float GameOverTime = 5;
-
+    ///
+    public float GameClearTime = 1;
+    public float FriendLivingPoint = 10;
+    ///
     [SerializeField, Header("初期位置")]
     Vector3 InitPosition = new Vector3(0, -60, 0);
 
@@ -194,6 +197,8 @@ public class WAVEGameManager : MonoBehaviour, IGameManager
         Paticlemain.maxParticles = (int)FriendNum;
         setParticle.Play();
 
+        canvas.GetComponent<Score>().FeverScoreCount(FriendNum * FriendLivingPoint);
+
         if (InitEnemyNum != 0)
         {
             if (InitFriendNum != 0)
@@ -229,7 +234,7 @@ public class WAVEGameManager : MonoBehaviour, IGameManager
         }else
         {
             AllChangeActive();
-            GameObject.Find("Manager").GetComponent<Manager>().CallWAVEClear();
+            Observable.Timer(System.TimeSpan.FromSeconds(GameClearTime)).Subscribe(_ => GameObject.Find("Manager").GetComponent<Manager>().CallWAVEClear());
             GameObject.Find("ScoreCanvas").GetComponent<ScoreDownbyTime>().isActive = false;
             //ゲームCLEARのBGM流す
             Manager.GetComponent<AudioManager>().PlayResult(AudioManager.AudioType.GameClear);
