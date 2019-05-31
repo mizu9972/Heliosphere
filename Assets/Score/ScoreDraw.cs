@@ -39,6 +39,7 @@ public class ScoreDraw : MonoBehaviour
             {
                 Num = 0;
             }
+
             if(Num<5)
             {
                 V = Num / 5 * 0.5f + 0.5f;
