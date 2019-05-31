@@ -21,7 +21,7 @@ public class GaugeParent : MonoBehaviour
     private bool Getflg;
 
     [SerializeField, Header("フレンド破壊時のゲージ減少量"), Range(0, 1)]
-    float DownCount;
+    float DownCount = 0.16f;
     public enum WAVENum
     {
         WAVE1,
