@@ -48059,8 +48059,8 @@ MonoBehaviour:
   Enemy_GameClearPoint: 45
   nextGameManager: {fileID: 1014729758}
   EnemyBreakScore: 30
-  FriendBreakScore: 150
-  WAVEClearScore: 500
+  FriendBreakScore: 0
+  WAVEClearScore: 1500
   GameMaster: {fileID: 218295583}
   WAVECount: 1
   ApproachSpeed: 100
@@ -51680,8 +51680,8 @@ MonoBehaviour:
   Enemy_GameClearPoint: 36
   nextGameManager: {fileID: 1740526655}
   EnemyBreakScore: 30
-  FriendBreakScore: 150
-  WAVEClearScore: 500
+  FriendBreakScore: 0
+  WAVEClearScore: 1500
   GameMaster: {fileID: 218295583}
   WAVECount: 1
   ApproachSpeed: 100
@@ -56295,10 +56295,10 @@ MonoBehaviour:
   Enemy_GameClearPoint: 90
   nextGameManager: {fileID: 1577306058}
   EnemyBreakScore: 30
-  FriendBreakScore: 150
-  WAVEClearScore: 500
+  FriendBreakScore: 0
+  WAVEClearScore: 1000
   GameMaster: {fileID: 218295583}
-  WAVECount: 2
+  WAVECount: 1
   ApproachSpeed: 100
   EffectBox: {fileID: 578367097}
   FriendParticleSystem: {fileID: 2526677672084448579, guid: e1e846f8ac0cea145b5cd148d559ce6f,
@@ -63095,8 +63095,8 @@ MonoBehaviour:
   Enemy_GameClearPoint: 42
   nextGameManager: {fileID: 0}
   EnemyBreakScore: 30
-  FriendBreakScore: 200
-  WAVEClearScore: 500
+  FriendBreakScore: 0
+  WAVEClearScore: 2000
   GameMaster: {fileID: 218295583}
   WAVECount: 1
   ApproachSpeed: 100
@@ -79146,8 +79146,8 @@ MonoBehaviour:
   Enemy_GameClearPoint: 30
   nextGameManager: {fileID: 1915863933}
   EnemyBreakScore: 30
-  FriendBreakScore: 150
-  WAVEClearScore: 500
+  FriendBreakScore: 0
+  WAVEClearScore: 1000
   GameMaster: {fileID: 218295583}
   WAVECount: 1
   ApproachSpeed: 100
@@ -88755,8 +88755,8 @@ MonoBehaviour:
   Enemy_GameClearPoint: 33
   nextGameManager: {fileID: 1259506420}
   EnemyBreakScore: 30
-  FriendBreakScore: 150
-  WAVEClearScore: 500
+  FriendBreakScore: 0
+  WAVEClearScore: 2000
   GameMaster: {fileID: 218295583}
   WAVECount: 1
   ApproachSpeed: 100
@@ -99160,8 +99160,8 @@ MonoBehaviour:
   Enemy_GameClearPoint: 42
   nextGameManager: {fileID: 943706738}
   EnemyBreakScore: 30
-  FriendBreakScore: 150
-  WAVEClearScore: 500
+  FriendBreakScore: 0
+  WAVEClearScore: 1500
   GameMaster: {fileID: 218295583}
   WAVECount: 1
   ApproachSpeed: 100

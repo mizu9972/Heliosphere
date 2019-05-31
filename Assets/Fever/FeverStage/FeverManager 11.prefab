@@ -4221,6 +4221,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StartFeverWAVE: {fileID: 3378507887738613455}
+  GameMaster: {fileID: 0}
 --- !u!1 &2522425226548043925
 GameObject:
   m_ObjectHideFlags: 0
@@ -5964,7 +5965,7 @@ MonoBehaviour:
   TimeToClear: 13
   nextGameManager: {fileID: 0}
   myFeverManager: {fileID: 2508690213010493306}
-  EnemyBreakScore: 60
+  EnemyBreakScore: 150
   FriendBreakScore: 0
   Enemy_GameClearPoint: 52
   ApproachSpeed: 50
@@ -7000,7 +7001,7 @@ MonoBehaviour:
   TimeToClear: 12
   nextGameManager: {fileID: 2951379982036754939}
   myFeverManager: {fileID: 2508690213010493306}
-  EnemyBreakScore: 60
+  EnemyBreakScore: 150
   FriendBreakScore: 0
   Enemy_GameClearPoint: 0
   ApproachSpeed: 25
@@ -7652,7 +7653,7 @@ MonoBehaviour:
   TimeToClear: 12
   nextGameManager: {fileID: 3234648671805329425}
   myFeverManager: {fileID: 2508690213010493306}
-  EnemyBreakScore: 60
+  EnemyBreakScore: 150
   FriendBreakScore: 0
   Enemy_GameClearPoint: 25
   ApproachSpeed: 25
