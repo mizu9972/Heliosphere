@@ -32,6 +32,7 @@ public class Manager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Screen.SetResolution(1920,825 , false, 60);//スクリーンサイズ固定
         Application.targetFrameRate = 60;//60FPS
         DontDestroyOnLoad(gameobject);
         DontDestroyOnLoad(Canvas);
