@@ -112,6 +112,10 @@ public class GaugeParent : MonoBehaviour
         }
     }
 
+    public void NomalFriendDestroyFunction(float _Cnt)
+    {
+
+    }
     public void FriendDestroyFunc()
     {
         CntTime += ClearTime * DownCount;

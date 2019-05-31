@@ -14,6 +14,7 @@ public class WAVEGameManager : MonoBehaviour, IGameManager
     ///
     public float GameClearTime = 1.2f;
     public float FriendLivingPoint = 10;
+    private float DownFeverGaugeRatioByFriendDestroy = 0.01f;
     ///
     [SerializeField, Header("初期位置")]
     Vector3 InitPosition = new Vector3(0, -60, 0);
@@ -162,6 +163,8 @@ public class WAVEGameManager : MonoBehaviour, IGameManager
             //エネミーが破壊されたことを送信
             GameMaster.GetComponent<GameMaster>().FrendDestroyCount();
         }
+
+        GameMaster.GetComponent<GameMaster>().CountDown(DownFeverGaugeRatioByFriendDestroy);
         FriendDestroyCount += 1;//破壊されたFriend数加算
         //Score.csのScoreCountを実行(引数は-FriendBreakScore)
         canvas.GetComponent<Score>().ScoreCount(-FriendBreakScore);

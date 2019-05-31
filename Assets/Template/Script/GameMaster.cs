@@ -73,6 +73,16 @@ public class GameMaster : MonoBehaviour
 
     }
 
+    public void CountDown(float _Ratio)
+    {
+        ScoreCount -= _Ratio * FeverScore;
+
+        if(ScoreCount <= 0)
+        {
+            ScoreCount = 0;
+        }
+    }
+
     public void WAVEset(GameObject SetManager)
     {
         //進行中のWAVE保存
