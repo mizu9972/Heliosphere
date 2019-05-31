@@ -11,8 +11,10 @@ public class WAVEGameManager : MonoBehaviour, IGameManager
     private bool FeverFlg;//フィーバー状態か
     public float SceneChangeTime = 0;
     private float GameOverTime = 5;
+    ///
     public float GameClearTime = 1;
-
+    public float FriendLivingPoint = 10;
+    ///
     [SerializeField, Header("初期位置")]
     Vector3 InitPosition = new Vector3(0, -60, 0);
 
@@ -194,6 +196,8 @@ public class WAVEGameManager : MonoBehaviour, IGameManager
         var Paticlemain = setParticle.main;
         Paticlemain.maxParticles = (int)FriendNum;
         setParticle.Play();
+
+        canvas.GetComponent<Score>().FeverScoreCount(FriendNum * FriendLivingPoint);
 
         if (InitEnemyNum != 0)
         {
