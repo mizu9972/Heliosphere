@@ -29,6 +29,7 @@ public class ClearRankJudge : MonoBehaviour
     float EBorder;
 
     [Header("各評価ポイント")]
+
     [SerializeField, Header("Parfect")]
     float ParfectPoint = 2;
     [SerializeField, Header("Marvelous")]
@@ -38,10 +39,14 @@ public class ClearRankJudge : MonoBehaviour
     [SerializeField, Header("Bad")]
     float BadPoint = -1;
 
-    public float MyRankPonit = -1;//最終ランク描画用
+    public float MyRankPonit = -2;//最終ランク描画用
 
+    public float ScoreSpecific = 5000;
     [SerializeField]
     GameObject ParfectImage, MarvelousImage, GoodImage, BadImage;
+
+    [SerializeField]
+    GameObject S, A, B, C, D, E;
 
     [SerializeField, Header("描画時間")]
     float ImageTime = 0.5f;
@@ -129,21 +134,26 @@ public class ClearRankJudge : MonoBehaviour
         }
     }
 
-    void RankJudge()
+    public void RankJudge()
     {
-        if (MyRankPonit >= SBorder)
+        double NowScore = this.GetComponent<Score>().ScoreGetter();
+        double JudgeSoce = NowScore + MyRankPonit * ScoreSpecific;
+
+
+
+        if (JudgeSoce >= SBorder)
         {
             MyLastRank = LastRank.S;
-        }else if(MyRankPonit >= ABorder)
+        }else if(JudgeSoce >= ABorder)
         {
             MyLastRank = LastRank.A;
-        }else if(MyRankPonit >= BBorder)
+        }else if(JudgeSoce >= BBorder)
         {
             MyLastRank = LastRank.B;
-        }else if(MyRankPonit >= CBorder)
+        }else if(JudgeSoce >= CBorder)
         {
             MyLastRank = LastRank.C;
-        }else if(MyRankPonit >= DBorder)
+        }else if(JudgeSoce >= DBorder)
         {
             MyLastRank = LastRank.D;
         }
@@ -153,6 +163,36 @@ public class ClearRankJudge : MonoBehaviour
         }
 
         //描画
+        ClearRankDraw();
+    }
 
+    void ClearRankDraw()
+    {
+        switch (MyLastRank)
+        {
+            case LastRank.S:
+                S.SetActive(true);
+                break;
+
+            case LastRank.A:
+                A.SetActive(true);
+                break;
+
+            case LastRank.B:
+                B.SetActive(true);
+                break;
+
+            case LastRank.C:
+                C.SetActive(true);
+                break;
+
+            case LastRank.D:
+                D.SetActive(true);
+                break;
+
+            case LastRank.E:
+                E.SetActive(true);
+                break;
+        }
     }
 }

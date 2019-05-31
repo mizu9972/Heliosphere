@@ -234,11 +234,17 @@ public class WAVEGameManager : MonoBehaviour, IGameManager
         }else
         {
             AllChangeActive();
-            Observable.Timer(System.TimeSpan.FromSeconds(GameClearTime)).Subscribe(_ => GameObject.Find("Manager").GetComponent<Manager>().CallWAVEClear());
+            Observable.Timer(System.TimeSpan.FromSeconds(GameClearTime)).Subscribe(_ => ClearFunc());
+
             GameObject.Find("ScoreCanvas").GetComponent<ScoreDownbyTime>().isActive = false;
             //ゲームCLEARのBGM流す
             Manager.GetComponent<AudioManager>().PlayResult(AudioManager.AudioType.GameClear);
         }
+    }
+    void ClearFunc()
+    {
+        GameObject.Find("Manager").GetComponent<Manager>().CallWAVEClear();
+        canvas.GetComponent<ClearRankJudge>().RankJudge();
     }
 
     public void ToGameOverScene()
@@ -248,8 +254,14 @@ public class WAVEGameManager : MonoBehaviour, IGameManager
         //SceneChangeTimeの分だけ遅らせて
         //ゲームオーバーシーンへ
         Comet.GetComponent<GameOverFunc>().GameOver();
-        Observable.Timer(System.TimeSpan.FromSeconds(GameOverTime)).Subscribe(_ => GameObject.Find("Manager").GetComponent<Manager>().CallResult());
+        Observable.Timer(System.TimeSpan.FromSeconds(GameOverTime)).Subscribe(_ => GameOverFunc());
         GameObject.Find("Manager").GetComponent<Manager>().ChengeActive(false);
+    }
+
+    void GameOverFunc()
+    {
+        GameObject.Find("Manager").GetComponent<Manager>().CallResult();
+        canvas.GetComponent<ClearRankJudge>().RankJudge();
     }
     void OnSceneUnloaded(Scene scene)
     {
